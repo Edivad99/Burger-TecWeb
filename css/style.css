@@ -77,12 +77,42 @@ header h1 {
     border-bottom: 1px solid #ddd;
 }
 
-.contenutoGenerale {
+/* CONTENUTO */
+#contenutoGenerale {
     background-color: white;
+    padding: 1em 0.2em 1em 0.2em;
+}
+
+#immagineLocale {
+    float: left;
+    width: 41%;
+    padding-right: 0.5em;
+}
+
+#cosafacciamo {
+    min-height: 18em;
+}
+
+#promozioneStudenti {
+    font-size: 1.6em;
+    min-height: 8em;
+    padding-top: 6em;
+}
+
+#immaginePromozione {
+    width: 40%;
+    float: right;
+}
+
+abbr {
+    text-decoration: none;
 }
 
 footer {
-    background-color: white;
+    background-color: #bd091b;
+    color: white;
     border: 1px solid #ddd;
     text-align: center;
+    padding-top: 1em;
+    margin-bottom: 2em;
 }
