@@ -78,7 +78,7 @@ header h1 {
 }
 
 /* CONTENUTO */
-.contenutoGenerale {
+#contenutoGenerale {
     background-color: white;
     padding: 1em 0.2em 1em 0.2em;
 }
