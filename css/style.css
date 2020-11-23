@@ -79,14 +79,14 @@ header h1 {
         BREADCRUMB 
 =================================
 */
-#linkBreadcrumb{
+#linkBreadcrumb {
     text-decoration: none;
     background-color: white;
     color: #bd091b;
     font-weight: bold;
 }
 
-#breadcrumb{
+#breadcrumb {
     background-color: white;
     color: #bd091b;
     padding: 0.5em 0 0.5em 1.0em;
