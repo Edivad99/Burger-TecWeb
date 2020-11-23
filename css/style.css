@@ -11,10 +11,14 @@ html {
 body {
     max-width: 1024px;
     margin: auto;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif; /*font da cambiare*/
 }
 
-/* HEADER */
+/* 
+=================================
+        HEADER 
+=================================
+*/
 
 header {
     padding: 1.0em;
@@ -33,7 +37,11 @@ header h1 {
     max-width: 6em;
 }
 
-/* MENU */
+/* 
+=================================
+        MENU 
+=================================
+*/
 
 #menu ul {
     list-style-type: none;
@@ -66,9 +74,19 @@ header h1 {
     float: right;
 }
 
-/* BREADCRUMB */
+/* 
+=================================
+        BREADCRUMB 
+=================================
+*/
+#linkBreadcrumb{
+    text-decoration: none;
+    background-color: white;
+    color: #bd091b;
+    font-weight: bold;
+}
 
-#breadcrumb {
+#breadcrumb{
     background-color: white;
     color: #bd091b;
     padding: 0.5em 0 0.5em 1.0em;
@@ -77,7 +95,12 @@ header h1 {
     border-bottom: 1px solid #ddd;
 }
 
-/* CONTENUTO */
+/* 
+=================================
+        CONTENUTO 
+=================================
+*/
+
 #contenutoGenerale {
     background-color: white;
     padding: 1em 0.2em 1em 0.2em;
@@ -107,6 +130,12 @@ header h1 {
 abbr {
     text-decoration: none;
 }
+
+/* 
+=================================
+        FOOTER 
+=================================
+*/
 
 footer {
     background-color: #bd091b;
