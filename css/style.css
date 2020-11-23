@@ -79,6 +79,7 @@ header h1 {
         BREADCRUMB 
 =================================
 */
+
 #linkBreadcrumb {
     text-decoration: none;
     background-color: white;
@@ -103,6 +104,7 @@ header h1 {
 
 #contenutoGenerale {
     background-color: white;
+    line-height: 1.8;
     padding: 1em 0.2em 1em 0.2em;
 }
 
@@ -144,4 +146,26 @@ footer {
     text-align: center;
     padding-top: 1em;
     margin-bottom: 2em;
+}
+
+/* 
+=================================
+        CONTATTI
+=================================
+*/
+
+#contenutoGeneraleC {
+    background-color: white;
+    padding: 1em 0.2em 1em 0.2em;
+    display: flex;
+    line-height: 1.8;
+}
+
+#contenutoGeneraleC div {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+#contatti {
+    padding-top: 1.25em;
 }
