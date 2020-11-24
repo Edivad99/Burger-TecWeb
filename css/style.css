@@ -167,7 +167,7 @@ footer {
     text-align: center;
 }
 
-#contenutoGeneraleC ol {
+#contenutoGeneraleC ol, ul {
     list-style: none;
 }
 
