@@ -167,6 +167,10 @@ footer {
     text-align: center;
 }
 
+#contenutoGeneraleC ol {
+    list-style: none;
+}
+
 #contatti {
     padding-top: 1.25em;
 }
