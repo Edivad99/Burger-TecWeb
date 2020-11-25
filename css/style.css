@@ -133,6 +133,23 @@ abbr {
     text-decoration: none;
 }
 
+/* CONTENUTO > Contatti */
+#orari, #contatti {
+    list-style: none;
+}
+
+#contatti {
+    padding-top: 1.25em;
+}
+
+.centrato {
+    display: flex;
+}
+.centrato div {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
 /* 
 =================================
         FOOTER 
@@ -149,28 +166,6 @@ footer {
     margin-bottom: 2em;
 }
 
-/* 
-=================================
-        CONTATTI
-=================================
-*/
-
-#contenutoGeneraleC {
-    background-color: white;
-    padding: 1em 0.2em 1em 0.2em;
-    display: flex;
-    line-height: 1.8;
-}
-
-#contenutoGeneraleC div {
-    flex: 1 1 200px;
-    text-align: center;
-}
-
-#contenutoGeneraleC ol, ul {
+footer ul {
     list-style: none;
-}
-
-#contatti {
-    padding-top: 1.25em;
 }
