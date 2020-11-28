@@ -14,6 +14,7 @@
     <meta name="language" content="italian it" />
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
     <link rel="icon" type="image/png" href="img/burger-icon.png" />
     <!--<link rel="stylesheet" type="text/css" href="css/style_small_lavoro.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>-->
 </head>

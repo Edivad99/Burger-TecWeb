@@ -1,0 +1,120 @@
+* {
+    padding: 0em;
+    margin: 0em;
+}
+
+html {
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.aiutiNascosti {
+    display:none;
+}
+
+/* 
+=================================
+        HEADER 
+=================================
+*/
+
+#header {
+    padding: 1.0em;
+    min-height: 6em;
+    text-align: left;   /*Verificare se è meglio left o center*/
+    padding-bottom: 0em;
+}
+
+#header h1 {
+    font-size: 3.5em;  /*Forse va diminuito*/
+}
+
+#logo {
+    display: none;
+}
+
+/* 
+=================================
+        MENU 
+=================================
+*/
+
+#menu {
+    display: none;
+}
+
+/* 
+=================================
+        BREADCRUMB 
+=================================
+*/
+
+#breadcrumb {
+    padding: 1em 0em 0em 0em;           /*Aumentare Font?*/
+}
+
+#linkBreadcrumb {
+    color: black;
+    text-decoration: none;
+}
+
+/* 
+=================================
+        CONTENUTO 
+=================================
+*/
+
+#contenutoGenerale {
+    line-height: 1.8;
+    padding: 1em 0.2em 1em 0.2em;
+}
+
+#immagineLocale {
+    display: none;
+}
+
+#immaginePromozione {
+    display: none;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+/* CONTENUTO > Contatti */
+
+#contatti {
+    padding-top: 1.25em;
+}
+
+#orari, #contatti {
+    list-style: none;
+}
+
+.centrato {
+    display: flex;
+}
+
+.centrato div {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+#contatti a#tel, #contatti a#mail {
+    color:black;
+    text-decoration: none;
+}
+
+/* 
+=================================
+        FOOTER 
+=================================
+*/
+
+footer {
+    line-height: 1.8;
+}
+
+footer a#tel {
+    color: black;
+    text-decoration: none;
+}
