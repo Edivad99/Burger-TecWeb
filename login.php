@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatti | Burgheria Padovana</title>
+    <title>Login | Burgheria Padovana</title>
 
-    <meta name="title" content="Contatti | Burgheria Padovana" />
-    <meta name="description" content="Contatti Burgheria Padovana" />
-    <meta name="keywords" content="" />  <!--Aggiungere key-->
+    <!-- Non sono sicuro se sulla pagina di login bisgona mettere queste informazioni-->
+    <meta name="title" content="Login | Burgheria Padovana" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
 
@@ -23,7 +24,7 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <a href="index.html"><img id="logo" src="img/burger-icon.png"/></a>
+        <img id="logo" src="img/burger-icon.png"/>
         <h1>Burgheria Padovana</h1>
     </header>
 
@@ -33,39 +34,24 @@
             <li><a href="menu.php">I NOSTRI BURGER</a></li>
             <li><a href="eventi.html">EVENTI</a></li>
             <li><a href="storia.html">STORIA</a></li>
-            <li id="currentLink">CONTATTI</li>
-            <li><a href="login.php" lang="en">LOGIN</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li id="currentLink" lang="en">LOGIN</li>
         </ul>
     </nav>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a id="linkBreadcrumb" href="index.html" lang="en">Home</a> > Contatti</p>
+        <p>Ti trovi in: <span lang="en">Login</span></p>
     </nav>
 
-    <div id="contenutoGenerale" class="centrato">
-        <div>
-            <h2>Orari</h2>
-            <ol id="orari">
-                <li>Lunedì:    12:00-16:00 19:00-02:00</li>
-                <li>Martedì:   12:00-16:00 19:00-02:00</li>
-                <li>Mercoledì: 12:00-16:00 19:00-02:00</li>
-                <li>Giovedì:   12:00-16:00 19:00-02:00</li>
-                <li>Venerdì:   12:00-16:00 19:00-02:00</li>
-                <li>Sabato:    Chiuso</li>
-                <li>Domenica:  Chiuso</li>
-            </ol>
-        </div>
-        <div>
-            <h2>Contatti</h2>
-            <ul id="contatti">
-                <li>Via Luigi Luzzati, 10</li>
-                <li>35121, Padova</li>
-                <li><abbr title="Telefono">Tel</abbr>: +39 3453434225</li>
-                <li>burger.pad@gmail.com</li>
-            </ul>
-        </div>
+    <div id="contenutoGenerale">
+        <form action="" method="post">
+            <label for="user" lang="en">Username:</label>
+            <input type="text" name="usr" id="user" autocomplete="username"/>
+            <label for="pwd" lang="en">Password:</label>
+            <input type="password" name="pwd" id="pwd" autocomplete="current-password"/>
+            <input type="submit" value="Login"/>
+        </form>
     </div>
-
     <footer>
         <ul>
             <li>Via Luigi Luzzati, 10 Padova</li>
@@ -74,4 +60,6 @@
         </ul>
         <!-- TODO: Validazioni immagini verso la fine-->
     </footer>
+</body>
+
 </html>
