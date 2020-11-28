@@ -186,6 +186,10 @@ abbr {
     text-align: center;
 }
 
+#contatti a#tel, #contatti a#mail {
+    color: black;
+}
+
 /* 
 =================================
         FOOTER 
@@ -204,4 +208,8 @@ footer {
 
 footer ul {
     list-style: none;
+}
+
+footer a#tel {
+    color: white;
 }
