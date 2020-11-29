@@ -51,34 +51,38 @@ header h1 {
 =================================
 */
 
-#menu ul {
+.open-button, .close-button  {
+    display: none;
+}
+
+.nav ul {
     list-style-type: none;
     overflow: hidden;
     background-color: #bd091b;
 }
 
-#menu li a {
+.nav li a {
     padding: 14px 16px;
 }
 
-#menu li a, #menu li {
+.nav li a, .nav li {
     display: inline-block;
     color: white;
     text-align: center;
     text-decoration: none;
 }
 
-#menu li#currentLink {
+.nav li#currentLink {
     border-bottom: white 4px solid;
     padding: 14px 16px 10px 16px;
 }
 
-#menu li a:hover {
+.nav li a:hover {
     background-color: white;
     color: #bd091b;
 }
 
-#menu li:last-child {
+.nav li:last-child {
     float: right;
 }
 

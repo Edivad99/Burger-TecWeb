@@ -1,0 +1,113 @@
+/* 
+=================================
+        HEADER 
+=================================
+*/
+
+header {
+    min-height: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 1.5em;
+    padding-top: 0.23em;
+}
+
+#logo {
+    display: none;
+}
+/* 
+=================================
+        MENU 
+=================================
+*/
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    height: 90%;   /*da modificare*/
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: -15em;    /*per far sparire il menu*/
+    padding: 0em 2em 0em 2em;
+    z-index: 1;
+    transition: 0.5s;
+    background: #bd091b; 
+    text-align: left
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu-active {
+    width: fit-content;
+    right: 0;
+}
+
+.apri-nav img {
+    width: 3em;
+    display: block;
+    cursor: pointer;
+    flex: 1 1 200px;
+}
+
+.chiudi-nav-active {
+    padding-top: 1em;
+    margin-bottom: 1em;
+    text-align: right;
+}
+
+.chiudi-nav img {
+    display: block;
+    cursor: pointer;
+    margin-right: 2em;
+    width: 2em;
+ }
+
+ .elemento-menu{
+    margin: 0.3em 1em 0.5em 0em;
+    text-decoration: none;
+    font-size: 1.4em;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+ /*.apri-nav {
+    cursor: pointer;
+    margin-right: 2em;
+}*/
+
+/* 
+=================================
+        CONTENUTO 
+=================================
+*/
+
+#promozioneStudenti {
+    min-height: 5em;
+    padding-top: 0em;
+}
+
+/* CONTENUTO > Contatti */
+
+.centrato {
+    display: block;
+}
+
+
+/* 
+=================================
+        FOOTER 
+=================================
+*/
+
+footer {
+    margin-bottom: 0em;
+}

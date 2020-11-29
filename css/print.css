@@ -20,7 +20,7 @@ html {
 #header {
     padding: 1.0em;
     min-height: 6em;
-    text-align: left;   /*Verificare se è meglio left o center*/
+    text-align: center;
     padding-bottom: 0em;
 }
 
@@ -38,7 +38,7 @@ html {
 =================================
 */
 
-#menu {
+.nav, .close-button, .open-button {
     display: none;
 }
 
