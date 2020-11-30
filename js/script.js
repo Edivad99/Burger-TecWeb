@@ -4,30 +4,22 @@
 =================================
 */
 
-function openSideNav() {
+function apri_nav() {
 
-	let apriNav = document.querySelector('.open-button');
-	let chiudiNav = document.querySelector('.chiudi-nav');
-	let nav = document.querySelector('.nav');
+    let chiudiNav = document.querySelector('.chiudi-nav');
+    let nav = document.querySelector('.nav');
 
-	apriNav.addEventListener("click", function () {
-		nav.classList.add("menu-active");
-		chiudiNav.classList.add("chiudi-nav-active");
-	});
-
-	chiudiNav.addEventListener("click", function () {
-		nav.classList.remove("menu-active");
-		nav.classList.add("menu-disable");
-		chiudiNav.classList.remove("chiudi-nav-active");
-		chiudiNav.classList.add("chiudi-nav-disable");
-	});
-
+    nav.classList.add("menu-active");
+    chiudiNav.classList.add("chiudi-nav-active");
 }
 
-/* 
-=================================
-        CHIAMATE FUNZIONI 
-=================================
-*/
+function chiudi_nav() {
 
-openSideNav();
+    let chiudiNav = document.querySelector('.chiudi-nav');
+    let nav = document.querySelector('.nav');
+
+    nav.classList.remove("menu-active");
+    nav.classList.add("menu-disable");
+    chiudiNav.classList.remove("chiudi-nav-active");
+    chiudiNav.classList.add("chiudi-nav-disable");
+}

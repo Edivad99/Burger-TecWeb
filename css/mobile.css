@@ -31,18 +31,15 @@ header h1 {
     width: 0;
     position: fixed;
     top: 0;
-    right: -15em;    /*per far sparire il menu*/
+    right: -15em;
     padding: 0em 2em 0em 2em;
-    z-index: 1;
     transition: 0.5s;
     background: #bd091b; 
-    text-align: left
 }
 
 #menu {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
 }
 
 .menu-active {
@@ -54,41 +51,35 @@ header h1 {
     width: 3em;
     display: block;
     cursor: pointer;
-    flex: 1 1 200px;
 }
 
 .chiudi-nav-active {
     padding-top: 1em;
     margin-bottom: 1em;
-    text-align: right;
 }
 
-.chiudi-nav img {
+.chiudi-nav img {    /*decidere tra width 2em o 3em*/
     display: block;
     cursor: pointer;
-    margin-right: 2em;
-    width: 2em;
+    width: 3em;
  }
 
  .elemento-menu{
-    margin: 0.3em 1em 0.5em 0em;
+    margin: 0.3em 1em 0.5em 0em;   /*per facilitare clic*/
     text-decoration: none;
     font-size: 1.4em;
     color: white;
-    display: block;
-    transition: 0.3s;
 }
 
- /*.apri-nav {
-    cursor: pointer;
-    margin-right: 2em;
-}*/
-
-/* 
+/*
 =================================
         CONTENUTO 
 =================================
 */
+#contenutoGenerale header{
+    display: block;
+    text-align: center;
+}
 
 #promozioneStudenti {
     min-height: 5em;

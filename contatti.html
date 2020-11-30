@@ -16,7 +16,7 @@
     <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
     <link rel="icon" type="image/png" href="img/burger-icon.png" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
-    <script defer="defer" type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
 </head>
 
 <body>
@@ -28,13 +28,13 @@
         <a href="index.html"><img id="logo" src="img/burger-icon.png"/></a>
         <h1>Burgheria Padovana</h1>
         <span class="apri-nav">
-            <img class="open-button" src="./img/menu/hamburger.png" alt="apri menu"/>
+            <img onclick="apri_nav()" class="open-button" src="img/menu/hamburger.png" alt="apri menu"/>
         </span>
     </header>
 
     <nav class="nav">
         <span class="chiudi-nav">
-            <img class="close-button" src="./img/menu/exit.png" alt="esci dal menu"/>
+            <img onclick="chiudi_nav()" class="close-button" src="img/menu/exit.png" alt="esci dal menu"/>
         </span>
         <ul id="menu">
             <li class="elemento-menu"><a href="index.html" lang="en">HOME</a></li>

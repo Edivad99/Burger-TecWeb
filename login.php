@@ -16,7 +16,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
     <link rel="icon" type="image/png" href="img/burger-icon.png" />
-    <!--<link rel="stylesheet" type="text/css" href="css/style_small_lavoro.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>-->
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
+    <script type="text/javascript" src="./js/script.js"></script>
 </head>
 
 <body>
@@ -25,18 +26,26 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <img id="logo" src="img/burger-icon.png"/>
+        <span>
+            <img id="logo" src="img/burger-icon.png"/>
+        </span>
         <h1>Burgheria Padovana</h1>
+        <span class="apri-nav">
+            <img onclick="apri_nav()" class="open-button" src="img/menu/hamburger.png" alt="apri menu"/>
+        </span>
     </header>
 
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html" lang="en">HOME</a></li>
-            <li><a href="menu.php">I NOSTRI BURGER</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
-            <li><a href="storia.html">STORIA</a></li>
-            <li><a href="contatti.html">CONTATTI</a></li>
-            <li id="currentLink" lang="en">LOGIN</li>
+    <nav class="nav">
+        <span class="chiudi-nav">
+            <img onclick="chiudi_nav()" class="close-button" src="img/menu/exit.png" alt="esci dal menu"/>
+        </span>
+        <ul id="menu">
+            <li class="elemento-menu"><a href="index.html" lang="en">HOME</a></li>
+            <li class="elemento-menu"><a href="menu.php">I NOSTRI BURGER</a></li>
+            <li class="elemento-menu"><a href="eventi.html">EVENTI</a></li>
+            <li class="elemento-menu"><a href="storia.html">STORIA</a></li>
+            <li class="elemento-menu"><a href="contatti.html">CONTATTI</a></li>
+            <li id="currentLink" class="elemento-menu" lang="en">LOGIN</li>
         </ul>
     </nav>
 
