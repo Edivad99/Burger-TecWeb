@@ -39,12 +39,12 @@
             <img onclick="chiudi_nav()" class="close-button" src="img/menu/exit.png" alt="esci dal menu"/>
         </span>
         <ul id="menu">
-            <li class="elemento-menu"><a href="index.html" lang="en">HOME</a></li>
-            <li id="currentLink" class="elemento-menu">I NOSTRI BURGER</li>
-            <li class="elemento-menu"><a href="eventi.html">EVENTI</a></li>
-            <li class="elemento-menu"><a href="storia.html">STORIA</a></li>
-            <li class="elemento-menu"><a href="contatti.html">CONTATTI</a></li>
-            <li class="elemento-menu"><a href="login.php" lang="en">LOGIN</a></li>
+            <li><a href="index.html" lang="en">HOME</a></li>
+            <li id="currentLink">I NOSTRI BURGER</li>
+            <li><a href="eventi.html">EVENTI</a></li>
+            <li><a href="storia.html">STORIA</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="login.php" lang="en">LOGIN</a></li>
         </ul>
     </nav>
 
