@@ -55,34 +55,34 @@ header h1 {
     display: none;
 }
 
-.nav ul {
+#menu {
     list-style-type: none;
     overflow: hidden;
     background-color: #bd091b;
 }
 
-.nav li a {
+#menu li a {
     padding: 14px 16px;
 }
 
-.nav li a, .nav li {
+#menu li a, #menu li {
     display: inline-block;
     color: white;
     text-align: center;
     text-decoration: none;
 }
 
-.nav li#currentLink {
+#menu li#currentLink {
     border-bottom: white 4px solid;
     padding: 14px 16px 10px 16px;
 }
 
-.nav li a:hover {
+#menu li a:hover {
     background-color: white;
     color: #bd091b;
 }
 
-.nav li:last-child {
+#menu li:last-child {
     float: right;
 }
 
