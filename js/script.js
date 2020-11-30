@@ -19,7 +19,6 @@ function chiudi_nav() {
     let nav = document.querySelector('.nav');
 
     nav.classList.remove("menu-active");
-    nav.classList.add("menu-disable");
     chiudiNav.classList.remove("chiudi-nav-active");
     chiudiNav.classList.add("chiudi-nav-disable");
 }
