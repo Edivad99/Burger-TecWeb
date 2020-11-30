@@ -20,5 +20,4 @@ function chiudi_nav() {
 
     nav.classList.remove("menu-active");
     chiudiNav.classList.remove("chiudi-nav-active");
-    chiudiNav.classList.add("chiudi-nav-disable");
 }
