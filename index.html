@@ -13,10 +13,10 @@
     <meta name="language" content="italian it" />
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-    <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
     <link rel="icon" type="image/png" href="img/burger-icon.png" />
-    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)"/>
-    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
