@@ -27,7 +27,7 @@ header h1 {
 .nav {
     display: flex;
     flex-direction: column;
-    height: 90%;   /*da modificare*/
+    height: 100%;   /*da modificare*/
     width: 0;
     position: fixed;
     top: 0;
