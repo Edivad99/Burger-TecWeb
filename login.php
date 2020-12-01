@@ -26,9 +26,7 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <span>
-            <img id="logo" src="img/burger-icon.png"/>
-        </span>
+        <a href="index.html"><img id="logo" src="img/burger-icon.png"/></a>
         <h1>Burgheria Padovana</h1>
         <span class="apri-nav">
             <img onclick="apri_nav()" src="img/menu/hamburger.png" alt="apri menu"/>
