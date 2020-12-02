@@ -38,7 +38,7 @@ html {
 =================================
 */
 
-.nav, .apri-nav {
+#menu, #menu-btn, .menu-icon {
     display: none;
 }
 
