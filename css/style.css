@@ -21,15 +21,15 @@ body {
 */
 
 header {
-    padding: 1.0em;
+    padding-top: 1.0em;
     padding-bottom: 0em;
-    text-align: center;
     min-height: 6em;
 }
 
 header h1 {
     color: #bd091b;
     font-size: 3.5em;
+    text-align: center;
 }
 
 #logo {
@@ -51,14 +51,16 @@ header h1 {
 =================================
 */
 
-.chiudi-nav img, .apri-nav img {
-    display: none;
-}
-
 #menu {
+    margin-top: 1.5em;
     list-style-type: none;
     overflow: hidden;
     background-color: #bd091b;
+    clear: both;
+}
+
+.menu-btn {
+    display: none;
 }
 
 #menu li a {
