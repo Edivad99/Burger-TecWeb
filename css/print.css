@@ -38,7 +38,7 @@ html {
 =================================
 */
 
-#menu, #menu-btn, .menu-icon {
+#menu, #menu-btn, #menu-icon {
     display: none;
 }
 

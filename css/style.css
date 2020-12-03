@@ -59,7 +59,7 @@ header h1 {
     clear: both;
 }
 
-.menu-btn {
+#menu-btn {
     display: none;
 }
 
@@ -194,6 +194,30 @@ abbr {
 
 #contatti a#tel, #contatti a#mail {
     color: black;
+}
+
+/* CONTENUTO > Login */
+
+#contenutoGenerale form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#user, #pwd {
+    width: fit-content;
+    margin: auto;
+}
+
+#login {
+    width: 80px;
+    height: 30px;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #bd091b;
+    border-color: transparent;
 }
 
 /* 
