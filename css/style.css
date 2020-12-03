@@ -38,7 +38,7 @@ header h1 {
     text-align: center;
 }
 
-#logo {
+#logo, #logo img{
     float: left;
     max-width: 6em;
 }
