@@ -27,6 +27,9 @@ header h1 {
 
 #menu {
     margin: 0;
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-in-out;
 }
 
 #menu li a {
@@ -39,12 +42,6 @@ header h1 {
 
 #menu li:last-child {
     float: none;
-}
-
-#menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2 ease-out;
 }
 
 .menu-icon {

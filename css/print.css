@@ -38,7 +38,7 @@ html {
 =================================
 */
 
-#menu, #menu-btn, #menu-icon {
+#menu, .menu-btn, .menu-icon {
     display: none;
 }
 
@@ -95,7 +95,7 @@ abbr {
     text-align: center;
 }
 
-#contatti a#tel, #contatti a#mail {
+#contatti a.tel, #contatti a#mail {
     color:black;
     text-decoration: none;
 }
@@ -110,7 +110,7 @@ footer {
     line-height: 1.8;
 }
 
-footer a#tel {
+footer a.tel {
     color: black;
     text-decoration: none;
 }

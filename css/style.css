@@ -195,7 +195,7 @@ abbr {
     text-align: center;
 }
 
-#contatti a#tel, #contatti a#mail {
+#contatti a.tel, #contatti a#mail {
     color: black;
 }
 
@@ -244,6 +244,6 @@ footer ul {
     list-style: none;
 }
 
-footer a#tel {
+footer a.tel {
     color: white;
 }
