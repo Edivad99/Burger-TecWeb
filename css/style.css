@@ -1,10 +1,16 @@
+:root {
+    --sfondo: #faf2dd;
+    --principale: #bd091b;
+    --divisore: #ddd;
+  }
+
 * {
     padding: 0em;
     margin: 0em;
 }
 
 html {
-    background-color: #faf2dd;
+    background-color: var(--sfondo);
     width: 100%;
 }
 
@@ -27,7 +33,7 @@ header {
 }
 
 header h1 {
-    color: #bd091b;
+    color: var(--principale);
     font-size: 3.5em;
     text-align: center;
 }
@@ -55,7 +61,7 @@ header h1 {
     margin-top: 1.5em;
     list-style-type: none;
     overflow: hidden;
-    background-color: #bd091b;
+    background-color: var(--principale);
     clear: both;
 }
 
@@ -81,7 +87,7 @@ header h1 {
 
 #menu li a:hover {
     background-color: white;
-    color: #bd091b;
+    color: var(--principale);
 }
 
 #menu li:last-child {
@@ -97,17 +103,17 @@ header h1 {
 #linkBreadcrumb {
     text-decoration: none;
     background-color: white;
-    color: #bd091b;
+    color: var(--principale);
     font-weight: bold;
 }
 
 #breadcrumb {
     background-color: white;
-    color: #bd091b;
+    color: var(--principale);
     padding: 0.5em 0 0.5em 1.0em;
     font-weight: bold;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid var(--divisore);
+    border-bottom: 1px solid var(--divisore);
 }
 
 /* 
@@ -134,13 +140,9 @@ header h1 {
 
 #promozioneStudenti {
     font-size: 1.6em;
-    min-height: 8em;
-    padding-top: 3em;
-}
-
-#immaginePromozione {
-    width: 40%;
-    float: right;
+    padding-top: 1em;
+    clear: both;
+    text-align: center;
 }
 
 abbr {
@@ -216,8 +218,9 @@ abbr {
     margin-left: auto;
     margin-right: auto;
     color: white;
-    background-color: #bd091b;
+    background-color: var(--principale);
     border-color: transparent;
+    cursor: pointer;
 }
 
 /* 
@@ -227,9 +230,9 @@ abbr {
 */
 
 footer {
-    background-color: #bd091b;
+    background-color: var(--principale);
     color: white;
-    border: 1px solid #ddd;
+    border: 1px solid var(--divisore);
     text-align: center;
     padding-top: 1em;
     padding-bottom: 1em;

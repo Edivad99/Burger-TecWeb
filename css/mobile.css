@@ -55,7 +55,7 @@ header h1 {
 }
 
 .nav-icon {
-    background: #bd091b;
+    background: var(--principale);
     display: block;
     height: 2px;
     width: 18px;
@@ -64,7 +64,7 @@ header h1 {
 }
 
 .nav-icon:before {
-    background: #bd091b;
+    background: var(--principale);
     content: "";
     display: block;
     height: 100%;
@@ -75,7 +75,7 @@ header h1 {
 }
 
 .nav-icon:after {
-    background: #bd091b;
+    background: var(--principale);
     content: "";
     display: block;
     height: 100%;
