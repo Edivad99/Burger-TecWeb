@@ -108,7 +108,7 @@ header h1 {
         CONTENUTO 
 =================================
 */
-#contenutoGenerale header{
+#contenutoGenerale header {
     display: block;
     text-align: center;
 }

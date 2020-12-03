@@ -151,26 +151,26 @@ abbr {
 
 /* CONTENUTO > Eventi */
 
-.Eventi {
+.eventi {
     padding-bottom: 1em;
 }
 
-.Eventi header {
+.eventi header {
     padding: 1.0em;
     padding-bottom: 0em;
     text-align: center;
     min-height: auto;
 }
 
-.Eventi h2 {
+.eventi h2 {
     font-size: 1.75em;
 }
 
-.Eventi h3 {
+.eventi h3 {
     font-size: 1.0em;
 }
 
-.Eventi p {
+.eventi p {
     font-size: 0.9em;
     padding-left: 1em;
     padding-right: 1em;
