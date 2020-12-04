@@ -52,7 +52,7 @@ html {
     padding: 1em 0em 0em 0em;  /*Aumentare Font?*/
 }
 
-#linkBreadcrumb {
+#breadcrumb a {
     color: black;
     text-decoration: none;
 }

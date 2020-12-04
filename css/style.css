@@ -100,13 +100,6 @@ header h1 {
 =================================
 */
 
-#linkBreadcrumb {
-    text-decoration: none;
-    background-color: white;
-    color: var(--principale);
-    font-weight: bold;
-}
-
 #breadcrumb {
     background-color: white;
     color: var(--principale);
@@ -114,6 +107,11 @@ header h1 {
     font-weight: bold;
     border-top: 1px solid var(--divisore);
     border-bottom: 1px solid var(--divisore);
+}
+
+#breadcrumb a {
+    text-decoration: none;
+    color: var(--principale);
 }
 
 /* 
