@@ -110,8 +110,19 @@ header h1 {
     text-align: center;
 }
 
+#immagineLocale {
+    width: 70%;
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cosafacciamo {
+    clear: both;
+}
+
 #promozioneStudenti {
-    min-height: 5em;
     padding-top: 0em;
 }
 

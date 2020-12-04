@@ -2,7 +2,7 @@
     --sfondo: #faf2dd;
     --principale: #bd091b;
     --divisore: #ddd;
-  }
+}
 
 * {
     padding: 0em;
@@ -132,14 +132,8 @@ header h1 {
     padding-right: 0.5em;
 }
 
-#cosafacciamo {
-    min-height: 18em;
-    text-align: justify;
-}
-
 #promozioneStudenti {
     font-size: 1.6em;
-    padding-top: 1em;
     clear: both;
     text-align: center;
 }
