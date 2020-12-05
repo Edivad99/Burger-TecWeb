@@ -66,6 +66,7 @@ html {
 #contenutoGenerale {
     line-height: 1.8;
     padding: 1em 0.2em 1em 0.2em;
+    text-align: justify;
 }
 
 #immagineLocale {
