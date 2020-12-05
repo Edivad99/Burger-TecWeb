@@ -38,8 +38,7 @@ header h1 {
     text-align: center;
 }
 
-#logo {
-    content: url(../img/burger-icon.png);
+#logo, #logo img {
     float: left;
     max-width: 6em;
 }
