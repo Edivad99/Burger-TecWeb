@@ -127,6 +127,7 @@ header h1 {
 }
 
 #immagineLocale {
+    content:url(../img/locale.jpg);
     float: left;
     width: 41%;
     padding-right: 0.5em;
