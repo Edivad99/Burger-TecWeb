@@ -44,12 +44,15 @@
     </nav>
 
     <div id="contenutoGenerale">
-        <form action="" method="post">
+        <form action="" method="post" id="accesso">
             <label for="user" lang="en">Username:</label>
             <input type="text" name="usr" id="user" autocomplete="username"/>
             <label for="pwd" lang="en">Password:</label>
             <input type="password" name="pwd" id="pwd" autocomplete="current-password"/>
-            <input type="submit" value="Accedi" id="login"/>
+            <span>
+                <input type="submit" name="registrazione" value="Registrati" id="registrati"/>
+                <input type="submit" name="accesso" value="Accedi" id="login"/>
+            </span>
         </form>
     </div>
     <footer>
