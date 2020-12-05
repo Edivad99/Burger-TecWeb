@@ -38,7 +38,8 @@ header h1 {
     text-align: center;
 }
 
-#logo, #logo img{
+#logo {
+    content: url(../img/burger-icon.png);
     float: left;
     max-width: 6em;
 }
@@ -127,7 +128,7 @@ header h1 {
 }
 
 #immagineLocale {
-    content:url(../img/locale.jpg);
+    content: url(../img/locale.jpg);
     float: left;
     width: 41%;
     padding-right: 0.5em;
