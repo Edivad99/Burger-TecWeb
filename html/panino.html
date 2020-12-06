@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menù | Burgheria Padovana</title>
+    <title>{{ %nomePanino }} | Burgheria Padovana</title>
 
-    <meta name="title" content="Menù | Burgheria Padovana" />
+    <meta name="title" content="{{ %nomePanino }} | Burgheria Padovana" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
@@ -30,7 +30,7 @@
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul id="menu">
             <li><a href="index.html" lang="en">HOME</a></li>
-            <li id="currentLink">I NOSTRI BURGER</li>
+            <li><a href="menu.html">I NOSTRI BURGER</a></li>
             <li><a href="eventi.html">EVENTI</a></li>
             <li><a href="storia.html">STORIA</a></li>
             <li><a href="contatti.html">CONTATTI</a></li>
@@ -39,11 +39,22 @@
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.html" lang="en">Home</a> > I nostri burger</p>
+        <!--Dobbiamo generarlo da PHP-->
+        <p>Ti trovi in: <a href="index.html" lang="en">Home</a> > <a href="menu.html">I nostri burger</a> > CATEGORIA</p>
     </nav>
 
     <div id="contenutoGenerale">
-        <a href="panino.php">Vai alla prova del panino</a>
+        <h2 id="nomePanino" class="decorazionePanino">{{ %nomePanino }}</h2>
+        <img id="immaginePanino" src="{{ %immaginePanino }}" alt="{{ %altImmaginePanino }}"/>
+        <div id="ingredienti" class="decorazionePanino">
+            <h3>Ingredienti</h3>
+            <listaIngredienti/>
+        </div>
+        <p id="descrizionePanino">
+            Pollo croccante, pomodoro, lattuga e doppia maionese, racchiusi in un morbido pane al mais.
+            Vieni a provare il nostro nuovo Crunchicken.
+            Un pollo così non l'hai mai sentito!
+        </p>
     </div>
     <footer>
         <ul>

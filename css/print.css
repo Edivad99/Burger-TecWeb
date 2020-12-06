@@ -69,7 +69,7 @@ html {
     text-align: justify;
 }
 
-#immagineLocale {
+#immagineLocale, #immaginePanino {
     display: none;
 }
 

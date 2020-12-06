@@ -110,7 +110,7 @@ header h1 {
     text-align: center;
 }
 
-#immagineLocale {
+#immagineLocale, #immaginePanino {
     width: 70%;
     display: block;
     float: none;
