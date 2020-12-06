@@ -38,7 +38,7 @@ html {
 =================================
 */
 
-.nav, .close-button, .open-button {
+#menu, .menu-btn, .menu-icon {
     display: none;
 }
 
@@ -49,10 +49,10 @@ html {
 */
 
 #breadcrumb {
-    padding: 1em 0em 0em 0em;           /*Aumentare Font?*/
+    padding: 1em 0em 0em 0em;  /*Aumentare Font?*/
 }
 
-#linkBreadcrumb {
+#breadcrumb a {
     color: black;
     text-decoration: none;
 }
@@ -66,13 +66,10 @@ html {
 #contenutoGenerale {
     line-height: 1.8;
     padding: 1em 0.2em 1em 0.2em;
+    text-align: justify;
 }
 
 #immagineLocale {
-    display: none;
-}
-
-#immaginePromozione {
     display: none;
 }
 
@@ -99,7 +96,7 @@ abbr {
     text-align: center;
 }
 
-#contatti a#tel, #contatti a#mail {
+#contatti a.tel, #contatti a#mail {
     color:black;
     text-decoration: none;
 }
@@ -114,7 +111,7 @@ footer {
     line-height: 1.8;
 }
 
-footer a#tel {
+footer a.tel {
     color: black;
     text-decoration: none;
 }

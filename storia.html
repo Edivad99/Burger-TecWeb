@@ -14,9 +14,8 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="handheld, screen and (max-width:694px), only screen and (max-device-width:694px)" />
     <link rel="icon" type="image/png" href="img/burger-icon.png" />
-    <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
@@ -25,29 +24,22 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <a href="index.html"><img id="logo" src="img/burger-icon.png"/></a>
+        <a id="logo" href="index.html"><img src="img/burger-icon.png"/></a>
         <h1>Burgheria Padovana</h1>
-        <span class="apri-nav">
-            <img onclick="apri_nav()" class="open-button" src="img/menu/hamburger.png" alt="apri menu"/>
-        </span>
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+        <ul id="menu">
+            <li><a href="index.html" lang="en">HOME</a></li>
+            <li><a href="menu.html">I NOSTRI BURGER</a></li>
+            <li><a href="eventi.html">EVENTI</a></li>
+            <li id="currentLink">STORIA</li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="login.html" lang="en">LOGIN</a></li>
+        </ul>
     </header>
 
-    <nav class="nav">
-        <span class="chiudi-nav">
-            <img onclick="chiudi_nav()" class="close-button" src="img/menu/exit.png" alt="esci dal menu"/>
-        </span>
-        <ul id="menu">
-            <li class="elemento-menu"><a href="index.html" lang="en">HOME</a></li>
-            <li class="elemento-menu"><a href="menu.php">I NOSTRI BURGER</a></li>
-            <li class="elemento-menu"><a href="eventi.html">EVENTI</a></li>
-            <li id="currentLink" class="elemento-menu">STORIA</li>
-            <li class="elemento-menu"><a href="contatti.html">CONTATTI</a></li>
-            <li class="elemento-menu"><a href="login.php" lang="en">LOGIN</a></li>
-        </ul>
-    </nav>
-
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a id="linkBreadcrumb" href="index.html" lang="en">Home</a> > Storia </p>
+        <p>Ti trovi in: <a href="index.html" lang="en">Home</a> > Storia </p>
     </nav>
 
     <div id="contenutoGenerale">
@@ -63,7 +55,7 @@
     <footer>
         <ul>
             <li>Via Luigi Luzzati, 10 Padova</li>
-            <li><abbr title="Telefono">Tel</abbr>: <a id="tel" href="tel:+393453434225">+39 3453434225</a></li>
+            <li><abbr title="Telefono">Tel</abbr>: <a class="tel" href="tel:+393453434225">+39 3453434225</a></li>
             <li><abbr title="Partita IVA">P.IVA</abbr> 17935620231</li>
         </ul>
         <!-- TODO: Validazioni immagini verso la fine-->

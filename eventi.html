@@ -14,9 +14,8 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="handheld, screen and (max-width:694px), only screen and (max-device-width:694px)" />
     <link rel="icon" type="image/png" href="img/burger-icon.png" />
-    <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
@@ -25,33 +24,26 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <a href="index.html"><img id="logo" src="img/burger-icon.png"/></a>
+        <a id="logo" href="index.html"><img src="img/burger-icon.png"/></a>
         <h1>Burgheria Padovana</h1>
-        <span class="apri-nav">
-            <img onclick="apri_nav()" class="open-button" src="img/menu/hamburger.png" alt="apri menu"/>
-        </span>
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+        <ul id="menu">
+            <li><a href="index.html" lang="en">HOME</a></li>
+            <li><a href="menu.html">I NOSTRI BURGER</a></li>
+            <li id="currentLink">EVENTI</li>
+            <li><a href="storia.html">STORIA</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="login.html" lang="en">LOGIN</a></li>
+        </ul>
     </header>
 
-    <nav class="nav">
-        <span class="chiudi-nav">
-            <img onclick="chiudi_nav()" class="close-button" src="img/menu/exit.png" alt="esci dal menu"/>
-        </span>
-        <ul id="menu">
-            <li class="elemento-menu"><a href="index.html" lang="en">HOME</a></li>
-            <li class="elemento-menu"><a href="menu.php">I NOSTRI BURGER</a></li>
-            <li id="currentLink" class="elemento-menu">EVENTI</li>
-            <li class="elemento-menu"><a href="storia.html">STORIA</a></li>
-            <li class="elemento-menu"><a href="contatti.html">CONTATTI</a></li>
-            <li class="elemento-menu"><a href="login.php" lang="en">LOGIN</a></li>
-        </ul>
-    </nav>
-
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a id="linkBreadcrumb" href="index.html" lang="en">Home</a> > Eventi</p>
+        <p>Ti trovi in: <a href="index.html" lang="en">Home</a> > Eventi</p>
     </nav>
 
     <div id="contenutoGenerale">
-        <article class="Eventi" id="evento_quarantino">
+        <article class="eventi">
             <header>
                 <h2>QUARANTINO</h2>
                 <h3>Mercoledì 18/11, 19:00-02:00 Via Luigi Luzzati, 10 Padova, PD</h3>
@@ -63,7 +55,7 @@
                 </p>
         </article>
 
-        <article class="Eventi" id="evento_panino">
+        <article class="eventi">
             <header>
                 <h2>GIORNATA MONDIALE DEL PANINO</h2>
                 <h3>Sabato 21/11,  12:00-16:00 e 19:00-02:00 Via Luigi Luzzati, 10 Padova, PD</h3>
@@ -73,7 +65,7 @@
                 </p>
         </article>
 
-        <article class="Eventi" id="evento_san_valentino">
+        <article class="eventi">
             <header>
                 <h2>DUE CUORI E UN PANINO</h2>
                 <h3>Domenica 14/02/2021, 12:00-16:00 e 19:00-02:00 Via Luigi Luzzati, 10 Padova, PD</h3>
@@ -83,21 +75,21 @@
                 </p>
         </article>
 
-        <article class="Eventi" id="evento_mex">
+        <article class="eventi">
             <header>
-                <h2 xml:lang="en">MEX NIGHT</h2>
+                <h2 lang="en">MEX NIGHT</h2>
                 <h3>Giovedì 8/04/2021, 19:00-02:00 Via Luigi Luzzati, 10 Padova, PD</h3>
             </header>
                 <p>Serata messicana! Per l'occasione ci saranno non solo panini, ma anche altri piatti tipici messicani come tacos e burritos. Vivi anche tu questo tuffo nella cultura messicana
                    in compagnia. Per l'occasione avremo anche una piccola band che ci intratterrà per tutta la serata con musica tipica. Non mancare!</p>
         </article>
         
-        <article class="Eventi" id="evento_burger">
+        <article class="eventi">
             <header>
                 <h2>GIORNATA MONDIALE DELL'HAMBURGER</h2>
                 <h3>Venerdì 28/05/2021, Via Luigi Luzzati, 10 Padova, PD</h3>
             </header>
-                <p>Festeddia con Burgheria Padovana la giornata mondaile dell'Hamburger. Per l'occasione si potra ordinare il nuovo <abbr title="United States of America" xml:lang="en">USA</abbr>,
+                <p>Festeddia con Burgheria Padovana la giornata mondaile dell'Hamburger. Per l'occasione si potra ordinare il nuovo <abbr title="United States of America" lang="en">USA</abbr>,
                     il nnuovo panino pensato apposta per portare l'America anche qua a Padova! Gustati la buonissima carne di black angus con il cheddar tra due fette di pane al latte croccante con i semi
                     di sesamo. Ti aspettiamo!</p>
         </article>
@@ -106,7 +98,7 @@
     <footer>
         <ul>
             <li>Via Luigi Luzzati, 10 Padova</li>
-            <li><abbr title="Telefono">Tel</abbr>: <a id="tel" href="tel:+393453434225">+39 3453434225</a></li>
+            <li><abbr title="Telefono">Tel</abbr>: <a class="tel" href="tel:+393453434225">+39 3453434225</a></li>
             <li><abbr title="Partita IVA">P.IVA</abbr> 17935620231</li>
         </ul>
         <!-- TODO: Validazioni immagini verso la fine-->

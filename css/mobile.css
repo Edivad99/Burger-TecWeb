@@ -6,69 +6,98 @@
 
 header {
     min-height: 3em;
-    display: flex;
-    justify-content: space-between;
 }
 
 header h1 {
+    float: left;
+    display: block;
     font-size: 1.5em;
-    padding-top: 0.23em;
+    padding: 10px 20px;
 }
 
 #logo {
     display: none;
 }
+
 /* 
 =================================
         MENU 
 =================================
 */
 
-.nav {
-    display: flex;
-    flex-direction: column;
-    height: 100%;   /*da modificare*/
-    width: 0;
-    position: fixed;
-    top: 0;
-    right: -15em;
-    padding: 0em 2em 0em 2em;
-    transition: 0.5s;
-    background: #bd091b; 
-}
-
 #menu {
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-in-out;
 }
 
-.menu-active {
-    width: fit-content;
-    right: 0;
+#menu li a {
+    padding: 14px 16px;
 }
 
-.apri-nav img {
-    width: 3em;
+#menu li a, #menu li {
     display: block;
+}
+
+#menu li:last-child {
+    float: none;
+}
+
+.menu-icon {
+    padding: 28px 20px;
+    position: relative;
+    float: right;
     cursor: pointer;
 }
 
-.chiudi-nav-active {
-    padding-top: 1em;
-    margin-bottom: 1em;
+.nav-icon {
+    background: var(--principale);
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
 }
 
-.chiudi-nav img {    /*decidere tra width 2em o 3em*/
+.nav-icon:before {
+    background: var(--principale);
+    content: "";
     display: block;
-    cursor: pointer;
-    width: 3em;
- }
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
 
- .elemento-menu{
-    margin: 0.3em 1em 0.5em 0em;   /*per facilitare clic*/
-    text-decoration: none;
-    font-size: 1.4em;
-    color: white;
+.nav-icon:after {
+    background: var(--principale);
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.menu-btn:checked ~ #menu {
+    max-height: 37em;
+}
+
+.menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
 }
 
 /*
@@ -76,13 +105,24 @@ header h1 {
         CONTENUTO 
 =================================
 */
-#contenutoGenerale header{
+#contenutoGenerale header {
     display: block;
     text-align: center;
 }
 
+#immagineLocale {
+    width: 70%;
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cosafacciamo {
+    clear: both;
+}
+
 #promozioneStudenti {
-    min-height: 5em;
     padding-top: 0em;
 }
 
@@ -91,7 +131,6 @@ header h1 {
 .centrato {
     display: block;
 }
-
 
 /* 
 =================================
