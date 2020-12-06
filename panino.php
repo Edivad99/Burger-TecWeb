@@ -15,6 +15,8 @@ if(!isset($_GET["ID"])) {
     } else {
         $id = $_GET["ID"];
         $panino = $dbAccess->getPaninoById($id);
+        $dbAccess->closeDBConnection();
+
         $nomePanino = $panino["Nome"];
         $imgPanino = $panino["Img"];
         $altImgPanino = "AGGIUNGI UN ALT";
