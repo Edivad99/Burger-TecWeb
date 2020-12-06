@@ -28,6 +28,19 @@ class DBAccess {
     public function closeDBConnection() {
         mysqli_close($this->connection);
     }
+
+    public function getPaninoById($id) {
+        $checkID = mysqli_real_escape_string($this->connection, $id);
+
+        $sql = "SELECT * FROM prodotti WHERE ID = $checkID";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) != 1) {
+            return null;
+        }
+
+        return mysqli_fetch_assoc($queryResult);
+    }
 }
 
 ?>

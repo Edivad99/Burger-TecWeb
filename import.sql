@@ -24,8 +24,7 @@ CREATE TABLE Prodotti
 INSERT INTO `Categoria` (`Categoria`) VALUES
 ('Pollo'),
 ('Manzo'),
-('Speciali'),
-('Bevande');
+('Speciali');
 
 INSERT INTO `Prodotti` (`Nome`, `Img`, `Ingredienti`, `Categoria`) VALUES
 ('Chicken Bacon King', 'img/pollo/chicken_bacon_king.png', 'Bacon;Ketchup;Pollo;Maionese;Formaggio', 1),
@@ -47,13 +46,4 @@ INSERT INTO `Prodotti` (`Nome`, `Img`, `Ingredienti`, `Categoria`) VALUES
 
 ('Pretzel Bacon Pub Cheeseburger', 'img/speciali/pretzel_bacon_pub_cheeseburger.jpg', 'Pane pretzel;Hamburger;Formaggio;Cipolle;Salsa alla birra;Bacon affumicato;Senape;Cetrioli', 3),
 ('Pretzel Bacon Pub Double Cheeseburger', 'img/speciali/pretzel_bacon_pub_double_cheeseburger.jpg', 'Pane pretzel;Hamburger;Formaggio;Cipolle;Salsa alla birra;Bacon affumicato;Senape;Cetrioli', 3),
-('Pretzel Bacon Pub Triple Cheeseburger', 'img/speciali/pretzel_bacon_pub_triple_cheeseburger.jpg', 'Pane pretzel;Hamburger;Formaggio;Cipolle;Salsa alla birra;Bacon affumicato;Senape;Cetrioli', 3),
-
-('Acqua minerale', 'img/bevande/acqua_minerale.jpg', NULL, 4),
-('Birra', 'img/bevande/birra.jpg', NULL, 4),
-('CocaCola zero', 'img/bevande/cocacola_zero.jpg', NULL, 4),
-('CocaCola', 'img/bevande/cocacola.jpg', NULL, 4),
-('Fanta', 'img/bevande/fanta.jpg', NULL, 4),
-('Sprite', 'img/bevande/sprite.jpg', NULL, 4),
-('Succo di frutta', 'img/bevande/succo_di_frutta.jpg', NULL, 4),
-('The', 'img/bevande/the.jpg', NULL, 4);
+('Pretzel Bacon Pub Triple Cheeseburger', 'img/speciali/pretzel_bacon_pub_triple_cheeseburger.jpg', 'Pane pretzel;Hamburger;Formaggio;Cipolle;Salsa alla birra;Bacon affumicato;Senape;Cetrioli', 3);
