@@ -1,3 +1,5 @@
+@media only screen and (max-width: 694px) {
+
 /* 
 =================================
         HEADER 
@@ -140,4 +142,6 @@ header h1 {
 
 footer {
     margin-bottom: 0em;
+}
+
 }
