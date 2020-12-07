@@ -28,7 +28,7 @@ INSERT INTO `Categoria` (`Categoria`) VALUES
 
 INSERT INTO `Prodotti` (`Nome`, `Img`, `Ingredienti`, `Categoria`) VALUES
 ('Chicken Bacon King', 'img/pollo/chicken_bacon_king.png', 'Bacon;Ketchup;Pollo;Maionese;Formaggio', 1),
-('Chicken Royale', 'img/pollo/chicken_royale.png', 'Pollo,Maionese,Lattuga', 1),
+('Chicken Royale', 'img/pollo/chicken_royale.png', 'Pollo;Maionese;Lattuga', 1),
 ('Chicken Royale Bacon Cheese', 'img/pollo/chicken_royale_bacon_cheese.png', 'Bacon;Pomodoro a fette;Maionese;Pollo;Lattuga;Formaggio', 1),
 ('Crispy Chicken', 'img/pollo/crispy_chicken.png', 'Pomodoro a fette;Maionese;Pollo;Lattuga', 1),
 ('Crunchicken', 'img/pollo/crunchicken.png', 'Pane al mais;Doppia maionese;Pomodoro a fette;Lattuga;Pollo croccante', 1),
@@ -40,7 +40,7 @@ INSERT INTO `Prodotti` (`Nome`, `Img`, `Ingredienti`, `Categoria`) VALUES
 ('Bacon King', 'img/manzo/bacon_king.png', 'Carne alla griglia;Ketchup;Maionese;Formaggio', 2),
 ('Bronx Steakhouse', 'img/manzo/bronx_steakhouse.png', 'Pane al mais;Carne alla griglia;Bacon;Pomodoro a fette;Maionese;Salsa BBQ;Lattuga;Cipolla;Formaggio', 2),
 ('Big King', 'img/manzo/big_king.png', 'Doppia carne;Cipolla fresca;Lattuga;Formaggio', 2),
-('Big King XXL', 'img/manzo/big_king_xxl.png', 'Doppia carne; Cipolla fresca;Lattuga;Formaggio', 2),
+('Big King XXL', 'img/manzo/big_king_xxl.png', 'Doppia carne;Cipolla fresca;Lattuga;Formaggio', 2),
 ('Hamburger', 'img/manzo/hamburger.png', 'Carne alla griglia;Ketchup;Senape;Cetrioli', 2),
 ('Cheeseburger', 'img/manzo/cheeseburger.png', 'Carne alla griglia;Ketchup;Senape;Formaggio;Cetrioli', 2),
 

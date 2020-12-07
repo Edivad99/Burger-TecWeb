@@ -32,7 +32,9 @@ class DBAccess {
     public function getPaninoById($id) {
         $checkID = mysqli_real_escape_string($this->connection, $id);
 
-        $sql = "SELECT * FROM prodotti WHERE ID = $checkID";
+        $sql = "SELECT prodotti.*, categoria.Categoria AS 'CategoriaText'
+                FROM prodotti, categoria 
+                WHERE prodotti.ID = $checkID AND prodotti.Categoria = categoria.ID";
         $queryResult = mysqli_query($this->connection, $sql);
 
         if(mysqli_num_rows($queryResult) != 1) {
