@@ -30,18 +30,18 @@ if(!isset($_GET["ID"])) {
             Vieni a provare il nostro nuovo Crunchicken.
             Un pollo così non l'hai mai sentito!";
 
-            $paginaHTML = file_get_contents("html/panino.html");
+            $content = array(
+                "{{ nomePanino }}" => $nomePanino,
+                "{{ immaginePanino }}" => $imgPanino,
+                "{{ altImmaginePanino }}" => $altImgPanino,
+                "{{ categoria }}" => $categoriaText,
+                "{{ categoriaID }}" => $categoria,
+                "{{ descrizione }}" => $descrizione,
+                "<listaIngredienti/>" => Util::getUlFromArray($ingredienti)
+            );
 
-            $paginaHTML = str_replace("{{ nomePanino }}", $nomePanino, $paginaHTML);
-            $paginaHTML = str_replace("{{ immaginePanino }}", $imgPanino, $paginaHTML);
-            $paginaHTML = str_replace("{{ altImmaginePanino }}", $altImgPanino, $paginaHTML);
-            $lista = Util::getUlFromArray($ingredienti);
-            $paginaHTML = str_replace("<listaIngredienti/>", $lista, $paginaHTML);
-            $paginaHTML = str_replace("{{ categoria }}", $categoriaText, $paginaHTML);
-            $paginaHTML = str_replace("{{ categoriaID }}", $categoria, $paginaHTML);
-            $paginaHTML = str_replace("{{ descrizione }}", $descrizione, $paginaHTML);
+            echo Util::replacer("html/panino.html", $content);
 
-            echo $paginaHTML;
         } else {
             die("Id non corretto");
         }
