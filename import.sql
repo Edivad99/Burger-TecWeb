@@ -21,6 +21,36 @@ CREATE TABLE Prodotti
     FOREIGN KEY (`Categoria`) REFERENCES `Categoria` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
+CREATE TABLE Utenti
+(
+    `ID` INT NOT NULL AUTO_INCREMENT,
+    `Password` VARCHAR(30) NOT NULL,
+    `Username` VARCHAR(30) NOT NULL,
+    `Admin` ENUM('Si', 'No') NOT NULL,
+    PRIMARY KEY (`ID`)
+) ENGINE = InnoDB;
+
+CREATE TABLE Voti
+(
+    `ID_Panino` INT NOT NULL,
+    `ID_Utente` INT NOT NULL,
+    `Voto` ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10') NOT NULL,
+    PRIMARY KEY(`ID_Panino`, `ID_Utente`),
+    FOREIGN KEY (`ID_Panino`) REFERENCES `Prodotti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`ID_Utente`) REFERENCES `Utenti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+CREATE TABLE Commenti
+(
+    `ID` INT NOT NULL AUTO_INCREMENT,
+    `ID_Panino` INT NOT NULL,
+    `ID_Utente` INT NOT NULL,
+    `Data_Ora` DATETIME NOT NULL,
+    `Contenuto` VARCHAR(500) NOT NULL,
+    PRIMARY KEY(`ID`, `ID_Panino`, `ID_Utente`),
+    FOREIGN KEY (`ID_Panino`) REFERENCES `Prodotti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`ID_Utente`) REFERENCES `Utenti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
 
 INSERT INTO `Categoria` (`Categoria`) VALUES
 ('Pollo'),
@@ -48,3 +78,29 @@ INSERT INTO `Prodotti` (`Nome`, `Img`, `Ingredienti`, `Categoria`, `Descrizione`
 ('Pretzel Bacon Pub Cheeseburger', 'img/speciali/pretzel_bacon_pub_cheeseburger.jpg', 'Pane pretzel;Hamburger;Formaggio;Cipolle;Salsa alla birra;Bacon affumicato;Senape;Cetrioli', 3, '100 grammi di manzo fresco, salsa di formaggio alla birra, pancetta affumicata in legno di mele, senape affumicata al miele, cipolle fritte croccanti, sottaceti e una fetta di formaggio muenster, il tutto su un panino pretzel extra morbido. Vieni per il panino Pretzel.'),
 ('Pretzel Bacon Pub Double Cheeseburger', 'img/speciali/pretzel_bacon_pub_double_cheeseburger.jpg', 'Pane pretzel;Hamburger;Formaggio;Cipolle;Salsa alla birra;Bacon affumicato;Senape;Cetrioli', 3, '200 grammi di manzo fresco, salsa di formaggio alla birra, pancetta affumicata in legno di mele, senape affumicata al miele, cipolle fritte croccanti, sottaceti e una fetta di formaggio muenster, il tutto su un panino pretzel extra morbido. Vieni per il panino Pretzel.'),
 ('Pretzel Bacon Pub Triple Cheeseburger', 'img/speciali/pretzel_bacon_pub_triple_cheeseburger.jpg', 'Pane pretzel;Hamburger;Formaggio;Cipolle;Salsa alla birra;Bacon affumicato;Senape;Cetrioli', 3, '300 grammi di manzo fresco, salsa di formaggio alla birra, pancetta affumicata in legno di mele, senape affumicata al miele, cipolle fritte croccanti, sottaceti e una fetta di formaggio muenster, il tutto su un panino pretzel extra morbido. Vieni per il panino Pretzel.');
+
+INSERT INTO `Utenti` (`Password`, `Username`, `Admin`) VALUES
+('Admin', 'Admin', 'Si'),
+('Luca', 'userL', 'No'),
+('Paolo', 'userP', 'No'),
+('Laura', 'userL', 'No'),
+('Valeria', 'userV', 'No');
+
+INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
+(1, 2, '6'),
+(6, 2, '8'),
+(9, 4, '8'),
+(13, 3, '10'),
+(14, 5, '3'),
+(16, 5, '7'),
+(18, 4, '9');
+
+INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Data_Ora`, `Contenuto`) VALUES
+(1, 2, '6', 'Panino passabile, niente di speciale.'),
+(6, 2, '8', 'Panino perfetto per gli amanti del pollo come me.'),
+(9, 4, '8', 'Un vero King del Bacon, croccante e delizioso'),
+(13, 3, '10', 'Squisito! Una vera delizia per il palato, se ne avete occasione prendetelo.'),
+(14, 5, '3', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
+(16, 5, '7', 'Panino molto particolare ma niente di speciale.'),
+(18, 4, '9', 'Un panino veramente assurdo, talmente grande che non sono riuscita a finirlo. Roba da matti.');
+
