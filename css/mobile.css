@@ -6,11 +6,11 @@
 =================================
 */
 
-header {
+body > header {
     min-height: 3em;
 }
 
-header h1 {
+body > header h1 {
     float: left;
     display: block;
     font-size: 1.5em;
@@ -107,10 +107,6 @@ header h1 {
         CONTENUTO 
 =================================
 */
-#contenutoGenerale header {
-    display: block;
-    text-align: center;
-}
 
 #immagineLocale, #immaginePanino {
     width: 70%;
@@ -132,6 +128,10 @@ header h1 {
 
 #ingredienti {
     margin-bottom: 1em;
+}
+
+.commento {
+    width: 100%;
 }
 
 /* CONTENUTO > Contatti */

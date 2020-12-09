@@ -17,14 +17,14 @@ html {
 =================================
 */
 
-#header {
+body > header {
     padding: 1.0em;
     min-height: 6em;
     text-align: center;
     padding-bottom: 0em;
 }
 
-#header h1 {
+body > header h1 {
     font-size: 3.5em;  /*Forse va diminuito*/
 }
 

@@ -44,7 +44,7 @@
 
     <div id="contenutoGenerale">
         <h2 id="nomePanino" class="decorazionePanino">{{ nomePanino }}</h2>
-        <img id="immaginePanino" src="{{ immaginePanino }}" alt="{{ altImmaginePanino }}"/>
+        <img id="immaginePanino" src="{{ immaginePanino }}"/>
         <div id="ingredienti" class="decorazionePanino">
             <h3>Ingredienti</h3>
             <listaIngredienti/>
@@ -52,6 +52,10 @@
         <div id="descrizionePanino">
             <h3>Descrizione</h3>
             <p>{{ descrizione }}</p>
+        </div>
+        <div id="commenti">
+            <h3>Commenti</h3>
+            <commenti/>
         </div>
     </div>
     <footer>

@@ -105,7 +105,7 @@ INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Data_Ora`, `Contenuto`) VALUE
 (6, 2, '2018-02-03 16:25', 'Panino perfetto per gli amanti del pollo come me.'),
 (9, 4, '2018-06-01 12:55', 'Un vero King del Bacon, croccante e delizioso'),
 (13, 3, '2019-04-02 22:00', 'Squisito! Una vera delizia per il palato, se ne avete occasione prendetelo.'),
-(14, 5, '2020-05-19 19:30', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
+(13, 5, '2020-05-19 19:30', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
 (16, 5, '2020-07-08 15:47', 'Panino molto particolare ma niente di speciale.'),
 (18, 4, '2020-09-08 21:32', 'Un panino veramente assurdo, talmente grande che non sono riuscita a finirlo. Roba da matti.');
 

@@ -43,6 +43,30 @@ class DBAccess {
 
         return mysqli_fetch_assoc($queryResult);
     }
+
+    public function getCommentiPaninoById($id) {
+        $checkID = mysqli_real_escape_string($this->connection, $id);
+
+        $sql = "SELECT utenti.Username, commenti.*
+                FROM utenti, commenti
+                WHERE commenti.ID_Panino = $checkID AND commenti.ID_Utente = utenti.ID";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $commento = array(
+                "Username" => $row["Username"],
+                "ID_Username" => $row["ID_Utente"],
+                "DataOraPost" => date_create_from_format('Y-m-d H:i:s', $row["Data_Ora"]),
+                "Contenuto" => $row["Contenuto"]
+            );
+
+            array_push($result, $commento);
+        }
+
+        return $result;
+    }
 }
 
 ?>
