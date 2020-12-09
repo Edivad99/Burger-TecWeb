@@ -1,13 +1,9 @@
-DROP DATABASE IF EXISTS Burgheria;
-CREATE DATABASE Burgheria;
-USE Burgheria;
-
-/*DROP TABLE IF EXISTS Commenti;
+DROP TABLE IF EXISTS Commenti;
 DROP TABLE IF EXISTS Voti;
 DROP TABLE IF EXISTS Utenti;
 DROP TABLE IF EXISTS Prodotti;
 DROP TABLE IF EXISTS Categoria;
-USE nome_DB;*/
+USE nome_DB;
 
 CREATE TABLE Categoria
 (
@@ -103,11 +99,11 @@ INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
 (18, 4, '9');
 
 INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Data_Ora`, `Contenuto`) VALUES
-(1, 2, '6', 'Panino passabile, niente di speciale.'),
-(6, 2, '8', 'Panino perfetto per gli amanti del pollo come me.'),
-(9, 4, '8', 'Un vero King del Bacon, croccante e delizioso'),
-(13, 3, '10', 'Squisito! Una vera delizia per il palato, se ne avete occasione prendetelo.'),
-(14, 5, '3', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
-(16, 5, '7', 'Panino molto particolare ma niente di speciale.'),
-(18, 4, '9', 'Un panino veramente assurdo, talmente grande che non sono riuscita a finirlo. Roba da matti.');
+(1, 2, '2018-01-01 13:26', 'Panino passabile, niente di speciale.'),
+(6, 2, '2018-02-03 16:25', 'Panino perfetto per gli amanti del pollo come me.'),
+(9, 4, '2018-06-01 12:55', 'Un vero King del Bacon, croccante e delizioso'),
+(13, 3, '2019-04-02 22:00', 'Squisito! Una vera delizia per il palato, se ne avete occasione prendetelo.'),
+(14, 5, '2020-05-19 19:30', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
+(16, 5, '2020-07-08 15:47', 'Panino molto particolare ma niente di speciale.'),
+(18, 4, '2020-09-08 21:32', 'Un panino veramente assurdo, talmente grande che non sono riuscita a finirlo. Roba da matti.');
 
