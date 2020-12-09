@@ -260,6 +260,18 @@ input[type="submit"] {
     color: var(--principale);
     background-color: transparent;
 }
+/* CONTENUTO > Login */
+.year {
+    float: left;
+    font-size: 4em;
+    margin: auto;
+    padding: 0px 10px;
+}
+
+.subtitle {
+    height: 8em;
+    border-top: 3px solid var(--principale);
+}
 
 /* 
 =================================
