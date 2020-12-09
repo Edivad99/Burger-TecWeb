@@ -94,25 +94,36 @@ INSERT INTO `Utenti` (`Password`, `Username`, `Admin`) VALUES
 /*7*/('userA', 'Anna', 'No'),
 /*8*/('userC', 'Cesare', 'No'),
 /*9*/('userP', 'Picasso', 'No'),
-/*10*/('userG', 'Van Gogh', 'No');
+/*10*/('userG', 'Van Gogh', 'No'),
+/*11*/('userB', 'Alessandro Borghese', 'No');
 
 INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
 (1, 2, '3'),
+(1, 5, '1'),
 (2, 7, '4'),
 (3, 6, '5'),
+(3, 9, '3'),
 (4, 4, '2'),
 (5, 3, '3'),
+(5, 8, '2'),
 (6, 2, '4'),
 (7, 10, '4'),
+(8, 7, '4'),
 (8, 5, '5'),
 (9, 4, '4'),
+(9, 2, '2'),
 (10, 8, '3'),
 (11, 9, '4'),
-(12, 10, '2'),
+(12, 11, '2'),
+(12, 4, '4'),
 (13, 3, '5'),
+(13, 2, '3'),
+(13, 11, '5'),
 (14, 5, '1'),
 (15, 9, '2'),
+(15, 3, '3'),
 (16, 5, '3'),
+(16, 10, '4'),
 (17, 7, '4'),
 (18, 4, '5');
 
@@ -121,7 +132,12 @@ INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Data_Ora`, `Contenuto`) VALUE
 (6, 2, '2018-02-03 16:25', 'Panino perfetto per gli amanti del pollo come me.'),
 (9, 4, '2018-06-01 12:55', 'Un vero King del Bacon, croccante e delizioso'),
 (13, 3, '2019-04-02 22:00', 'Squisito! Una vera delizia per il palato, se ne avete occasione prendetelo.'),
-(13, 5, '2020-05-19 19:30', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
+(13, 6, '2019-04-02 22:00', 'Uno dei migliori panini che abbia mai mangiato, se potessi vivrei solo di questi.'),
+(13, 8, '2019-04-02 22:00', 'Veramente buono, si sentono gli ingredienti di qualità.'),
+(13, 10, '2019-04-02 22:00', 'Un panino croccante, buono e con ingredienti freschi. Con questo voto andrò a confermare o a ribaltare il risultato. Il mio voto è... diesci'),
+(13, 10, '2019-04-02 22:00', 'Che vergogna si vede che è una brutta copia del panino del MC, ma almeno questo non sa di plastica.'),
+(13, 2, '2019-04-02 22:00', 'Non so il perchè di tutti questi commenti entusiasti. Lo provato ma non è niente di che in realtà.'),
+(14, 5, '2020-05-19 19:30', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
 (16, 5, '2020-07-08 15:47', 'Panino molto particolare ma niente di speciale.'),
 (18, 4, '2020-09-08 21:32', 'Un panino veramente assurdo, talmente grande che non sono riuscita a finirlo. Roba da matti.');
 
