@@ -145,7 +145,7 @@ abbr {
 
 /* CONTENUTO > Panino */
 
-#nomePanino {
+#nomePanino, #descrizionePanino h3 {
     color: var(--principale);
     font-size: 2em;
 }
@@ -173,6 +173,7 @@ abbr {
     margin-top: 1.5em;
     margin-bottom: 2.5em;
 }
+
 #ingredienti h3 {
     font-weight: normal;
     color: var(--principale);

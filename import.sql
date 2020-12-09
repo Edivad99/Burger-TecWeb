@@ -1,9 +1,9 @@
+CREATE DATABASE IF NOT EXISTS Burgheria;
 DROP TABLE IF EXISTS Commenti;
 DROP TABLE IF EXISTS Voti;
 DROP TABLE IF EXISTS Utenti;
 DROP TABLE IF EXISTS Prodotti;
 DROP TABLE IF EXISTS Categoria;
-USE nome_DB;
 
 CREATE TABLE Categoria
 (
@@ -15,7 +15,7 @@ CREATE TABLE Categoria
 CREATE TABLE Prodotti
 (
     `ID` INT NOT NULL AUTO_INCREMENT,
-    `Nome` VARCHAR(30) NOT NULL,
+    `Nome` VARCHAR(50) NOT NULL,
     `Img` VARCHAR(100) NOT NULL,
     `Categoria` INT NOT NULL,
     `Ingredienti` VARCHAR(200),
@@ -37,7 +37,7 @@ CREATE TABLE Voti
 (
     `ID_Panino` INT NOT NULL,
     `ID_Utente` INT NOT NULL,
-    `Voto` ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10') NOT NULL,
+    `Voto` ENUM('1', '2', '3', '4', '5') NOT NULL,
     PRIMARY KEY(`ID_Panino`, `ID_Utente`),
     FOREIGN KEY (`ID_Panino`) REFERENCES `Prodotti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (`ID_Utente`) REFERENCES `Utenti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -90,13 +90,13 @@ INSERT INTO `Utenti` (`Password`, `Username`, `Admin`) VALUES
 ('Valeria', 'userV', 'No');
 
 INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
-(1, 2, '6'),
-(6, 2, '8'),
-(9, 4, '8'),
-(13, 3, '10'),
-(14, 5, '3'),
-(16, 5, '7'),
-(18, 4, '9');
+(1, 2, '3'),
+(6, 2, '4'),
+(9, 4, '2'),
+(13, 3, '5'),
+(14, 5, '1'),
+(16, 5, '3'),
+(18, 4, '4');
 
 INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Data_Ora`, `Contenuto`) VALUES
 (1, 2, '2018-01-01 13:26', 'Panino passabile, niente di speciale.'),

@@ -18,22 +18,17 @@ if(!isset($_GET["ID"])) {
         $dbAccess->closeDBConnection();
 
         if(isset($panino)) {
-            var_dump($panino);
+            //var_dump($panino);//Funzione utile per scoprire cosa otteniamo dal DB
             $nomePanino = $panino["Nome"];
             $imgPanino = $panino["Img"];
-            $altImgPanino = "AGGIUNGI UN ALT";
             $ingredienti = explode(";", $panino["Ingredienti"]);
             $categoria = $panino["Categoria"];
             $categoriaText = $panino["CategoriaText"];
-            $descrizione = 
-            "Pollo croccante, pomodoro, lattuga e doppia maionese, racchiusi in un morbido pane al mais.
-            Vieni a provare il nostro nuovo Crunchicken.
-            Un pollo così non l'hai mai sentito!";
+            $descrizione = $panino["Descrizione"];
 
             $content = array(
                 "{{ nomePanino }}" => $nomePanino,
                 "{{ immaginePanino }}" => $imgPanino,
-                "{{ altImmaginePanino }}" => $altImgPanino,
                 "{{ categoria }}" => $categoriaText,
                 "{{ categoriaID }}" => $categoria,
                 "{{ descrizione }}" => $descrizione,
