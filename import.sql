@@ -89,16 +89,32 @@ INSERT INTO `Utenti` (`Password`, `Username`, `Admin`) VALUES
 /*2*/('userL', 'Luca', 'No'),
 /*3*/('userP', 'Paolo', 'No'),
 /*4*/('userL', 'Laura', 'No'),
-/*5*/('userV', 'Valeria', 'No');
+/*5*/('userV', 'Valeria', 'No'),
+/*6*/('userM', 'Marco', 'No'),
+/*7*/('userA', 'Anna', 'No'),
+/*8*/('userC', 'Cesare', 'No'),
+/*9*/('userP', 'Picasso', 'No'),
+/*10*/('userG', 'Van Gogh', 'No');
 
 INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
 (1, 2, '3'),
+(2, 7, '4'),
+(3, 6, '5'),
+(4, 4, '2'),
+(5, 3, '3'),
 (6, 2, '4'),
-(9, 4, '2'),
+(7, 10, '4'),
+(8, 5, '5'),
+(9, 4, '4'),
+(10, 8, '3'),
+(11, 9, '4'),
+(12, 10, '2'),
 (13, 3, '5'),
 (14, 5, '1'),
+(15, 9, '2'),
 (16, 5, '3'),
-(18, 4, '4');
+(17, 7, '4'),
+(18, 4, '5');
 
 INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Data_Ora`, `Contenuto`) VALUES
 (1, 2, '2018-01-01 13:26', 'Panino passabile, niente di speciale.'),
