@@ -86,10 +86,10 @@ INSERT INTO `Prodotti` (`Nome`, `Img`, `Ingredienti`, `Categoria`, `Descrizione`
 
 INSERT INTO `Utenti` (`Password`, `Username`, `Admin`) VALUES
 ('Admin', 'Admin', 'Si'),
-('Luca', 'userL', 'No'),
-('Paolo', 'userP', 'No'),
-('Laura', 'userL', 'No'),
-('Valeria', 'userV', 'No');
+('userL', 'Luca', 'No'),
+('userP', 'Paolo', 'No'),
+('userL', 'Laura', 'No'),
+('userV', 'Valeria', 'No');
 
 INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
 (1, 2, '3'),
