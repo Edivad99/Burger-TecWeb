@@ -58,7 +58,7 @@ class DBAccess {
             $commento = array(
                 "Username" => $row["Username"],
                 "ID_Username" => $row["ID_Utente"],
-                "DataOraPost" => date_create_from_format('Y-m-d H:i:s', $row["Data_Ora"]),
+                "DataOraPost" => date_create_from_format('Y-m-d H:i:s', $row["Ora_Pubblicazione"]),
                 "Contenuto" => $row["Contenuto"]
             );
 
