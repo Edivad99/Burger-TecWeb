@@ -134,6 +134,10 @@ body > header h1 {
     width: 45%;
 }
 
+#contenitorePanini::after {
+    content: "";
+    flex: 50%;
+}
 
 /* CONTENUTO > Panino */
 
