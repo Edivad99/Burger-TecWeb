@@ -101,6 +101,13 @@ abbr {
     text-decoration: none;
 }
 
+/* CONTENUTO > 404 */
+
+#NonTrovato {
+    text-align: center;
+    line-height: 2;
+}
+
 /* 
 =================================
         FOOTER 

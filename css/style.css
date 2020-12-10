@@ -291,6 +291,32 @@ input[type="submit"] {
     background-color: transparent;
 }
 
+/* CONTENUTO > 404 */
+
+#NonTrovato {
+    text-align: center;
+    line-height: 2;
+}
+
+#NonTrovato h2 {
+    color: #bd091b;
+    font-size: 6em;
+}
+
+#NonTrovato h3 {
+    font-size: 1.2em;
+}
+
+#ToHomeButton {
+    background-color: #bd091b;
+    color: white;
+    padding: 0.5em 1.3em;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    line-height: 4em;
+}
+
 /* 
 =================================
         FOOTER 
