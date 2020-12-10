@@ -95,7 +95,8 @@ INSERT INTO `Utenti` (`ID`, `Username`, `Password`, `Admin`) VALUES
 (8, 'Cesare', 'a5df691c0ab077055896e5cdf023357a', 0),
 (9, 'Picasso', '1546378dfa803ffdfbba403fdda31c13', 0),
 (10, 'Van Gogh', '955b31240f6a03a195309e7452611041', 0),
-(11, 'Alessandro Borghese', '5cb11eb3bac6e8e0b57b002d631fc4e9', 0);
+(11, 'Alessandro Borghese', '5cb11eb3bac6e8e0b57b002d631fc4e9', 0),
+(12, 'Homer', '22e487fd62b7e8b13ae82b429a4e38f4', 0);
 
 INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
 (1, 2, '3'),
@@ -128,13 +129,19 @@ INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
 (18, 4, '5');
 
 INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Ora_Pubblicazione`, `Contenuto`) VALUES
-(1, 2, '2018-01-01 13:26', 'Panino passabile, niente di speciale.'),
-(6, 2, '2018-02-03 16:25', 'Panino perfetto per gli amanti del pollo come me.'),
-(9, 4, '2018-06-01 12:55', 'Un vero King del Bacon, croccante e delizioso'),
+(1, 10, '2018-01-11 17:26', 'Panino passabile, niente di speciale.'),
+(2, 12, '2018-04-11 12:45', 'Mmmm... Pollo!.'),
+(3, 2, '2019-07-21 13:38', 'Una soluzione ideale come alternativa al manzo.'),
+(6, 8, '2020-07-03 14:25', 'Panino perfetto per gli amanti del pollo come me.'),
+(7, 4, '2020-08-18 15:11', 'Buono ma poco sostanzioso.'),
+(8, 6, '2018-01-01 20:20', 'Un panino formidabile, mi ricorda casa.'),
+(9, 7, '2018-09-12 12:55', 'Un vero King del Bacon, croccante e delizioso.'),
+(10, 4, '2018-06-01 12:01', 'Una versione mini del king bacon, a sto punto prendete direttamente quello!'),
+(11, 9, '2019-03-21 21:12', 'Ne ho visto uno prendere vita e scappare dal locale, ho paura di sapere con cosa sono fatti sti panini'),
+(12, 10, '2019-04-02 22:45', 'Un panino croccante, buono e con ingredienti freschi. Con questo voto andrò a confermare o a ribaltare il risultato. Il mio voto è... diesci'),
 (13, 3, '2019-11-24 17:00', 'Squisito! Una vera delizia per il palato, se ne avete occasione prendetelo.'),
 (13, 6, '2019-08-05 13:28', 'Uno dei migliori panini che abbia mai mangiato, se potessi vivrei solo di questi.'),
 (13, 8, '2019-09-15 21:20', 'Veramente buono, si sentono gli ingredienti di qualità.'),
-(12, 10, '2019-04-02 22:45', 'Un panino croccante, buono e con ingredienti freschi. Con questo voto andrò a confermare o a ribaltare il risultato. Il mio voto è... diesci'),
 (13, 10, '2019-06-21 19:13', 'Che vergogna si vede che è una brutta copia del panino del MC, ma almeno questo non sa di plastica.'),
 (13, 2, '2019-10-02 22:00', "Non so il perchè di tutti questi commenti entusiasti. L'ho provato ma non è niente di che in realtà."),
 (14, 5, '2020-05-19 19:30', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
