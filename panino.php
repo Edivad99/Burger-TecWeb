@@ -26,7 +26,7 @@ if(!isset($_GET["ID"])) {
             foreach($commenti as $commento) {
                 $content = array(
                     "{{ username }}" => $commento["Username"],
-                    "{{ dataOraPost }}" => date_format($commento["DataOraPost"], 'H:i:s d//m/Y '),
+                    "{{ dataOraPost }}" => date_format($commento["DataOraPost"], 'H:i:s d/m/Y '),
                     "{{ contenuto }}" => $commento["Contenuto"]
                 );
 
