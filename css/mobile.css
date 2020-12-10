@@ -124,6 +124,17 @@ body > header h1 {
     padding-top: 0em;
 }
 
+/* CONTENUTO > Menu */
+
+#contenitorePanini li {
+    flex: 50%;
+}
+
+#contenitorePanini img {
+    width: 45%;
+}
+
+
 /* CONTENUTO > Panino */
 
 #ingredienti {

@@ -143,6 +143,32 @@ abbr {
     text-decoration: none;
 }
 
+/* CONTENUTO > Menu */
+
+#contenitorePanini {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    text-align: center;
+}
+
+#contenitorePanini li {
+    flex: 33%;
+}
+
+#contenitorePanini img {
+    width: 40%;
+    display: block;
+    margin: auto;
+}
+
+#contenitorePanini .nomePanino{
+    text-decoration: none;
+    color: var(--principale);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 /* CONTENUTO > Panino */
 
 #nomePanino, #descrizionePanino h3, #commenti h3 {

@@ -67,6 +67,29 @@ class DBAccess {
 
         return $result;
     }
+
+    public function getPaniniByCategoria($categoria) {
+        $checkCategoria = mysqli_real_escape_string($this->connection, $categoria);
+
+        $sql = "SELECT ID, Nome, Img
+                FROM prodotti
+                WHERE Categoria = $checkCategoria";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $panino = array(
+                "ID" => $row["ID"],
+                "Nome" => $row["Nome"],
+                "Img" => $row["Img"]
+            );
+
+            array_push($result, $panino);
+        }
+
+        return $result;
+    }
 }
 
 ?>
