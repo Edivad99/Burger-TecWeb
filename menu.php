@@ -11,8 +11,8 @@ $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita) {
     die("Errore nell'apertura del DB");
 } else {
-    $id = isset($_GET["ID"]) ? $_GET["ID"] : 1;
-    $panini = $dbAccess->getPaniniByCategoria($id);
+    $categoria = isset($_GET["categoria"]) ? $_GET["categoria"] : 1;
+    $panini = $dbAccess->getPaniniByCategoria($categoria);
     $dbAccess->closeDBConnection();
 
     $listaPanini = "";
