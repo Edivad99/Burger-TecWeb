@@ -145,6 +145,16 @@ abbr {
 
 /* CONTENUTO > Menu */
 
+#categoria {
+    float: left;
+    list-style-type: none;
+}
+
+#categoria a {
+    text-decoration: none;
+    color: var(--principale);
+}
+
 #contenitorePanini {
     display: flex;
     flex-wrap: wrap;
