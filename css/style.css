@@ -2,6 +2,7 @@
     --sfondo: #faf2dd;
     --principale: #bd091b;
     --divisore: #ddd;
+    --alternative: rgb(228, 0, 43);
 }
 
 * {
@@ -17,7 +18,7 @@ html {
 body {
     max-width: 1024px;
     margin: auto;
-    font-family: "Comic Sans MS", cursive, sans-serif; /*font da cambiare*/
+    font-family: Helvetica, Arial, sans-serif
 }
 
 /* 
@@ -260,17 +261,36 @@ input[type="submit"] {
     color: var(--principale);
     background-color: transparent;
 }
-/* CONTENUTO > Login */
+/* CONTENUTO > Storia */
+.article {
+    width: auto;
+    display: flex;
+    min-height: 7em;
+    margin-bottom: 10px;
+}
+.importantarticle {
+    background-color: var(--principale);
+    color: white;
+    width: auto;
+    display: flex;
+    min-height: 7em;
+    margin-bottom: 10px;
+}
 .year {
+    padding: 0px 15px;
+    font-size: 5em;
     float: left;
-    font-size: 4em;
-    margin: auto;
-    padding: 0px 10px;
 }
 
 .subtitle {
-    height: 8em;
+    width: 70%;
     border-top: 3px solid var(--principale);
+}
+
+.subtitle h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.8em;
 }
 
 /* 
