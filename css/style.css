@@ -283,16 +283,20 @@ input[type="submit"] {
 }
 
 .subtitle {
-    width: 70%;
+    width: 75%;
     border-top: 3px solid var(--principale);
 }
 
-.subtitle h3 {
+.bsubtitle {
+    width: 55%;
+    border-top: 3px solid var(--principale);
+}
+
+.subtitle h3, .bsubtitle h3 {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.8em;
 }
-
 /* 
 =================================
         FOOTER 

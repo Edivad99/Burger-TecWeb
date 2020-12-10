@@ -151,7 +151,7 @@ header h1 {
     text-align: center;
 }
 
-.subtitle {
+.subtitle, .bsubtitle {
     width: 100%;
 }
 
