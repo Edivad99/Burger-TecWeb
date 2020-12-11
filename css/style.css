@@ -123,7 +123,6 @@ body > header h1 {
 */
 
 #contenutoGenerale {
-    background-color: white;
     line-height: 1.8;
     padding: 1em 0.2em 1em 0.2em;
 }
@@ -147,10 +146,6 @@ abbr {
 
 /* CONTENUTO > Menu */
 
-#categoria-btn {
-    display: none;
-}
-
 #leftSidebar {
     float: left;
     width: 14.3%;
@@ -171,7 +166,6 @@ abbr {
 }
 
 #contenutoGeneraleMenuPanini {
-    background-color: white;
     line-height: 1.8;
     padding: 1em 0.2em 1em 0.2em;
     margin-left: 15%;
