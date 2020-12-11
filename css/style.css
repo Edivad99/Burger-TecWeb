@@ -18,6 +18,7 @@ body {
     max-width: 1024px;
     margin: auto;
     font-family: "Comic Sans MS", cursive, sans-serif; /*font da cambiare*/
+    background-color:white;
 }
 
 /* 
@@ -30,6 +31,7 @@ body > header {
     padding-top: 1.0em;
     padding-bottom: 0em;
     min-height: 6em;
+    background-color: var(--sfondo);
 }
 
 body > header h1 {
@@ -145,14 +147,31 @@ abbr {
 
 /* CONTENUTO > Menu */
 
-#categoria {
+#leftSidebar {
     float: left;
-    list-style-type: none;
+    width: 14.3%;
+    font-size: 1em;
+    line-height: 3em;
+    text-align: center;
+    color: var(--principale);
 }
 
-#categoria a {
+#leftSidebar ul {
+    list-style-type: none;
+    font-size: 1.5em;
+}
+
+#leftSidebar a {
     text-decoration: none;
     color: var(--principale);
+}
+
+#contenutoGeneraleMenuPanini {
+    background-color: white;
+    line-height: 1.8;
+    padding: 1em 0.2em 1em 0.2em;
+    margin-left: 15%;
+    border-left: 1px solid var(--divisore);
 }
 
 #contenitorePanini {
