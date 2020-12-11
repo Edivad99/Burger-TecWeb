@@ -293,21 +293,21 @@ input[type="submit"] {
 
 /* CONTENUTO > 404 */
 
-#NonTrovato {
+#nonTrovato {
     text-align: center;
     line-height: 2;
 }
 
-#NonTrovato h2 {
+#nonTrovato h2 {
     color: #bd091b;
     font-size: 6em;
 }
 
-#NonTrovato h3 {
+#nonTrovato h3 {
     font-size: 1.2em;
 }
 
-#ToHomeButton {
+#toHomeButton {
     background-color: #bd091b;
     color: white;
     padding: 0.5em 1.3em;
