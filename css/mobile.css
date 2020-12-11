@@ -166,3 +166,119 @@ footer {
 }
 
 }
+
+@media only screen and (max-width: 730px) {
+
+/* 
+=================================
+        MENU 
+=================================
+*/
+
+/* CONTENUTO > Menu */
+
+#leftSidebar {
+    display: block;
+    width: auto;
+    line-height: 3em;
+    color: var(--principale);
+}
+
+#leftSidebar h2 {
+    display: none;
+}
+
+#contenutoGeneraleMenuPanini {
+    display: inline-block;
+    line-height: 1.8;
+    padding: 1em 0.2em 1em 0.2em;
+    margin:auto;
+    border-left: none;
+}
+
+#categoria {
+    margin: 0;
+    clear: both;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-in-out;
+}
+
+#categoria-btn {
+    display: none;
+}
+
+#categoria li a {
+    padding: 14px 16px;
+}
+
+#categoria li a, #categoria li {
+    display: block;
+}
+
+#categoria li:last-child {
+    float: none;
+}
+
+#menu li a:hover {
+    background-color: var(--principale);
+    color: var(--principale);
+}
+
+.categoria-icon {
+    padding: 28px 20px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+
+.cat-icon {
+    background: var(--principale);
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.cat-icon:before {
+    background: var(--principale);
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+.cat-icon:after {
+    background: var(--principale);
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.categoria-btn:checked ~ #categoria {
+    max-height: 37em;
+}
+
+.categoria-btn:checked ~ .categoria-icon .cat-icon {
+    background: transparent;
+}
+
+.categoria-btn:checked ~ .categoria-icon .cat-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.categoria-btn:checked ~ .categoria-icon .cat-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+}

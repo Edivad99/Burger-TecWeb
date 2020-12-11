@@ -147,6 +147,10 @@ abbr {
 
 /* CONTENUTO > Menu */
 
+#categoria-btn {
+    display: none;
+}
+
 #leftSidebar {
     float: left;
     width: 14.3%;
