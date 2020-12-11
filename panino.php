@@ -6,7 +6,7 @@ use Util\Util;
 use DB\DBAccess;
 
 if(!isset($_GET["ID"])) {
-    
+    header("Location: error_400.php");
 } else {
     $dbAccess = new DBAccess();
     $connessioneRiuscita = $dbAccess->openDBConnection();
@@ -58,7 +58,7 @@ if(!isset($_GET["ID"])) {
             echo Util::replacer("html/panino.html", $content);
 
         } else {
-            die("Id non corretto");
+            header("Location: error_400.php");
         }
     }
 }
