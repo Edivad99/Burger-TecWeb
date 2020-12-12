@@ -123,8 +123,14 @@ header h1 {
 
 #contenutoGenerale {
     background-color: white;
-    line-height: 1.8;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
     padding: 1em 0.2em 1em 0.2em;
+}
+
+#contenutoGenerale p {
+    margin-bottom: 2em;
 }
 
 #immagineLocale {
@@ -268,6 +274,7 @@ input[type="submit"] {
     min-height: 7em;
     margin-bottom: 10px;
 }
+
 .importantarticle {
     background-color: var(--principale);
     color: white;
@@ -276,6 +283,22 @@ input[type="submit"] {
     min-height: 7em;
     margin-bottom: 10px;
 }
+
+#banner {
+    padding: 0px 10px;
+}
+
+#banner h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.8em;
+}
+
+#HistoryImg {
+    width: 47%;
+    float: right;
+}
+
 .year {
     padding: 0px 15px;
     font-size: 5em;

@@ -147,6 +147,11 @@ header h1 {
     min-height: 7em;
     flex-direction: column;
 }
+
+#HistoryImg {
+    display: none;
+}
+
 .year {
     text-align: center;
 }
