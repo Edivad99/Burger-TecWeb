@@ -90,6 +90,30 @@ class DBAccess {
 
         return $result;
     }
+
+    public function getCategorie() {
+        $sql = "SELECT *
+                FROM categoria";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $categorie = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $categoria = array(
+                "ID" => $row["ID"],
+                "Categoria" => $row["Categoria"]
+            );
+
+            array_push($categorie, $categoria);
+        }
+
+        $result = array(
+            "result" => $categorie,
+            "IDMax" => end($categorie)["ID"]
+        );
+
+        return $result;
+    }
 }
 
 ?>

@@ -149,18 +149,16 @@ abbr {
 #leftSidebar {
     float: left;
     width: 14.3%;
-    font-size: 1em;
     line-height: 3em;
     text-align: center;
-    color: var(--principale);
 }
 
-#leftSidebar ul {
+#categoria {
     list-style-type: none;
     font-size: 1.25em;
 }
 
-#leftSidebar a {
+#categoria a, #categoriaAttiva, #leftSidebar h2{
     text-decoration: none;
     color: var(--principale);
 }
