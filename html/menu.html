@@ -42,12 +42,16 @@
         <p>Ti trovi in: <a href="index.html" lang="en">Home</a> > I nostri burger</p>
     </nav>
 
-    <div id="contenutoGenerale">
-        <ul style="display: list-item;list-style-type: none;">
-            <a href="menu.php">Pollo</a>
-            <a href="menu.php?categoria=2">Manzo</a>
-            <a href="menu.php?categoria=3">Speciali</a>
+    <div id="leftSidebar">
+        <h2>Categorie</h2>
+        <ul id="categoria">
+            <li><a href="menu.php">Pollo</a></li>
+            <li><a href="menu.php?categoria=2">Manzo</a></li>
+            <li><a href="menu.php?categoria=3">Speciali</a></li>
         </ul>
+    </div>
+
+    <div id="contenutoGeneraleMenuPanini">
         <ul id="contenitorePanini">
             <paniniMenu/>
         </ul>

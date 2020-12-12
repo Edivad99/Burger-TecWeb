@@ -166,3 +166,50 @@ footer {
 }
 
 }
+
+@media only screen and (max-width: 730px) {
+
+/* 
+=================================
+        MENU 
+=================================
+*/
+
+/* CONTENUTO > Menu */
+
+#leftSidebar {
+    width: 100%;
+    line-height: 3em;
+    color: var(--principale);
+}
+
+#contenutoGeneraleMenuPanini {
+    display: inline-block;
+    line-height: 1.8;
+    padding: 1em 0.2em 1em 0.2em;
+    margin:auto;
+    border-top: 1px solid var(--divisore);
+    border-left: none;
+}
+
+#categoria {
+    display: inline;
+    margin: 0;
+    clear: both;
+    max-height: 0;
+}
+
+#categoria li a {
+    padding: 4px 16px;
+}
+
+#categoria li {
+    display: inline;
+}
+
+#categoria li a:hover {
+    background-color: var(--principale);
+    color: white;
+}
+
+}
