@@ -86,17 +86,19 @@ INSERT INTO `Prodotti` (`ID`, `Nome`, `Img`, `Ingredienti`, `Categoria`, `Descri
 
 INSERT INTO `Utenti` (`ID`, `Username`, `Password`, `Admin`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
-(2, 'Luca', '739f5fa32416de6edd148809408de038', 0),
-(3, 'Paolo', '1546378dfa803ffdfbba403fdda31c13', 0),
-(4, 'Laura', '739f5fa32416de6edd148809408de038', 0),
-(5, 'Valeria','a42d6924f08db582dca94eed9a65d2e0', 0),
-(6, 'Marco', 'b17677ebd3e6ab8755b7ac5d2170ddfe', 0),
-(7, 'Anna', '495f661bac0f61f6c7a4f0d6d4a0fb6b', 0),
-(8, 'Cesare', 'a5df691c0ab077055896e5cdf023357a', 0),
-(9, 'Picasso', '1546378dfa803ffdfbba403fdda31c13', 0),
-(10, 'Van Gogh', '955b31240f6a03a195309e7452611041', 0),
-(11, 'Alessandro Borghese', '5cb11eb3bac6e8e0b57b002d631fc4e9', 0),
-(12, 'Homer', '22e487fd62b7e8b13ae82b429a4e38f4', 0);
+(2, 'Luca', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(3, 'Paolo', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(4, 'Laura', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(5, 'Valeria','ee11cbb19052e40b07aac0ca060c23ee', 0),
+(6, 'Marco', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(7, 'Anna', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(8, 'Cesare', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(9, 'Picasso', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(10, 'Van Gogh', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(11, 'Alessandro Borghese', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(12, 'Homer', 'ee11cbb19052e40b07aac0ca060c23ee', 0);
+
+/* admin o user come password */
 
 INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
 (1, 2, '3'),
