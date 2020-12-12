@@ -6,7 +6,10 @@ use Util\Util;
 session_start();
 $msgDiErrore;
 if(isset($_SESSION["isValid"]) && !$_SESSION["isValid"]) {
-    $msgDiErrore = "<p id=\"datiNonCorretti\">Dati non corretti</p>";
+    if($_SESSION["isValidMsg"] == "registrazione")
+        $msgDiErrore = "<p id=\"datiNonCorretti\">L'username è già in uso</p>";
+    else if ($_SESSION["isValidMsg"] == "login")
+        $msgDiErrore = "<p id=\"datiNonCorretti\">Dati non corretti</p>";
 } else {
     $msgDiErrore = "";
 }

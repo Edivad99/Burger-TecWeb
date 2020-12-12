@@ -138,6 +138,23 @@ class DBAccess {
             "username" => null
         );
     }
+
+    public function createNewUser($username, $password) {
+        $sql = "SELECT *
+                FROM utenti
+                WHERE UserName = '$username'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 0) {
+            //Non esiste nessun utente con questo username
+            $sql = "INSERT INTO `utenti`(`Username`, `Password`, `Admin`) 
+                    VALUES ('$username','$password', 0)";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+        return false;
+    }
 }
 
 ?>
