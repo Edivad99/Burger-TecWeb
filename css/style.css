@@ -342,6 +342,13 @@ input[type="submit"] {
     background-color: transparent;
 }
 
+#datiNonCorretti {
+    background-color: var(--principale);
+    color: white;
+    text-align: center;
+    font-size: 1.4em;
+}
+
 /* CONTENUTO > 404 */
 
 #nonTrovato {

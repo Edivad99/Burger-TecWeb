@@ -44,11 +44,12 @@
     </nav>
 
     <div id="contenutoGenerale">
-        <form action="" method="post" id="accesso">
+        <msgErrore/>
+        <form action="php/loginHandler.php" method="post" id="accesso">
             <label for="user" lang="en">Username:</label>
-            <input type="text" name="usr" id="user" autocomplete="username"/>
+            <input type="text" name="usr" id="user" autocomplete="username" required/>
             <label for="pwd" lang="en">Password:</label>
-            <input type="password" name="pwd" id="pwd" autocomplete="current-password"/>
+            <input type="password" name="pwd" id="pwd" autocomplete="current-password" required/>
             <span>
                 <input type="submit" name="registrazione" value="Registrati" id="registrati"/>
                 <input type="submit" name="accesso" value="Accedi" id="login"/>
