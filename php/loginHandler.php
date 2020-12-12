@@ -11,7 +11,7 @@
     $dbAccess = new DBAccess();
     $connessioneRiuscita = $dbAccess->openDBConnection();
     if(!$connessioneRiuscita) {
-        die("Errore nell'apertura del DB");
+        header("Location: ../error_500.html");
     }
 
     session_start();
