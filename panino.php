@@ -12,7 +12,7 @@ if(!isset($_GET["ID"])) {
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita) {
-    die("Errore nell'apertura del DB");
+    header("Location: error_500.html");
 }
 
 $id = $_GET["ID"];
