@@ -18,7 +18,9 @@ html {
 body {
     max-width: 1024px;
     margin: auto;
-    font-family: Helvetica, Arial, sans-serif
+    /*font-family: Helvetica, Arial, sans-serif*/
+    font-family: "Comic Sans MS", cursive, sans-serif; /*font da cambiare*/
+    background-color:white;
 }
 
 /* 
@@ -27,13 +29,14 @@ body {
 =================================
 */
 
-header {
+body > header {
     padding-top: 1.0em;
     padding-bottom: 0em;
     min-height: 6em;
+    background-color: var(--sfondo);
 }
 
-header h1 {
+body > header h1 {
     color: var(--principale);
     font-size: 3.5em;
     text-align: center;
@@ -150,9 +153,59 @@ abbr {
     text-decoration: none;
 }
 
+/* CONTENUTO > Menu */
+
+#leftSidebar {
+    float: left;
+    width: 14.3%;
+    line-height: 3em;
+    text-align: center;
+}
+
+#categoria {
+    list-style-type: none;
+    font-size: 1.25em;
+}
+
+#categoria a, #categoriaAttiva, #leftSidebar h2{
+    text-decoration: none;
+    color: var(--principale);
+}
+
+#contenutoGeneraleMenuPanini {
+    line-height: 1.8;
+    padding: 1em 0.2em 1em 0.2em;
+    margin-left: 15%;
+    border-left: 1px solid var(--divisore);
+}
+
+#contenitorePanini {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    text-align: center;
+}
+
+#contenitorePanini li {
+    flex: 33%;
+}
+
+#contenitorePanini img {
+    width: 40%;
+    display: block;
+    margin: auto;
+}
+
+#contenitorePanini .nomePanino{
+    text-decoration: none;
+    color: var(--principale);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 /* CONTENUTO > Panino */
 
-#nomePanino, #descrizionePanino h3 {
+#nomePanino, #descrizionePanino h3, #commenti h3 {
     color: var(--principale);
     font-size: 2em;
 }
@@ -187,6 +240,36 @@ abbr {
 }
 
 #descrizionePanino {
+    clear: both;
+}
+
+/* CONTENUTO > Panino > Commenti*/
+
+.commento {
+    margin-top: 0.3em;
+    border: 2px solid var(--divisore);
+    /*width: 75%;
+    margin-left: auto;
+    margin-right: auto;*/
+}
+
+.commento > header{
+    color: white;
+    background-color: var(--principale);
+    display: flow-root; /* Devo mettere questo, altrimenti non cambia il colore */
+}
+
+.commentoUser {
+    float: left;
+    margin-left: 1em;
+}
+
+.commentoOra {
+    float: right;
+    margin-right: 1em;
+}
+
+.commentoText {
     clear: both;
 }
 
@@ -319,6 +402,31 @@ input[type="submit"] {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.8em;
+}
+/* CONTENUTO > 404 */
+
+#nonTrovato {
+    text-align: center;
+    line-height: 2;
+}
+
+#nonTrovato h2 {
+    color: #bd091b;
+    font-size: 6em;
+}
+
+#nonTrovato h3 {
+    font-size: 1.2em;
+}
+
+#toHomeButton {
+    background-color: #bd091b;
+    color: white;
+    padding: 0.5em 1.3em;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    line-height: 4em;
 }
 /* 
 =================================

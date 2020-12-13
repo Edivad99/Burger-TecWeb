@@ -6,11 +6,11 @@
 =================================
 */
 
-header {
+body > header {
     min-height: 3em;
 }
 
-header h1 {
+body > header h1 {
     float: left;
     display: block;
     font-size: 1.5em;
@@ -107,10 +107,6 @@ header h1 {
         CONTENUTO 
 =================================
 */
-#contenutoGenerale header {
-    display: block;
-    text-align: center;
-}
 
 #immagineLocale, #immaginePanino {
     width: 70%;
@@ -128,10 +124,29 @@ header h1 {
     padding-top: 0em;
 }
 
+/* CONTENUTO > Menu */
+
+#contenitorePanini li {
+    flex: 50%;
+}
+
+#contenitorePanini img {
+    width: 45%;
+}
+
+#contenitorePanini::after {
+    content: "";
+    flex: 50%;
+}
+
 /* CONTENUTO > Panino */
 
 #ingredienti {
     margin-bottom: 1em;
+}
+
+.commento {
+    width: 100%;
 }
 
 /* CONTENUTO > Contatti */
@@ -172,6 +187,53 @@ header h1 {
 
 footer {
     margin-bottom: 0em;
+}
+
+}
+
+@media only screen and (max-width: 730px) {
+
+/* 
+=================================
+        MENU 
+=================================
+*/
+
+/* CONTENUTO > Menu */
+
+#leftSidebar {
+    width: 100%;
+    line-height: 3em;
+    color: var(--principale);
+}
+
+#contenutoGeneraleMenuPanini {
+    display: inline-block;
+    line-height: 1.8;
+    padding: 1em 0.2em 1em 0.2em;
+    margin:auto;
+    border-top: 1px solid var(--divisore);
+    border-left: none;
+}
+
+#categoria {
+    display: inline;
+    margin: 0;
+    clear: both;
+    max-height: 0;
+}
+
+#categoria li a, #categoriaAttiva{
+    padding: 4px 16px;
+}
+
+#categoria li {
+    display: inline;
+}
+
+#categoria li a:hover {
+    background-color: var(--principale);
+    color: white;
 }
 
 }

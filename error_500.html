@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menù | Burgheria Padovana</title>
+    <title>Problemi con il Database | Burgheria Padovana</title>
 
-    <meta name="title" content="Menù | Burgheria Padovana" />
-    <meta name="description" content="" />
+    <meta name="title" content="Contenuto non trovato | Burgheria Padovana" />
+    <meta name="description" content="Errore 500 - problemi con il Database" />
     <meta name="keywords" content="" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
+    
+    <meta name="viewport" content="width=device-width" /> 
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-    <link rel="icon" type="image/png" href="img/burger-icon.png" />
+    <link rel="icon" type="image/png" href="img/burger-icon.png"/>
 </head>
 
 <body>
@@ -24,13 +26,13 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <a id="logo" href="index.html"><img src="img/burger-icon.png"/></a>
+        <img id="logo" src="img/burger-icon.png" alt=""/>
         <h1>Burgheria Padovana</h1>
         <input class="menu-btn" type="checkbox" id="menu-btn">
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul id="menu">
             <li><a href="index.html" lang="en">HOME</a></li>
-            <li id="currentLink">I NOSTRI BURGER</li>
+            <li><a href="menu.php">I NOSTRI BURGER</a></li>
             <li><a href="eventi.html">EVENTI</a></li>
             <li><a href="storia.html">STORIA</a></li>
             <li><a href="contatti.html">CONTATTI</a></li>
@@ -38,21 +40,13 @@
         </ul>
     </header>
 
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.html" lang="en">Home</a> > I nostri burger</p>
-    </nav>
-
-    <div id="leftSidebar">
-        <h2>Categorie</h2>
-        <ul id="categoria">
-            <listaCategoria/>
-        </ul>
-    </div>
-
-    <div id="contenutoGeneraleMenuPanini">
-        <ul id="contenitorePanini">
-            <paniniMenu/>
-        </ul>
+    <div id="contenutoGenerale">
+        <section id="nonTrovato">
+            <h2> 500 </h2>
+            <h3>Siamo spiacenti c'è stato un problema con il database</h3>
+            <p>vai a vedere le nostre nuove offerte! </p>
+            <a id="toHomeButton" href="index.html" lang="en">HOME</a>
+        </section>
     </div>
     <footer>
         <ul>
