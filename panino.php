@@ -44,7 +44,7 @@ session_start();
 $username = "";
 if(isset($_SESSION["isValid"])) {
     if($_SESSION["isValid"]) {
-        $log = "<li><a href=\"areariservata.php\">Area Riservata</a></li>";
+        $log = "<li><a href=\"areariservata.php\">{{ username }}</a></li>";
         $username = $_SESSION["username"];
     }
     else {
