@@ -12,6 +12,7 @@
     $connessioneRiuscita = $dbAccess->openDBConnection();
     if(!$connessioneRiuscita) {
         header("Location: ../error_500.html");
+        die;
     }
 
     session_start();
@@ -23,6 +24,7 @@
             $_SESSION["isValid"] = false;
             $_SESSION["isValidMsg"] = "registrazione";
             header("Location: ../login.php");
+            die;
         }
     }
 

@@ -9,7 +9,8 @@ use DB\DBAccess;
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita) {
-    header("Location: error_500.php");
+    header("Location: error_500.html");
+    die;
 }
 
 $categoria = isset($_GET["categoria"]) ? $_GET["categoria"] : 1;
@@ -19,7 +20,8 @@ $dbAccess->closeDBConnection();
 
 //Controlliamo se $categoria esiste
 if($categoria <= 0 || $categoria > $categorie["IDMax"] || count($panini) <= 0) {
-    header("Location: error_400.php");
+    header("Location: error_404.html");
+    die;
 }
 
 $listaPanini = "";
