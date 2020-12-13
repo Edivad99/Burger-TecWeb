@@ -12,8 +12,8 @@ if(isset($_GET["registrazione"]) && $_GET["registrazione"] == 1) {
     //Errore nel login
     $msgDiErrore = "<p id=\"datiNonCorretti\">Dati non corretti</p>";
 } else if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
-    //Avviene il logout
-    session_destroy();
+    //Redirect nell'area riservata
+    header("Location: areariservata.php");
 }
 
 $content = array(
