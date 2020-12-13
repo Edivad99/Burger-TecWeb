@@ -6,7 +6,7 @@ use DB\DBAccess;
 
 session_start();
 if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
-    header("Location: index.html");
+    header("Location: index.php");
 }
 
 $content = array(
