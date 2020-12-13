@@ -155,6 +155,30 @@ body > header h1 {
     display: block;
 }
 
+/* CONTENUTO > Storia */
+.article, .importantarticle {
+    width: auto;
+    display: flex;
+    min-height: 7em;
+    flex-direction: column;
+}
+
+#HistoryImg {
+    display: none;
+}
+
+.year {
+    text-align: center;
+}
+
+.subtitle, .bsubtitle {
+    width: 100%;
+}
+
+.importantarticle .subtitle h3 {
+    border-top: 3px solid white;
+}
+
 /* 
 =================================
         FOOTER 
