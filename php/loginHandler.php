@@ -21,9 +21,7 @@
         //REGISTRA
         $registrazioneValida = $dbAccess->createNewUser($username, $passwordCifrata);
         if(!$registrazioneValida) {
-            $_SESSION["isValid"] = false;
-            $_SESSION["isValidMsg"] = "registrazione";
-            header("Location: ../login.php");
+            header("Location: ../login.php?registrazione=1");
             die;
         }
     }
@@ -37,11 +35,9 @@
         if($_SESSION["isValid"]) {
             $_SESSION["isAdmin"] = $result["isAdmin"];
             $_SESSION["username"] = $result["username"];
-            $_SESSION["isValidMsg"] = "";
             header("Location: ../index.html");
         } else {
-            $_SESSION["isValidMsg"] = "login";
-            header("Location: ../login.php");
+            header("Location: ../login.php?accesso=1");
         }
     }
 
