@@ -40,6 +40,20 @@ if(count($commenti) > 0) {
     $listaCommenti = "NON CI SONO COMMENTI";
 }
 
+session_start();
+if(isset($_SESSION["isValid"])) {
+    if($_SESSION["isValid"]) {
+        $log = "<li><a href=\"areariservata.php\">Area Riservata</a></li>";
+    }
+    else {
+        $log = "<li><a href=\"login.php\" lang=\"en\">LOGIN</a></li>";
+    }
+}
+
+else {
+    $log = "<li><a href=\"login.php\" lang=\"en\">LOGIN</a></li>";
+}
+
 if(isset($panino)) {
     //var_dump($panino);//Funzione utile per scoprire cosa otteniamo dal DB
     $nomePanino = $panino["Nome"];
@@ -50,6 +64,7 @@ if(isset($panino)) {
     $descrizione = $panino["Descrizione"];
 
     $content = array(
+        "<login/>" => $log,
         "{{ nomePanino }}" => $nomePanino,
         "{{ immaginePanino }}" => $imgPanino,
         "{{ categoria }}" => $categoriaText,
