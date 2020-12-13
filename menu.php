@@ -9,7 +9,7 @@ use DB\DBAccess;
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita) {
-    header("Location: error_500.html");
+    header("Location: error_500.php");
 }
 
 $categoria = isset($_GET["categoria"]) ? $_GET["categoria"] : 1;
