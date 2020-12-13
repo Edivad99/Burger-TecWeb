@@ -426,7 +426,7 @@ input[type="submit"] {
     padding: 0.5em;
 }
 
-/* CONTENUTO > 404 */
+/* CONTENUTO > 404 e 500 */
 
 #nonTrovato {
     text-align: center;
