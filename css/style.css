@@ -2,6 +2,7 @@
     --sfondo: #faf2dd;
     --principale: #bd091b;
     --divisore: #ddd;
+    --alternative: rgb(228, 0, 43);
 }
 
 * {
@@ -17,6 +18,7 @@ html {
 body {
     max-width: 1024px;
     margin: auto;
+    /*font-family: Helvetica, Arial, sans-serif*/
     font-family: "Comic Sans MS", cursive, sans-serif; /*font da cambiare*/
     background-color:white;
 }
@@ -123,8 +125,15 @@ body > header h1 {
 */
 
 #contenutoGenerale {
-    line-height: 1.8;
+    background-color: white;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
     padding: 1em 0.2em 1em 0.2em;
+}
+
+#contenutoGenerale p {
+    margin-bottom: 2em;
 }
 
 #immagineLocale {
@@ -341,7 +350,59 @@ input[type="submit"] {
     color: var(--principale);
     background-color: transparent;
 }
+/* CONTENUTO > Storia */
+.article {
+    width: auto;
+    display: flex;
+    min-height: 7em;
+    margin-bottom: 10px;
+}
 
+.importantarticle {
+    background-color: var(--principale);
+    color: white;
+    width: auto;
+    display: flex;
+    min-height: 7em;
+    margin-bottom: 10px;
+}
+
+#banner {
+    padding: 0px 10px;
+}
+
+#banner h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.8em;
+}
+
+#HistoryImg {
+    width: 50%;
+    float: right;
+}
+
+.year {
+    padding: 0px 15px;
+    font-size: 5em;
+    float: left;
+}
+
+.subtitle {
+    width: 75%;
+    border-top: 3px solid var(--principale);
+}
+
+.bsubtitle {
+    width: 55%;
+    border-top: 3px solid var(--principale);
+}
+
+.subtitle h3, .bsubtitle h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.8em;
+}
 /* CONTENUTO > 404 */
 
 #nonTrovato {
@@ -367,7 +428,6 @@ input[type="submit"] {
     border-radius: 5px;
     line-height: 4em;
 }
-
 /* 
 =================================
         FOOTER 
