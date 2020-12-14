@@ -18,8 +18,8 @@ html {
 body {
     max-width: 1024px;
     margin: auto;
-    font-family: Helvetica, Arial, sans-serif;
-    /*font-family: "Comic Sans MS", cursive, sans-serif; font da cambiare*/
+    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: "Comic Sans MS", cursive, sans-serif; /*font da cambiare*/
     background-color: white;
 }
 
