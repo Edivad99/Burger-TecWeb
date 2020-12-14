@@ -365,6 +365,10 @@ abbr {
     list-style: none;
 }
 
+#orari li{
+    padding: 0.2em;
+}
+
 #contatti {
     padding-top: 1.25em;
 }
