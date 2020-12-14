@@ -253,6 +253,10 @@ abbr {
 .commento {
     margin-top: 0.3em;
     border: 2px solid var(--divisore);
+    border-top: none;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
     /*width: 75%;
     margin-left: auto;
     margin-right: auto;*/
@@ -262,6 +266,15 @@ abbr {
     color: white;
     background-color: var(--principale);
     display: flow-root; /* Devo mettere questo, altrimenti non cambia il colore */
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -webkit-border-bottom-right-radius: 0em;
+    -moz-border-radius-bottomleft: 0em;
+    -webkit-border-bottom-left-radius: 0em;
+    -moz-border-radius-bottomright: 0em;
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 0em;
 }
 
 .commentoUser {
