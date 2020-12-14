@@ -50,24 +50,17 @@ for($i=1; $i<=3; $i++) {
 
 session_start();
 $username = "";
-if(isset($_SESSION["isValid"])) {
-    if($_SESSION["isValid"]) {
-        $log = "<li><a href=\"areariservata.php\">{{ username }}</a></li>";
-        $username = $_SESSION["username"];
-    }
-    else {
-        $log = "<li><a href=\"login.php\" lang=\"en\">LOGIN</a></li>";
-    }
+if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
+    $username = "LOGIN";
 }
 
 else {
-    $log = "<li><a href=\"login.php\" lang=\"en\">LOGIN</a></li>";
+    $username = $_SESSION["username"];
 }
 
 $content = array(
     "<paniniMenu/>" => $listaPanini,
     "<listaCategoria/>" => $categorieMenu,
-    "<login/>" => $log,
     "{{ username }}" => $username
 );
 
