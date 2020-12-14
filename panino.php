@@ -41,12 +41,8 @@ if(count($commenti) > 0) {
 }
 
 session_start();
-$username = "";
-if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
-    $username = "LOGIN";
-}
-
-else {
+$username = "LOGIN";
+if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
 }
 

@@ -49,12 +49,8 @@ for($i=1; $i<=3; $i++) {
 }
 
 session_start();
-$username = "";
-if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
-    $username = "LOGIN";
-}
-
-else {
+$username = "LOGIN";
+if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
 }
 
