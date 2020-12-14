@@ -149,12 +149,6 @@ body > header h1 {
     width: 100%;
 }
 
-/* CONTENUTO > Contatti */
-
-.centrato {
-    display: block;
-}
-
 /* CONTENUTO > Storia */
 .article, .importantarticle {
     width: auto;
@@ -177,6 +171,12 @@ body > header h1 {
 
 .importantarticle .subtitle h3 {
     border-top: 3px solid white;
+}
+
+/* CONTENUTO > Contatti */
+
+.centrato {
+    display: block;
 }
 
 /* 

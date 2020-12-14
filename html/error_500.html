@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ nomePanino }} | Burgheria Padovana</title>
+    <title>Errore interno | Burgheria Padovana</title>
 
-    <meta name="title" content="{{ nomePanino }} | Burgheria Padovana" />
-    <meta name="description" content="{{ descrizione }}" />
-    <meta name="keywords" content="Burgheria Padovana, {{ categoria }}, {{ nomePanino }}" />
+    <meta name="title" content="Contenuto non trovato | Burgheria Padovana" />
+    <meta name="description" content="Errore 500 - errore interno" />
+    <meta name="keywords" content="" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
+    
+    <meta name="viewport" content="width=device-width" /> 
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-    <link rel="icon" type="image/png" href="img/burger-icon.png" />
+    <link rel="icon" type="image/png" href="img/burger-icon.png"/>
 </head>
 
 <body>
@@ -38,25 +40,13 @@
         </ul>
     </header>
 
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.php" lang="en">Home</a> > <a href="menu.php">I nostri burger</a> > <a href="menu.php?categoria={{ categoriaID }}">{{ categoria }}</a></p>
-    </nav>
-
     <div id="contenutoGenerale">
-        <h2 id="nomePanino" class="decorazionePanino">{{ nomePanino }}</h2>
-        <img id="immaginePanino" src="{{ immaginePanino }}"/>
-        <div id="ingredienti" class="decorazionePanino">
-            <h3>Ingredienti</h3>
-            <listaIngredienti/>
-        </div>
-        <div id="descrizionePanino">
-            <h3>Descrizione</h3>
-            <p>{{ descrizione }}</p>
-        </div>
-        <div id="commenti">
-            <h3>Commenti</h3>
-            <commenti/>
-        </div>
+        <section id="nonTrovato">
+            <h2> 500 </h2>
+            <h3>Siamo spiacenti c'è stato un problema interno</h3>
+            <p>Scopri le nostre nuove offerte!</p>
+            <a id="toHomeButton" href="index.php" lang="en">HOME</a>
+        </section>
     </div>
     <footer>
         <ul>

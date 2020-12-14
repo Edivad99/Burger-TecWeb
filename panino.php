@@ -6,13 +6,15 @@ use Util\Util;
 use DB\DBAccess;
 
 if(!isset($_GET["ID"])) {
-    header("Location: error_400.php");
+    header("Location: error_404.php");
+    die;
 } 
 
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita) {
-    header("Location: error_500.html");
+    header("Location: error_500.php");
+    die;
 }
 
 $id = $_GET["ID"];
@@ -28,7 +30,7 @@ if(count($commenti) > 0) {
     foreach($commenti as $commento) {
         $content = array(
             "{{ username }}" => $commento["Username"],
-            "{{ dataOraPost }}" => date_format($commento["DataOraPost"], 'H:i:s d/m/Y '),
+            "{{ dataOraPost }}" => date_format($commento["DataOraPost"], 'H:i:s d/m/Y'),
             "{{ contenuto }}" => $commento["Contenuto"]
         );
 
@@ -36,6 +38,12 @@ if(count($commenti) > 0) {
     }
 } else {
     $listaCommenti = "NON CI SONO COMMENTI";
+}
+
+session_start();
+$username = "LOGIN";
+if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
+    $username = $_SESSION["username"];
 }
 
 if(isset($panino)) {
@@ -48,6 +56,7 @@ if(isset($panino)) {
     $descrizione = $panino["Descrizione"];
 
     $content = array(
+        "{{ username }}" => $username,
         "{{ nomePanino }}" => $nomePanino,
         "{{ immaginePanino }}" => $imgPanino,
         "{{ categoria }}" => $categoriaText,
@@ -60,7 +69,8 @@ if(isset($panino)) {
     echo Util::replacer("html/panino.html", $content);
 
 } else {
-    header("Location: error_400.php");
+    header("Location: error_404.php");
+    die;
 }
 
 ?>

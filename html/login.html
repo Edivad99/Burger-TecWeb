@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burgheria Padovana</title>
+    <title>Login | Burgheria Padovana</title>
 
-    <meta name="title" content="Burgheria Padovana" />
-    <meta name="description" content="" />
+    <!-- Non sono sicuro se sulla pagina di login bisgona mettere queste informazioni-->
+    <meta name="title" content="Login | Burgheria Padovana" />
+    <meta name="description" content="Pagina di Login" />
     <meta name="keywords" content="" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
-    
-    <meta name="viewport" content="width=device-width" /> 
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-    <link rel="icon" type="image/png" href="img/burger-icon.png"/>
+    <link rel="icon" type="image/png" href="img/burger-icon.png" />
 </head>
 
 <body>
@@ -26,33 +25,36 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <img id="logo" src="img/burger-icon.png" alt=""/>
+        <a id="logo" href="index.php"><img src="img/burger-icon.png"/></a>
         <h1>Burgheria Padovana</h1>
         <input class="menu-btn" type="checkbox" id="menu-btn">
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul id="menu">
-            <li id="currentLink" lang="en">HOME</li>
+            <li><a href="index.php" lang="en">HOME</a></li>
             <li><a href="menu.php">I NOSTRI BURGER</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
-            <li><a href="storia.html">STORIA</a></li>
-            <li><a href="contatti.html">CONTATTI</a></li>
-            <li><a href="login.html" lang="en">LOGIN</a></li>
+            <li><a href="eventi.php">EVENTI</a></li>
+            <li><a href="storia.php">STORIA</a></li>
+            <li><a href="contatti.php">CONTATTI</a></li>
+            <li id="currentLink" lang="en">LOGIN</li>
         </ul>
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <span lang="en">Home</span></p>
+        <p>Ti trovi in: <a href="index.php" lang="en">Home</a> > <span lang="en">Login</span></p>
     </nav>
 
     <div id="contenutoGenerale">
-        <p id="immagineLocale"></p>
-        <p id="cosafacciamo">
-            Burgheria Padovana offre ottimi panini a tutte le ore del giorno.
-            I nostri panini sono fatti da 100% carne italiana. Tutte le verdure sono a <abbr title="chilometro">km</abbr> zero. <br>
-            Il nostro menù è frutto di una ricerca costante e di una dedizione assoluta al mondo dei burger.
-            Continuiamo ogni giorno a lavorare per creare un’esperienza che parta dal cibo ma che sappia andare ben oltre.
-        </p>
-        <p id="promozioneStudenti">Per tutti gli studenti dal lunedì al venerdì Panino + Bibita a solo 6<abbr title="euro">&euro;</abbr></p>
+        <msgErrore/>
+        <form action="php/loginHandler.php" method="post" id="accesso">
+            <label for="user" lang="en">Username:</label>
+            <input type="text" name="usr" id="user" autocomplete="username" required/>
+            <label for="pwd" lang="en">Password:</label>
+            <input type="password" name="pwd" id="pwd" autocomplete="current-password" required/>
+            <span>
+                <input type="submit" name="registrazione" value="Registrati" id="registrati"/>
+                <input type="submit" name="accesso" value="Accedi" id="login"/>
+            </span>
+        </form>
     </div>
     <footer>
         <ul>

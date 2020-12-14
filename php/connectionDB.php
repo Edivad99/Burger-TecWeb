@@ -114,6 +114,47 @@ class DBAccess {
 
         return $result;
     }
+
+    public function checkUserAndPassword($username, $password) {
+        $sql = "SELECT *
+                FROM utenti
+                WHERE UserName = '$username' AND Password = '$password'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 1) {
+            $user = mysqli_fetch_assoc($queryResult);
+            $isAdmin = $user["Admin"] == 1;
+
+            return array(
+                "isValid" => true,
+                "isAdmin" => $isAdmin,
+                "username" => $user["Username"]
+            );
+        }
+        return array(
+            "isValid" => false,
+            "isAdmin" => false,
+            "username" => null
+        );
+    }
+
+    public function createNewUser($username, $password) {
+        $sql = "SELECT *
+                FROM utenti
+                WHERE UserName = '$username'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 0) {
+            //Non esiste nessun utente con questo username
+            $sql = "INSERT INTO `utenti`(`Username`, `Password`, `Admin`) 
+                    VALUES ('$username','$password', 0)";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+        return false;
+    }
 }
 
 ?>

@@ -10,6 +10,7 @@ $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita) {
     header("Location: error_500.php");
+    die;
 }
 
 $categoria = isset($_GET["categoria"]) ? $_GET["categoria"] : 1;
@@ -19,7 +20,8 @@ $dbAccess->closeDBConnection();
 
 //Controlliamo se $categoria esiste
 if($categoria <= 0 || $categoria > $categorie["IDMax"] || count($panini) <= 0) {
-    header("Location: error_400.php");
+    header("Location: error_404.php");
+    die;
 }
 
 $listaPanini = "";
@@ -46,9 +48,16 @@ for($i=1; $i<=3; $i++) {
     }
 }
 
+session_start();
+$username = "LOGIN";
+if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
+    $username = $_SESSION["username"];
+}
+
 $content = array(
     "<paniniMenu/>" => $listaPanini,
-    "<listaCategoria/>" => $categorieMenu
+    "<listaCategoria/>" => $categorieMenu,
+    "{{ username }}" => $username
 );
 
 echo Util::replacer("html/menu.html", $content);
