@@ -264,9 +264,7 @@ abbr {
     color: white;
     background-color: var(--principale);
     display: flow-root; /* Devo mettere questo, altrimenti non cambia il colore */
-    border-radius: 1em;
-    border-bottom-left-radius: 0em;
-    border-bottom-right-radius: 0em;
+    border-radius: 1em 1em 0em 0em;
 }
 
 .commentoUser {
