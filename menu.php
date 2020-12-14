@@ -9,7 +9,7 @@ use DB\DBAccess;
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita) {
-    header("Location: error_500.html");
+    header("Location: error_500.php");
     die;
 }
 
@@ -20,7 +20,7 @@ $dbAccess->closeDBConnection();
 
 //Controlliamo se $categoria esiste
 if($categoria <= 0 || $categoria > $categorie["IDMax"] || count($panini) <= 0) {
-    header("Location: error_404.html");
+    header("Location: error_404.php");
     die;
 }
 

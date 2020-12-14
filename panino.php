@@ -6,14 +6,14 @@ use Util\Util;
 use DB\DBAccess;
 
 if(!isset($_GET["ID"])) {
-    header("Location: error_404.html");
+    header("Location: error_404.php");
     die;
 } 
 
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita) {
-    header("Location: error_500.html");
+    header("Location: error_500.php");
     die;
 }
 
@@ -69,7 +69,7 @@ if(isset($panino)) {
     echo Util::replacer("html/panino.html", $content);
 
 } else {
-    header("Location: error_404.html");
+    header("Location: error_404.php");
     die;
 }
 

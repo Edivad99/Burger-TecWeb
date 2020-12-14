@@ -15,6 +15,6 @@ $content = array(
     "{{ username }}" => $username
 );
 
-echo Util::replacer("html/error_500.html", $content);
+echo Util::replacer("html/error_500.php", $content);
 
 ?>

@@ -11,7 +11,7 @@
     $dbAccess = new DBAccess();
     $connessioneRiuscita = $dbAccess->openDBConnection();
     if(!$connessioneRiuscita) {
-        header("Location: ../error_500.html");
+        header("Location: ../error_500.php");
         die;
     }
 
