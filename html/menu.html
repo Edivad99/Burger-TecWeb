@@ -22,7 +22,8 @@
     <header>
         <ul class="aiutiNascosti">
             <li><a href="#menu">Vai al menù</a></li>
-            <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
+            <li><a href="#leftSidebar">Vai alla selezione categoria</a></li>
+            <li><a href="#contenutoGeneraleMenuPanini">Vai al contenuto</a></li>
         </ul>
         <a id="logo" href="index.php"><img src="img/burger-icon.png"/></a>
         <h1>Burgheria Padovana</h1>
@@ -43,6 +44,7 @@
     </nav>
 
     <div id="leftSidebar">
+        <p><a href="#contenutoGeneraleMenuPanini">Salta la selezione della categoria</a></p>
         <h2>Categorie</h2>
         <ul id="categoria">
             <listaCategoria/>
@@ -50,11 +52,12 @@
     </div>
 
     <div id="contenutoGeneraleMenuPanini">
+        <p><a href="#footer">Salta il menu dei panini</a></p>
         <ul id="contenitorePanini">
             <paniniMenu/>
         </ul>
     </div>
-    <footer>
+    <footer id="footer">
         <ul>
             <li>Via Luigi Luzzati, 10 Padova</li>
             <li><abbr title="Telefono">Tel</abbr>: <a class="tel" href="tel:+393453434225">+39 3453434225</a></li>
