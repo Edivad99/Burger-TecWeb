@@ -23,6 +23,7 @@
         <ul class="aiutiNascosti">
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
+            <li><a href="#commenti">Vai ai commenti</a></li>
         </ul>
         <a id="logo" href="index.php"><img src="img/burger-icon.png"/></a>
         <h1>Burgheria Padovana</h1>
@@ -43,22 +44,30 @@
     </nav>
 
     <div id="contenutoGenerale">
+        <ul class="aiutiNascosti">
+            <li><a href="#ingredienti">Vai agli ingredienti</a></li>
+            <li><a href="#descrizionePanino">Vai alla descrizione del panino</a></li>
+            <li><a href="#commenti">Vai ai commenti</a></li>
+        </ul>
         <h2 id="nomePanino" class="decorazionePanino">{{ nomePanino }}</h2>
         <img id="immaginePanino" src="{{ immaginePanino }}"/>
         <div id="ingredienti" class="decorazionePanino">
+            <p class="aiutiNascosti"><a href="#descrizionePanino">Salta gli ingredienti</a></p>
             <h3>Ingredienti</h3>
             <listaIngredienti/>
         </div>
         <div id="descrizionePanino">
+            <p class="aiutiNascosti"><a href="#commenti">Salta la descrizione del panino</a></p>
             <h3>Descrizione</h3>
             <p>{{ descrizione }}</p>
         </div>
         <div id="commenti">
+            <p class="aiutiNascosti"><a href="#footer">Salta i commenti</a></p>
             <h3>Commenti</h3>
             <commenti/>
         </div>
     </div>
-    <footer>
+    <footer id="footer">
         <ul>
             <li>Via Luigi Luzzati, 10 Padova</li>
             <li><abbr title="Telefono">Tel</abbr>: <a class="tel" href="tel:+393453434225">+39 3453434225</a></li>
