@@ -173,6 +173,15 @@ abbr {
     color: var(--principale);
 }
 
+#categoria li a{
+    padding: 4px 16px;
+}
+
+#categoria li a:hover {
+    background-color: var(--principale);
+    color: white;
+}
+
 #contenutoGeneraleMenuPanini {
     line-height: 1.8;
     padding: 1em 0.2em 1em 0.2em;

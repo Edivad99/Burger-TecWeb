@@ -223,17 +223,8 @@ footer {
     max-height: 0;
 }
 
-#categoria li a, #categoriaAttiva{
-    padding: 4px 16px;
-}
-
 #categoria li {
     display: inline;
-}
-
-#categoria li a:hover {
-    background-color: var(--principale);
-    color: white;
 }
 
 }
