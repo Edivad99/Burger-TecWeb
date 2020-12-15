@@ -15,6 +15,6 @@ $content = array(
     "{{ username }}" => $username
 );
 
-echo Util::replacer("html/error_404.php", $content);
+echo Util::replacer("html/error_404.html", $content);
 
 ?>
