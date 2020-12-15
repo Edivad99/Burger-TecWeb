@@ -49,7 +49,8 @@ class DBAccess {
 
         $sql = "SELECT utenti.Username, commenti.*
                 FROM utenti, commenti
-                WHERE commenti.ID_Panino = $checkID AND commenti.ID_Utente = utenti.ID";
+                WHERE commenti.ID_Panino = $checkID AND commenti.ID_Utente = utenti.ID
+                ORDER BY commenti.Ora_Pubblicazione DESC";
         $queryResult = mysqli_query($this->connection, $sql);
 
         $result = array();
