@@ -116,9 +116,10 @@ class DBAccess {
     }
 
     public function checkUserAndPassword($username, $password) {
+        $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
                 FROM utenti
-                WHERE UserName = '$username' AND Password = '$password'";
+                WHERE UserName = '$checkUsername' AND Password = '$password'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -140,16 +141,17 @@ class DBAccess {
     }
 
     public function createNewUser($username, $password) {
+        $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
                 FROM utenti
-                WHERE UserName = '$username'";
+                WHERE UserName = '$checkUsername'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
         if(mysqli_num_rows($queryResult) == 0) {
             //Non esiste nessun utente con questo username
             $sql = "INSERT INTO `utenti`(`Username`, `Password`, `Admin`) 
-                    VALUES ('$username','$password', 0)";
+                    VALUES ('$checkUsername','$password', 0)";
 
             return (mysqli_query($this->connection, $sql) === true);
         }
