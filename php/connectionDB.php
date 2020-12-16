@@ -131,13 +131,15 @@ class DBAccess {
             return array(
                 "isValid" => true,
                 "isAdmin" => $isAdmin,
-                "username" => $user["Username"]
+                "username" => $user["Username"],
+                "usernameID" => $user["ID"]
             );
         }
         return array(
             "isValid" => false,
             "isAdmin" => false,
-            "username" => null
+            "username" => null,
+            "usernameID" => -1
         );
     }
 

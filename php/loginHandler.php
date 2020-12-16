@@ -35,6 +35,7 @@
         if($_SESSION["isValid"]) {
             $_SESSION["isAdmin"] = $result["isAdmin"];
             $_SESSION["username"] = $result["username"];
+            $_SESSION["usernameID"] = $result["usernameID"];
             header("Location: ../areariservata.php");
         } else {
             header("Location: ../login.php?accesso=1");
