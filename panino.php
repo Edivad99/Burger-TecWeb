@@ -8,7 +8,7 @@ use DB\DBAccess;
 if(!isset($_GET["ID"])) {
     header("Location: error_404.php");
     die;
-} 
+}
 
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
@@ -20,6 +20,7 @@ if(!$connessioneRiuscita) {
 $id = $_GET["ID"];
 $panino = $dbAccess->getPaninoById($id);
 $commenti = $dbAccess->getCommentiPaninoById($id);
+$voti = $dbAccess->getVotiPaninoById($id);
 $dbAccess->closeDBConnection();
 
 
@@ -41,10 +42,29 @@ if(count($commenti) > 0) {
 }
 
 session_start();
+$votoForm = file_get_contents("html/components/formVotoPanino.html");
 $username = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
+} else {
+    $votoForm = ""; //L'utente non può votare se loggato
 }
+
+//Processo i voti
+$media = 0;
+foreach($voti as $voto) {
+    $media += intval($voto["Voto"]);
+    if($username != "LOGIN" && $voto["Username"] == $username) {
+        $votoForm = ""; //Se l'utente ha già votato, non mostro la form per il voto
+    }
+}
+$mediaText = "";
+if(count($voti) > 0) {
+    $media /= count($voti);
+    $media = round($media, 0, PHP_ROUND_HALF_DOWN);
+    $mediaText = "<p>Il nostro panino è valutato $media/5</p>";
+}
+
 
 if(isset($panino)) {
     //var_dump($panino);//Funzione utile per scoprire cosa otteniamo dal DB
@@ -62,6 +82,8 @@ if(isset($panino)) {
         "{{ categoria }}" => $categoriaText,
         "{{ categoriaID }}" => $categoria,
         "{{ descrizione }}" => $descrizione,
+        "<mediaPanino/>" => $mediaText,
+        "<formVotoPanino/>" => str_replace("{{ paninoID }}", $id, $votoForm),
         "<listaIngredienti/>" => Util::getUlFromArray($ingredienti),
         "<commenti/>" => $listaCommenti
     );

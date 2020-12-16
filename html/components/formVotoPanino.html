@@ -1,0 +1,12 @@
+<form action="php/votoPanino.php" id="formVotoPanino" method="GET">
+    <label for="voto">Dai un voto al panino</label>
+    <select name="voto" id="voto">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <input type="hidden" name="paninoRedirect" value="{{ paninoID }}">
+    <input type="submit" name="submit" value="Vota" id="vota"/>
+</form>

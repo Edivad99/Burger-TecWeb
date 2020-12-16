@@ -249,6 +249,14 @@ abbr {
     color: var(--principale);
 }
 
+#votoPanino p {
+    margin-bottom: 0;
+}
+
+#formVotoPanino #voto {
+    width: 5em;
+}
+
 #descrizionePanino {
     clear: both;
 }

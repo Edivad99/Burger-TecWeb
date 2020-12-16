@@ -92,6 +92,35 @@ class DBAccess {
         return $result;
     }
 
+    public function getVotiPaninoById($id) {
+        $checkID = mysqli_real_escape_string($this->connection, $id);
+
+        $sql = "SELECT ID_Utente, Username, Voto
+                FROM voti,utenti
+                WHERE voti.ID_Utente = utenti.ID AND voti.ID_Panino = $checkID";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $commento = array(
+                "Username" => $row["Username"],
+                "ID_Username" => $row["ID_Utente"],
+                "Voto" => $row["Voto"]
+            );
+            array_push($result, $commento);
+        }
+
+        return $result;
+    }
+
+    public function setVotoPaninoById($idPanino, $idUtente, $voto) {
+        $sql = "INSERT INTO Voti (ID_Panino, ID_Utente, Voto)
+                VALUES ($idPanino, $idUtente, $voto)";
+
+        return (mysqli_query($this->connection, $sql) === true);
+    }
+
     public function getCategorie() {
         $sql = "SELECT *
                 FROM categoria";
