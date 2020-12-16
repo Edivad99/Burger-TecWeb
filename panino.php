@@ -47,7 +47,7 @@ $username = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
 } else {
-    $votoForm = ""; //L'utente non può votare se loggato
+    $votoForm = ""; //L'utente non può votare se non loggato
 }
 
 //Processo i voti
@@ -55,7 +55,7 @@ $media = 0;
 foreach($voti as $voto) {
     $media += intval($voto["Voto"]);
     if($username != "LOGIN" && $voto["Username"] == $username) {
-        $votoForm = ""; //Se l'utente ha già votato, non mostro la form per il voto
+        $votoForm = "Il tuo voto è: " . intval($voto["Voto"]) . "/5";//Se l'utente ha già votato, non mostro la form per il voto
     }
 }
 $mediaText = "";

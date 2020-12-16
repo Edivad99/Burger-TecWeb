@@ -21,10 +21,11 @@ if(isset($_SESSION) && $_SESSION["isValid"]) {
                 $dbAccess->closeDBConnection();
 
                 header("Location: ../panino.php?ID=$paninoID");
+                die;
             }
         }
     }
 }
-
+header("Location: ../index.php");
 
 ?>
