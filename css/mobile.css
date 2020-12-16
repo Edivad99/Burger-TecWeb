@@ -149,6 +149,10 @@ body > header h1 {
     width: 100%;
 }
 
+#votoPanino {
+    margin-left: 0;
+}
+
 /* CONTENUTO > Storia */
 .article, .importantarticle {
     width: auto;

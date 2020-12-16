@@ -249,6 +249,10 @@ abbr {
     color: var(--principale);
 }
 
+#votoPanino {
+    margin-left: 48%;
+}
+
 #votoPanino p {
     margin-bottom: 0;
 }
