@@ -10,7 +10,7 @@ if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
 }
 
 $evento = "";
-if($_SESSION["username"] == "admin"){
+if($_SESSION["isAdmin"]){
     $evento = "<a class=\"button\" href=\"gestioneEventi.php\">Gestisci gli Eventi</a>";
 }
 
