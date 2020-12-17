@@ -116,6 +116,26 @@ class DBAccess {
         return $result;
     }
 
+    public function getEventi() {
+        $sql = "SELECT Nome, Data_Luogo_Evento, Descrizione
+                FROM eventi";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $evento = array(
+                "Nome" => $row["Nome"],
+                "Data_Luogo_Evento" => $row["Data_Luogo_Evento"],
+                "Descrizione" => $row["Descrizione"]
+            );
+
+            array_push($result, $evento);
+        }
+
+        return $result;
+    }
+
     public function checkUserAndPassword($username, $password) {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
