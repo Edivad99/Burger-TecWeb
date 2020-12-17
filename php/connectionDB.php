@@ -180,6 +180,25 @@ class DBAccess {
         }
         return false;
     }
+
+    public function createNewEvent($new_title, $data_place, $description) {
+        $checkTitle = mysqli_real_escape_string($this->connection, $new_title);
+        $sql = "SELECT *
+                FROM eventi
+                WHERE Nome = '$checkTitle'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 0) {
+            $sql = "INSERT INTO `eventi`(`Nome`, `Data_Luogo_Evento`, `Descrizione`)
+                    VALUES ('$checkTitle','$data_place', '$description')";
+
+                    return (mysqli_query($this->connection, $sql) === true);
+        }
+
+        return false;
+    }
+
 }
 
 ?>

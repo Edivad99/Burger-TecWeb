@@ -43,6 +43,7 @@
     </nav>
 
     <div id="contenutoGenerale">
+        <msgErrore/>
         <div id="form">
             <form action="php/eventiHandler.php" method="post" class="formEvento">
                 <label for="new_title">Titolo</label>
@@ -52,6 +53,7 @@
                 <label for="description">Descrizione</label>
                 <input type="text" name="descrizione" id="description" required/>
                 <span>
+                    <input type="hidden" name="azione" value="add">
                     <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>
                 </span>
             </form>
@@ -60,6 +62,7 @@
                 <label for="title">Titolo</label>
                 <input type="text" name="titolo" id="title" required/>
                 <span>
+                    <input type="hidden" name="azione" value="delete">
                     <input type="submit" name="elimina" value="Elimina" id="elimina"/>
                 </span>
             </form>
