@@ -9,8 +9,14 @@ if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
     header("Location: index.php");
 }
 
+$evento = "";
+if($_SESSION["username"] == "admin"){
+    $evento = "<a class=\"button\" href=\"html/gestioneEventi.html\">Gestisci gli Eventi</a>";
+}
+
 $content = array(
-    "{{ username }}" => $_SESSION["username"]
+    "{{ username }}" => $_SESSION["username"],
+    "<gestisciEventi/>" => $evento
 );
 
 echo Util::replacer("html/areariservata.html", $content);

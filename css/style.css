@@ -435,11 +435,21 @@ input[type="submit"] {
     text-align: center;
 }
 
-#logout {
+#gestione {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
     text-decoration: none;
     color: white;
     background-color: var(--principale);
     padding: 0.5em;
+    margin-right: 1em;
+}
+
+#gestione a:last-child {
+    margin-right: 0em;
 }
 
 /* CONTENUTO > 404 e 500 */
