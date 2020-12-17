@@ -11,7 +11,7 @@ if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
 
 $evento = "";
 if($_SESSION["username"] == "admin"){
-    $evento = "<a class=\"button\" href=\"html/gestioneEventi.html\">Gestisci gli Eventi</a>";
+    $evento = "<a class=\"button\" href=\"gestioneEventi.php\">Gestisci gli Eventi</a>";
 }
 
 $content = array(
