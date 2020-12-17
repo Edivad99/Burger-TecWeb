@@ -6,13 +6,12 @@ use Util\Util;
 use DB\DBAccess;
 
 session_start();
-$username = "LOGIN";
-if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
-    $username = $_SESSION["username"];
+if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
+    header("Location: index.php");
 }
 
 $content = array(
-    "{{ username }}" => $username
+    "{{ username }}" => $_SESSION["username"]
 );
 
 echo Util::replacer("html/gestioneCommenti.html", $content);
