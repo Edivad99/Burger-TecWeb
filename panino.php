@@ -46,8 +46,8 @@ $votoForm = file_get_contents("html/components/formVotoPanino.html");
 $username = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
-} else {
-    $votoForm = ""; //L'utente non può votare se non loggato
+} else { //All'utente viene mostrato il link per loggarsi e votare
+    $votoForm = "<p>Per votare, effettua il <a href=\"login.php\" lang=\"eng\">login</a></p>"; 
 }
 
 //Processo i voti

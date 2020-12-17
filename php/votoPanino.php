@@ -26,6 +26,6 @@ if(isset($_SESSION) && $_SESSION["isValid"]) {
         }
     }
 }
-header("Location: ../index.php");
+header("Location: ../login.php");
 
 ?>
