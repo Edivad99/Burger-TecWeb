@@ -43,6 +43,27 @@
     </nav>
 
     <div id="contenutoGenerale">
+        <div id="form">
+            <form action="php/eventiHandler.php" method="post" class="formEvento">
+                <label for="new_title">Titolo</label>
+                <input type="text" name="nuovo_titolo" id="new_title" required/>
+                <label for="data_place">Data e Luogo</label>
+                <input type="text" name="data_luogo" id="data_place" required/>
+                <label for="description">Descrizione</label>
+                <input type="text" name="descrizione" id="description" required/>
+                <span>
+                    <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>
+                </span>
+            </form>
+
+            <form action="php/eventiHandler.php" method="post" class="formEvento">
+                <label for="title">Titolo</label>
+                <input type="text" name="titolo" id="title" required/>
+                <span>
+                    <input type="submit" name="elimina" value="Elimina" id="elimina"/>
+                </span>
+            </form>
+        </div>
     </div>
 
     <footer id="footer">

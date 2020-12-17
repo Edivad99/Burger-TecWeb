@@ -453,6 +453,27 @@ input[type="submit"] {
     margin-right: 0em;
 }
 
+/* CONTENUTO > Gestione Eventi */
+
+#form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.formEvento {
+    display: flex;
+    flex-direction: column;
+}
+
+.formEvento:first-child {
+    padding-right: 5em;
+}
+
+.formEvento:last-child {
+    justify-content: center;
+}
+
 /* CONTENUTO > 404 e 500 */
 
 #nonTrovato {

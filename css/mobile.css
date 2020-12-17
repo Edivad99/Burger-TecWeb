@@ -179,6 +179,22 @@ body > header h1 {
     display: block;
 }
 
+/* CONTENUTO > Gestione Eventi */
+
+#form {
+    flex-direction: column;
+}
+
+.formEvento:first-child {
+    padding-right: 0em;
+    padding-bottom: 1.6em;
+}
+
+#new_title, #data_place, #description, #title {
+    width: fit-content;
+    margin: auto;
+}
+
 /* 
 =================================
         FOOTER 
