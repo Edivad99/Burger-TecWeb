@@ -12,7 +12,8 @@ CREATE TABLE Eventi
 (
     `ID` INT NOT NULL AUTO_INCREMENT,
     `Nome` VARCHAR(100) NOT NULL,
-    `Data_Luogo_Evento` VARCHAR(150),
+    `Data_Evento` VARCHAR(150),
+    `Luogo_Evento` VARCHAR(150),
     `Descrizione` VARCHAR(800),
     PRIMARY KEY(`ID`)
  ) ENGINE = InnoDB;
@@ -67,12 +68,12 @@ CREATE TABLE Commenti
     FOREIGN KEY (`ID_Utente`) REFERENCES `Utenti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
-INSERT INTO `Eventi` (`ID`, `Nome`, `Data_Luogo_Evento`, `Descrizione`) VALUES
-(1, 'QUARANTINO', 'Mercoledì 18/11, 19:00-02:00 Via Luigi Luzzati, 10 Padova, PD', "Anche durante il periodo di Lockdown gli eventi della Burgheria Padovana non mancano. Ordina a casa il nuovo Quarantino, il panino pensato per non farti mancare niente, neanche in quarantena! Ma l'evento non finisce qua, in tutte le ordinazioni che riceveremo questa sera avranno un Qr-code per potervi collegare in diretta al nostro video-evento con musica e non solo, così da poter fare festa tutti insieme al sicuro nelle nostre case. Partecipa anche tu!"),
-(2, 'GIORNATA MONDIALE DEL PANINO', 'Sabato 21/11,  12:00-16:00 e 19:00-02:00 Via Luigi Luzzati, 10 Padova, PD', "Apertura speciale per festeggiare la giornata mondiale del Panino. Per l'occasione avremo panini con soli ingredienti tradizionali italiani e con pane a scelta tra mantovana, cioppa oppure bastone, tutte forme di pane tipiche del territorio. Non perdere l'occasione di poter gustare un buon panino in questa giornata speciale!"),
-(3, 'DUE CUORI E UN PANINO', 'Domenica 14/02/2021, 12:00-16:00 e 19:00-02:00 Via Luigi Luzzati, 10 Padova, PD', "Approfitta dell'apertura speciale. In occasione della festa degli innamorati potrai gustare, insieme alla tua dolce metà, il nuovo panino: San Valentino. Questo panino è stato pensato apposta per essere mangiato da due persone. Chiama per ordinare da casa oppure per prenotare un tavolo. Ti(Vi) aspettiamo!"),
-(4, 'MEX NIGHT', 'Giovedì 8/04/2021, 19:00-02:00 Via Luigi Luzzati, 10 Padova, PD', "Serata messicana! Per l'occasione ci saranno non solo panini, ma anche altri piatti tipici messicani come tacos e burritos. Vivi anche tu questo tuffo nella cultura messicana in compagnia. Per l'occasione avremo anche una piccola band che ci intratterrà per tutta la serata con musica tipica. Non mancare!"),
-(5, "GIORNATA MONDIALE DELL'HAMBURGER", 'Venerdì 28/05/2021, Via Luigi Luzzati, 10 Padova, PD', "Festeggia con Burgheria Padovana la giornata mondiale dell'Hamburger. Per l'occasione si potra ordinare il nuovo <abbr title=""United States of America"" lang=""en"">USA</abbr>, il nuovo panino pensato apposta per portare l'America anche qua a Padova! Gustati la buonissima carne di black angus con il cheddar tra due fette di pane al latte croccante con i semi di sesamo. Ti aspettiamo!");
+INSERT INTO `Eventi` (`ID`, `Nome`, `Data_Evento`, `Luogo_Evento`, `Descrizione`) VALUES
+(1, 'QUARANTINO', 'Mercoledì 18/11, 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Anche durante il periodo di Lockdown gli eventi della Burgheria Padovana non mancano. Ordina a casa il nuovo Quarantino, il panino pensato per non farti mancare niente, neanche in quarantena! Ma l'evento non finisce qua, in tutte le ordinazioni che riceveremo questa sera avranno un Qr-code per potervi collegare in diretta al nostro video-evento con musica e non solo, così da poter fare festa tutti insieme al sicuro nelle nostre case. Partecipa anche tu!"),
+(2, 'GIORNATA MONDIALE DEL PANINO', 'Sabato 21/11,  12:00-16:00 e 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Apertura speciale per festeggiare la giornata mondiale del Panino. Per l'occasione avremo panini con soli ingredienti tradizionali italiani e con pane a scelta tra mantovana, cioppa oppure bastone, tutte forme di pane tipiche del territorio. Non perdere l'occasione di poter gustare un buon panino in questa giornata speciale!"),
+(3, 'DUE CUORI E UN PANINO', 'Domenica 14/02/2021, 12:00-16:00 e 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Approfitta dell'apertura speciale. In occasione della festa degli innamorati potrai gustare, insieme alla tua dolce metà, il nuovo panino: San Valentino. Questo panino è stato pensato apposta per essere mangiato da due persone. Chiama per ordinare da casa oppure per prenotare un tavolo. Ti(Vi) aspettiamo!"),
+(4, 'MEX NIGHT', 'Giovedì 8/04/2021, 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Serata messicana! Per l'occasione ci saranno non solo panini, ma anche altri piatti tipici messicani come tacos e burritos. Vivi anche tu questo tuffo nella cultura messicana in compagnia. Per l'occasione avremo anche una piccola band che ci intratterrà per tutta la serata con musica tipica. Non mancare!"),
+(5, "GIORNATA MONDIALE DELL'HAMBURGER", 'Venerdì 28/05/2021,', 'Via Luigi Luzzati, 10 Padova, PD', "Festeggia con Burgheria Padovana la giornata mondiale dell'Hamburger. Per l'occasione si potra ordinare il nuovo <abbr title=""United States of America"" lang=""en"">USA</abbr>, il nuovo panino pensato apposta per portare l'America anche qua a Padova! Gustati la buonissima carne di black angus con il cheddar tra due fette di pane al latte croccante con i semi di sesamo. Ti aspettiamo!");
 
 INSERT INTO `Categoria` (`ID`, `Categoria`) VALUES
 (1, 'Pollo'),

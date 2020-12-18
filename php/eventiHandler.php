@@ -23,9 +23,10 @@ if(!$_SESSION["isAdmin"]) {
 
 if($_POST["azione"] == "add") {
     $new_title = $_POST["nuovo_titolo"];
-    $data_place = $_POST["data_luogo"];
+    $data = $_POST["data"];
+    $place = $_POST["luogo"];
     $description = $_POST["descrizione"];
-    $result = $dbAccess->createNewEvent($new_title, $data_place, $description);
+    $result = $dbAccess->createNewEvent($new_title, $data, $place, $description);
     if(!$result) {
         header("Location: ../gestioneEventi.php?aggiungi=2");
         die;

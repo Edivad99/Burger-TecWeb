@@ -117,7 +117,7 @@ class DBAccess {
     }
 
     public function getEventi() {
-        $sql = "SELECT Nome, Data_Luogo_Evento, Descrizione
+        $sql = "SELECT Nome, Data_Evento, Luogo_Evento, Descrizione
                 FROM eventi";
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -126,7 +126,8 @@ class DBAccess {
         while($row = mysqli_fetch_assoc($queryResult)) {
             $evento = array(
                 "Nome" => $row["Nome"],
-                "Data_Luogo_Evento" => $row["Data_Luogo_Evento"],
+                "Data_Evento" => $row["Data_Evento"],
+                "Luogo_Evento" => $row["Luogo_Evento"],
                 "Descrizione" => $row["Descrizione"]
             );
 
@@ -181,7 +182,7 @@ class DBAccess {
         return false;
     }
 
-    public function createNewEvent($new_title, $data_place, $description) {
+    public function createNewEvent($new_title, $data, $place, $description) {
         $checkTitle = mysqli_real_escape_string($this->connection, $new_title);
         $sql = "SELECT *
                 FROM eventi
@@ -190,8 +191,8 @@ class DBAccess {
         $queryResult = mysqli_query($this->connection, $sql);
 
         if(mysqli_num_rows($queryResult) == 0) {
-            $sql = "INSERT INTO `eventi`(`Nome`, `Data_Luogo_Evento`, `Descrizione`)
-                    VALUES ('$checkTitle','$data_place', '$description')";
+            $sql = "INSERT INTO `eventi`(`Nome`, `Data_Evento`, `Luogo_Evento`, `Descrizione`)
+                    VALUES ('$checkTitle', '$data', '$place', '$description')";
 
             return (mysqli_query($this->connection, $sql) === true);
         }

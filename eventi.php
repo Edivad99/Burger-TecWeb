@@ -20,7 +20,8 @@ $patternEvento = file_get_contents("html/components/evento.html");
     foreach($eventi as $evento) {
         $content = array(
             "{{ titolo }}" => $evento["Nome"],
-            "{{ dataLuogoEvento }}" => $evento["Data_Luogo_Evento"],
+            "{{ dataEvento }}" => $evento["Data_Evento"],
+            "{{ luogoEvento }}" => $evento["Luogo_Evento"],
             "{{ contenuto }}" => $evento["Descrizione"]
         );
 
