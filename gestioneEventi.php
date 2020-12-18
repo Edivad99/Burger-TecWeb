@@ -16,7 +16,19 @@ if(!$_SESSION["isAdmin"]) {
 }
 
 if(isset($_GET["aggiungi"]) && $_GET["aggiungi"] == 1) {
+    $msgDiErrore = "<p id=\"datiNonCorretti\">L'evento è stato inserito correttamente</p>";
+}
+
+if(isset($_GET["aggiungi"]) && $_GET["aggiungi"] == 2) {
     $msgDiErrore = "<p id=\"datiNonCorretti\">L'evento esiste già</p>";
+}
+
+if(isset($_GET["elimina"]) && $_GET["elimina"] == 1) {
+    $msgDiErrore = "<p id=\"datiNonCorretti\">L'evento è stato eliminato con successo</p>";
+}
+
+if(isset($_GET["elimina"]) && $_GET["elimina"] == 2) {
+    $msgDiErrore = "<p id=\"datiNonCorretti\">L'evento non esiste</p>";
 }
 
 $content = array(

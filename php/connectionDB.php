@@ -193,7 +193,26 @@ class DBAccess {
             $sql = "INSERT INTO `eventi`(`Nome`, `Data_Luogo_Evento`, `Descrizione`)
                     VALUES ('$checkTitle','$data_place', '$description')";
 
-                    return (mysqli_query($this->connection, $sql) === true);
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+
+        return false;
+    }
+
+    public function deleteEvent($title) {
+        $checkTitle = mysqli_real_escape_string($this->connection, $title);
+        $sql = "SELECT *
+                FROM eventi
+                WHERE Nome = '$checkTitle'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) != 0) {
+            $sql = "DELETE
+                    FROM eventi
+                    WHERE Nome = '$checkTitle'";
+
+            return (mysqli_query($this->connection, $sql) === true);
         }
 
         return false;

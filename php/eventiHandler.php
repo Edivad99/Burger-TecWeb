@@ -27,16 +27,23 @@ if($_POST["azione"] == "add") {
     $description = $_POST["descrizione"];
     $result = $dbAccess->createNewEvent($new_title, $data_place, $description);
     if(!$result) {
-        header("Location: ../gestioneEventi.php?aggiungi=1");
+        header("Location: ../gestioneEventi.php?aggiungi=2");
         die;
     }
 
-    header("Location: ../gestioneEventi.php");
+    header("Location: ../gestioneEventi.php?aggiungi=1");
 }
 
-/*else {
+else {
+    $title = $_POST["titolo"];
+    $result = $dbAccess->deleteEvent($title);
+    if(!$result) {
+        header("Location: ../gestioneEventi.php?elimina=2");
+        die;
+    }
 
-}*/
+    header("Location: ../gestioneEventi.php?elimina=1");
+}
 
 $dbAccess->closeDBConnection();
 
