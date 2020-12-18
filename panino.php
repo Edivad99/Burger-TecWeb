@@ -62,7 +62,7 @@ $mediaText = "";
 if(count($voti) > 0) {
     $media /= count($voti);
     $media = round($media, 0, PHP_ROUND_HALF_DOWN);
-    $mediaText = "<p>Il nostro panino è valutato $media/5</p>";
+    $mediaText = "<p>Il nostro panino è valutato <span class=\"number\">$media</span>/5</p>";
 }
 
 
