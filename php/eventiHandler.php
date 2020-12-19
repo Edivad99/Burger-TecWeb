@@ -37,7 +37,8 @@ if($_POST["azione"] == "add") {
 
 else {
     $title = $_POST["titolo"];
-    $result = $dbAccess->deleteEvent($title);
+    $data = $_POST["data"];
+    $result = $dbAccess->deleteEvent($title, $data);
     if(!$result) {
         header("Location: ../gestioneEventi.php?elimina=2");
         die;

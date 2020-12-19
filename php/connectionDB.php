@@ -204,18 +204,18 @@ class DBAccess {
         return false;
     }
 
-    public function deleteEvent($title) {
+    public function deleteEvent($title, $data) {
         $checkTitle = mysqli_real_escape_string($this->connection, $title);
         $sql = "SELECT *
                 FROM eventi
-                WHERE Nome = '$checkTitle'";
+                WHERE Nome = '$checkTitle' AND `Data_Evento` = '$data'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
         if(mysqli_num_rows($queryResult) != 0) {
             $sql = "DELETE
                     FROM eventi
-                    WHERE Nome = '$checkTitle'";
+                    WHERE Nome = '$checkTitle' AND `Data_Evento` = '$data'";
 
             return (mysqli_query($this->connection, $sql) === true);
         }
