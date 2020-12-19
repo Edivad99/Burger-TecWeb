@@ -17,6 +17,7 @@ class DBAccess {
                                            DBAccess::PASSWORD,
                                            DBAccess::DATABASE_NAME);
 
+        $this->connection->query("SET lc_time_names = 'it_IT'");
         //Forse bisogna sollevare un'eccezione?
         if(!$this->connection) {
             return false;
@@ -87,6 +88,26 @@ class DBAccess {
             );
 
             array_push($result, $panino);
+        }
+
+        return $result;
+    }
+
+    public function getDayOfWeek() {
+
+        $sql = "SELECT DAYNAME(Data_Evento) Giorno
+                FROM eventi";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $giorno = array(
+                "Giorno" => $row["Giorno"],
+            );
+
+            array_push($result, $giorno);
         }
 
         return $result;
