@@ -67,8 +67,10 @@
                 <fieldset class="formEvento">
                     <legend id="legend">Rimuovi un evento:</legend>
                     <label for="title">Titolo</label>
-                    <input type="text" name="titolo" id="title" required/>
-                    <label for="data_place">Data</label>
+                    <select name="titolo" id="title" required>
+                        <opzioni/>
+                    </select>
+                    <label for="data">Data</label>
                     <input type="date" name="data" id="data" required/>
                     <span>
                         <input type="hidden" name="azione" value="delete">

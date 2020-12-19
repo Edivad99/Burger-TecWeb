@@ -118,7 +118,7 @@ class DBAccess {
     }
 
     public function getEventi() {
-        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev , Luogo_Evento, Descrizione
+        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev, Luogo_Evento, Descrizione
                 FROM eventi
                 WHERE Data_Evento > CURRENT_DATE
                 ORDER BY Data_Evento";
@@ -136,6 +136,25 @@ class DBAccess {
             );
 
             array_push($result, $evento);
+        }
+
+        return $result;
+    }
+
+    public function getOpzioni() {
+        $sql = "SELECT Nome
+                FROM eventi
+                ORDER BY Data_Evento";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $opzione = array(
+                "Nome" => $row["Nome"]
+            );
+
+            array_push($result, $opzione);
         }
 
         return $result;
@@ -193,7 +212,7 @@ class DBAccess {
         $checkDescription = mysqli_real_escape_string($this->connection, $description);
         $sql = "SELECT *
                 FROM eventi
-                WHERE Nome = '$checkTitle' AND `Data_Evento` = '$data'";
+                WHERE Nome = '$checkTitle' AND `Data_Evento` = '$checkDate'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -212,14 +231,14 @@ class DBAccess {
         $checkDate = mysqli_real_escape_string($this->connection, $data);
         $sql = "SELECT *
                 FROM eventi
-                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+                WHERE Nome = '$checkTitle' AND `Data_Evento` = '$checkDate'";
 
         $queryResult = mysqli_query($this->connection, $sql);
-
+        
         if(mysqli_num_rows($queryResult) == 1) {
             $sql = "DELETE
                     FROM eventi
-                    WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+                    WHERE Nome = '$checkTitle' AND `Data_Evento` = '$checkDate'";
 
             return (mysqli_query($this->connection, $sql) === true);
         }

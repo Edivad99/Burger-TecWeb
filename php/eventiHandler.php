@@ -33,7 +33,8 @@ if($_POST["azione"] == "add") {
     header("Location: ../gestioneEventi.php?aggiungi=1");
 } else {
     $title = $_POST["titolo"];
-    $data = $_POST["data"];
+    $data = $_POST["data"]; 
+    var_dump($title);
     $result = $dbAccess->deleteEvent($title, $data);
     if(!$result) {
         header("Location: ../gestioneEventi.php?elimina=2");

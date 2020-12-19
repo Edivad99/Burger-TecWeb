@@ -1,7 +1,28 @@
 <?php
 
 require_once "php/util.php";
+require_once "php/connectiondb.php";
 use Util\Util;
+use DB\DBAccess;
+
+$dbAccess = new DBAccess();
+$connessioneRiuscita = $dbAccess->openDBConnection();
+if(!$connessioneRiuscita) {
+    header("Location: error_500.php");
+    die;
+}
+
+$opzioni = $dbAccess->getOpzioni();
+$dbAccess->closeDBConnection();
+
+$listaOpzioni="";
+$patternOpzioni = file_get_contents("html/components/opzioni.html");
+    foreach($opzioni as $opzione) {
+        $content = array(
+            "{{ Nome }}" => $opzione["Nome"]
+        );
+        $listaOpzioni .= Util::replacerFromHTML($patternOpzioni, $content);
+    }
 
 session_start();
 $msgDiErrore = "";
@@ -31,7 +52,8 @@ if(isset($_GET["elimina"]) && $_GET["elimina"] == 2) {
 
 $content = array(
     "{{ username }}" => $_SESSION["username"],
-    "<msgErrore/>" => $msgDiErrore
+    "<msgErrore/>" => $msgDiErrore,
+    "<opzioni/>" => $listaOpzioni
 
 );
 

@@ -478,6 +478,10 @@ input[type="submit"] {
     padding: 1em 2em 2em 2em;
 }
 
+select {
+    width: 191.962px;
+}
+
 /* CONTENUTO > 404 e 500 */
 
 #nonTrovato {
