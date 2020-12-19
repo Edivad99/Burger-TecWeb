@@ -26,7 +26,8 @@ class DBAccess {
     }
 
     public function closeDBConnection() {
-        mysqli_close($this->connection);
+        if($this->connection)
+            mysqli_close($this->connection);
     }
 
     public function getPaninoById($id) {
