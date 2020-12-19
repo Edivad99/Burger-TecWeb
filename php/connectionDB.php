@@ -118,8 +118,9 @@ class DBAccess {
     }
 
     public function getEventi() {
-        $sql = "SELECT Nome, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_Evento , Luogo_Evento, Descrizione
-                FROM eventi";
+        $sql = "SELECT Nome, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev , Luogo_Evento, Descrizione
+                FROM eventi
+                ORDER BY Data_Evento";
         $queryResult = mysqli_query($this->connection, $sql);
 
         $result = array();
@@ -127,7 +128,7 @@ class DBAccess {
         while($row = mysqli_fetch_assoc($queryResult)) {
             $evento = array(
                 "Nome" => $row["Nome"],
-                "Data_Evento" => $row["Data_Evento"],
+                "Data_ev" => $row["Data_ev"],
                 "Luogo_Evento" => $row["Luogo_Evento"],
                 "Descrizione" => $row["Descrizione"]
             );

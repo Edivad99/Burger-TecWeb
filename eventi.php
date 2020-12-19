@@ -24,7 +24,7 @@ $i = 0;
         $content = array(
             "{{ titolo }}" => $evento["Nome"],
             "{{ giorno }}" => $giorno["Giorno"],
-            "{{ dataEvento }}" => $evento["Data_Evento"],
+            "{{ dataEvento }}" => $evento["Data_ev"],
             "{{ luogoEvento }}" => $evento["Luogo_Evento"],
             "{{ contenuto }}" => $evento["Descrizione"]
         );
