@@ -188,6 +188,9 @@ class DBAccess {
 
     public function createNewEvent($new_title, $data, $place, $description) {
         $checkTitle = mysqli_real_escape_string($this->connection, $new_title);
+        $checkDate = mysqli_real_escape_string($this->connection, $data);
+        $checkPlace = mysqli_real_escape_string($this->connection, $place);
+        $checkDescription = mysqli_real_escape_string($this->connection, $description);
         $sql = "SELECT *
                 FROM eventi
                 WHERE Nome = '$checkTitle' AND `Data_Evento` = '$data'";
@@ -196,7 +199,7 @@ class DBAccess {
 
         if(mysqli_num_rows($queryResult) == 0) {
             $sql = "INSERT INTO `eventi`(`Nome`, `Data_Evento`, `Luogo_Evento`, `Descrizione`)
-                    VALUES ('$checkTitle', '$data', '$place', '$description')";
+                    VALUES ('$checkTitle', '$checkDate', '$checkPlace', '$checkDescription')";
 
             return (mysqli_query($this->connection, $sql) === true);
         }
@@ -206,16 +209,17 @@ class DBAccess {
 
     public function deleteEvent($title, $data) {
         $checkTitle = mysqli_real_escape_string($this->connection, $title);
+        $checkDate = mysqli_real_escape_string($this->connection, $data);
         $sql = "SELECT *
                 FROM eventi
-                WHERE Nome = '$checkTitle' AND `Data_Evento` = '$data'";
+                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
-        if(mysqli_num_rows($queryResult) != 0) {
+        if(mysqli_num_rows($queryResult) == 1) {
             $sql = "DELETE
                     FROM eventi
-                    WHERE Nome = '$checkTitle' AND `Data_Evento` = '$data'";
+                    WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
 
             return (mysqli_query($this->connection, $sql) === true);
         }
