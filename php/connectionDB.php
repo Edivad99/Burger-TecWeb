@@ -190,7 +190,7 @@ class DBAccess {
         $checkTitle = mysqli_real_escape_string($this->connection, $new_title);
         $sql = "SELECT *
                 FROM eventi
-                WHERE Nome = '$checkTitle'";
+                WHERE Nome = '$checkTitle' AND `Data_Evento` = '$data'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
