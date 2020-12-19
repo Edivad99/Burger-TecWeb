@@ -190,7 +190,7 @@ body > header h1 {
     padding-bottom: 1.6em;
 }
 
-#new_title, #data_place, #description, #title {
+#new_title, #new_data, #place, #description, #title, #data {
     width: fit-content;
     margin: auto;
 }

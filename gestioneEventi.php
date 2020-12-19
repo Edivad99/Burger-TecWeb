@@ -1,14 +1,12 @@
 <?php
 
 require_once "php/util.php";
-require_once "php/connectiondb.php";
 use Util\Util;
-use DB\DBAccess;
 
 session_start();
 $msgDiErrore = "";
 if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
-    header("Location: index.php");
+    header("Location: login.php");
 }
 
 if(!$_SESSION["isAdmin"]) {

@@ -17,11 +17,11 @@ class DBAccess {
                                            DBAccess::PASSWORD,
                                            DBAccess::DATABASE_NAME);
 
-        $this->connection->query("SET lc_time_names = 'it_IT'");
         //Forse bisogna sollevare un'eccezione?
         if(!$this->connection) {
             return false;
         } else {
+            $this->connection->query("SET lc_time_names = 'it_IT'");
             return true;
         }
     }
