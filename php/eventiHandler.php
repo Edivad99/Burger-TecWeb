@@ -3,8 +3,6 @@
 require_once "connectiondb.php";
 use DB\DBAccess;
 
-/*$title = $_POST["titolo"];*/
-
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
 if(!$connessioneRiuscita){
@@ -33,9 +31,7 @@ if($_POST["azione"] == "add") {
     }
 
     header("Location: ../gestioneEventi.php?aggiungi=1");
-}
-
-else {
+} else {
     $title = $_POST["titolo"];
     $data = $_POST["data"];
     $result = $dbAccess->deleteEvent($title, $data);
