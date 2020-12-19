@@ -465,17 +465,17 @@ input[type="submit"] {
     text-align: center;
 }
 
+#legend {
+    padding-top: 0.5em;
+    border-bottom: 4px solid var(--principale);
+    font-weight: bold;
+}
+
 .formEvento {
     display: flex;
     flex-direction: column;
-}
-
-.formEvento:first-child {
-    padding-right: 5em;
-}
-
-.formEvento:last-child {
-    justify-content: center;
+    border: none;
+    padding: 1em 2em 2em 2em;
 }
 
 /* CONTENUTO > 404 e 500 */

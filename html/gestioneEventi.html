@@ -45,30 +45,36 @@
     <div id="contenutoGenerale">
         <msgErrore/>
         <div id="form">
-            <form action="php/eventiHandler.php" method="post" class="formEvento">
-                <label for="new_title">Titolo</label>
-                <input type="text" name="nuovo_titolo" id="new_title" required/>
-                <label for="data">Data</label>
-                <input type="date" name="data" id="new_data" required/>
-                <label for="place">Luogo</label>
-                <input type="text" name="luogo" id="place" required/>
-                <label for="description">Descrizione</label>
-                <input type="textarea" name="descrizione" id="description" required/>
-                <span>
-                    <input type="hidden" name="azione" value="add">
-                    <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>
-                </span>
+            <form action="php/eventiHandler.php" method="post">
+                <fieldset class="formEvento">
+                    <legend id="legend">Aggiungi un evento:</legend>
+                    <label for="new_title">Titolo</label>
+                    <input type="text" name="nuovo_titolo" id="new_title" required/>
+                    <label for="data">Data</label>
+                    <input type="date" name="data" id="new_data" required/>
+                    <label for="place">Luogo</label>
+                    <input type="text" name="luogo" id="place" required/>
+                    <label for="description">Descrizione</label>
+                    <input type="textarea" name="descrizione" id="description" required/>
+                    <span>
+                        <input type="hidden" name="azione" value="add">
+                        <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>
+                    </span>
+                </fieldset>
             </form>
 
-            <form action="php/eventiHandler.php" method="post" class="formEvento">
-                <label for="title">Titolo</label>
-                <input type="text" name="titolo" id="title" required/>
-                <label for="data_place">Data</label>
-                <input type="date" name="data" id="data" required/>
-                <span>
-                    <input type="hidden" name="azione" value="delete">
-                    <input type="submit" name="elimina" value="Elimina" id="elimina"/>
-                </span>
+            <form action="php/eventiHandler.php" method="post">
+                <fieldset class="formEvento">
+                    <legend id="legend">Rimuovi un evento:</legend>
+                    <label for="title">Titolo</label>
+                    <input type="text" name="titolo" id="title" required/>
+                    <label for="data_place">Data</label>
+                    <input type="date" name="data" id="data" required/>
+                    <span>
+                        <input type="hidden" name="azione" value="delete">
+                        <input type="submit" name="elimina" value="Elimina" id="elimina"/>
+                    </span>
+                </fieldset>
             </form>
         </div>
     </div>

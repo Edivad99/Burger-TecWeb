@@ -195,6 +195,11 @@ body > header h1 {
     margin: auto;
 }
 
+#new_data, #data {
+    width: 157px;
+    height: 20px;
+}
+
 /* 
 =================================
         FOOTER 
