@@ -312,6 +312,10 @@ abbr {
     font-size: 1.0em;
 }
 
+.eventi h3::first-letter {
+    text-transform: uppercase;
+}
+
 .eventi p {
     font-size: 0.9em;
     padding-left: 1em;
