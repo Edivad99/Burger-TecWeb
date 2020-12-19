@@ -120,6 +120,7 @@ class DBAccess {
     public function getEventi() {
         $sql = "SELECT Nome, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev , Luogo_Evento, Descrizione
                 FROM eventi
+                WHERE Data_Evento > CURRENT_DATE
                 ORDER BY Data_Evento";
         $queryResult = mysqli_query($this->connection, $sql);
 
