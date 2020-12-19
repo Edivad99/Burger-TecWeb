@@ -118,7 +118,7 @@ class DBAccess {
     }
 
     public function getEventi() {
-        $sql = "SELECT Nome, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev , Luogo_Evento, Descrizione
+        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev , Luogo_Evento, Descrizione
                 FROM eventi
                 WHERE Data_Evento > CURRENT_DATE
                 ORDER BY Data_Evento";
@@ -129,32 +129,13 @@ class DBAccess {
         while($row = mysqli_fetch_assoc($queryResult)) {
             $evento = array(
                 "Nome" => $row["Nome"],
+                "Giorno" => $row["Giorno"],
                 "Data_ev" => $row["Data_ev"],
                 "Luogo_Evento" => $row["Luogo_Evento"],
                 "Descrizione" => $row["Descrizione"]
             );
 
             array_push($result, $evento);
-        }
-
-        return $result;
-    }
-
-    public function getDayOfWeek() {
-
-        $sql = "SELECT DAYNAME(Data_Evento) Giorno
-                FROM eventi";
-
-        $queryResult = mysqli_query($this->connection, $sql);
-
-        $result = array();
-
-        while($row = mysqli_fetch_assoc($queryResult)) {
-            $giorno = array(
-                "Giorno" => $row["Giorno"],
-            );
-
-            array_push($result, $giorno);
         }
 
         return $result;

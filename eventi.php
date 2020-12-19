@@ -13,22 +13,18 @@ if(!$connessioneRiuscita) {
 }
 
 $eventi = $dbAccess->getEventi();
-$giorni = $dbAccess->getDayOfWeek();
 $dbAccess->closeDBConnection();
 
 $listaEventi = "";
 $patternEvento = file_get_contents("html/components/evento.html");
-$i = 0;
     foreach($eventi as $evento) {
-        $giorno = $giorni[$i];
         $content = array(
             "{{ titolo }}" => $evento["Nome"],
-            "{{ giorno }}" => $giorno["Giorno"],
+            "{{ giorno }}" => $evento["Giorno"],
             "{{ dataEvento }}" => $evento["Data_ev"],
             "{{ luogoEvento }}" => $evento["Luogo_Evento"],
             "{{ contenuto }}" => $evento["Descrizione"]
         );
-        $i = $i + 1;
         $listaEventi .= Util::replacerFromHTML($patternEvento, $content);
     }
 
