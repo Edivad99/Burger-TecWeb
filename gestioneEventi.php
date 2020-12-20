@@ -16,12 +16,9 @@ $opzioni = $dbAccess->getOpzioni();
 $dbAccess->closeDBConnection();
 
 $listaOpzioni="";
-$patternOpzioni = file_get_contents("html/components/opzioni.html");
     foreach($opzioni as $opzione) {
-        $content = array(
-            "{{ Nome }}" => $opzione["Nome"]
-        );
-        $listaOpzioni .= Util::replacerFromHTML($patternOpzioni, $content);
+        $nome = $opzione["Nome"];
+        $listaOpzioni .= "<option>$nome</option>";
     }
 
 session_start();
