@@ -19,7 +19,7 @@ if(!$_SESSION["isAdmin"]) {
     header("Location: areariservata.php");
 }
 
-if($_POST["azione"] == "add") {
+if($_POST["aggiungi"]) {
     $new_title = $_POST["nuovo_titolo"];
     $data = $_POST["data"];
     $place = $_POST["luogo"];
