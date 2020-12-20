@@ -1,4 +1,4 @@
-const maxCaratteri = 500;
+const maxCaratteri = 400;
 
 function contaCaratteri() {
     let commento = document.getElementById("commento");
