@@ -13,7 +13,7 @@ function contaCaratteri() {
 
 function validaCommento() {
     let commento = document.getElementById("commento");
-    let lunghezza = commento.value.length;
+    let lunghezza = commento.value.trim().length;
 
     return lunghezza >= 2 && lunghezza <= maxCaratteri;
-}
+} 
