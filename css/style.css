@@ -315,6 +315,7 @@ form#invioCommento #pubblicaBtn {
 .commentoText {
     clear: both;
     padding-bottom: 0.2em;
+    padding-left: 1em;
 }
 
 /* CONTENUTO > Eventi */

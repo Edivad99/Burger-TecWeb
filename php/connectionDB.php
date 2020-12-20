@@ -70,6 +70,17 @@ class DBAccess {
         return $result;
     }
 
+    public function addCommentToPanino($IDPanino, $IDUtente, $OraPubblicazione, $Contenuto)
+    {
+        $checKOra = mysqli_real_escape_string($this->connection, $OraPubblicazione);
+        $checKContenuto = mysqli_real_escape_string($this->connection, $Contenuto);
+
+        $sql = "INSERT INTO commenti (ID_Panino, ID_Utente, Ora_Pubblicazione, Contenuto) 
+                VALUES ($IDPanino, $IDUtente, '$checKOra', '$checKContenuto')";
+
+        return (mysqli_query($this->connection, $sql) === true);
+    }
+
     public function getPaniniByCategoria($categoria) {
         $checkCategoria = mysqli_real_escape_string($this->connection, $categoria);
 
@@ -183,7 +194,7 @@ class DBAccess {
 
         if(mysqli_num_rows($queryResult) == 0) {
             //Non esiste nessun utente con questo username
-            $sql = "INSERT INTO `utenti`(`Username`, `Password`, `Admin`) 
+            $sql = "INSERT INTO utenti (Username, Password, Admin) 
                     VALUES ('$checkUsername','$password', 0)";
 
             return (mysqli_query($this->connection, $sql) === true);
