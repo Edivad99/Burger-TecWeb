@@ -1,10 +1,11 @@
 <article class="commento">
     <header>
         <h4 class="commentoUser">{{ username }}, la tua opinione è importante!</h4>
+        <p class="commentoOra"><span id="caratteri">500</span> caratteri rimasti</p>
     </header>
     <form action="#" method="post" id="invioCommento">
         <input type="hidden" name="username" value="{{ username }}"/>
-        <textarea name="testo" id="commento" rows="10" placeholder="Scrivi qui, per recensire il {{ nomePanino }}"></textarea>
+        <textarea name="testo" id="commento" onkeyup="contaCaratteri()" rows="8" placeholder="Scrivi qui, per recensire il {{ nomePanino }}"></textarea>
         <input type="submit" value="Pubblica" id="pubblicaBtn"/>
     </form>
 </article>
