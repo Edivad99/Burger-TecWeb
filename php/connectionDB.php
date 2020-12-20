@@ -212,7 +212,7 @@ class DBAccess {
         $checkDescription = mysqli_real_escape_string($this->connection, $description);
         $sql = "SELECT *
                 FROM eventi
-                WHERE Nome = '$checkTitle' AND `Data_Evento` = '$checkDate'";
+                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -231,14 +231,14 @@ class DBAccess {
         $checkDate = mysqli_real_escape_string($this->connection, $data);
         $sql = "SELECT *
                 FROM eventi
-                WHERE Nome = '$checkTitle' AND `Data_Evento` = '$checkDate'";
+                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
 
         $queryResult = mysqli_query($this->connection, $sql);
         
         if(mysqli_num_rows($queryResult) == 1) {
             $sql = "DELETE
                     FROM eventi
-                    WHERE Nome = '$checkTitle' AND `Data_Evento` = '$checkDate'";
+                    WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
 
             return (mysqli_query($this->connection, $sql) === true);
         }
