@@ -79,6 +79,8 @@ if(isset($panino)) {
 
     $content = array(
         "<formCommentoPanino/>" => $commentoForm,
+        "<formVotoPanino/>" => $votoForm,
+        "{{ paninoID }}" => $id,
         "{{ username }}" => $username,
         "{{ nomePanino }}" => $nomePanino,
         "{{ immaginePanino }}" => $imgPanino,
@@ -86,7 +88,6 @@ if(isset($panino)) {
         "{{ categoriaID }}" => $categoria,
         "{{ descrizione }}" => $descrizione,
         "<mediaPanino/>" => $mediaText,
-        "<formVotoPanino/>" => str_replace("{{ paninoID }}", $id, $votoForm),
         "<listaIngredienti/>" => Util::getUlFromArray($ingredienti),
         "<commenti/>" => $listaCommenti
     );
