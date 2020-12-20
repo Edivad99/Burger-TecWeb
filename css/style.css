@@ -273,6 +273,17 @@ abbr {
 
 /* CONTENUTO > Panino > Commenti*/
 
+form#invioCommento #commento{
+    resize: none;
+    width: 98%;
+    display: block;
+    margin: 0.3em auto 0.3em auto;
+}
+
+form#invioCommento #pubblicaBtn {
+    margin: 0 0 0.3em 0.7em;
+}
+
 #commenti .commento p {
     margin-bottom: 0;
 }
@@ -282,9 +293,6 @@ abbr {
     border: 2px solid var(--divisore);
     border-top: none;
     border-radius: 1em;
-    /*width: 75%;
-    margin-left: auto;
-    margin-right: auto;*/
 }
 
 .commento > header{

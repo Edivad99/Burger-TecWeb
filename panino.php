@@ -43,11 +43,13 @@ if(count($commenti) > 0) {
 
 session_start();
 $votoForm = file_get_contents("html/components/formVotoPanino.html");
+$commentoForm = file_get_contents("html/components/formCommentoPanino.html");
 $username = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
-} else { //All'utente viene mostrato il link per loggarsi e votare
-    $votoForm = "<p>Per votare, effettua il <a href=\"login.php\" lang=\"eng\">login</a></p>"; 
+} else { //All'utente viene mostrato il link per loggarsi e votare/commentare
+    $votoForm = "<p>Per votare, effettua il <a href=\"login.php\" lang=\"eng\">login</a></p>";
+    $commentoForm = "<p>Per commentare, effettua il <a href=\"login.php\" lang=\"eng\">login</a></p>";//TODO: Da sistemare
 }
 
 //Processo i voti
@@ -76,6 +78,7 @@ if(isset($panino)) {
     $descrizione = $panino["Descrizione"];
 
     $content = array(
+        "<formCommentoPanino/>" => $commentoForm,
         "{{ username }}" => $username,
         "{{ nomePanino }}" => $nomePanino,
         "{{ immaginePanino }}" => $imgPanino,
