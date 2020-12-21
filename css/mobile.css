@@ -1,8 +1,8 @@
 @media only screen and (max-width: 694px) {
 
-/* 
+/*
 =================================
-        HEADER 
+        HEADER
 =================================
 */
 
@@ -21,9 +21,9 @@ body > header h1 {
     display: none;
 }
 
-/* 
+/*
 =================================
-        MENU 
+        MENU
 =================================
 */
 
@@ -104,7 +104,7 @@ body > header h1 {
 
 /*
 =================================
-        CONTENUTO 
+        CONTENUTO
 =================================
 */
 
@@ -154,6 +154,7 @@ body > header h1 {
 }
 
 /* CONTENUTO > Storia */
+
 .article, .importantarticle {
     width: auto;
     display: flex;
@@ -204,9 +205,9 @@ select, #new_data, #data {
     margin: auto;
 }
 
-/* 
+/*
 =================================
-        FOOTER 
+        FOOTER
 =================================
 */
 
@@ -218,9 +219,9 @@ footer {
 
 @media only screen and (max-width: 730px) {
 
-/* 
+/*
 =================================
-        MENU 
+        MENU
 =================================
 */
 

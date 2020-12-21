@@ -23,9 +23,9 @@ body {
     background-color: white;
 }
 
-/* 
+/*
 =================================
-        HEADER 
+        HEADER
 =================================
 */
 
@@ -55,9 +55,9 @@ body > header h1 {
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* 
+/*
 =================================
-        MENU 
+        MENU
 =================================
 */
 
@@ -99,9 +99,9 @@ body > header h1 {
     float: right;
 }
 
-/* 
+/*
 =================================
-        BREADCRUMB 
+        BREADCRUMB
 =================================
 */
 
@@ -119,9 +119,9 @@ body > header h1 {
     color: var(--principale);
 }
 
-/* 
+/*
 =================================
-        CONTENUTO 
+        CONTENUTO
 =================================
 */
 
@@ -168,12 +168,12 @@ abbr {
     font-size: 1.25em;
 }
 
-#categoria a, #categoriaAttiva, #leftSidebar h2{
+#categoria a, #categoriaAttiva, #leftSidebar h2 {
     text-decoration: none;
     color: var(--principale);
 }
 
-#categoria li a{
+#categoria li a {
     padding: 4px 16px;
 }
 
@@ -206,7 +206,7 @@ abbr {
     margin: auto;
 }
 
-#contenitorePanini .nomePanino{
+#contenitorePanini .nomePanino {
     text-decoration: none;
     color: var(--principale);
     font-size: 1.2em;
@@ -273,7 +273,7 @@ abbr {
 
 /* CONTENUTO > Panino > Commenti*/
 
-form#invioCommento #commento{
+form#invioCommento #commento {
     resize: none;
     width: 98%;
     display: block;
@@ -305,7 +305,7 @@ form#invioCommento #erroreForm {
     color: white;
 }
 
-.commento > header{
+.commento > header {
     color: white;
     background-color: var(--principale);
     display: flow-root; /* Devo mettere questo, altrimenti non cambia il colore */
@@ -410,11 +410,12 @@ form#invioCommento #erroreForm {
 }
 
 /* CONTENUTO > Contatti */
+
 #orari, #contatti {
     list-style: none;
 }
 
-#orari li{
+#orari li {
     padding: 0.2em;
 }
 
