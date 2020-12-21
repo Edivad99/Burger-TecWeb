@@ -15,11 +15,11 @@ if(!$connessioneRiuscita) {
 $opzioni = $dbAccess->getOpzioni();
 $dbAccess->closeDBConnection();
 
-$listaOpzioni="";
-    foreach($opzioni as $opzione) {
-        $nome = $opzione["Nome"];
-        $listaOpzioni .= "<option>$nome</option>";
-    }
+$listaOpzioni="<option value=\"\" disabled selected>Scegli evento</option>";
+foreach($opzioni as $opzione) {
+    $nome = $opzione["Nome"];
+    $listaOpzioni .= "<option>$nome</option>";
+}
 
 session_start();
 $msgDiErrore = "";

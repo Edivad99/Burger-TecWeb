@@ -19,7 +19,7 @@ if(!$_SESSION["isAdmin"]) {
     header("Location: areariservata.php");
 }
 
-if($_POST["aggiungi"] == "Aggiungi") {
+if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
     $new_title = $_POST["nuovo_titolo"];
     $data = $_POST["data"];
     $place = $_POST["luogo"];
@@ -31,10 +31,9 @@ if($_POST["aggiungi"] == "Aggiungi") {
     }
 
     header("Location: ../gestioneEventi.php?aggiungi=1");
-} else if($_POST["elimina"] == "Elimina") {
+} else if(isset($_POST["elimina"]) && $_POST["elimina"] == "Elimina") {
     $title = $_POST["titolo"];
-    $data = $_POST["data"]; 
-    var_dump($title);
+    $data = $_POST["data"];
     $result = $dbAccess->deleteEvent($title, $data);
     if(!$result) {
         header("Location: ../gestioneEventi.php?elimina=2");

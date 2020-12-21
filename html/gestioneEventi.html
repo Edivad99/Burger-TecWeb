@@ -64,11 +64,12 @@
                 <fieldset class="formEvento">
                     <legend id="legend">Rimuovi un evento:</legend>
                     <label for="title">Titolo</label>
-                    <select name="titolo" id="title" required>
+                    <select name="titolo" id="title" required onchange="titleChangedEvent()">
                         <opzioni/>
                     </select>
                     <label for="data">Data</label>
-                    <input type="date" name="data" id="data" required/>
+                    <select name="data" id="date" required disabled>
+                    </select>
                     <input type="submit" name="elimina" value="Elimina" id="elimina"/>
                 </fieldset>
             </form>
@@ -82,4 +83,6 @@
             <li><abbr title="Partita IVA">P.IVA</abbr> 17935620231</li>
         </ul>
     </footer>
+
+    <script src="js/controlli.js"></script>
 </html>

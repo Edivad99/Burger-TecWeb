@@ -142,9 +142,9 @@ class DBAccess {
     }
 
     public function getOpzioni() {
-        $sql = "SELECT Nome
+        $sql = "SELECT DISTINCT(Nome)
                 FROM eventi
-                ORDER BY Data_Evento";
+                ORDER BY Nome";
         $queryResult = mysqli_query($this->connection, $sql);
 
         $result = array();
@@ -157,6 +157,25 @@ class DBAccess {
             array_push($result, $opzione);
         }
 
+        return $result;
+    }
+
+    public function getDateFromEvento($nomeEvento) {
+        $checkNomeEvento = mysqli_real_escape_string($this->connection, $nomeEvento);
+        $sql = "SELECT Data_Evento
+                FROM eventi
+                WHERE Nome = '$checkNomeEvento'";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $opzione = array(
+                "Data" => $row["Data_Evento"]
+            );
+
+            array_push($result, $opzione);
+        }
         return $result;
     }
 
