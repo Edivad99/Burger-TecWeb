@@ -21,6 +21,7 @@ class DBAccess {
         if(!$this->connection) {
             return false;
         } else {
+            $this->connection->query("SET lc_time_names = 'it_IT'");
             return true;
         }
     }
@@ -146,6 +147,68 @@ class DBAccess {
         return $result;
     }
 
+    public function getEventi() {
+        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev, Luogo_Evento, Descrizione
+                FROM eventi
+                WHERE Data_Evento > CURRENT_DATE
+                ORDER BY Data_Evento";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $evento = array(
+                "Nome" => $row["Nome"],
+                "Giorno" => $row["Giorno"],
+                "Data_ev" => $row["Data_ev"],
+                "Luogo_Evento" => $row["Luogo_Evento"],
+                "Descrizione" => $row["Descrizione"]
+            );
+
+            array_push($result, $evento);
+        }
+
+        return $result;
+    }
+
+    public function getOpzioni() {
+        $sql = "SELECT DISTINCT(Nome)
+                FROM eventi
+                ORDER BY Nome";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $opzione = array(
+                "Nome" => $row["Nome"]
+            );
+
+            array_push($result, $opzione);
+        }
+
+        return $result;
+    }
+
+    public function getDateFromEvento($nomeEvento) {
+        $checkNomeEvento = mysqli_real_escape_string($this->connection, $nomeEvento);
+        $sql = "SELECT Data_Evento
+                FROM eventi
+                WHERE Nome = '$checkNomeEvento'";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $opzione = array(
+                "Data" => $row["Data_Evento"]
+            );
+
+            array_push($result, $opzione);
+        }
+        return $result;
+    }
+
     public function checkUserAndPassword($username, $password) {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
@@ -190,6 +253,48 @@ class DBAccess {
         }
         return false;
     }
+
+    public function createNewEvent($new_title, $data, $place, $description) {
+        $checkTitle = mysqli_real_escape_string($this->connection, $new_title);
+        $checkDate = mysqli_real_escape_string($this->connection, $data);
+        $checkPlace = mysqli_real_escape_string($this->connection, $place);
+        $checkDescription = mysqli_real_escape_string($this->connection, $description);
+        $sql = "SELECT *
+                FROM eventi
+                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 0) {
+            $sql = "INSERT INTO `eventi`(`Nome`, `Data_Evento`, `Luogo_Evento`, `Descrizione`)
+                    VALUES ('$checkTitle', '$checkDate', '$checkPlace', '$checkDescription')";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+
+        return false;
+    }
+
+    public function deleteEvent($title, $data) {
+        $checkTitle = mysqli_real_escape_string($this->connection, $title);
+        $checkDate = mysqli_real_escape_string($this->connection, $data);
+        $sql = "SELECT *
+                FROM eventi
+                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+        
+        if(mysqli_num_rows($queryResult) == 1) {
+            $sql = "DELETE
+                    FROM eventi
+                    WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+
+        return false;
+    }
+
 }
 
 ?>

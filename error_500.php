@@ -1,9 +1,7 @@
 <?php
 
 require_once "php/util.php";
-require_once "php/connectiondb.php";
 use Util\Util;
-use DB\DBAccess;
 
 session_start();
 $username = "LOGIN";

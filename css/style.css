@@ -330,6 +330,10 @@ abbr {
     font-size: 1.0em;
 }
 
+.eventi h3::first-letter {
+    text-transform: uppercase;
+}
+
 .eventi p {
     font-size: 0.9em;
     padding-left: 1em;
@@ -337,6 +341,7 @@ abbr {
 }
 
 /* CONTENUTO > Storia */
+
 .article {
     width: auto;
     display: flex;
@@ -453,11 +458,46 @@ input[type="submit"] {
     text-align: center;
 }
 
-#logout {
+#gestione {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
     text-decoration: none;
     color: white;
     background-color: var(--principale);
     padding: 0.5em;
+    margin-right: 1em;
+}
+
+#gestione a:last-child {
+    margin-right: 0em;
+}
+
+/* CONTENUTO > Gestione Eventi */
+
+#form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#legend {
+    padding-top: 0.5em;
+    border-bottom: 4px solid var(--principale);
+    font-weight: bold;
+}
+
+.formEvento {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 1em 2em 2em 2em;
+}
+
+select {
+    width: 191.962px;
 }
 
 /* CONTENUTO > 404 e 500 */
