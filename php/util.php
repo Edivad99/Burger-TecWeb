@@ -23,6 +23,16 @@ class Util {
 
         return $HTMLPage;
     }
+
+    public static function pulisciInput($value) {
+        // elimina gli spazi
+        $value = trim($value);
+        // converte i caratteri speciali in entità html (ex. &lt;)
+        $value = htmlentities($value);
+        // rimuove tag html, non gli vogliamo
+        $value = strip_tags($value);
+        return $value;
+    }
 }
 
 ?>

@@ -43,11 +43,13 @@ if(count($commenti) > 0) {
 
 session_start();
 $votoForm = file_get_contents("html/components/formVotoPanino.html");
+$commentoForm = file_get_contents("html/components/formCommentoPanino.html");
 $username = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
-} else { //All'utente viene mostrato il link per loggarsi e votare
-    $votoForm = "<p>Per votare, effettua il <a href=\"login.php\" lang=\"eng\">login</a></p>"; 
+} else { //All'utente viene mostrato il link per loggarsi e votare/commentare
+    $votoForm = "<p>Per votare, effettua il <a href=\"login.php\" lang=\"eng\">login</a></p>";
+    $commentoForm = file_get_contents("html/components/formCommentoPaninoDisabled.html");
 }
 
 //Processo i voti
@@ -65,6 +67,11 @@ if(count($voti) > 0) {
     $mediaText = "<p>Il nostro panino è valutato <span class=\"number\">$media</span>/5</p>";
 }
 
+$errore = "";
+if(isset($_GET) && isset($_GET["errore"]) && $_GET["errore"] = 1) {
+    $errore = "Controlla la lunghezza del testo!";
+}
+
 
 if(isset($panino)) {
     //var_dump($panino);//Funzione utile per scoprire cosa otteniamo dal DB
@@ -76,14 +83,17 @@ if(isset($panino)) {
     $descrizione = $panino["Descrizione"];
 
     $content = array(
+        "<formCommentoPanino/>" => $commentoForm,
+        "<formVotoPanino/>" => $votoForm,
+        "{{ paninoID }}" => $id,
         "{{ username }}" => $username,
         "{{ nomePanino }}" => $nomePanino,
         "{{ immaginePanino }}" => $imgPanino,
         "{{ categoria }}" => $categoriaText,
         "{{ categoriaID }}" => $categoria,
         "{{ descrizione }}" => $descrizione,
+        "{{ erroreCommento }}" => $errore,
         "<mediaPanino/>" => $mediaText,
-        "<formVotoPanino/>" => str_replace("{{ paninoID }}", $id, $votoForm),
         "<listaIngredienti/>" => Util::getUlFromArray($ingredienti),
         "<commenti/>" => $listaCommenti
     );

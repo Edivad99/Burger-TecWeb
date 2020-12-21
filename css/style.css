@@ -2,7 +2,7 @@
     --sfondo: #faf2dd;
     --principale: #bd091b;
     --divisore: #ddd;
-    --alternative: rgb(228, 0, 43);
+    --alternative: #e4002b;
 }
 
 * {
@@ -273,6 +273,23 @@ abbr {
 
 /* CONTENUTO > Panino > Commenti*/
 
+form#invioCommento #commento{
+    resize: none;
+    width: 98%;
+    display: block;
+    margin: 0.3em auto 0.3em auto;
+}
+
+form#invioCommento #pubblicaBtn {
+    margin: 0 0 0.3em 0.7em;
+}
+
+form#invioCommento #erroreForm {
+    display: inline-block;
+    color: var(--principale);
+    font-weight: bold;
+}
+
 #commenti .commento p {
     margin-bottom: 0;
 }
@@ -282,9 +299,10 @@ abbr {
     border: 2px solid var(--divisore);
     border-top: none;
     border-radius: 1em;
-    /*width: 75%;
-    margin-left: auto;
-    margin-right: auto;*/
+}
+
+.commento a {
+    color: white;
 }
 
 .commento > header{
@@ -307,6 +325,7 @@ abbr {
 .commentoText {
     clear: both;
     padding-bottom: 0.2em;
+    padding-left: 1em;
 }
 
 /* CONTENUTO > Eventi */

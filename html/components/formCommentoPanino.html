@@ -1,0 +1,13 @@
+<article class="commento">
+    <header>
+        <h4 class="commentoUser">{{ username }}, la tua opinione è importante!</h4>
+        <p class="commentoOra"><span id="caratteri">400</span> caratteri rimasti</p>
+    </header>
+    <form action="php/aggiungiCommento.php" method="post" id="invioCommento" onsubmit="return validaCommento()">
+        <input type="hidden" name="username" value="{{ username }}"/>
+        <input type="hidden" name="paninoID" value="{{ paninoID }}"/>
+        <textarea name="testo" id="commento" onkeyup="contaCaratteri()" rows="8" placeholder="Scrivi qui, per recensire il {{ nomePanino }}"></textarea>
+        <input type="submit" value="Pubblica" id="pubblicaBtn"/>
+        <p id="erroreForm">{{ erroreCommento }}</p>
+    </form>
+</article>
