@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventi | Burgheria Padovana</title>
+    <title>Gestione Commenti | Burgheria Padovana</title>
 
-    <meta name="title" content="Eventi | Burgheria Padovana" />
-    <meta name="description" content="Eventi organizzati da Burger" />
-    <meta name="keywords" content="" />
+    <meta name="title" content="Gestione Commenti | Burgheria Padovana" />
+    <meta name="description" content="Qui puoi visualizzare e gestire i commenti che hai lasciato ai nostri panini" />
+    <meta name="keywords" content="" />  <!--Aggiungere key-->
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
 
@@ -31,20 +31,18 @@
         <ul id="menu">
             <li><a href="index.php" lang="en">HOME</a></li>
             <li><a href="menu.php">I NOSTRI BURGER</a></li>
-            <li id="currentLink">EVENTI</li>
+            <li><a href="eventi.php">EVENTI</a></li>
             <li><a href="storia.php">STORIA</a></li>
             <li><a href="contatti.php">CONTATTI</a></li>
-            <li><a href="login.php">{{ username }}</a></li>
+            <li><a href="areariservata.php">{{ username }}</a></li>
         </ul>
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.php" lang="en">Home</a> > Eventi</p>
+        <p>Ti trovi in: <a href="index.php" lang="en">Home</a><a href="areariservata.php"> > Area riservata</a> > Gestione Commenti</p>
     </nav>
 
     <div id="contenutoGenerale">
-        <p class="aiutiNascosti"><a href="#footer">Salta il contenuto</a></p>
-        <eventi/>
     </div>
 
     <footer id="footer">
@@ -54,5 +52,4 @@
             <li><abbr title="Partita IVA">P.IVA</abbr> 17935620231</li>
         </ul>
     </footer>
-</body>
 </html>

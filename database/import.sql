@@ -1,4 +1,5 @@
 CREATE DATABASE IF NOT EXISTS Burgheria;
+DROP TABLE IF EXISTS Eventi;
 DROP TABLE IF EXISTS Commenti;
 DROP TABLE IF EXISTS Voti;
 DROP TABLE IF EXISTS Utenti;
@@ -6,6 +7,16 @@ DROP TABLE IF EXISTS Prodotti;
 DROP TABLE IF EXISTS Categoria;
 
 USE Burgheria;
+
+CREATE TABLE Eventi
+(
+    `ID` INT NOT NULL AUTO_INCREMENT,
+    `Nome` VARCHAR(100) NOT NULL,
+    `Data_Evento` DATE NOT NULL,
+    `Luogo_Evento` VARCHAR(150),
+    `Descrizione` VARCHAR(800),
+    PRIMARY KEY(`ID`)
+ ) ENGINE = InnoDB;
 
 CREATE TABLE Categoria
 (
@@ -57,6 +68,14 @@ CREATE TABLE Commenti
     FOREIGN KEY (`ID_Utente`) REFERENCES `Utenti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
+INSERT INTO `Eventi` (`ID`, `Nome`, `Data_Evento`, `Luogo_Evento`, `Descrizione`) VALUES
+(1, 'QUARANTINO', '2020/11/18, 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Anche durante il periodo di Lockdown gli eventi della Burgheria Padovana non mancano. Ordina a casa il nuovo Quarantino, il panino pensato per non farti mancare niente, neanche in quarantena! Ma l'evento non finisce qua, in tutte le ordinazioni che riceveremo questa sera avranno un Qr-code per potervi collegare in diretta al nostro video-evento con musica e non solo, così da poter fare festa tutti insieme al sicuro nelle nostre case. Partecipa anche tu!"),
+(2, 'GIORNATA MONDIALE DEL PANINO', '2020/11/21, 12:00-16:00 e 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Apertura speciale per festeggiare la giornata mondiale del Panino. Per l'occasione avremo panini con soli ingredienti tradizionali italiani e con pane a scelta tra mantovana, cioppa oppure bastone, tutte forme di pane tipiche del territorio. Non perdere l'occasione di poter gustare un buon panino in questa giornata speciale!"),
+(3, 'GIORNATA MONDIALE DEL PANINO', '2019/11/21, 12:00-16:00 e 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Non perdere l'occasione di poter gustare un buon panino in questa giornata speciale!"),
+(4, 'DUE CUORI E UN PANINO', '2021/02/14, 12:00-16:00 e 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Approfitta dell'apertura speciale. In occasione della festa degli innamorati potrai gustare, insieme alla tua dolce metà, il nuovo panino: San Valentino. Questo panino è stato pensato apposta per essere mangiato da due persone. Chiama per ordinare da casa oppure per prenotare un tavolo. Ti(Vi) aspettiamo!"),
+(5, 'MEX NIGHT', '2021/04/08, 19:00-02:00', 'Via Luigi Luzzati, 10 Padova, PD', "Serata messicana! Per l'occasione ci saranno non solo panini, ma anche altri piatti tipici messicani come tacos e burritos. Vivi anche tu questo tuffo nella cultura messicana in compagnia. Per l'occasione avremo anche una piccola band che ci intratterrà per tutta la serata con musica tipica. Non mancare!"),
+(6, "GIORNATA MONDIALE DELL'HAMBURGER", '2021/05/28,', 'Via Luigi Luzzati, 10 Padova, PD', "Festeggia con Burgheria Padovana la giornata mondiale dell'Hamburger. Per l'occasione si potra ordinare il nuovo <abbr title=""United States of America"" lang=""en"">USA</abbr>, il nuovo panino pensato apposta per portare l'America anche qua a Padova! Gustati la buonissima carne di black angus con il cheddar tra due fette di pane al latte croccante con i semi di sesamo. Ti aspettiamo!");
+
 INSERT INTO `Categoria` (`ID`, `Categoria`) VALUES
 (1, 'Pollo'),
 (2, 'Manzo'),
@@ -86,11 +105,11 @@ INSERT INTO `Prodotti` (`ID`, `Nome`, `Img`, `Ingredienti`, `Categoria`, `Descri
 
 INSERT INTO `Utenti` (`ID`, `Username`, `Password`, `Admin`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
-(2, 'Luca', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
-(3, 'Paolo', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(2, 'Davide', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(3, 'Matteo', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
 (4, 'Laura', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
-(5, 'Valeria','ee11cbb19052e40b07aac0ca060c23ee', 0),
-(6, 'Marco', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(5, 'Cristiano','ee11cbb19052e40b07aac0ca060c23ee', 0),
+(6, 'Alessandro', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
 (7, 'Anna', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
 (8, 'Cesare', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
 (9, 'Picasso', 'ee11cbb19052e40b07aac0ca060c23ee', 0),

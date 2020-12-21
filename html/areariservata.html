@@ -44,7 +44,11 @@
 
     <div id="contenutoGenerale">
         <p id="benvenuto">Benvenuto nella tua area riservata {{ username }}</p>
-        <a id="logout" href="php/logoutHandler.php" lang="en">Logout</a>
+        <div id="gestione">
+            <a class="button" href="gestioneCommenti.php">Gestisci i Commenti</a>
+            <gestisciEventi/>
+            <a class="button" href="php/logoutHandler.php" lang="en">Logout</a>
+        </div>
     </div>
     <footer>
         <ul>
