@@ -67,6 +67,11 @@ if(count($voti) > 0) {
     $mediaText = "<p>Il nostro panino è valutato <span class=\"number\">$media</span>/5</p>";
 }
 
+$errore = "";
+if(isset($_GET) && isset($_GET["errore"]) && $_GET["errore"] = 1) {
+    $errore = "Controlla la lunghezza del testo!";
+}
+
 
 if(isset($panino)) {
     //var_dump($panino);//Funzione utile per scoprire cosa otteniamo dal DB
@@ -87,6 +92,7 @@ if(isset($panino)) {
         "{{ categoria }}" => $categoriaText,
         "{{ categoriaID }}" => $categoria,
         "{{ descrizione }}" => $descrizione,
+        "{{ erroreCommento }}" => $errore,
         "<mediaPanino/>" => $mediaText,
         "<listaIngredienti/>" => Util::getUlFromArray($ingredienti),
         "<commenti/>" => $listaCommenti

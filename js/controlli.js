@@ -15,7 +15,12 @@ function validaCommento() {
     let commento = document.getElementById("commento");
     let lunghezza = commento.value.trim().length;
 
-    return lunghezza >= 2 && lunghezza <= maxCaratteri;
+    const messaggio = "Controlla la lunghezza del testo!";
+
+    let result = lunghezza >= 2 && lunghezza <= maxCaratteri;
+    if(!result)
+        document.getElementById("erroreForm").innerText = messaggio;
+    return result;
 }
 
 function titleChangedEvent() {

@@ -8,5 +8,6 @@
         <input type="hidden" name="paninoID" value="{{ paninoID }}"/>
         <textarea name="testo" id="commento" onkeyup="contaCaratteri()" rows="8" placeholder="Scrivi qui, per recensire il {{ nomePanino }}"></textarea>
         <input type="submit" value="Pubblica" id="pubblicaBtn"/>
+        <p id="erroreForm">{{ erroreCommento }}</p>
     </form>
 </article>

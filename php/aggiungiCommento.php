@@ -20,10 +20,8 @@ $username = $_POST["username"];
 $testo = Util::pulisciInput($_POST["testo"]);
 $paninoID = $_POST["paninoID"];
 
-var_dump($testo);
-
 if($_SESSION["username"] != $username || strlen($testo) < 2) {
-    header("Location: ../panino.php?ID=$paninoID");
+    header("Location: ../panino.php?ID=$paninoID&errore=1");
     die;
 }
 $data = date("Y-m-d H:i:s");

@@ -2,7 +2,7 @@
     --sfondo: #faf2dd;
     --principale: #bd091b;
     --divisore: #ddd;
-    --alternative: rgb(228, 0, 43);
+    --alternative: #e4002b;
 }
 
 * {
@@ -282,6 +282,12 @@ form#invioCommento #commento{
 
 form#invioCommento #pubblicaBtn {
     margin: 0 0 0.3em 0.7em;
+}
+
+form#invioCommento #erroreForm {
+    display: inline-block;
+    color: var(--principale);
+    font-weight: bold;
 }
 
 #commenti .commento p {
