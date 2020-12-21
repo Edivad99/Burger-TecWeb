@@ -301,6 +301,10 @@ form#invioCommento #erroreForm {
     border-radius: 1em;
 }
 
+.commento a {
+    color: white;
+}
+
 .commento > header{
     color: white;
     background-color: var(--principale);
