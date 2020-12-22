@@ -27,11 +27,10 @@ function titleChangedEvent() {
     let selectEvento = document.getElementById("title");
     let selectOrari = document.getElementById("date");
     let index = selectEvento.selectedIndex;
-    
+
     let optionSelezionata = selectEvento[index];
 
     let testo = optionSelezionata.value;
-    //console.log(index);
 
     fetch('php/api/getDateFromEventi.php?nomeEvento=' + testo)
     .then(response => {
@@ -42,6 +41,7 @@ function titleChangedEvent() {
     })
     .then(data => {
         //console.log("RAW Response: " + data);
+        selectOrari.disabled = true;
 
         if(data.length > 0) {
             let dataArray = data.split("#");
@@ -55,11 +55,7 @@ function titleChangedEvent() {
                     option.text = dataArray[i];
                     selectOrari.add(option);
                 }
-            } else {
-                selectOrari.disabled = true;
             }
-        } else {
-            selectOrari.disabled = true;
         }
     }).catch(error => {
         console.log(error);

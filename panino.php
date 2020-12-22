@@ -68,7 +68,7 @@ if(count($voti) > 0) {
 }
 
 $errore = "";
-if(isset($_GET) && isset($_GET["errore"]) && $_GET["errore"] = 1) {
+if(isset($_GET) && isset($_GET["errore"]) && $_GET["errore"] == 1) {
     $errore = "Controlla la lunghezza del testo!";
 }
 
