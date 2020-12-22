@@ -116,16 +116,33 @@ abbr {
 
 /* CONTENUTO > Panino */
 
-.commentoOra {
-    display: none;
+#ingredienti ul {
+    list-style: inside;
 }
 
-#commento {
+#votoPanino .number {
+    font-size: 2.5em;
+}
+
+.commentoUser {
+    float: left;
+}
+
+.commentoOra {
+    float: right;
+    margin-right: 1em;
+}
+
+.commentoText {
+    clear: both;
+}
+
+/*#commento {
     background-color: white;
     width: 100%;
     border: none;
     height: 20px;
-}
+} */
 
 #boxAggiuntaCommento {
     display: none;
