@@ -49,6 +49,7 @@ foreach($opzioni as $opzione) {
 
 $content = array(
     "{{ username }}" => $_SESSION["username"],
+    "{{ stdPlace }}" => "Via Luigi Luzzati, 10 Padova, PD",//Di default questo luogo, dato che è dove si trova la panineria
     "<msgErrore/>" => $msgDiErrore,
     "<opzioni/>" => $listaOpzioni
 

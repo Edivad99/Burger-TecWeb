@@ -23,6 +23,41 @@ function validaCommento() {
     return result;
 }
 
+function validaFormEvento() {
+    let titolo = document.getElementById("new_title").value.trim();
+    let data = document.getElementById("new_data").value;
+    let luogo = document.getElementById("place").value.trim();
+    let descrizione = document.getElementById("description").value.trim();
+
+    let result = true;
+    if(titolo.length <= 2) {
+        console.log("titolo errore");
+        result = false;
+    }
+    if(!controllaData(data)) {
+        console.log("data errore");
+        result = false;
+    }
+    if(luogo.length <= 2) {
+        console.log("luogo errore");
+        result = false;
+    }
+    if(descrizione.length <= 2) {
+        console.log("descrizione errore");
+        result = false;
+    }
+
+    return result;
+}
+
+function controllaData(dataIns) {
+    let data = new Date(dataIns);
+    let oggi = new Date();
+    oggi.setHours(0,0,0,0);
+
+    return data >= oggi;
+}
+
 function titleChangedEvent() {
     let selectEvento = document.getElementById("title");
     let selectOrari = document.getElementById("date");

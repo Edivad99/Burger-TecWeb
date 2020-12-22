@@ -45,15 +45,15 @@
     <div id="contenutoGenerale">
         <msgErrore/>
         <div id="form">
-            <form action="php/eventiHandler.php" method="post">
+            <form action="php/eventiHandler.php" method="post" onsubmit="return validaFormEvento();">
                 <fieldset class="formEvento">
                     <legend id="legend">Aggiungi un evento:</legend>
                     <label for="new_title">Titolo</label>
-                    <textarea name="nuovo_titolo" id="new_title" rows="2" cols="20" required></textarea>
+                    <input type="text" name="nuovo_titolo" id="new_title" required />
                     <label for="data">Data</label>
                     <input type="date" name="data" id="new_data" required/>
                     <label for="place">Luogo</label>
-                    <textarea name="luogo" id="place" rows="3" cols="20" required></textarea>
+                    <input type="text" name="luogo" id="place" value="{{ stdPlace }}" required />
                     <label for="description">Descrizione</label>
                     <textarea name="descrizione" id="description" rows="4" cols="20" required></textarea>
                     <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>
