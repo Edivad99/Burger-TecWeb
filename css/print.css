@@ -177,6 +177,12 @@ abbr {
     text-decoration: none;
 }
 
+/* CONTENUTO > Gestione Eventi */
+
+#form {
+    display: none;
+}
+
 /* CONTENUTO > 404 e 500 */
 
 #nonTrovato {
