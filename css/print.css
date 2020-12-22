@@ -124,6 +124,10 @@ abbr {
     font-size: 2.5em;
 }
 
+#formVotoPanino {
+    display: none;
+}
+
 .commentoUser {
     float: left;
 }
