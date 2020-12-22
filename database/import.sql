@@ -115,7 +115,8 @@ INSERT INTO `Utenti` (`ID`, `Username`, `Password`, `Admin`) VALUES
 (9, 'Picasso', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
 (10, 'Van Gogh', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
 (11, 'Alessandro Borghese', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
-(12, 'Homer', 'ee11cbb19052e40b07aac0ca060c23ee', 0);
+(12, 'Homer', 'ee11cbb19052e40b07aac0ca060c23ee', 0),
+(13, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 0);
 
 /* admin o user come password */
 
