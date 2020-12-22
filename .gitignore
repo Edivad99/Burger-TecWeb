@@ -1,1 +1,10 @@
 .vscode
+
+# latex
+
+*.aux
+*.log
+*.gz
+*.toc
+*.blg
+*.bbl

@@ -1,0 +1,90 @@
+\documentclass[a4paper, dvipsnames, table]{article} 
+%pensavo di usare table per i nomi in copertina
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Burgheria Padovana}
+\date{Anno accademico: 2020/2021}
+
+\newpage  %includere repo github?
+\begin{figure}
+	\centering
+	\includegraphics[width=2cm]{../img/burger-icon.png}%da sistemare qualità
+\end{figure}
+\maketitle
+
+\begin{table}
+	\centering
+	\begin{tabular}{c|c c c}
+		\textbf{Componenti}
+			& Albiero	& Davide      & 1193425 \\
+			& Fincato	& Alessandro  &         \\
+ 			& Panighel	& Cristiano   & 1201284 \\
+			& Tossuto	& Matteo      & 1193493 \\
+	\end{tabular}
+\end{table}
+
+\begin{center}
+	\textbf{Indirizzo sito web}: \\
+	\textbf{Email referente del gruppo}: davide.albiero@studenti.unipd.it
+\end{center}
+
+\begin{table}
+	\centering
+	\begin{tabular}{c|c c}
+		\textbf{Utenti} & \textbf{Nickname} & \textbf{Password} \\
+		\hline
+		Admin           & admin & admin             \\
+		User            & user  & user              \\
+	\end{tabular}
+\end{table}
+
+\newpage
+	\tableofcontents
+
+\newpage
+\section{Introduzione}
+	\input{sezioni/Introduzione.tex}
+	
+\newpage
+\section{Analisi}
+	\subsection{Studio dell'utenza finale}
+		\input{sezioni/Analisi/studio_utenza.tex}
+	\subsection{Casi d'uso}
+		\subsubsection{Utente generico}
+			\input{sezioni/Analisi/utente_generico.tex}
+		\subsubsection{Amministratore}
+			\input{sezioni/Analisi/admin.tex}
+
+\newpage
+\section{Progettazione}%Obiettivi? Design e DB
+	\subsection{Obiettivi}
+	\subsection{Design}%layout per differenza tra desktop e mobile?
+	\subsection{Database}
+
+\newpage
+\section{Presentazione}%Per spiegare scelte generali o particolari nel CSS
+
+\newpage
+\section{Implementazione}%Per spiegare scelte per HTML, PHP e JS
+	\subsection{Linguaggi}
+		\subsection{HTML5 e CSS}
+		\subsection{SQL}
+		\subsection{PHP}
+		\subsection{JavaScript}
+
+\newpage
+\section{Validazione}%Strumenti per la validazione
+
+\newpage
+\section{Fase di Test e Strumenti}%Dove e con cosa testato
+	\subsection{XAMPP}
+	\subsection*{Silktide - Toolbar}	
+	
+\newpage
+\section{Suddivisione del lavoro}
+
+\end{document}
