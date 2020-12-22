@@ -46,7 +46,7 @@ function titleChangedEvent() {
         if(data.length > 0) {
             let dataArray = data.split("#");
             selectOrari.innerHTML = "";
-            
+
             if(dataArray.length > 0) {
                 selectOrari.disabled = false;
 
