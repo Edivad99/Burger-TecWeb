@@ -516,8 +516,14 @@ input[type="submit"] {
     padding: 1em 2em 2em 2em;
 }
 
+.formEvento #description {
+    max-width: 400px;
+    min-width: 188px;
+    min-height: 65px;
+}
+
 select {
-    width: 191.962px;
+    width: 192px;
 }
 
 /* CONTENUTO > 404 e 500 */
