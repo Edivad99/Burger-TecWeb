@@ -21,7 +21,7 @@ $testo = Util::pulisciInput($_POST["testo"]);
 $paninoID = $_POST["paninoID"];
 
 if($_SESSION["username"] != $username || strlen($testo) < 2) {
-    header("Location: ../panino.php?ID=$paninoID&errore=1");
+    header("Location: ../panino.php?ID=$paninoID&errore=1#commenti");
     die;
 }
 $data = date("Y-m-d H:i:s");
@@ -37,6 +37,6 @@ if(!$connessioneRiuscita) {
 
 $dbAccess->addCommentToPanino($paninoID, $IDUtente, $data, $testo);
 $dbAccess->closeDBConnection();
-header("Location: ../panino.php?ID=$paninoID");
+header("Location: ../panino.php?ID=$paninoID#commenti");
 
 ?>
