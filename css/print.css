@@ -153,6 +153,12 @@ abbr {
     display: none;
 }
 
+/* CONTENUTO > Storia */
+
+#HistoryImg {
+    display: none;
+}
+
 /* CONTENUTO > Contatti */
 
 #contatti {
