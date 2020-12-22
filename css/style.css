@@ -503,7 +503,7 @@ input[type="submit"] {
     text-align: center;
 }
 
-#legend {
+.legend {
     padding-top: 0.5em;
     border-bottom: 4px solid var(--principale);
     font-weight: bold;
@@ -552,9 +552,9 @@ select {
     line-height: 4em;
 }
 
-/* 
+/*
 =================================
-        FOOTER 
+        FOOTER
 =================================
 */
 
