@@ -114,6 +114,23 @@ abbr {
     font-size: 1.2em;
 }
 
+/* CONTENUTO > Panino */
+
+.commentoOra {
+    display: none;
+}
+
+#commento {
+    background-color: white;
+    width: 100%;
+    border: none;
+    height: 20px;
+}
+
+#pubblicaBtn {
+    display: none;
+}
+
 /* CONTENUTO > Contatti */
 
 #contatti {
