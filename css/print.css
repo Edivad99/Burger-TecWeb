@@ -88,6 +88,10 @@ abbr {
     font-size: 1.5em;
 }
 
+#categoria a {
+    color: black;
+}
+
 #contenutoGeneraleMenuPanini {
     padding: 1em 0.2em 1em 0.2em;
 }
@@ -101,6 +105,10 @@ abbr {
 
 #contenitorePanini li {
     flex: 33%;
+}
+
+#contenitorePanini a {
+    color: black;
 }
 
 #contenitorePanini img {
