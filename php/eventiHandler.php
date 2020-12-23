@@ -20,7 +20,7 @@ if(!$_SESSION["isAdmin"]) {
 }
 
 if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
-    $new_title = $_POST["nuovo_titolo"];
+    $new_title = $_POST["titolo"];
     $data = $_POST["data"];
     $place = $_POST["luogo"];
     $description = $_POST["descrizione"];

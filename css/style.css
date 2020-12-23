@@ -503,7 +503,7 @@ input[type="submit"] {
     text-align: center;
 }
 
-.legend {
+.formEvento legend {
     padding-top: 0.5em;
     border-bottom: 4px solid var(--principale);
     font-weight: bold;
@@ -520,6 +520,11 @@ input[type="submit"] {
     max-width: 400px;
     min-width: 188px;
     min-height: 65px;
+}
+
+.formEvento .errore {
+    color: var(--principale);
+    font-weight: bold;
 }
 
 select {

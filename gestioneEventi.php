@@ -49,7 +49,8 @@ foreach($opzioni as $opzione) {
 
 $content = array(
     "{{ username }}" => $_SESSION["username"],
-    "{{ stdPlace }}" => "Via Luigi Luzzati, 10 Padova, PD",//Di default questo luogo, dato che è dove si trova la panineria
+    "{{ stdLuogo }}" => "Via Luigi Luzzati, 10 Padova, PD",//Di default questo luogo, dato che è dove si trova la panineria
+    "{{ dataMinima }}" => date("Y-m-d"),
     "<msgErrore/>" => $msgDiErrore,
     "<opzioni/>" => $listaOpzioni
 

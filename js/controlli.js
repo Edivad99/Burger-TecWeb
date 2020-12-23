@@ -24,26 +24,26 @@ function validaCommento() {
 }
 
 function validaFormEvento() {
-    let titolo = document.getElementById("new_title").value.trim();
-    let data = document.getElementById("new_data").value;
-    let luogo = document.getElementById("place").value.trim();
-    let descrizione = document.getElementById("description").value.trim();
+    let titolo = document.getElementById("titolo").value.trim();
+    let data = document.getElementById("data").value;
+    let luogo = document.getElementById("luogo").value.trim();
+    let descrizione = document.getElementById("descrizione").value.trim();
 
     let result = true;
     if(titolo.length <= 2) {
-        console.log("titolo errore");
+        document.getElementById("errore_titolo").innerText = "Il titolo è troppo corto!";
         result = false;
     }
     if(!controllaData(data)) {
-        console.log("data errore");
+        document.getElementById("errore_data").innerText = "Hai inserito una data del passato!";
         result = false;
     }
     if(luogo.length <= 2) {
-        console.log("luogo errore");
+        document.getElementById("errore_luogo").innerText = "Il luogo è troppo corto!";
         result = false;
     }
     if(descrizione.length <= 2) {
-        console.log("descrizione errore");
+        document.getElementById("errore_descrizione").innerText = "La descrizione è troppo corta!";
         result = false;
     }
 

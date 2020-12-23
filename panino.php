@@ -57,14 +57,15 @@ $media = 0;
 foreach($voti as $voto) {
     $media += intval($voto["Voto"]);
     if($username != "LOGIN" && $voto["Username"] == $username) {
-        $votoForm = "Il tuo voto è: " . intval($voto["Voto"]) . "/5";//Se l'utente ha già votato, non mostro la form per il voto
+        $votoInt = intval($voto["Voto"]);
+        $votoForm = "<p>Il tuo voto è: <abbr title=\"$votoInt su 5\">$votoInt/5</abbr></p>";//Se l'utente ha già votato, non mostro la form per il voto
     }
 }
 $mediaText = "";
 if(count($voti) > 0) {
     $media /= count($voti);
     $media = round($media, 0, PHP_ROUND_HALF_DOWN);
-    $mediaText = "<p>Il nostro panino è valutato <span class=\"number\">$media</span>/5</p>";
+    $mediaText = "<p>Il nostro panino è valutato <abbr title=\"$media su 5\"><span class=\"number\">$media</span>/5</abbr></p>";
 }
 
 $errore = "";
