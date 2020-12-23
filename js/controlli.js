@@ -24,6 +24,7 @@ function validaCommento() {
 }
 
 function validaFormEvento() {
+    document.getElementById("datiNonCorretti").remove();
     let titolo = document.getElementById("titolo").value.trim();
     let data = document.getElementById("data").value;
     let luogo = document.getElementById("luogo").value.trim();
