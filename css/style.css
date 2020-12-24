@@ -490,13 +490,24 @@ input[type="submit"] {
 .button {
     text-decoration: none;
     color: white;
+    border-color: transparent;
     background-color: var(--principale);
     padding: 0.5em;
     margin-right: 1em;
+    cursor: pointer;
 }
 
 #gestione a:last-child {
     margin-right: 0em;
+}
+
+/* CONTENUTO > Gestione Eventi */
+
+#caricaCommenti {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 /* CONTENUTO > Gestione Eventi */

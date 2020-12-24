@@ -102,3 +102,62 @@ function titleChangedEvent() {
         selectOrari.disabled = true;
     });
 }
+
+let offset = 5;
+function addNewComment() {
+
+    fetch('php/api/getCommenti.php?offset=' + offset)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('La pagina PHP non risponde');
+        }
+        return response.json();
+    })
+    .then(data => {
+        let listaCommenti = document.getElementById("listaCommenti");
+
+        if(data.length == 0) {
+            document.getElementById("caricaCommenti").remove();
+        }
+
+
+        for(let i = 0; i < data.length; i++) {
+            let username = data[i]["Username"];
+            let dataOra = data[i]["DataOraPost"];
+            let contenuto = data[i]["Contenuto"];
+
+            let commento = buildCommento(username, dataOra, contenuto);
+            listaCommenti.appendChild(commento);
+        }
+        offset += 5;
+
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
+function buildCommento(username, dataOra, contenuto) {
+    let usernameTag = document.createElement("h4");
+    usernameTag.classList.add("commentoUser");
+    usernameTag.innerText = username;
+
+    let oraTag = document.createElement("p");
+    oraTag.classList.add("commentoOra");
+    oraTag.innerText = "Il " + dataOra;
+
+    let commentoTag = document.createElement("p");
+    commentoTag.classList.add("commentoText");
+    commentoTag.innerText = contenuto;
+
+    let header = document.createElement("header");
+    header.appendChild(usernameTag);
+    header.appendChild(oraTag);
+
+    let article = document.createElement("header");
+    article.classList.add("commento");
+    article.appendChild(header);
+    article.appendChild(commentoTag);
+
+    return article;
+
+}
