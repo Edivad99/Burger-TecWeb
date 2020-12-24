@@ -17,7 +17,7 @@ if(!$connessioneRiuscita) {
     die;
 }
 
-$commenti = $dbAccess->getCommenti();
+$commenti = $dbAccess->getCommenti(5, 0);
 $dbAccess->closeDBConnection();
 
 $listaCommenti="";

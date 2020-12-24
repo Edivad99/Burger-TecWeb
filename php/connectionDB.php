@@ -21,7 +21,7 @@ class DBAccess {
         if(!$this->connection) {
             return false;
         } else {
-            $this->connection->query("SET lc_time_names = 'it_IT'");
+            mysqli_query($this->connection, "SET lc_time_names = 'it_IT'");
             return true;
         }
     }
@@ -158,12 +158,12 @@ class DBAccess {
         return $result;
     }
 
-    public function getCommenti() {
+    public function getCommenti($limit, $offset) {
         $sql = "SELECT utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%Y-%m-%d %H:%i:%s') AS DataOraPost, Contenuto
                 FROM utenti, commenti
                 WHERE commenti.ID_Utente = utenti.ID
-                ORDER BY commenti.Ora_Pubblicazione DESC";
-                #LIMIT ";
+                ORDER BY commenti.Ora_Pubblicazione DESC
+                LIMIT $offset, $limit";
         $queryResult = mysqli_query($this->connection, $sql);
 
         $result = array();
@@ -179,6 +179,12 @@ class DBAccess {
         }
 
         return $result;
+    }
+
+    public function getCommentiJSON($limit, $offset) {
+
+        $result = $this->getCommenti($limit, $offset);
+        return json_encode($result);
     }
 
     public function getEventi() {
