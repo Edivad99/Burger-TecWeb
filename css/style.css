@@ -119,6 +119,10 @@ body > header h1 {
     color: var(--principale);
 }
 
+#breadcrumb p {
+    margin-bottom: 0;
+}
+
 /*
 =================================
         CONTENUTO
@@ -133,7 +137,7 @@ body > header h1 {
     padding: 1em 0.2em 1em 0.2em;
 }
 
-#contenutoGenerale p {
+p {
     margin-bottom: 2em;
 }
 
@@ -290,7 +294,7 @@ form#invioCommento #erroreForm {
     font-weight: bold;
 }
 
-#commenti .commento p {
+.commento p {
     margin-bottom: 0;
 }
 
