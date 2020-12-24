@@ -158,6 +158,29 @@ class DBAccess {
         return $result;
     }
 
+    public function getCommenti() {
+        $sql = "SELECT utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%Y-%m-%d %H:%i:%s') AS DataOraPost, Contenuto
+                FROM utenti, commenti
+                WHERE commenti.ID_Utente = utenti.ID
+                ORDER BY commenti.Ora_Pubblicazione DESC";
+                #LIMIT ";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $commento = array(
+                "Username" => $row["Username"],
+                "DataOraPost" => $row["DataOraPost"],
+                "Contenuto" => $row["Contenuto"]
+            );
+
+            array_push($result, $commento);
+        }
+
+        return $result;
+    }
+
     public function getEventi() {
         $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev, Luogo_Evento, Descrizione
                 FROM eventi
