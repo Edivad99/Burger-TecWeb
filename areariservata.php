@@ -1,6 +1,6 @@
 <?php
 require_once "php/util.php";
-require_once "php/connectiondb.php";
+require_once "php/connectionDB.php";
 use Util\Util;
 use DB\DBAccess;
 
