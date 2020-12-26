@@ -34,9 +34,9 @@ class DBAccess {
     public function getPaninoById($id) {
         $checkID = mysqli_real_escape_string($this->connection, $id);
 
-        $sql = "SELECT prodotti.*, categoria.Categoria AS 'CategoriaText'
-                FROM prodotti, categoria 
-                WHERE prodotti.ID = $checkID AND prodotti.Categoria = categoria.ID";
+        $sql = "SELECT Prodotti.*, Categoria.Categoria AS 'CategoriaText'
+                FROM Prodotti, Categoria
+                WHERE Prodotti.ID = $checkID AND Prodotti.Categoria = Categoria.ID";
         $queryResult = mysqli_query($this->connection, $sql);
 
         if(mysqli_num_rows($queryResult) != 1) {
@@ -49,10 +49,10 @@ class DBAccess {
     public function getCommentiPaninoById($id) {
         $checkID = mysqli_real_escape_string($this->connection, $id);
 
-        $sql = "SELECT utenti.Username, commenti.*
-                FROM utenti, commenti
-                WHERE commenti.ID_Panino = $checkID AND commenti.ID_Utente = utenti.ID
-                ORDER BY commenti.Ora_Pubblicazione DESC";
+        $sql = "SELECT Utenti.Username, Commenti.*
+                FROM Utenti, Commenti
+                WHERE Commenti.ID_Panino = $checkID AND Commenti.ID_Utente = Utenti.ID
+                ORDER BY Commenti.Ora_Pubblicazione DESC";
         $queryResult = mysqli_query($this->connection, $sql);
 
         $result = array();
@@ -76,7 +76,7 @@ class DBAccess {
         $checKOra = mysqli_real_escape_string($this->connection, $OraPubblicazione);
         $checKContenuto = mysqli_real_escape_string($this->connection, $Contenuto);
 
-        $sql = "INSERT INTO commenti (ID_Panino, ID_Utente, Ora_Pubblicazione, Contenuto) 
+        $sql = "INSERT INTO Commenti (ID_Panino, ID_Utente, Ora_Pubblicazione, Contenuto) 
                 VALUES ($IDPanino, $IDUtente, '$checKOra', '$checKContenuto')";
 
         return (mysqli_query($this->connection, $sql) === true);
@@ -86,7 +86,7 @@ class DBAccess {
         $checkCategoria = mysqli_real_escape_string($this->connection, $categoria);
 
         $sql = "SELECT ID, Nome, Img
-                FROM prodotti
+                FROM Prodotti
                 WHERE Categoria = $checkCategoria";
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -109,8 +109,8 @@ class DBAccess {
         $checkID = mysqli_real_escape_string($this->connection, $id);
 
         $sql = "SELECT ID_Utente, Username, Voto
-                FROM voti,utenti
-                WHERE voti.ID_Utente = utenti.ID AND voti.ID_Panino = $checkID";
+                FROM Voti, Utenti
+                WHERE Voti.ID_Utente = Utenti.ID AND Voti.ID_Panino = $checkID";
         $queryResult = mysqli_query($this->connection, $sql);
 
         $result = array();
@@ -136,7 +136,7 @@ class DBAccess {
 
     public function getCategorie() {
         $sql = "SELECT *
-                FROM categoria";
+                FROM Categoria";
         $queryResult = mysqli_query($this->connection, $sql);
 
         $categorie = array();
@@ -160,7 +160,7 @@ class DBAccess {
 
     public function getEventi() {
         $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev, Luogo_Evento, Descrizione
-                FROM eventi
+                FROM Eventi
                 WHERE Data_Evento > CURRENT_DATE
                 ORDER BY Data_Evento";
         $queryResult = mysqli_query($this->connection, $sql);
@@ -184,7 +184,7 @@ class DBAccess {
 
     public function getOpzioni() {
         $sql = "SELECT DISTINCT(Nome)
-                FROM eventi
+                FROM Eventi
                 ORDER BY Nome";
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -204,7 +204,7 @@ class DBAccess {
     public function getDateFromEvento($nomeEvento) {
         $checkNomeEvento = mysqli_real_escape_string($this->connection, $nomeEvento);
         $sql = "SELECT Data_Evento
-                FROM eventi
+                FROM Eventi
                 WHERE Nome = '$checkNomeEvento'";
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -223,7 +223,7 @@ class DBAccess {
     public function checkUserAndPassword($username, $password) {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
-                FROM utenti
+                FROM Utenti
                 WHERE UserName = '$checkUsername' AND Password = '$password'";
 
         $queryResult = mysqli_query($this->connection, $sql);
@@ -250,14 +250,14 @@ class DBAccess {
     public function createNewUser($username, $password) {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
-                FROM utenti
+                FROM Utenti
                 WHERE UserName = '$checkUsername'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
         if(mysqli_num_rows($queryResult) == 0) {
             //Non esiste nessun utente con questo username
-            $sql = "INSERT INTO utenti (Username, Password, Admin) 
+            $sql = "INSERT INTO Utenti (Username, Password, Admin) 
                     VALUES ('$checkUsername','$password', 0)";
 
             return (mysqli_query($this->connection, $sql) === true);
@@ -271,13 +271,13 @@ class DBAccess {
         $checkPlace = mysqli_real_escape_string($this->connection, $place);
         $checkDescription = mysqli_real_escape_string($this->connection, $description);
         $sql = "SELECT *
-                FROM eventi
+                FROM Eventi
                 WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
         if(mysqli_num_rows($queryResult) == 0) {
-            $sql = "INSERT INTO `eventi`(`Nome`, `Data_Evento`, `Luogo_Evento`, `Descrizione`)
+            $sql = "INSERT INTO Eventi (Nome, Data_Evento, Luogo_Evento, Descrizione)
                     VALUES ('$checkTitle', '$checkDate', '$checkPlace', '$checkDescription')";
 
             return (mysqli_query($this->connection, $sql) === true);
@@ -290,14 +290,14 @@ class DBAccess {
         $checkTitle = mysqli_real_escape_string($this->connection, $title);
         $checkDate = mysqli_real_escape_string($this->connection, $data);
         $sql = "SELECT *
-                FROM eventi
+                FROM Eventi
                 WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
 
         $queryResult = mysqli_query($this->connection, $sql);
         
         if(mysqli_num_rows($queryResult) == 1) {
             $sql = "DELETE
-                    FROM eventi
+                    FROM Eventi
                     WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
 
             return (mysqli_query($this->connection, $sql) === true);
