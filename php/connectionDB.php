@@ -159,10 +159,10 @@ class DBAccess {
     }
 
     public function getCommenti($limit, $offset) {
-        $sql = "SELECT utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%Y-%m-%d %H:%i:%s') AS DataOraPost, Contenuto
-                FROM utenti, commenti
-                WHERE commenti.ID_Utente = utenti.ID
-                ORDER BY commenti.Ora_Pubblicazione DESC
+        $sql = "SELECT Utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%Y-%m-%d %H:%i:%s') AS DataOraPost, Contenuto
+                FROM Utenti, Commenti
+                WHERE Commenti.ID_Utente = Utenti.ID
+                ORDER BY Commenti.Ora_Pubblicazione DESC
                 LIMIT $offset, $limit";
         $queryResult = mysqli_query($this->connection, $sql);
 
