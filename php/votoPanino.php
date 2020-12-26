@@ -1,6 +1,6 @@
 <?php
 
-require_once "connectiondb.php";
+require_once "connectionDB.php";
 use DB\DBAccess;
 
 session_start();
