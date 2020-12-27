@@ -15,12 +15,13 @@ if(isset($_GET["limit"])) {
 header("Content-Type: application/json; charset=UTF-8");
 $dbAccess = new DBAccess();
 $connessioneRiuscita = $dbAccess->openDBConnection();
-if(!$connessioneRiuscita) {
+if(!$connessioneRiuscita || !isset($_GET["user"])) {
     echo "{}";
 } else {
-    $result = $dbAccess->getCommentiJSON($limit, $offset);
+    $result = $dbAccess->getCommentiJSON($_GET["user"], $limit, $offset);
 
     echo $result;
 }
+$dbAccess->closeDBConnection();
 
 ?>

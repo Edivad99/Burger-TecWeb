@@ -104,9 +104,9 @@ function titleChangedEvent() {
 }
 
 let offset = 5;
-function addNewComment() {
+function showMoreComments(user) {
 
-    fetch('php/api/getCommenti.php?offset=' + offset)
+    fetch('php/api/getCommenti.php?user=' + user + '&offset=' + offset)
     .then(response => {
         if (!response.ok) {
             throw new Error('La pagina PHP non risponde');
