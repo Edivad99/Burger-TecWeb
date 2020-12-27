@@ -159,9 +159,9 @@ class DBAccess {
     }
 
     public function getCommenti($limit, $offset) {
-        $sql = "SELECT Utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%Y-%m-%d %H:%i:%s') AS DataOraPost, Contenuto
-                FROM Utenti, Commenti
-                WHERE Commenti.ID_Utente = Utenti.ID
+        $sql = "SELECT Utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%H:%i:%s %d/%m/%Y') AS DataOraPost, Contenuto, Prodotti.Nome AS Panino, Prodotti.ID AS PaninoID
+                FROM Utenti, Commenti, Prodotti
+                WHERE Commenti.ID_Utente = Utenti.ID AND Commenti.ID_Panino = Prodotti.ID
                 ORDER BY Commenti.Ora_Pubblicazione DESC
                 LIMIT $offset, $limit";
         $queryResult = mysqli_query($this->connection, $sql);
@@ -172,7 +172,9 @@ class DBAccess {
             $commento = array(
                 "Username" => $row["Username"],
                 "DataOraPost" => $row["DataOraPost"],
-                "Contenuto" => $row["Contenuto"]
+                "Contenuto" => $row["Contenuto"],
+                "PaninoID" => $row["PaninoID"],
+                "Panino" => $row["Panino"]
             );
 
             array_push($result, $commento);

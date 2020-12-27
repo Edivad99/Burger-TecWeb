@@ -22,12 +22,14 @@ $dbAccess->closeDBConnection();
 
 $listaCommenti="";
 if(count($commenti) > 0) {
-    $patternCommento = file_get_contents("html/components/commento.html");
+    $patternCommento = file_get_contents("html/components/gestioneCommento.html");
     foreach($commenti as $commento) {
         $content = array(
             "{{ username }}" => $commento["Username"],
             "{{ dataOraPost }}" => $commento["DataOraPost"],
-            "{{ contenuto }}" => $commento["Contenuto"]
+            "{{ contenuto }}" => $commento["Contenuto"],
+            "{{ panino }}" => $commento["Panino"],
+            "{{ paninoID }}" => $commento["PaninoID"],
         );
 
         $listaCommenti .= Util::replacerFromHTML($patternCommento, $content);

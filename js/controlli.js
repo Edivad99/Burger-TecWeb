@@ -122,11 +122,7 @@ function addNewComment() {
 
 
         for(let i = 0; i < data.length; i++) {
-            let username = data[i]["Username"];
-            let dataOra = data[i]["DataOraPost"];
-            let contenuto = data[i]["Contenuto"];
-
-            let commento = buildCommento(username, dataOra, contenuto);
+            let commento = buildCommento(data[i]);
             listaCommenti.appendChild(commento);
         }
         offset += 5;
@@ -136,18 +132,23 @@ function addNewComment() {
     });
 }
 
-function buildCommento(username, dataOra, contenuto) {
+function buildCommento(data) {
+    let link = document.createElement("a");
+    link.href = "panino.php?ID=" + data["PaninoID"];
+    link.innerText = data["Panino"];
+
     let usernameTag = document.createElement("h4");
     usernameTag.classList.add("commentoUser");
-    usernameTag.innerText = username;
+    usernameTag.innerText = data["Username"] + " - ";
+    usernameTag.appendChild(link);
 
     let oraTag = document.createElement("p");
     oraTag.classList.add("commentoOra");
-    oraTag.innerText = "Il " + dataOra;
+    oraTag.innerText = "Il " + data["DataOraPost"];
 
     let commentoTag = document.createElement("p");
     commentoTag.classList.add("commentoText");
-    commentoTag.innerText = contenuto;
+    commentoTag.innerText = data["Contenuto"];
 
     let header = document.createElement("header");
     header.appendChild(usernameTag);
