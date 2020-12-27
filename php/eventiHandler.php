@@ -21,7 +21,7 @@ if(!$_SESSION["isAdmin"]) {
 
 if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
     $new_title = $_POST["titolo"];
-    $data = $_POST["data"];
+    $data = $_POST["data-ora"];
     $place = $_POST["luogo"];
     $description = $_POST["descrizione"];
     $result = $dbAccess->createNewEvent($new_title, $data, $place, $description);
