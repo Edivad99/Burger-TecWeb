@@ -16,11 +16,12 @@ if(!$connessioneRiuscita) {
     header("Location: error_500.php");
     die;
 }
-
-$commenti = $dbAccess->getCommenti($_SESSION["username"], 5, 0);
+$limit = 5;
+$commenti = $dbAccess->getCommenti($_SESSION["username"], $limit, 0);
 $dbAccess->closeDBConnection();
 
 $listaCommenti="";
+$buttonCaricaCommenti="";
 if(count($commenti) > 0) {
     $patternCommento = file_get_contents("html/components/gestioneCommento.html");
     foreach($commenti as $commento) {
@@ -34,11 +35,15 @@ if(count($commenti) > 0) {
 
         $listaCommenti .= Util::replacerFromHTML($patternCommento, $content);
     }
+    if(count($commenti) >= $limit) {
+        $buttonCaricaCommenti = "<button id=\"caricaCommenti\" class=\"button\" onclick=\"showMoreComments('{{ username }}')\">Carica altri commenti</button>";
+    }
 } else {
     $listaCommenti = "NON CI SONO COMMENTI";
 }
 
 $content = array(
+    "<buttonCaricaCommenti/>" => $buttonCaricaCommenti,
     "{{ username }}" => $_SESSION["username"],
     "<commenti/>" => $listaCommenti
 );
