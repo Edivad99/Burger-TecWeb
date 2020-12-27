@@ -510,9 +510,13 @@ input[type="submit"] {
     display: block;
 }
 
+#contenutoGenerale .tornaSu {
+    color: var(--principale);
+}
+
 /* CONTENUTO > Gestione Eventi */
 
-#form {
+#formGestioneEventi {
     display: flex;
     justify-content: center;
     text-align: center;
