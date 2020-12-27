@@ -213,6 +213,10 @@ abbr {
     color: black;
 }
 
+#caricaCommenti, .tornaSu {
+    display: none;
+}
+
 /* CONTENUTO > 404 e 500 */
 
 #nonTrovato {
