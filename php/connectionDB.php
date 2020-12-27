@@ -159,7 +159,7 @@ class DBAccess {
     }
 
     public function getEventi() {
-        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev, Luogo_Evento, Descrizione
+        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y %H:%i') AS Data_ev, Luogo_Evento, Descrizione
                 FROM Eventi
                 WHERE Data_Evento >= CURRENT_DATE
                 ORDER BY Data_Evento";
