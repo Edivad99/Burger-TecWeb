@@ -53,13 +53,9 @@
                     <input type="text" name="titolo" id="titolo" required />
                     <p class="errore" id="errore_titolo"></p>
 
-                    <label for="data">Data</label>
-                    <input type="date" min="{{ dataMinima }}" name="data" id="data" required/>
+                    <label for="data">Data-Ora</label>
+                    <input type="datetime-local" min="{{ dataMinima }}" name="data-ora" id="data-ora" required/>
                     <p class="errore" id="errore_data"></p>
-
-                    <label for="ora">Ora</label>
-                    <input type="time" min="12:00" max="23:00" name="ora" id="ora" required/>
-                    <p class="errore" id="errore_ora"></p>
 
                     <label for="luogo">Luogo</label>
                     <input type="text" name="luogo" id="luogo" value="{{ stdLuogo }}" required />
