@@ -68,8 +68,11 @@
         <div id="commenti">
             <p class="aiutiNascosti"><a href="#footer">Salta i commenti</a></p>
             <formCommentoPanino/>
-            <h3>Commenti ({{ numeroCommenti }})</h3>
-            <commenti/>
+            <h3>Commenti</h3>
+            <div id="listaCommenti">
+                <commenti/>
+            </div>
+            <buttonCaricaCommenti/>
         </div>
     </div>
     <footer id="footer">
@@ -80,5 +83,6 @@
         </ul>
     </footer>
     <script src="js/inserimentoCommento.js"></script>
+    <script src="js/visualizzaCommenti.js"></script>
 </body>
 </html>

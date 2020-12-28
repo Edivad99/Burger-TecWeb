@@ -54,13 +54,15 @@ class DBAccess {
 
     /* PANINO > Commenti */
 
-    public function getCommentiPaninoById($id) {
+    public function getCommentiPaninoById($id, $limit, $offset) {
         $checkID = mysqli_real_escape_string($this->connection, $id);
 
-        $sql = "SELECT Utenti.Username, Commenti.*
+        $sql = "SELECT Utenti.Username, Commenti.*, DATE_FORMAT(Ora_Pubblicazione, '%H:%i:%s %d/%m/%Y') AS Ora_Post
                 FROM Utenti, Commenti
                 WHERE Commenti.ID_Panino = $checkID AND Commenti.ID_Utente = Utenti.ID
-                ORDER BY Commenti.Ora_Pubblicazione DESC";
+                ORDER BY Commenti.Ora_Pubblicazione DESC
+                LIMIT $offset, $limit";
+
         $queryResult = mysqli_query($this->connection, $sql);
 
         $result = array();
@@ -69,7 +71,7 @@ class DBAccess {
             $commento = array(
                 "Username" => $row["Username"],
                 "ID_Username" => $row["ID_Utente"],
-                "DataOraPost" => date_create_from_format('Y-m-d H:i:s', $row["Ora_Pubblicazione"]),
+                "DataOraPost" => $row["Ora_Post"],
                 "Contenuto" => $row["Contenuto"]
             );
 
@@ -77,6 +79,12 @@ class DBAccess {
         }
 
         return $result;
+    }
+
+    public function getCommentiPaninoByIdJSON($id, $limit, $offset) {
+
+        $result = $this->getCommentiPaninoById($id, $limit, $offset);
+        return json_encode($result);
     }
 
     public function addCommentToPanino($IDPanino, $IDUtente, $OraPubblicazione, $Contenuto) {

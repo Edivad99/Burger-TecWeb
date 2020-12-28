@@ -19,7 +19,7 @@ if(!$connessioneRiuscita) {
 
 $id = $_GET["ID"];
 $panino = $dbAccess->getPaninoById($id);
-$commenti = $dbAccess->getCommentiPaninoById($id);
+$commenti = $dbAccess->getCommentiPaninoById($id, 5, 0);
 $voti = $dbAccess->getVotiPaninoById($id);
 $dbAccess->closeDBConnection();
 
@@ -31,7 +31,7 @@ if(count($commenti) > 0) {
     foreach($commenti as $commento) {
         $content = array(
             "{{ username }}" => $commento["Username"],
-            "{{ dataOraPost }}" => date_format($commento["DataOraPost"], 'H:i:s d/m/Y'),
+            "{{ dataOraPost }}" => $commento["DataOraPost"],
             "{{ contenuto }}" => $commento["Contenuto"]
         );
 
@@ -73,6 +73,10 @@ if(isset($_GET) && isset($_GET["errore"]) && $_GET["errore"] == 1) {
     $errore = "Controlla la lunghezza del testo!";
 }
 
+$buttonCaricaCommenti = "";
+if(count($commenti) >= 5) {
+    $buttonCaricaCommenti = "<button id=\"caricaCommenti\" class=\"button\" onclick=\"showMoreCommentsByPanino({{ paninoID }})\">Carica altri commenti</button>";
+}
 
 if(isset($panino)) {
     $nomePanino = $panino["Nome"];
@@ -83,6 +87,7 @@ if(isset($panino)) {
     $descrizione = $panino["Descrizione"];
 
     $content = array(
+        "<buttonCaricaCommenti/>" => $buttonCaricaCommenti,
         "<formCommentoPanino/>" => $commentoForm,
         "<formVotoPanino/>" => $votoForm,
         "{{ paninoID }}" => $id,
@@ -93,7 +98,6 @@ if(isset($panino)) {
         "{{ categoriaID }}" => $categoria,
         "{{ descrizione }}" => $descrizione,
         "{{ erroreCommento }}" => $errore,
-        "{{ numeroCommenti }}" => count($commenti),
         "<mediaPanino/>" => $mediaText,
         "<listaIngredienti/>" => Util::getUlFromArray($ingredienti),
         "<commenti/>" => $listaCommenti
