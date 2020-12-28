@@ -261,7 +261,7 @@ class DBAccess {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
                 FROM Utenti
-                WHERE UserName = '$checkUsername' AND Password = '$password'";
+                WHERE BINARY UserName = '$checkUsername' AND BINARY Password = '$password'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -288,7 +288,7 @@ class DBAccess {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
                 FROM Utenti
-                WHERE UserName = '$checkUsername'";
+                WHERE BINARY UserName = '$checkUsername'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -303,7 +303,7 @@ class DBAccess {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
                 FROM Utenti
-                WHERE UserName = '$checkUsername'";
+                WHERE BINARY UserName = '$checkUsername'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
