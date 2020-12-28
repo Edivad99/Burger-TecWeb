@@ -38,7 +38,7 @@ if(!$connessioneRiuscita) {
     die;
 }
 
-$opzioni = $dbAccess->getOpzioni();
+$opzioni = $dbAccess->getEventiDaCancellare();
 $dbAccess->closeDBConnection();
 
 $listaOpzioni="<option value=\"\" disabled selected>Scegli evento</option>";

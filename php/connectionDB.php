@@ -31,6 +31,12 @@ class DBAccess {
             mysqli_close($this->connection);
     }
 
+    /*
+    =================================
+            Pagina Panino
+    =================================
+    */
+
     public function getPaninoById($id) {
         $checkID = mysqli_real_escape_string($this->connection, $id);
 
@@ -82,29 +88,6 @@ class DBAccess {
         return (mysqli_query($this->connection, $sql) === true);
     }
 
-    public function getPaniniByCategoria($categoria) {
-        $checkCategoria = mysqli_real_escape_string($this->connection, $categoria);
-
-        $sql = "SELECT ID, Nome, Img
-                FROM Prodotti
-                WHERE Categoria = $checkCategoria";
-        $queryResult = mysqli_query($this->connection, $sql);
-
-        $result = array();
-
-        while($row = mysqli_fetch_assoc($queryResult)) {
-            $panino = array(
-                "ID" => $row["ID"],
-                "Nome" => $row["Nome"],
-                "Img" => $row["Img"]
-            );
-
-            array_push($result, $panino);
-        }
-
-        return $result;
-    }
-
     public function getVotiPaninoById($id) {
         $checkID = mysqli_real_escape_string($this->connection, $id);
 
@@ -134,6 +117,35 @@ class DBAccess {
         return (mysqli_query($this->connection, $sql) === true);
     }
 
+    /*
+    =================================
+            Pagina Menu
+    =================================
+    */
+
+    public function getPaniniByCategoria($categoria) {
+        $checkCategoria = mysqli_real_escape_string($this->connection, $categoria);
+
+        $sql = "SELECT ID, Nome, Img
+                FROM Prodotti
+                WHERE Categoria = $checkCategoria";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $panino = array(
+                "ID" => $row["ID"],
+                "Nome" => $row["Nome"],
+                "Img" => $row["Img"]
+            );
+
+            array_push($result, $panino);
+        }
+
+        return $result;
+    }
+
     public function getCategorie() {
         $sql = "SELECT *
                 FROM Categoria";
@@ -157,6 +169,12 @@ class DBAccess {
 
         return $result;
     }
+
+    /*
+    =================================
+            Pagina Eventi
+    =================================
+    */
 
     public function getEventi() {
         $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y %H:%i') AS Data_ev, Luogo_Evento, Descrizione
@@ -182,7 +200,55 @@ class DBAccess {
         return $result;
     }
 
-    public function getOpzioni() {
+    /*
+    =================================
+            Pagina Gestione Eventi
+    =================================
+    */
+
+    public function createNewEvent($new_title, $data, $place, $description) {
+        $checkTitle = mysqli_real_escape_string($this->connection, $new_title);
+        $checkDate = mysqli_real_escape_string($this->connection, $data);
+        $checkPlace = mysqli_real_escape_string($this->connection, $place);
+        $checkDescription = mysqli_real_escape_string($this->connection, $description);
+        $onlyDate = date("Y-m-d", strtotime($checkDate));
+        $sql = "SELECT *
+                FROM Eventi
+                WHERE Nome = '$checkTitle' AND Data_Evento between '$onlyDate' and '$onlyDate 23:59:59'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 0) {
+            $sql = "INSERT INTO Eventi (Nome, Data_Evento, Luogo_Evento, Descrizione)
+                    VALUES ('$checkTitle', '$checkDate', '$checkPlace', '$checkDescription')";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+
+        return false;
+    }
+
+    public function deleteEvent($title, $data) {
+        $checkTitle = mysqli_real_escape_string($this->connection, $title);
+        $checkDate = mysqli_real_escape_string($this->connection, $data);
+        $sql = "SELECT *
+                FROM Eventi
+                WHERE Nome = '$checkTitle' AND Data_Evento between '$checkDate' and '$checkDate 23:59:59'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+        
+        if(mysqli_num_rows($queryResult) == 1) {
+            $sql = "DELETE
+                    FROM Eventi
+                    WHERE Nome = '$checkTitle' AND Data_Evento between '$checkDate' and '$checkDate 23:59:59'";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+
+        return false;
+    }
+
+    public function getEventiDaCancellare() {
         $sql = "SELECT DISTINCT(Nome)
                 FROM Eventi
                 ORDER BY Nome";
@@ -219,6 +285,12 @@ class DBAccess {
         }
         return $result;
     }
+
+    /*
+    =================================
+            Pagina Login
+    =================================
+    */
 
     public function checkUserAndPassword($username, $password) {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
@@ -264,49 +336,6 @@ class DBAccess {
         }
         return false;
     }
-
-    public function createNewEvent($new_title, $data, $place, $description) {
-        $checkTitle = mysqli_real_escape_string($this->connection, $new_title);
-        $checkDate = mysqli_real_escape_string($this->connection, $data);
-        $checkPlace = mysqli_real_escape_string($this->connection, $place);
-        $checkDescription = mysqli_real_escape_string($this->connection, $description);
-        $onlyDate = date("Y-m-d", strtotime($checkDate));
-        $sql = "SELECT *
-                FROM Eventi
-                WHERE Nome = '$checkTitle' AND Data_Evento between '$onlyDate' and '$onlyDate 23:59:59'";
-
-        $queryResult = mysqli_query($this->connection, $sql);
-
-        if(mysqli_num_rows($queryResult) == 0) {
-            $sql = "INSERT INTO Eventi (Nome, Data_Evento, Luogo_Evento, Descrizione)
-                    VALUES ('$checkTitle', '$checkDate', '$checkPlace', '$checkDescription')";
-
-            return (mysqli_query($this->connection, $sql) === true);
-        }
-
-        return false;
-    }
-
-    public function deleteEvent($title, $data) {
-        $checkTitle = mysqli_real_escape_string($this->connection, $title);
-        $checkDate = mysqli_real_escape_string($this->connection, $data);
-        $sql = "SELECT *
-                FROM Eventi
-                WHERE Nome = '$checkTitle' AND Data_Evento between '$checkDate' and '$checkDate 23:59:59'";
-
-        $queryResult = mysqli_query($this->connection, $sql);
-        
-        if(mysqli_num_rows($queryResult) == 1) {
-            $sql = "DELETE
-                    FROM Eventi
-                    WHERE Nome = '$checkTitle' AND Data_Evento between '$checkDate' and '$checkDate 23:59:59'";
-
-            return (mysqli_query($this->connection, $sql) === true);
-        }
-
-        return false;
-    }
-
 }
 
 ?>
