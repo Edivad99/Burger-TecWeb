@@ -65,7 +65,7 @@ CREATE TABLE Commenti
     `ID_Utente` INT NOT NULL,
     `Ora_Pubblicazione` DATETIME NOT NULL,
     `Contenuto` VARCHAR(500) NOT NULL,
-    PRIMARY KEY(`ID`, `ID_Panino`, `ID_Utente`),
+    PRIMARY KEY(`ID`),
     FOREIGN KEY (`ID_Panino`) REFERENCES `Prodotti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (`ID_Utente`) REFERENCES `Utenti` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB;

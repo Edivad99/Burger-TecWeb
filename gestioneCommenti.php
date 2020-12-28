@@ -31,6 +31,7 @@ if(count($commenti) > 0) {
             "{{ contenuto }}" => $commento["Contenuto"],
             "{{ panino }}" => $commento["Panino"],
             "{{ paninoID }}" => $commento["PaninoID"],
+            "{{ commentoID }}" => $commento["CommentoID"]
         );
 
         $listaCommenti .= Util::replacerFromHTML($patternCommento, $content);

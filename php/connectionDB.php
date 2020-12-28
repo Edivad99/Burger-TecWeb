@@ -71,8 +71,7 @@ class DBAccess {
         return $result;
     }
 
-    public function addCommentToPanino($IDPanino, $IDUtente, $OraPubblicazione, $Contenuto)
-    {
+    public function addCommentToPanino($IDPanino, $IDUtente, $OraPubblicazione, $Contenuto) {
         $checKOra = mysqli_real_escape_string($this->connection, $OraPubblicazione);
         $checKContenuto = mysqli_real_escape_string($this->connection, $Contenuto);
 
@@ -165,7 +164,7 @@ class DBAccess {
             $extraFilter = " AND Utenti.Username = '$checkUsername'";
         }
 
-        $sql = "SELECT Utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%H:%i:%s %d/%m/%Y') AS DataOraPost, Contenuto, Prodotti.Nome AS Panino, Prodotti.ID AS PaninoID
+        $sql = "SELECT Utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%H:%i:%s %d/%m/%Y') AS DataOraPost, Contenuto, Prodotti.Nome AS Panino, Prodotti.ID AS PaninoID, Commenti.ID AS CommentoID
                 FROM Utenti, Commenti, Prodotti
                 WHERE Commenti.ID_Utente = Utenti.ID AND Commenti.ID_Panino = Prodotti.ID $extraFilter
                 ORDER BY Commenti.Ora_Pubblicazione DESC
@@ -179,6 +178,7 @@ class DBAccess {
                 "Username" => $row["Username"],
                 "DataOraPost" => $row["DataOraPost"],
                 "Contenuto" => $row["Contenuto"],
+                "CommentoID" => $row["CommentoID"],
                 "PaninoID" => $row["PaninoID"],
                 "Panino" => $row["Panino"]
             );
@@ -193,6 +193,19 @@ class DBAccess {
 
         $result = $this->getCommenti($user, $limit, $offset);
         return json_encode($result);
+    }
+
+    public function deleteComment($idCommento, $idUtente) {
+        $extraFilter = "";
+        if($idUtente != -1) { //Utente normale
+            $extraFilter = " AND ID_Utente = $idUtente";
+        }
+
+        $sql = "DELETE
+                FROM Commenti
+                WHERE ID = $idCommento $extraFilter";
+
+        return (mysqli_query($this->connection, $sql) === true) && (mysqli_affected_rows($this->connection) == 1);
     }
 
     public function getEventi() {
