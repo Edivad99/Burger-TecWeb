@@ -199,4 +199,6 @@ INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Ora_Pubblicazione`, `Contenut
 (7, 3, '2019-07-01 23:23', 'Che dire, è davvero spektacolare ;)'),
 (10, 11, '2020-01-06 00:04', 'Burger king, il giusto panino da re. Strepitoso'),
 (13, 12, '2020-04-09 01:12', "Talmente grande che ci puoi sfamare un'intera squadra di rugby"),
+(9, 12, '2020-12-09 19:23', "Veramente molto buono, mio figlio l'ha divorato"),
+(18, 12, '2020-11-09 21:34', "Sembra quasi di stare in Tedeschia"),
 (18, 7, '2020-04-08 14:22', 'Mi sono ritrovato catapultato in Germania, impressionante da quanto buono. La salsa alla birra è quel tocco incredibile che non mi aspettavo');

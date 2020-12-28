@@ -105,6 +105,7 @@ function titleChangedEvent() {
 
 let offset = 5;
 function showMoreComments(user) {
+    const limit = 5;
 
     fetch('php/api/getCommenti.php?user=' + user + '&offset=' + offset)
     .then(response => {
@@ -116,7 +117,7 @@ function showMoreComments(user) {
     .then(data => {
         let listaCommenti = document.getElementById("listaCommenti");
 
-        if(data.length == 0) {
+        if(data.length < limit) {
             document.getElementById("caricaCommenti").remove();
         }
 
@@ -146,12 +147,18 @@ function buildCommento(data) {
     oraTag.classList.add("commentoOra");
     oraTag.innerText = "Il " + data["DataOraPost"];
 
+    let elimina = document.createElement("a");
+    elimina.classList.add("elimina");
+    elimina.href = "php/eliminaCommento.php?ID=" + data["CommentoID"];
+    elimina.innerText = "Elimina";
+
     let commentoTag = document.createElement("p");
     commentoTag.classList.add("commentoText");
     commentoTag.innerText = data["Contenuto"];
 
     let header = document.createElement("header");
     header.appendChild(usernameTag);
+    header.appendChild(elimina);
     header.appendChild(oraTag);
 
     let article = document.createElement("header");
