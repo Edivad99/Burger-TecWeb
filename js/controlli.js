@@ -29,7 +29,7 @@ function validaFormEvento() {
         errore.remove();
     }
     let titolo = document.getElementById("titolo").value.trim();
-    let data = document.getElementById("data").value;
+    let data = document.getElementById("data-ora").value;
     let luogo = document.getElementById("luogo").value.trim();
     let descrizione = document.getElementById("descrizione").value.trim();
 

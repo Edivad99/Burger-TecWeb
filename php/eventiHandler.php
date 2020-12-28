@@ -21,7 +21,7 @@ if(!$_SESSION["isAdmin"]) {
 
 if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
     $new_title = $_POST["titolo"];
-    $data = $_POST["data"];
+    $data = $_POST["data-ora"];
     $place = $_POST["luogo"];
     $description = $_POST["descrizione"];
     $result = $dbAccess->createNewEvent($new_title, $data, $place, $description);
@@ -33,7 +33,7 @@ if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
     header("Location: ../gestioneEventi.php?aggiungi=1");
 } else if(isset($_POST["elimina"]) && $_POST["elimina"] == "Elimina") {
     $title = $_POST["titolo"];
-    $data = $_POST["data"];
+    $data = date("Y-m-d", strtotime($_POST["data"]));
     $result = $dbAccess->deleteEvent($title, $data);
     if(!$result) {
         header("Location: ../gestioneEventi.php?elimina=2");

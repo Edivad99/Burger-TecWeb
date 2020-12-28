@@ -159,7 +159,7 @@ class DBAccess {
     }
 
     public function getEventi() {
-        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y') AS Data_ev, Luogo_Evento, Descrizione
+        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y %H:%i') AS Data_ev, Luogo_Evento, Descrizione
                 FROM Eventi
                 WHERE Data_Evento >= CURRENT_DATE
                 ORDER BY Data_Evento";
@@ -212,7 +212,7 @@ class DBAccess {
 
         while($row = mysqli_fetch_assoc($queryResult)) {
             $opzione = array(
-                "Data" => $row["Data_Evento"]
+                "Data" => date("d-m-Y", strtotime($row["Data_Evento"]))
             );
 
             array_push($result, $opzione);
@@ -270,9 +270,10 @@ class DBAccess {
         $checkDate = mysqli_real_escape_string($this->connection, $data);
         $checkPlace = mysqli_real_escape_string($this->connection, $place);
         $checkDescription = mysqli_real_escape_string($this->connection, $description);
+        $onlyDate = date("Y-m-d", strtotime($checkDate));
         $sql = "SELECT *
                 FROM Eventi
-                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+                WHERE Nome = '$checkTitle' AND Data_Evento between '$onlyDate' and '$onlyDate 23:59:59'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -291,14 +292,14 @@ class DBAccess {
         $checkDate = mysqli_real_escape_string($this->connection, $data);
         $sql = "SELECT *
                 FROM Eventi
-                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+                WHERE Nome = '$checkTitle' AND Data_Evento between '$checkDate' and '$checkDate 23:59:59'";
 
         $queryResult = mysqli_query($this->connection, $sql);
         
         if(mysqli_num_rows($queryResult) == 1) {
             $sql = "DELETE
                     FROM Eventi
-                    WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+                    WHERE Nome = '$checkTitle' AND Data_Evento between '$checkDate' and '$checkDate 23:59:59'";
 
             return (mysqli_query($this->connection, $sql) === true);
         }
