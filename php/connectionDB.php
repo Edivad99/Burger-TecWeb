@@ -212,7 +212,7 @@ class DBAccess {
 
         while($row = mysqli_fetch_assoc($queryResult)) {
             $opzione = array(
-                "Data" => $row["Data_Evento"]
+                "Data" => date("d-m-Y", strtotime($row["Data_Evento"]))
             );
 
             array_push($result, $opzione);
@@ -292,14 +292,14 @@ class DBAccess {
         $checkDate = mysqli_real_escape_string($this->connection, $data);
         $sql = "SELECT *
                 FROM Eventi
-                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+                WHERE Nome = '$checkTitle' AND Data_Evento between '$checkDate' and '$checkDate 23:59:59'";
 
         $queryResult = mysqli_query($this->connection, $sql);
         
         if(mysqli_num_rows($queryResult) == 1) {
             $sql = "DELETE
                     FROM Eventi
-                    WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+                    WHERE Nome = '$checkTitle' AND Data_Evento between '$checkDate' and '$checkDate 23:59:59'";
 
             return (mysqli_query($this->connection, $sql) === true);
         }
