@@ -38,7 +38,7 @@ if(!$connessioneRiuscita) {
     die;
 }
 
-$opzioni = $dbAccess->getOpzioni();
+$opzioni = $dbAccess->getEventiDaCancellare();
 $dbAccess->closeDBConnection();
 
 $listaOpzioni="<option value=\"\" disabled selected>Scegli evento</option>";
@@ -50,7 +50,7 @@ foreach($opzioni as $opzione) {
 $content = array(
     "{{ username }}" => $_SESSION["username"],
     "{{ stdLuogo }}" => "Via Luigi Luzzati, 10 Padova, PD",//Di default questo luogo, dato che è dove si trova la panineria
-    "{{ dataMinima }}" => date("Y-m-d"),
+    "{{ dataMinima }}" => date("Y-m-d") . "T00:00",
     "<msgErrore/>" => $msgDiErrore,
     "<opzioni/>" => $listaOpzioni
 

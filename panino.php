@@ -75,7 +75,6 @@ if(isset($_GET) && isset($_GET["errore"]) && $_GET["errore"] == 1) {
 
 
 if(isset($panino)) {
-    //var_dump($panino);//Funzione utile per scoprire cosa otteniamo dal DB
     $nomePanino = $panino["Nome"];
     $imgPanino = $panino["Img"];
     $ingredienti = explode(";", $panino["Ingredienti"]);

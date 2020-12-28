@@ -14,7 +14,7 @@ CREATE TABLE Eventi
 (
     `ID` INT NOT NULL AUTO_INCREMENT,
     `Nome` VARCHAR(100) NOT NULL,
-    `Data_Evento` DATE NOT NULL,
+    `Data_Evento` DATETIME NOT NULL,
     `Luogo_Evento` VARCHAR(150),
     `Descrizione` VARCHAR(800),
     PRIMARY KEY(`ID`)
