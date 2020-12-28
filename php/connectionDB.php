@@ -173,6 +173,42 @@ class DBAccess {
         return $result;
     }
 
+    /*
+    =================================
+            Pagina Eventi
+    =================================
+    */
+
+    public function getEventi() {
+        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y %H:%i') AS Data_ev, Luogo_Evento, Descrizione
+                FROM Eventi
+                WHERE Data_Evento >= CURRENT_DATE
+                ORDER BY Data_Evento";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $evento = array(
+                "Nome" => $row["Nome"],
+                "Giorno" => $row["Giorno"],
+                "Data_ev" => $row["Data_ev"],
+                "Luogo_Evento" => $row["Luogo_Evento"],
+                "Descrizione" => $row["Descrizione"]
+            );
+
+            array_push($result, $evento);
+        }
+
+        return $result;
+    }
+
+    /*
+    =================================
+            Pagina Gestione Commenti
+    =================================
+    */
+
     public function getCommenti($user, $limit, $offset) {
         $extraFilter = "";
         if(!$this->checkUserIsAdmin($user)) {
@@ -223,37 +259,7 @@ class DBAccess {
 
         return (mysqli_query($this->connection, $sql) === true) && (mysqli_affected_rows($this->connection) == 1);
     }
-
-    /*
-    =================================
-            Pagina Eventi
-    =================================
-    */
-
-    public function getEventi() {
-        $sql = "SELECT Nome, DAYNAME(Data_Evento) Giorno, DATE_FORMAT(Data_Evento,'%d/%m/%Y %H:%i') AS Data_ev, Luogo_Evento, Descrizione
-                FROM Eventi
-                WHERE Data_Evento >= CURRENT_DATE
-                ORDER BY Data_Evento";
-        $queryResult = mysqli_query($this->connection, $sql);
-
-        $result = array();
-
-        while($row = mysqli_fetch_assoc($queryResult)) {
-            $evento = array(
-                "Nome" => $row["Nome"],
-                "Giorno" => $row["Giorno"],
-                "Data_ev" => $row["Data_ev"],
-                "Luogo_Evento" => $row["Luogo_Evento"],
-                "Descrizione" => $row["Descrizione"]
-            );
-
-            array_push($result, $evento);
-        }
-
-        return $result;
-    }
-
+    
     /*
     =================================
             Pagina Gestione Eventi
