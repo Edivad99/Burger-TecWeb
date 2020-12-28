@@ -70,7 +70,6 @@ class DBAccess {
         while($row = mysqli_fetch_assoc($queryResult)) {
             $commento = array(
                 "Username" => $row["Username"],
-                "ID_Username" => $row["ID_Utente"],
                 "DataOraPost" => $row["Ora_Post"],
                 "Contenuto" => $row["Contenuto"]
             );
