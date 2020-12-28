@@ -270,9 +270,10 @@ class DBAccess {
         $checkDate = mysqli_real_escape_string($this->connection, $data);
         $checkPlace = mysqli_real_escape_string($this->connection, $place);
         $checkDescription = mysqli_real_escape_string($this->connection, $description);
+        $onlyDate = date("Y-m-d", strtotime($checkDate));
         $sql = "SELECT *
                 FROM Eventi
-                WHERE Nome = '$checkTitle' AND Data_Evento = '$checkDate'";
+                WHERE Nome = '$checkTitle' AND Data_Evento between '$onlyDate' and '$onlyDate 23:59:59'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
