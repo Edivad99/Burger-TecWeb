@@ -21,7 +21,7 @@ class DBAccess {
         if(!$this->connection) {
             return false;
         } else {
-            $this->connection->query("SET lc_time_names = 'it_IT'");
+            mysqli_query($this->connection, "SET lc_time_names = 'it_IT'");
             return true;
         }
     }
@@ -79,8 +79,7 @@ class DBAccess {
         return $result;
     }
 
-    public function addCommentToPanino($IDPanino, $IDUtente, $OraPubblicazione, $Contenuto)
-    {
+    public function addCommentToPanino($IDPanino, $IDUtente, $OraPubblicazione, $Contenuto) {
         $checKOra = mysqli_real_escape_string($this->connection, $OraPubblicazione);
         $checKContenuto = mysqli_real_escape_string($this->connection, $Contenuto);
 
