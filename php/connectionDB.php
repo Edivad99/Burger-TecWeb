@@ -259,7 +259,7 @@ class DBAccess {
 
         return (mysqli_query($this->connection, $sql) === true) && (mysqli_affected_rows($this->connection) == 1);
     }
-    
+
     /*
     =================================
             Pagina Gestione Eventi
