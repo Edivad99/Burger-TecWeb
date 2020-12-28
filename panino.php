@@ -93,6 +93,7 @@ if(isset($panino)) {
         "{{ categoriaID }}" => $categoria,
         "{{ descrizione }}" => $descrizione,
         "{{ erroreCommento }}" => $errore,
+        "{{ numeroCommenti }}" => count($commenti),
         "<mediaPanino/>" => $mediaText,
         "<listaIngredienti/>" => Util::getUlFromArray($ingredienti),
         "<commenti/>" => $listaCommenti

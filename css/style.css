@@ -119,6 +119,10 @@ body > header h1 {
     color: var(--principale);
 }
 
+#breadcrumb p {
+    margin-bottom: 0;
+}
+
 /*
 =================================
         CONTENUTO
@@ -133,7 +137,7 @@ body > header h1 {
     padding: 1em 0.2em 1em 0.2em;
 }
 
-#contenutoGenerale p {
+p {
     margin-bottom: 2em;
 }
 
@@ -290,12 +294,12 @@ form#invioCommento #erroreForm {
     font-weight: bold;
 }
 
-#commenti .commento p {
+.commento p {
     margin-bottom: 0;
 }
 
 .commento {
-    margin-top: 0.3em;
+    margin-top: 0.7em;
     border: 2px solid var(--divisore);
     border-top: none;
     border-radius: 1em;
@@ -486,18 +490,40 @@ input[type="submit"] {
 .button {
     text-decoration: none;
     color: white;
+    border-color: transparent;
     background-color: var(--principale);
     padding: 0.5em;
     margin-right: 1em;
+    cursor: pointer;
 }
 
 #gestione a:last-child {
     margin-right: 0em;
 }
 
+/* CONTENUTO > Gestione Commenti */
+
+#caricaCommenti {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#contenutoGenerale .tornaSu {
+    color: var(--principale);
+    float: right;
+    margin-top: 0.2em;
+}
+
+a.elimina {
+    float: right;
+    margin-right: 0.5em;
+}
+
 /* CONTENUTO > Gestione Eventi */
 
-#form {
+#formGestioneEventi {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -571,6 +597,7 @@ footer {
     padding-top: 1em;
     padding-bottom: 1em;
     margin-bottom: 2em;
+    clear: both;
 }
 
 footer ul {

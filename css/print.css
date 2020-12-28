@@ -207,6 +207,16 @@ abbr {
     display: none;
 }
 
+/* CONTENUTO > Gestione Commenti */
+
+.commentoUser a {
+    color: black;
+}
+
+#caricaCommenti, .tornaSu {
+    display: none;
+}
+
 /* CONTENUTO > 404 e 500 */
 
 #nonTrovato {

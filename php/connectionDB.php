@@ -205,6 +205,63 @@ class DBAccess {
 
     /*
     =================================
+            Pagina Gestione Commenti
+    =================================
+    */
+
+    public function getCommenti($user, $limit, $offset) {
+        $extraFilter = "";
+        if(!$this->checkUserIsAdmin($user)) {
+            $checkUsername = mysqli_real_escape_string($this->connection, $user);
+            $extraFilter = " AND Utenti.Username = '$checkUsername'";
+        }
+
+        $sql = "SELECT Utenti.Username, DATE_FORMAT(Ora_Pubblicazione, '%H:%i:%s %d/%m/%Y') AS DataOraPost, Contenuto, Prodotti.Nome AS Panino, Prodotti.ID AS PaninoID, Commenti.ID AS CommentoID
+                FROM Utenti, Commenti, Prodotti
+                WHERE Commenti.ID_Utente = Utenti.ID AND Commenti.ID_Panino = Prodotti.ID $extraFilter
+                ORDER BY Commenti.Ora_Pubblicazione DESC
+                LIMIT $offset, $limit";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $commento = array(
+                "Username" => $row["Username"],
+                "DataOraPost" => $row["DataOraPost"],
+                "Contenuto" => $row["Contenuto"],
+                "CommentoID" => $row["CommentoID"],
+                "PaninoID" => $row["PaninoID"],
+                "Panino" => $row["Panino"]
+            );
+
+            array_push($result, $commento);
+        }
+
+        return $result;
+    }
+
+    public function getCommentiJSON($user, $limit, $offset) {
+
+        $result = $this->getCommenti($user, $limit, $offset);
+        return json_encode($result);
+    }
+
+    public function deleteComment($idCommento, $idUtente) {
+        $extraFilter = "";
+        if($idUtente != -1) { //Utente normale
+            $extraFilter = " AND ID_Utente = $idUtente";
+        }
+
+        $sql = "DELETE
+                FROM Commenti
+                WHERE ID = $idCommento $extraFilter";
+
+        return (mysqli_query($this->connection, $sql) === true) && (mysqli_affected_rows($this->connection) == 1);
+    }
+
+    /*
+    =================================
             Pagina Gestione Eventi
     =================================
     */
@@ -300,7 +357,7 @@ class DBAccess {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
                 FROM Utenti
-                WHERE UserName = '$checkUsername' AND Password = '$password'";
+                WHERE BINARY UserName = '$checkUsername' AND BINARY Password = '$password'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -323,11 +380,26 @@ class DBAccess {
         );
     }
 
+    public function checkUserIsAdmin($username) {
+        $checkUsername = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT *
+                FROM Utenti
+                WHERE BINARY UserName = '$checkUsername'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 1) {
+            $user = mysqli_fetch_assoc($queryResult);
+            return ($user["Admin"] == 1);
+        }
+        return false;
+    }
+
     public function createNewUser($username, $password) {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT *
                 FROM Utenti
-                WHERE UserName = '$checkUsername'";
+                WHERE BINARY UserName = '$checkUsername'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
