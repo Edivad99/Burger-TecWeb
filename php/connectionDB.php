@@ -52,6 +52,8 @@ class DBAccess {
         return mysqli_fetch_assoc($queryResult);
     }
 
+    /* PANINO > Commenti */
+
     public function getCommentiPaninoById($id) {
         $checkID = mysqli_real_escape_string($this->connection, $id);
 
@@ -87,6 +89,8 @@ class DBAccess {
 
         return (mysqli_query($this->connection, $sql) === true);
     }
+
+    /* PANINO > Voto */
 
     public function getVotiPaninoById($id) {
         $checkID = mysqli_real_escape_string($this->connection, $id);
@@ -267,6 +271,7 @@ class DBAccess {
         return $result;
     }
 
+    /* VENGONO MOSTRATE LE DATE PER SCEGLIERE L'EVENTO PRECISO CHE SI VUOLE ELIMINARE */
     public function getDateFromEvento($nomeEvento) {
         $checkNomeEvento = mysqli_real_escape_string($this->connection, $nomeEvento);
         $sql = "SELECT Data_Evento
