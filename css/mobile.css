@@ -195,12 +195,12 @@ body > header h1 {
     padding-bottom: 1.6em;
 }
 
-#titolo, #data, #ora, #luogo, #descrizione, #date {
+#titolo, #data-ora, #luogo, #descrizione, #date {
     width: fit-content;
     margin: auto;
 }
 
-select, #data, #date {
+select, #data-ora, #date {
     width: 157px;
     margin: auto;
 }
