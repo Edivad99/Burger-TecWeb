@@ -253,4 +253,8 @@ footer {
     display: inline;
 }
 
+#categoriaAttiva {
+    padding: 4px 16px;
+}
+
 }
