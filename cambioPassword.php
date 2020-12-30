@@ -20,7 +20,7 @@ if(isset($_GET["cambioAvvenuto"]) && $_GET["cambioAvvenuto"] == 1) {
 }
 
 $content = array(
-    "<msg/>" => $msg,
+    "<msgCambioPassword/>" => $msg,
     "{{ username }}" => $_SESSION["username"]
 );
 

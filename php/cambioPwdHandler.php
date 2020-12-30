@@ -3,15 +3,16 @@
     require_once "connectionDB.php";
     use DB\DBAccess;
 
-    
-    $vPassword = $_POST["opwd"];
-    $vPasswordCifrata = md5($vPassword);
-    $nPassword = $_POST["npwd"];
-    $nPasswordCifrata = md5($nPassword);
-    $cPassword = $_POST["cpwd"];
-    $cPasswordCifrata = md5($cPassword);
-    
-    
+    if(!isset($_POST["opwd"]) || !isset($_POST["npwd"]) || !isset($_POST["cpwd"])) {
+        header("Location: ../cambioPassword.php");
+        die;
+    }
+
+    $vPasswordCifrata = md5($_POST["opwd"]);
+    $nPasswordCifrata = md5($_POST["npwd"]);
+    $cPasswordCifrata = md5($_POST["cpwd"]);
+
+
     $dbAccess = new DBAccess();
     $connessioneRiuscita = $dbAccess->openDBConnection();
     if(!$connessioneRiuscita) {
@@ -21,8 +22,8 @@
 
     session_start();
     $username = $_SESSION["username"];
-    if($nPassword === $cPassword) {
-        if($nPassword !== $vPassword) {
+    if($nPasswordCifrata === $cPasswordCifrata) {
+        if($nPasswordCifrata !== $vPasswordCifrata) {
             $result = $dbAccess->checkUserAndPassword($username, $vPasswordCifrata);
             $_SESSION["isValid"] = $result["isValid"];
 
@@ -34,7 +35,7 @@
             } 
         } else {
             header("Location: ../cambioPassword.php?errNuovaPwd=1");
-        }       
+        }
     } else {
         header("Location: ../cambioPassword.php?errConferma=1");
     }

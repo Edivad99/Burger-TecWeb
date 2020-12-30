@@ -473,12 +473,6 @@ input[type="submit"] {
     background-color: transparent;
 }
 
-#tornaAreaRiservata {
-    font-size: 0.8em;
-    text-decoration: none;
-    color: var(--principale);
-}
-
 #datiNonCorretti, #cambioAvvenuto {
     background-color: var(--principale);
     color: white;
