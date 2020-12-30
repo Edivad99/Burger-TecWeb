@@ -195,6 +195,16 @@ abbr {
     text-decoration: none;
 }
 
+/* CONTENUTO > Cambio Password */
+
+#cambioPwd {
+    text-align: center;
+}
+
+#tornaAreaRiservata {
+    color: black;
+}
+
 /* CONTENUTO > Area Riservata */
 
 .button {

@@ -443,15 +443,15 @@ form#invioCommento #erroreForm {
     color: black;
 }
 
-/* CONTENUTO > Login */
+/* CONTENUTO > Login & Cambio Password*/
 
-#accesso {
+#accesso, #cambioPwd {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-#user, #pwd {
+#user, #pwd, #newPwd, #cnPwd {
     width: fit-content;
     margin: auto;
 }
@@ -468,12 +468,18 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-#accesso #registrati {
+#accesso, #registrati {
     color: var(--principale);
     background-color: transparent;
 }
 
-#datiNonCorretti {
+#tornaAreaRiservata {
+    font-size: 0.8em;
+    text-decoration: none;
+    color: var(--principale);
+}
+
+#datiNonCorretti, #cambioAvvenuto {
     background-color: var(--principale);
     color: white;
     text-align: center;
