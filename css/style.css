@@ -162,7 +162,7 @@ abbr {
 
 #leftSidebar {
     float: left;
-    width: 14.3%;
+    width: 15%;
     line-height: 2.7em;
     text-align: center;
 }
@@ -170,6 +170,10 @@ abbr {
 #categoria {
     list-style-type: none;
     font-size: 1.25em;
+}
+
+#categoriaAttiva {
+    border-bottom: var(--principale) 3px solid;
 }
 
 #categoria a, #categoriaAttiva, #leftSidebar h2 {
