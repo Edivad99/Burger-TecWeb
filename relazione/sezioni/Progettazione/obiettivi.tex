@@ -1,0 +1,37 @@
+Il progetto \emph{Burgheria Padovana} si prefigge di rispettare le specifiche tecniche richieste:
+\begin{itemize}
+	\item \textbf{Rispettare gli standard:}\\ 
+	È stato scelto di utilizzare \emph{HTML5} per il contenuto e \emph{CSS3} per la presentazione.
+	\item \textbf{Separazione tra contenuto, presentazione e comportamento:}\\ 
+	Per il contenuto è stato utilizzato \emph{HTML}, per la presentazione è stato utilizzato \emph{CSS} e per il comportamento è stato utilizzato \emph{PHP} e \emph{JavaScript}.
+	\item \textbf{Accessibilità:}\\ 
+	Il sito è stato progettato per permettere a tutte le categorie di utenti di accedere al sito.
+	Per fare ciò si è scelto uno sviluppo del sito rispettando fin dal principio norme e pratiche per facilitare l'accessibilità.
+	In questo modo si riduce il lavoro di controllo e validazione per quanto riguarda l'accessibilità evitando di dover riscrivere parti di codici che potrebbero causare problemi di accessibilità.
+	\item \textbf{Usabilità:}\\
+	Il sito è stato progettato per permettere una navigazione fluida, semplice e tradizionale per evitare all'utente disorientamento e sovraccarico cognitivo.
+	\item \textbf{PHP e DB:}\\
+	Sono state utilizzate pagine in \emph{PHP} per poter interagire con il \emph{DB} ottenendo, scrivendo o eliminando dati. Sarà utilizzato un \emph{DB} in forma normale dove salvare eventuali dati inseriti dagli utenti.
+	\item \textbf{Form:}\\
+	Sono stati implementati controlli dell'input da parte dell'utente sia lato client (\emph{PHP}) sia lato server (\emph{JavaScript}).
+	\item \textbf{Dispositivi:}\\
+	Il sito è stato progettato per essere utilizzato da diversi dispositivi e a diverse dimensioni senza problemi. Per fare ciò si è utilizzato la pratica di sviluppo "\emph{Mobile First}" con la quale il progetto viene ideato pensando prima a dispositivi mobile.
+\end{itemize}
+Per rendere il sito accessibile e usabile sono state applicate le seguenti scelte: 
+	\begin{itemize}
+		\item Utilizzo dell'attributo \emph{alt} nelle immagini, per persone con disabilità visive.
+		 Tale attributo permette di inserire delle descrizioni delle immagini che verranno poi lette dal screen reader. 
+		 La descrizione deve essere riportata solo se l'immagine è di contenuto e riporta informazioni importanti altrimenti, se l'immagine è solo di presentazione, la descrizione viene lasciata vuota.
+		 Inoltre se si decide di implementare la descrizione, quest'ultima deve essere chiara ed esaustiva per non confondere l'utente.
+		\item Utilizzo di \emph{aiuti nascosti}, per persone che utilizzano screen reader o navigazione tramite tastiera. 
+		Gli \emph{aiuti nascosti} sono link invisibili all'utente ma visibile agli screen reader.
+		 Sono utilizzati in diversi punti della pagina e permettono di saltare contenuti non interessanti e dirigersi direttamente a ciò che si cerca.
+		\item Attenzione ai contrasti dei colori, per evitare problemi o disorientamento a utenti daltonici. 
+		\item Per aiutare l'utente a capire dove si trova viene sottolineato nel menu la pagina in cui si trova l'utente; inoltre nella pagina \emph{Menu} viene sottolineata la categoria che l'utente sta visualizzando.
+		Per i link presenti nel contenuto viene utilizzata la convezione standard: sono colorati di blu se non sono stati visitati altrimenti sono viola.
+		I link dei bottoni del menu non seguono questa convezione poiché facilmente riconoscibili.
+		\item Nelle form, quando l'utente sbaglia, vengono riportati avvisi di errore spiegando cosa è stato sbagliato facilitando la comprensione dell'utente ed evitando disorientamento.
+		\item Non è stato necessario l'implementazione di \emph{tabindex}, in quanto l'ordine seguito è logico e rispetta l'ordine dei contenuti della pagina. % da decidere se usare o meno
+		\item Nelle pagine \emph{Panino} e \emph{gestioneCommenti} è stato utilizzato il bottone \emph{torna su}; Questo bottone posto in fondo alla pagina, sotto ai commenti, è un link che permette all'utente di ritornare a inizio pagina evitando scroll inutile e velocizzando la navigazione. 
+		\item Per la versione \emph{Mobile} è stata rispettata la "Comfort Zone" ossia il menu, le form, link o altre opzioni cliccabili sono state inserite in zone comode da raggiungere per l'utente. 
+	\end{itemize}
