@@ -213,6 +213,10 @@ abbr {
     color: black;
 }
 
+a.elimina {
+    display: none;
+}
+
 #caricaCommenti, .tornaSu {
     display: none;
 }
