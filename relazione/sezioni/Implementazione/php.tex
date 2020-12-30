@@ -3,10 +3,10 @@ pagina viene riportato il tasto di login se l'utente non è loggato, altrimenti 
 Il linguaggio \emph{PHP} viene utilizzato per leggere, ricavare, scrivere ed eliminare informazioni dal database.\\
 Il sito è strutturato in questo modo: 
 \begin{itemize}
-    \item file \emph{HTML} per ogni singola pagina contenente tutte le parti statiche;
-    \item i relativi file in \emph{PHP}, per elaborare le parti dinamiche e ritornare la pagina completa;
-    \item file \emph{PHP} per la gestione di diverse funzionalità: inserimento o eliminazione di eventi, login e logout, la possibilità di votare o commentare un panino;
-    \item file \emph{PHP} per l'interazione con il \emph{DB}.
+    \item File \emph{HTML} per ogni singola pagina contenente tutte le parti statiche;
+    \item I relativi file in \emph{PHP}, per elaborare le parti dinamiche e ritornare la pagina completa;
+    \item File \emph{PHP} per la gestione di diverse funzionalità: inserimento o eliminazione di eventi, login e logout, la possibilità di votare o commentare un panino;
+    \item File \emph{PHP} per l'interazione con il \emph{DB}.
 \end{itemize}
 In questo modo si mantiene la separazione tra struttura e comportamento, in quanto la struttura viene descritta nei file HTML, mentre il comportamento è gestito dai file \emph{PHP} e \emph{JS} come vedremo in seguito.\\
 
@@ -16,6 +16,6 @@ I metodi utilizzati per il controllo dell'input sono:
         \item \emph{trim()}: elimina gli spazi prima e dopo la stringa in input;
         \item \emph{htmlentities()}: converte tutti i possibili caratteri speciali in entità \emph{HTML};
         \item \emph{strip\_tags()}: elimina tutti i possibili tag \emph{HTML};
-        \item inoltre viene utilizzata la funzione \emph{mysqli real escape string};
-        \item nella query per il login viene utilizzato \emph{BINARY} per rendere la form case sensitive;
+        \item Inoltre viene utilizzata la funzione \emph{mysqli real escape string};
+        \item Nella query per il login viene utilizzato \emph{BINARY} per rendere la form case sensitive;
     \end{itemize}
