@@ -25,9 +25,8 @@
     if($nPasswordCifrata === $cPasswordCifrata) {
         if($nPasswordCifrata !== $vPasswordCifrata) {
             $result = $dbAccess->checkUserAndPassword($username, $vPasswordCifrata);
-            $_SESSION["isValid"] = $result["isValid"];
 
-            if($_SESSION["isValid"]) {
+            if($result["isValid"]) {
                 $dbAccess->changePassword($username, $vPasswordCifrata, $nPasswordCifrata);
                 header("Location: ../cambioPassword.php?cambioAvvenuto=1");
             } else {
