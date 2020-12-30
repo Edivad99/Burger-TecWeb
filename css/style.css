@@ -468,7 +468,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-#accesso, #registrati {
+#accesso #registrati {
     color: var(--principale);
     background-color: transparent;
 }
