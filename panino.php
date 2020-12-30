@@ -1,7 +1,7 @@
 <?php
 
 require_once "php/util.php";
-require_once "php/connectiondb.php";
+require_once "php/connectionDB.php";
 use Util\Util;
 use DB\DBAccess;
 
@@ -19,7 +19,7 @@ if(!$connessioneRiuscita) {
 
 $id = $_GET["ID"];
 $panino = $dbAccess->getPaninoById($id);
-$commenti = $dbAccess->getCommentiPaninoById($id);
+$commenti = $dbAccess->getCommentiPaninoById($id, 5, 0);
 $voti = $dbAccess->getVotiPaninoById($id);
 $dbAccess->closeDBConnection();
 
@@ -31,7 +31,7 @@ if(count($commenti) > 0) {
     foreach($commenti as $commento) {
         $content = array(
             "{{ username }}" => $commento["Username"],
-            "{{ dataOraPost }}" => date_format($commento["DataOraPost"], 'H:i:s d/m/Y'),
+            "{{ dataOraPost }}" => $commento["DataOraPost"],
             "{{ contenuto }}" => $commento["Contenuto"]
         );
 
@@ -57,14 +57,15 @@ $media = 0;
 foreach($voti as $voto) {
     $media += intval($voto["Voto"]);
     if($username != "LOGIN" && $voto["Username"] == $username) {
-        $votoForm = "Il tuo voto è: " . intval($voto["Voto"]) . "/5";//Se l'utente ha già votato, non mostro la form per il voto
+        $votoInt = intval($voto["Voto"]);
+        $votoForm = "<p>Il tuo voto è: <abbr title=\"$votoInt su 5\">$votoInt/5</abbr></p>";//Se l'utente ha già votato, non mostro la form per il voto
     }
 }
 $mediaText = "";
 if(count($voti) > 0) {
     $media /= count($voti);
     $media = round($media, 0, PHP_ROUND_HALF_DOWN);
-    $mediaText = "<p>Il nostro panino è valutato <span class=\"number\">$media</span>/5</p>";
+    $mediaText = "<p>Il nostro panino è valutato <abbr title=\"$media su 5\"><span class=\"number\">$media</span>/5</abbr></p>";
 }
 
 $errore = "";
@@ -72,9 +73,12 @@ if(isset($_GET) && isset($_GET["errore"]) && $_GET["errore"] == 1) {
     $errore = "Controlla la lunghezza del testo!";
 }
 
+$buttonCaricaCommenti = "";
+if(count($commenti) >= 5) {
+    $buttonCaricaCommenti = "<button id=\"caricaCommenti\" class=\"button\" onclick=\"showMoreCommentsByPanino({{ paninoID }})\">Carica altri commenti</button>";
+}
 
 if(isset($panino)) {
-    //var_dump($panino);//Funzione utile per scoprire cosa otteniamo dal DB
     $nomePanino = $panino["Nome"];
     $imgPanino = $panino["Img"];
     $ingredienti = explode(";", $panino["Ingredienti"]);
@@ -83,6 +87,7 @@ if(isset($panino)) {
     $descrizione = $panino["Descrizione"];
 
     $content = array(
+        "<buttonCaricaCommenti/>" => $buttonCaricaCommenti,
         "<formCommentoPanino/>" => $commentoForm,
         "<formVotoPanino/>" => $votoForm,
         "{{ paninoID }}" => $id,

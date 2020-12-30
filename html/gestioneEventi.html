@@ -44,32 +44,44 @@
 
     <div id="contenutoGenerale">
         <msgErrore/>
-        <div id="form">
-            <form action="php/eventiHandler.php" method="post" onsubmit="return validaFormEvento();">
+        <div id="formGestioneEventi">
+            <form action="php/eventiHandler.php" method="post" onsubmit="return validaFormEvento()">
                 <fieldset class="formEvento">
-                    <legend id="legend">Aggiungi un evento:</legend>
-                    <label for="new_title">Titolo</label>
-                    <input type="text" name="nuovo_titolo" id="new_title" required />
-                    <label for="data">Data</label>
-                    <input type="date" name="data" id="new_data" required/>
-                    <label for="place">Luogo</label>
-                    <input type="text" name="luogo" id="place" value="{{ stdPlace }}" required />
-                    <label for="description">Descrizione</label>
-                    <textarea name="descrizione" id="description" rows="4" cols="20" required></textarea>
+                    <legend>Aggiungi un evento:</legend>
+
+                    <label for="titolo">Titolo</label>
+                    <input type="text" name="titolo" id="titolo" required />
+                    <p class="errore" id="errore_titolo"></p>
+
+                    <label for="data-ora">Data-Ora</label>
+                    <input type="datetime-local" min="{{ dataMinima }}" name="data-ora" id="data-ora" required/>
+                    <p class="errore" id="errore_data"></p>
+
+                    <label for="luogo">Luogo</label>
+                    <input type="text" name="luogo" id="luogo" value="{{ stdLuogo }}" required />
+                    <p class="errore" id="errore_luogo"></p>
+
+                    <label for="descrizione">Descrizione</label>
+                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required></textarea>
+                    <p class="errore" id="errore_descrizione"></p>
+
                     <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>
                 </fieldset>
             </form>
 
             <form action="php/eventiHandler.php" method="post">
                 <fieldset class="formEvento">
-                    <legend id="legend">Rimuovi un evento:</legend>
+                    <legend>Rimuovi un evento:</legend>
+
                     <label for="title">Titolo</label>
                     <select name="titolo" id="title" required onchange="titleChangedEvent()">
                         <opzioni/>
                     </select>
+
                     <label for="data">Data</label>
                     <select name="data" id="date" required disabled>
                     </select>
+
                     <input type="submit" name="elimina" value="Elimina" id="elimina"/>
                 </fieldset>
             </form>
@@ -84,6 +96,6 @@
         </ul>
     </footer>
 
-    <script src="js/controlli.js"></script>
+    <script src="js/validazioneGestioneEventi.js"></script>
 </body>
 </html>

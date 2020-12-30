@@ -1,49 +1,28 @@
-const maxCaratteri = 400;
-
-function contaCaratteri() {
-    let commento = document.getElementById("commento");
-    let caratteriContatore = document.getElementById("caratteri");
-
-    let lunghezza = commento.value.length;
-    let caratteriRimasti = Math.max(0, maxCaratteri - lunghezza);
-
-    caratteriContatore.innerHTML = caratteriRimasti;
-    commento.value = commento.value.substring(0, Math.min(maxCaratteri, lunghezza));
-}
-
-function validaCommento() {
-    let commento = document.getElementById("commento");
-    let lunghezza = commento.value.trim().length;
-
-    const messaggio = "Controlla la lunghezza del testo!";
-
-    let result = lunghezza >= 2 && lunghezza <= maxCaratteri;
-    if(!result)
-        document.getElementById("erroreForm").innerText = messaggio;
-    return result;
-}
-
 function validaFormEvento() {
-    let titolo = document.getElementById("new_title").value.trim();
-    let data = document.getElementById("new_data").value;
-    let luogo = document.getElementById("place").value.trim();
-    let descrizione = document.getElementById("description").value.trim();
+    let errore = document.getElementById('datiNonCorretti');
+    if (errore != null) {
+        errore.remove();
+    }
+    let titolo = document.getElementById("titolo").value.trim();
+    let data = document.getElementById("data-ora").value;
+    let luogo = document.getElementById("luogo").value.trim();
+    let descrizione = document.getElementById("descrizione").value.trim();
 
     let result = true;
     if(titolo.length <= 2) {
-        console.log("titolo errore");
+        document.getElementById("errore_titolo").innerText = "Il titolo è troppo corto!";
         result = false;
     }
     if(!controllaData(data)) {
-        console.log("data errore");
+        document.getElementById("errore_data").innerText = "Hai inserito una data del passato!";
         result = false;
     }
     if(luogo.length <= 2) {
-        console.log("luogo errore");
+        document.getElementById("errore_luogo").innerText = "Il luogo è troppo corto!";
         result = false;
     }
     if(descrizione.length <= 2) {
-        console.log("descrizione errore");
+        document.getElementById("errore_descrizione").innerText = "La descrizione è troppo corta!";
         result = false;
     }
 

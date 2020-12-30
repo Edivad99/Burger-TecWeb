@@ -195,12 +195,12 @@ body > header h1 {
     padding-bottom: 1.6em;
 }
 
-#new_title, #new_data, #place, #description, #data {
+#titolo, #data-ora, #luogo, #descrizione, #date {
     width: fit-content;
     margin: auto;
 }
 
-select, #new_data, #data {
+select, #data-ora, #date {
     width: 157px;
     margin: auto;
 }
@@ -251,6 +251,10 @@ footer {
 
 #categoria li {
     display: inline;
+}
+
+#categoriaAttiva {
+    padding: 4px 16px;
 }
 
 }
