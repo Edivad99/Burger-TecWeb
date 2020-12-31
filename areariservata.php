@@ -15,6 +15,7 @@ if($_SESSION["isAdmin"]){
 }
 
 $content = array(
+    "{{ icona }}" => $_SESSION["icona"],
     "{{ username }}" => $_SESSION["username"],
     "<gestisciEventi/>" => $evento
 );

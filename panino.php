@@ -38,15 +38,17 @@ if(count($commenti) > 0) {
         $listaCommenti .= Util::replacerFromHTML($patternCommento, $content);
     }
 } else {
-    $listaCommenti = "NON CI SONO COMMENTI";
+    $listaCommenti = "COMMENTA PER PRIMO L'INCREDIBILE $panino";
 }
 
 session_start();
 $votoForm = file_get_contents("html/components/formVotoPanino.html");
 $commentoForm = file_get_contents("html/components/formCommentoPanino.html");
 $username = "LOGIN";
+$icona = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
+    $icona = $_SESSION["icona"];
 } else { //All'utente viene mostrato il link per loggarsi e votare/commentare
     $votoForm = "<p>Per votare, effettua il <a href=\"login.php\" lang=\"eng\">login</a></p>";
     $commentoForm = file_get_contents("html/components/formCommentoPaninoDisabled.html");
@@ -90,6 +92,7 @@ if(isset($panino)) {
         "<buttonCaricaCommenti/>" => $buttonCaricaCommenti,
         "<formCommentoPanino/>" => $commentoForm,
         "<formVotoPanino/>" => $votoForm,
+        "{{ icona }}" => $icona,
         "{{ paninoID }}" => $id,
         "{{ username }}" => $username,
         "{{ nomePanino }}" => $nomePanino,
