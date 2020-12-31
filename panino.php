@@ -38,7 +38,7 @@ if(count($commenti) > 0) {
         $listaCommenti .= Util::replacerFromHTML($patternCommento, $content);
     }
 } else {
-    $listaCommenti = "COMMENTA PER PRIMO L'INCREDIBILE $panino";
+    $listaCommenti = "Commenta per primo l'incredibile ".$panino["Nome"];
 }
 
 session_start();
