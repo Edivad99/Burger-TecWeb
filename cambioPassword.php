@@ -4,6 +4,11 @@ require_once "php/util.php";
 use Util\Util;
 
 session_start();
+if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
+    header("Location: login.php");
+    die;
+}
+
 $msg = "";
 if(isset($_GET["cambioAvvenuto"]) && $_GET["cambioAvvenuto"] == 1) {
     //Cambio avvenuto con successo
