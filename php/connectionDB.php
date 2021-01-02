@@ -422,10 +422,10 @@ class DBAccess {
 
     public function changePassword($username, $vPassword, $nPassword) {
         $checkUsername = mysqli_real_escape_string($this->connection, $username);
-        $sql = "UPDATE Utenti 
-                SET Password = '$nPassword' 
-                WHERE Username = '$username' AND Password = '$vPassword'";
-        
+        $sql = "UPDATE Utenti
+                SET Password = '$nPassword'
+                WHERE BINARY Username = '$checkUsername' AND BINARY Password = '$vPassword'";
+
         return (mysqli_query($this->connection, $sql) === true);
     }
 }
