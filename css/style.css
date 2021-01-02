@@ -389,10 +389,10 @@ form#invioCommento #erroreForm {
     padding: 0px 10px;
 }
 
-#banner h3 {
+.bannerTitle {
     text-transform: uppercase;
     font-weight: 800;
-    font-size: 1.4em;
+    font-size: 1.5em; 
 }
 
 #HistoryImg {
