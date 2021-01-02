@@ -195,6 +195,12 @@ abbr {
     text-decoration: none;
 }
 
+/* CONTENUTO > Cambio Password */
+
+#cambioPwd {
+    display: none;
+}
+
 /* CONTENUTO > Area Riservata */
 
 .button {
