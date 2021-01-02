@@ -28,6 +28,7 @@
 
             if($result["isValid"]) {
                 $dbAccess->changePassword($username, $vPasswordCifrata, $nPasswordCifrata);
+                $dbAccess->closeDBConnection();
                 header("Location: ../cambioPassword.php?cambioAvvenuto=1");
             } else {
                 header("Location: ../cambioPassword.php?errDati=1");
@@ -38,6 +39,4 @@
     } else {
         header("Location: ../cambioPassword.php?errConferma=1");
     }
-
-    $dbAccess->closeDBConnection();
 ?>
