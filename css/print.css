@@ -198,7 +198,7 @@ abbr {
 /* CONTENUTO > Cambio Password */
 
 #cambioPwd {
-    text-align: center;
+    display: none;
 }
 
 /* CONTENUTO > Area Riservata */
