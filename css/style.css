@@ -535,7 +535,7 @@ a.elimina {
 
 /* CONTENUTO > Gestione Eventi */
 
-#formGestioneEventi {
+.formGestione {
     display: flex;
     justify-content: center;
     text-align: center;

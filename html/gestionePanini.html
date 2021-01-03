@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestione Eventi | Burgheria Padovana</title>
+    <title>Gestione Panini | Burgheria Padovana</title>
 
-    <meta name="title" content="Gestione Eventi | Burgheria Padovana" />
+    <meta name="title" content="Gestione Panini | Burgheria Padovana" />
     <meta name="description" content="Qui l'admin può gestire gli eventi della Burgheria Padovana"/> <!--Non so se è il caso di far apparire questa pagina sul browser-->
-    <meta name="keywords" content="Burgheria Padovana, Aggiungi, Rimuovi, evento" />
+    <meta name="keywords" content="Burgheria Padovana, Aggiungi, Rimuovi, panino" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
 
@@ -39,27 +39,31 @@
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.php" lang="en">Home</a><a href="areariservata.php"> > Area riservata</a> > Gestione Eventi</p>
+        <p>Ti trovi in: <a href="index.php" lang="en">Home</a><a href="areariservata.php"> > Area riservata</a> > Gestione Panini</p>
     </nav>
 
     <div id="contenutoGenerale">
         <msgErrore/>
         <div class="formGestione">
-            <form action="php/eventiHandler.php" method="post" onsubmit="return validaFormEvento()">
+            <form action="php/paniniHandler.php" method="post" > <!--onsubmit="return validaFormPanino()"-->
                 <fieldset class="formEvento">
-                    <legend>Aggiungi un evento:</legend>
+                    <legend>Aggiungi un panino:</legend> <!--Da modificare gli errori di JS-->
 
-                    <label for="titolo">Titolo</label>
-                    <input type="text" name="titolo" id="titolo" required />
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" required />
                     <p class="errore" id="errore_titolo"></p>
 
-                    <label for="data-ora">Data-Ora</label>
-                    <input type="datetime-local" min="{{ dataMinima }}" name="data-ora" id="data-ora" required/>
+                    <label for="immagine">Immagine</label>
+                    <input type="file" name="immagine" id="immagine" accept="image/png, image/jpeg" required/>
                     <p class="errore" id="errore_data"></p>
 
-                    <label for="luogo">Luogo</label>
-                    <input type="text" name="luogo" id="luogo" value="{{ stdLuogo }}" required />
+                    <label for="categoria">Categoria</label>
+                    <input type="text" name="categoria" id="categoria" required />
                     <p class="errore" id="errore_luogo"></p>
+
+                    <label for="ingred">Ingredienti</label> <!--Forse mettere qualcosa di più adatto-->
+                    <textarea name="ingred" id="ingred" rows="4" cols="20" required></textarea>
+                    <p class="errore" id="errore_descrizione"></p>
 
                     <label for="descrizione">Descrizione</label>
                     <textarea name="descrizione" id="descrizione" rows="4" cols="20" required></textarea>
@@ -69,17 +73,13 @@
                 </fieldset>
             </form>
 
-            <form action="php/eventiHandler.php" method="post">
+            <form action="php/paniniHandler.php" method="post">
                 <fieldset class="formEvento">
-                    <legend>Rimuovi un evento:</legend>
+                    <legend>Rimuovi un panino:</legend>
 
-                    <label for="title">Titolo</label>
-                    <select name="titolo" id="title" required onchange="titleChangedEvent()">
+                    <label for="nome">Nome</label>
+                    <select name="nome" id="nome">
                         <opzioni/>
-                    </select>
-
-                    <label for="data">Data</label>
-                    <select name="data" id="date" required disabled>
                     </select>
 
                     <input type="submit" name="elimina" value="Elimina" id="elimina"/>
@@ -96,6 +96,6 @@
         </ul>
     </footer>
 
-    <script src="js/validazioneGestioneEventi.js"></script>
+    <script src="js/validazioneGestionePanini.js"></script>
 </body>
 </html>
