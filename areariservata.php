@@ -11,12 +11,13 @@ if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
 
 $evento = "";
 if($_SESSION["isAdmin"]){
-    $evento = "<a class=\"button\" href=\"gestioneEventi.php\">Gestisci gli Eventi</a>";
+    $evento .= "<a class=\"button\" href=\"gestioneEventi.php\">Gestisci gli Eventi</a>";
+    $evento .= "<a class=\"button\" href=\"gestionePanini.php\">Gestisci i Panini</a>";
 }
 
 $content = array(
     "{{ username }}" => $_SESSION["username"],
-    "<gestisciEventi/>" => $evento
+    "<gestione/>" => $evento
 );
 
 echo Util::replacer("html/areariservata.html", $content);
