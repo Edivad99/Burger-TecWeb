@@ -16,19 +16,19 @@ if(!$_SESSION["isAdmin"]) {
 }
 
 if(isset($_GET["aggiungi"]) && $_GET["aggiungi"] == 1) {
-    $msgDiErrore = "<p id=\"datiNonCorretti\">L'evento è stato inserito correttamente</p>";
+    $msgDiErrore = "<p id=\"datiNonCorretti\">Il panino è stato inserito correttamente</p>";
 }
 
 if(isset($_GET["aggiungi"]) && $_GET["aggiungi"] == 2) {
-    $msgDiErrore = "<p id=\"datiNonCorretti\">L'evento esiste già</p>";
+    $msgDiErrore = "<p id=\"datiNonCorretti\">Il panino esiste già</p>";
 }
 
 if(isset($_GET["elimina"]) && $_GET["elimina"] == 1) {
-    $msgDiErrore = "<p id=\"datiNonCorretti\">L'evento è stato eliminato con successo</p>";
+    $msgDiErrore = "<p id=\"datiNonCorretti\">Il panino è stato eliminato con successo</p>";
 }
 
 if(isset($_GET["elimina"]) && $_GET["elimina"] == 2) {
-    $msgDiErrore = "<p id=\"datiNonCorretti\">L'evento non esiste</p>";
+    $msgDiErrore = "<p id=\"datiNonCorretti\">Il panino non esiste</p>";
 }
 
 $dbAccess = new DBAccess();
@@ -38,10 +38,10 @@ if(!$connessioneRiuscita) {
     die;
 }
 
-$opzioni = $dbAccess->getEventiDaCancellare();
+$opzioni = $dbAccess->getPaniniDaCancellare();
 $dbAccess->closeDBConnection();
 
-$listaOpzioni="<option value=\"\" disabled selected>Scegli evento</option>";
+$listaOpzioni="<option value=\"\" disabled selected>Scegli panino</option>";
 foreach($opzioni as $opzione) {
     $nome = $opzione["Nome"];
     $listaOpzioni .= "<option>$nome</option>";

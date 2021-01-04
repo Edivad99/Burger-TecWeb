@@ -428,6 +428,72 @@ class DBAccess {
 
         return (mysqli_query($this->connection, $sql) === true);
     }
+
+    /*
+    =================================
+            Pagina Gestione Panini
+    =================================
+    */
+
+    public function createNewPanino($new_name, $image, $category, $ingredients, $description) {
+        $checkName = mysqli_real_escape_string($this->connection, $new_name);
+        $checkCategory = mysqli_real_escape_string($this->connection, $category);
+        $checkIngredients = mysqli_real_escape_string($this->connection, $ingredients);
+        $checkDescription = mysqli_real_escape_string($this->connection, $description);
+        $sql = "SELECT *
+                FROM Prodotti
+                WHERE Nome = '$checkName'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 0) {
+            $sql = "INSERT INTO Prodotti (Nome, Img, Categoria, Ingredienti, Descrizione)
+                    VALUES ('$checkName', '$image', '$checkCategory', '$checkIngredients', '$checkDescription')";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+
+        return false;
+    }
+
+    public function deletePanino($name) {
+        $checkName = mysqli_real_escape_string($this->connection, $name);
+        $sql = "SELECT *
+                FROM Prodotti
+                WHERE Nome = '$checkName'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+        
+        if(mysqli_num_rows($queryResult) == 1) {
+            $sql = "DELETE
+                    FROM Prodotti
+                    WHERE Nome = '$checkName'";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+
+        return false;
+    }
+
+    public function getPaniniDaCancellare() {
+        $sql = "SELECT DISTINCT(Nome)
+                FROM Prodotti
+                ORDER BY Nome";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $opzione = array(
+                "Nome" => $row["Nome"]
+            );
+
+            array_push($result, $opzione);
+        }
+
+        return $result;
+    }
+
 }
 
 ?>
