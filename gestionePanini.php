@@ -39,6 +39,7 @@ if(!$connessioneRiuscita) {
 }
 
 $opzioni = $dbAccess->getPaniniDaCancellare();
+$categorie = $dbAccess->getCategorie();
 $dbAccess->closeDBConnection();
 
 $listaOpzioni="<option value=\"\" disabled selected>Scegli panino</option>";
@@ -47,9 +48,16 @@ foreach($opzioni as $opzione) {
     $listaOpzioni .= "<option>$nome</option>";
 }
 
+$listaCategorie="<option value=\"\" disabled selected>Scegli categoria</option>";
+for($i=1; $i<=3; $i++) {
+    $categoriaText = $categorie["result"][$i-1]["Categoria"];
+    $listaCategorie .= "<option>$categoriaText</option>";
+}
+
 $content = array(
     "{{ username }}" => $_SESSION["username"],
     "<msgErrore/>" => $msgDiErrore,
+    "<categorie/>" => $listaCategorie,
     "<opzioni/>" => $listaOpzioni
 
 );

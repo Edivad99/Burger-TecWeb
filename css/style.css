@@ -569,6 +569,12 @@ select {
     width: 192px;
 }
 
+/* CONTENUTO > Gestione Eventi */
+
+#categoriaForm {
+    margin-bottom: 2.5em;
+}
+
 /* CONTENUTO > 404 e 500 */
 
 #nonTrovato {

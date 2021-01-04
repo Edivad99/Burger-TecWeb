@@ -22,7 +22,18 @@ if(!$_SESSION["isAdmin"]) {
 if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
     $new_name = $_POST["nome"];
     $image = $_POST["immagine"];
-    $category = $_POST["categoria"];
+
+    if($_POST["categoriaForm"] == "Pollo") {
+        $categoria = 1;
+    }
+    if($_POST["categoriaForm"] == "Manzo") {        //Forse così è un po bruttino ma sennò bisogna cambiare il campo categoria
+        $categoria = 2;                             //della tabella Prodotti e trasformare Categoria da INT a VARCHAR
+    }                                               //però prima di farlo bisogna vedere cosa modificare in tutto il codice
+    if($_POST["categoriaForm"] == "Speciali") {
+        $categoria = 3;
+    }
+
+    $category = $categoria;
     $ingredients = $_POST["ingred"];
     $description = $_POST["descrizione"];
     $result = $dbAccess->createNewPanino($new_name, $image, $category, $ingredients, $description);
