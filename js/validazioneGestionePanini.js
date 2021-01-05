@@ -4,7 +4,7 @@ function validaFormPanino() {
         errore.remove();
     }
     let nome = document.getElementById("nome").value.trim();
-    let immagine = document.getElementById("immagine").value.trim();
+    let immagineFileName = document.getElementById("immagine").value;
     let ingred = document.getElementById("ingred").value.trim();
     let descrizione = document.getElementById("descrizione").value.trim();
 
@@ -13,8 +13,8 @@ function validaFormPanino() {
         document.getElementById("errore_nome").innerText = "Il nome è troppo corto!";
         result = false;
     }
-    if(immagine.lenght <= 9) {
-        document.getElementById("errore_immagine").innerText = "Il percorso dell'immagine non esiste!";
+    if(!verificaImmaginePNG(immagineFileName)) {
+        document.getElementById("errore_immagine").innerText = "Il file selezionato non è un'immagine PNG";
         result = false;
     }
     if(ingred.lenght <= 2) {
@@ -27,6 +27,16 @@ function validaFormPanino() {
     }
 
     return result;
+}
+
+function verificaImmaginePNG(immagineFileName) {
+    //Controllo se l'immagine caricata è un PNG
+    if(immagineFileName.length > 0) {
+        let idxDot = immagineFileName.lastIndexOf(".") + 1;
+        let extFile = immagineFileName.substr(idxDot, immagineFileName.length).toLowerCase();
+        return extFile == "png";
+    }
+    return false;
 }
 
 function nameChangedBurger() {

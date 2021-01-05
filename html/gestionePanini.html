@@ -45,16 +45,16 @@
     <div id="contenutoGenerale">
         <msgErrore/>
         <div class="formGestione">
-            <form action="php/paniniHandler.php" method="post" onsubmit="return validaFormPanino()">
+            <form action="php/paniniHandler.php" method="post" onsubmit="return validaFormPanino()" enctype="multipart/form-data">
                 <fieldset class="formEvento">
                     <legend>Aggiungi un panino:</legend> <!--Da modificare gli errori di JS-->
 
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" required />
+                    <input type="text" name="nome" id="nome" required autocomplete="off"/>
                     <p class="errore" id="errore_nome"></p>
 
-                    <label for="immagine">Percorso Immagine</label>
-                    <input type="text" name="immagine" id="immagine" value="img/categoria/nomePanino.png" required />
+                    <label for="immagine"><span lang="en">Upload</span> immagine</label>
+                    <input type="file" name="immagine" id="immagine" accept="image/x-png" required />
                     <p class="errore" id="errore_immagine"></p>
 
                     <label for="categoriaForm">Categoria</label>

@@ -20,29 +20,40 @@ if(!$_SESSION["isAdmin"]) {
 }
 
 if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
-    $new_name = $_POST["nome"];
-    $image = $_POST["immagine"];
+    if(isset($_POST["nome"], $_POST["categoriaForm"], $_POST["ingred"], $_POST["descrizione"], $_FILES["immagine"])) {
 
-    if($_POST["categoriaForm"] == "Pollo") {
+        $nomePanino = $_POST["nome"];
         $categoria = 1;
-    }
-    if($_POST["categoriaForm"] == "Manzo") {        //Forse così è un po bruttino ma sennò bisogna cambiare il campo categoria
-        $categoria = 2;                             //della tabella Prodotti e trasformare Categoria da INT a VARCHAR
-    }                                               //però prima di farlo bisogna vedere cosa modificare in tutto il codice
-    if($_POST["categoriaForm"] == "Speciali") {
-        $categoria = 3;
-    }
+        $percorsoBase = "img/";
+        switch ($_POST["categoriaForm"]) {
+            case "Pollo": $categoria = 1; $percorsoBase.= "pollo/"; break;
+            case "Manzo": $categoria = 2; $percorsoBase.= "manzo/"; break;
+            case "Speciali": $categoria = 3; $percorsoBase.= "speciali/"; break;
+            default: $categoria = 1; $percorsoBase.= "pollo/"; break;
+        }
+        $percorsoBase .= basename($_FILES["immagine"]["name"]);
+        $ingredienti = $_POST["ingred"]; //TODO: Da sistemare
+        $descrizione = $_POST["descrizione"];
 
-    $category = $categoria;
-    $ingredients = $_POST["ingred"];
-    $description = $_POST["descrizione"];
-    $result = $dbAccess->createNewPanino($new_name, $image, $category, $ingredients, $description);
-    if(!$result) {
-        header("Location: ../gestionePanini.php?aggiungi=2");
-        die;
-    }
 
-    header("Location: ../gestionePanini.php?aggiungi=1");
+        $check = getimagesize($_FILES["immagine"]["tmp_name"]);
+        $imageFileType = strtolower(pathinfo($percorsoBase,PATHINFO_EXTENSION));
+        if($check !== false && $imageFileType == "png") {
+            //L'immagine è valida
+            $result = $dbAccess->createNewPanino($nomePanino, $percorsoBase, $categoria, $ingredienti, $descrizione);
+            if($result) {
+                $result = move_uploaded_file($_FILES["immagine"]["tmp_name"], "../" . $percorsoBase);
+                header("Location: ../gestionePanini.php?aggiungi=1");
+                die;
+            } else {
+                header("Location: ../gestionePanini.php?aggiungi=2");
+                die;
+            }
+        } else {
+            echo "File is not a valid image.";
+            //TODO: Creare un errore
+        }
+    }
 } else if(isset($_POST["elimina"]) && $_POST["elimina"] == "Elimina") {
     $name = $_POST["name"];
     $result = $dbAccess->deletePanino($name);
