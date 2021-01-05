@@ -54,15 +54,18 @@ if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
             //TODO: Creare un errore
         }
     }
-} else if(isset($_POST["elimina"]) && $_POST["elimina"] == "Elimina") {
+} else if(isset($_POST["elimina"], $_POST["name"]) && $_POST["elimina"] == "Elimina") {
     $name = $_POST["name"];
     $result = $dbAccess->deletePanino($name);
     if(!$result) {
         header("Location: ../gestionePanini.php?elimina=2");
         die;
+    } else {
+        if(is_string($result)) {
+            $result = unlink("../" . $result);
+        }
+        header("Location: ../gestionePanini.php?elimina=1");
     }
-
-    header("Location: ../gestionePanini.php?elimina=1");
 }
 
 $dbAccess->closeDBConnection();

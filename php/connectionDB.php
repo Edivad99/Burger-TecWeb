@@ -458,18 +458,22 @@ class DBAccess {
 
     public function deletePanino($name) {
         $checkName = mysqli_real_escape_string($this->connection, $name);
-        $sql = "SELECT *
+        $sql = "SELECT Img
                 FROM Prodotti
                 WHERE Nome = '$checkName'";
 
         $queryResult = mysqli_query($this->connection, $sql);
-        
+
         if(mysqli_num_rows($queryResult) == 1) {
+
+            $img = mysqli_fetch_assoc($queryResult)["Img"];
             $sql = "DELETE
                     FROM Prodotti
                     WHERE Nome = '$checkName'";
 
-            return (mysqli_query($this->connection, $sql) === true);
+            if(mysqli_query($this->connection, $sql) === true) {
+                return $img;//Ritorno il percorso dell'immagine per cancellarla
+            }
         }
 
         return false;
