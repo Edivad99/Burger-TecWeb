@@ -49,7 +49,7 @@
                 <fieldset class="formEvento">
                     <legend>Aggiungi un panino:</legend> <!--Da modificare gli errori di JS-->
 
-                    <label for="nome">Nome</label>
+                    <label for="nome">Nome panino</label>
                     <input type="text" name="nome" id="nome" required autocomplete="off"/>
                     <p class="errore" id="errore_nome"></p>
 
@@ -80,10 +80,10 @@
 
                     <label for="categoriaElimina">Categoria</label>
                     <select name="categoriaElimina" id="categoriaElimina" required onchange="nameChangedBurger()">
-                        <opzioni/>
+                        <categorie/>
                     </select>
 
-                    <label for="name">Nome</label>
+                    <label for="name">Nome panino</label>
                     <select name="name" id="name" required disabled>
                     </select>
 

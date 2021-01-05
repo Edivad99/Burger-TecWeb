@@ -27,23 +27,16 @@ if(!$connessioneRiuscita) {
 $categorie = $dbAccess->getCategorie();
 $dbAccess->closeDBConnection();
 
-$listaOpzioni="<option value=\"\" disabled selected>Scegli panino</option>";
-for($i=1; $i<=3; $i++) {
-    $categoriaText = $categorie["result"][$i-1]["Categoria"];
-    $listaOpzioni .= "<option>$categoriaText</option>";
-}
-
 $listaCategorie="<option value=\"\" disabled selected>Scegli categoria</option>";
-for($i=1; $i<=3; $i++) {
-    $categoriaText = $categorie["result"][$i-1]["Categoria"];
+for($i=0; $i<3; $i++) {
+    $categoriaText = $categorie["result"][$i]["Categoria"];
     $listaCategorie .= "<option>$categoriaText</option>";
 }
 
 $content = array(
     "{{ username }}" => $_SESSION["username"],
     "<msgErrore/>" => $messaggio,
-    "<categorie/>" => $listaCategorie,
-    "<opzioni/>" => $listaOpzioni
+    "<categorie/>" => $listaCategorie
 
 );
 
