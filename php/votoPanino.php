@@ -6,7 +6,7 @@ use DB\DBAccess;
 session_start();
 
 if(isset($_SESSION) && $_SESSION["isValid"]) {
-    if(isset($_GET["submit"]) && isset($_GET["paninoRedirect"]) && isset($_GET["voto"])) {
+    if(isset($_GET["submit"], $_GET["paninoRedirect"], $_GET["voto"])) {
         $paninoID = $_GET["paninoRedirect"];
         $voto = $_GET["voto"];
 

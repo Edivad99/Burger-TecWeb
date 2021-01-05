@@ -3,7 +3,7 @@
     require_once "connectionDB.php";
     use DB\DBAccess;
 
-    if(!isset($_POST["opwd"]) || !isset($_POST["npwd"]) || !isset($_POST["cpwd"])) {
+    if(!isset($_POST["opwd"], $_POST["npwd"], $_POST["cpwd"])) {
         header("Location: ../cambioPassword.php");
         die;
     }

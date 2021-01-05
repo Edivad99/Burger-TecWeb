@@ -3,6 +3,11 @@
     require_once "connectionDB.php";
     use DB\DBAccess;
 
+    if(!isset($_POST["usr"], $_POST["pwd"])) {
+        header("Location: ../login.php");
+        die;
+    }
+
     $username = $_POST["usr"];
     $password = $_POST["pwd"];
     $passwordCifrata = md5($password);

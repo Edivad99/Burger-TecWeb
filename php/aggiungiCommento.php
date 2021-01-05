@@ -11,7 +11,7 @@ if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
     die;
 }
 
-if(!isset($_POST["username"]) || !isset($_POST["testo"]) || !isset($_POST["paninoID"]) || !is_numeric($_POST["paninoID"])) {
+if(!isset($_POST["username"], $_POST["testo"], $_POST["paninoID"]) || !is_numeric($_POST["paninoID"])) {
     header("Location: ../menu.php");
     die;
 }
