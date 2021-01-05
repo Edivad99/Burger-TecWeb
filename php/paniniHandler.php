@@ -44,7 +44,7 @@ if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
 
     header("Location: ../gestionePanini.php?aggiungi=1");
 } else if(isset($_POST["elimina"]) && $_POST["elimina"] == "Elimina") {
-    $name = $_POST["nome"];
+    $name = $_POST["name"];
     $result = $dbAccess->deletePanino($name);
     if(!$result) {
         header("Location: ../gestionePanini.php?elimina=2");

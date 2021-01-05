@@ -571,7 +571,7 @@ select {
 
 /* CONTENUTO > Gestione Eventi */
 
-#categoriaForm {
+#categoriaForm, #categoriaElimina {
     margin-bottom: 2.5em;
 }
 

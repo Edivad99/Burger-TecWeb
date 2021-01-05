@@ -475,9 +475,11 @@ class DBAccess {
         return false;
     }
 
-    public function getPaniniDaCancellare() {
+    public function getBurgerFromCategory($category) {
+        $checkCategory = mysqli_real_escape_string($this->connection, $category);
         $sql = "SELECT DISTINCT(Nome)
                 FROM Prodotti
+                WHERE Categoria = '$checkCategory'
                 ORDER BY Nome";
         $queryResult = mysqli_query($this->connection, $sql);
 
@@ -490,7 +492,6 @@ class DBAccess {
 
             array_push($result, $opzione);
         }
-
         return $result;
     }
 
