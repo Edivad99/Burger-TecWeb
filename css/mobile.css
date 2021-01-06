@@ -186,7 +186,7 @@ body > header h1 {
 
 /* CONTENUTO > Gestione Eventi */
 
-#form {
+.formGestione {
     flex-direction: column;
 }
 
@@ -195,7 +195,7 @@ body > header h1 {
     padding-bottom: 1.6em;
 }
 
-#titolo, #data-ora, #luogo, #descrizione, #date {
+#titolo, #luogo, #descrizione, #nome, #immagine, #ingred {
     width: fit-content;
     margin: auto;
 }
