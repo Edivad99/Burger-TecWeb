@@ -42,11 +42,12 @@ if(isset($_POST["aggiungi"], $_POST["titolo"], $_POST["data-ora"], $_POST["luogo
     } else {
         $messaggio = "L'evento non esiste e non è stato eliminato";
     }
-} else {
-    $dbAccess->closeDBConnection();
-    header("Location: ../gestioneEventi.php");
 }
 
 $dbAccess->closeDBConnection();
-header("Location: ../gestioneEventi.php?messaggio=$messaggio");
+if(strlen($messaggio) > 0) {
+    header("Location: ../gestioneEventi.php?messaggio=$messaggio");
+} else {
+    header("Location: ../gestioneEventi.php");
+}
 ?>
