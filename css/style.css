@@ -554,7 +554,7 @@ a.elimina {
     padding: 1em 2em 2em 2em;
 }
 
-.formEvento #descrizione {
+.formEvento #descrizione, .formEvento #ingred {
     max-width: 400px;
     min-width: 188px;
     min-height: 65px;

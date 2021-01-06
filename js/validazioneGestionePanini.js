@@ -17,8 +17,12 @@ function validaFormPanino() {
         document.getElementById("errore_immagine").innerText = "Il file selezionato non è un'immagine PNG";
         result = false;
     }
-    if(ingred.lenght <= 2) {
-        document.getElementById("errore_ingredienti").innerText ="Ingredienti è troppo corta"; //Da cambiare assolutamente
+    let check = controllaIngredienti(ingred);
+    if(check == 0) {
+        document.getElementById("errore_ingredienti").innerText ="Devi inserire almeno 2 ingredienti";
+        result = false;
+    } else if (check == 1) {
+        document.getElementById("errore_ingredienti").innerText ="Togli il ; finale";
         result = false;
     }
     if(descrizione.length <= 2) {
@@ -37,6 +41,22 @@ function verificaImmaginePNG(immagineFileName) {
         return extFile == "png";
     }
     return false;
+}
+
+function controllaIngredienti(ingredienti) {
+    let res = ingredienti.split(";");
+
+    if(res.length < 2) {
+        return 0;
+    } else {
+        let result = true;
+        for(let i = 0; i < res.length && result; i++) {
+            if(res[i].trim() == "") {
+                result = false;
+            }
+        }
+        return (result ? 2 : 1);
+    }
 }
 
 function nameChangedBurger() {

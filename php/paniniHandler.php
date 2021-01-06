@@ -32,7 +32,14 @@ if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi" && isset($_POST
         default: $categoria = 1; $percorsoBase.= "pollo/"; break;
     }
     $percorsoBase .= basename($_FILES["immagine"]["name"]);
-    $ingredienti = $_POST["ingred"]; //TODO: Da sistemare
+    $ingredienti = $_POST["ingred"];
+
+    $ultimoCarattere = substr($ingredienti, strlen($ingredienti) - 1);
+    while($ultimoCarattere == ";") {
+        $ingredienti = substr($ingredienti, 0, strlen($ingredienti) - 1);
+        $ultimoCarattere = substr($ingredienti, strlen($ingredienti) - 1);
+    }
+
     $descrizione = $_POST["descrizione"];
 
 
