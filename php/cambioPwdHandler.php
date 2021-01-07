@@ -3,7 +3,7 @@
     require_once "connectionDB.php";
     use DB\DBAccess;
 
-    if(!isset($_POST["opwd"]) || !isset($_POST["npwd"]) || !isset($_POST["cpwd"])) {
+    if(!isset($_POST["opwd"], $_POST["npwd"], $_POST["cpwd"])) {
         header("Location: ../cambioPassword.php");
         die;
     }
@@ -22,6 +22,7 @@
 
     session_start();
     $username = $_SESSION["username"];
+    $messaggio = "";
     if($nPasswordCifrata === $cPasswordCifrata) {
         if($nPasswordCifrata !== $vPasswordCifrata) {
             $result = $dbAccess->checkUserAndPassword($username, $vPasswordCifrata);
@@ -29,14 +30,15 @@
             if($result["isValid"]) {
                 $dbAccess->changePassword($username, $vPasswordCifrata, $nPasswordCifrata);
                 $dbAccess->closeDBConnection();
-                header("Location: ../cambioPassword.php?cambioAvvenuto=1");
+                $messaggio = "La modifica della password è avvenuta con successo!";
             } else {
-                header("Location: ../cambioPassword.php?errDati=1");
+                $messaggio = "La vecchia password non è corretta";
             } 
         } else {
-            header("Location: ../cambioPassword.php?errNuovaPwd=1");
+            $messaggio = "La nuova password è uguale a quella vecchia";
         }
     } else {
-        header("Location: ../cambioPassword.php?errConferma=1");
+        $messaggio = "La nuova password e quella di conferma non corrispondono";
     }
+    header("Location: ../cambioPassword.php?messaggio=$messaggio");
 ?>

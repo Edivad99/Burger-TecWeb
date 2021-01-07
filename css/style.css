@@ -481,7 +481,7 @@ input[type="submit"] {
     background-color: transparent;
 }
 
-#datiNonCorretti, #cambioAvvenuto {
+#datiNonCorretti {
     background-color: var(--principale);
     color: white;
     text-align: center;
