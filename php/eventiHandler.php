@@ -19,30 +19,35 @@ if(!$_SESSION["isAdmin"]) {
     header("Location: areariservata.php");
 }
 
-if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi") {
+$messaggio = "";
+if(isset($_POST["aggiungi"], $_POST["titolo"], $_POST["data-ora"], $_POST["luogo"], $_POST["descrizione"]) && $_POST["aggiungi"] == "Aggiungi") {
     $new_title = $_POST["titolo"];
     $data = $_POST["data-ora"];
     $place = $_POST["luogo"];
     $description = $_POST["descrizione"];
     $result = $dbAccess->createNewEvent($new_title, $data, $place, $description);
-    if(!$result) {
-        header("Location: ../gestioneEventi.php?aggiungi=2");
-        die;
-    }
 
-    header("Location: ../gestioneEventi.php?aggiungi=1");
-} else if(isset($_POST["elimina"]) && $_POST["elimina"] == "Elimina") {
+    if($result) {
+        $messaggio = "L'evento è stato inserito correttamente";
+    } else {
+        $messaggio = "L'evento esiste già";
+    }
+} else if(isset($_POST["elimina"], $_POST["titolo"], $_POST["data"]) && $_POST["elimina"] == "Elimina") {
     $title = $_POST["titolo"];
     $data = date("Y-m-d", strtotime($_POST["data"]));
     $result = $dbAccess->deleteEvent($title, $data);
-    if(!$result) {
-        header("Location: ../gestioneEventi.php?elimina=2");
-        die;
-    }
 
-    header("Location: ../gestioneEventi.php?elimina=1");
+    if($result) {
+        $messaggio = "L'evento è stato eliminato con successo";
+    } else {
+        $messaggio = "L'evento non esiste e non è stato eliminato";
+    }
 }
 
 $dbAccess->closeDBConnection();
-
+if(strlen($messaggio) > 0) {
+    header("Location: ../gestioneEventi.php?messaggio=$messaggio");
+} else {
+    header("Location: ../gestioneEventi.php");
+}
 ?>

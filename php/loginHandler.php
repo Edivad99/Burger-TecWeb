@@ -3,6 +3,11 @@
     require_once "connectionDB.php";
     use DB\DBAccess;
 
+    if(!isset($_POST["usr"], $_POST["pwd"])) {
+        header("Location: ../login.php");
+        die;
+    }
+
     $username = $_POST["usr"];
     $password = $_POST["pwd"];
     $passwordCifrata = md5($password);
@@ -21,7 +26,9 @@
         //REGISTRA
         $registrazioneValida = $dbAccess->createNewUser($username, $passwordCifrata);
         if(!$registrazioneValida) {
-            header("Location: ../login.php?registrazione=1");
+            $dbAccess->closeDBConnection();
+            $messaggio = "L'username è già in uso";
+            header("Location: ../login.php?messaggio=$messaggio");
             die;
         }
     }
@@ -30,7 +37,9 @@
     if($registrazioneValida) {
 
         $result = $dbAccess->checkUserAndPassword($username, $passwordCifrata);
+        $dbAccess->closeDBConnection();
         $_SESSION["isValid"] = $result["isValid"];
+
 
         if($_SESSION["isValid"]) {
             $_SESSION["isAdmin"] = $result["isAdmin"];
@@ -38,9 +47,8 @@
             $_SESSION["usernameID"] = $result["usernameID"];
             header("Location: ../areariservata.php");
         } else {
-            header("Location: ../login.php?accesso=1");
+            $messaggio = "Dati non corretti";
+            header("Location: ../login.php?messaggio=$messaggio");
         }
     }
-
-    $dbAccess->closeDBConnection();
 ?>
