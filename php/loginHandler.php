@@ -44,6 +44,7 @@
         if($_SESSION["isValid"]) {
             $_SESSION["isAdmin"] = $result["isAdmin"];
             $_SESSION["username"] = $result["username"];
+            $_SESSION["icona"] = "<img id=\"icon\" src=\"img/user-icon.png\" alt=\"Area riservata di $result[username]\"/>";
             $_SESSION["usernameID"] = $result["usernameID"];
             header("Location: ../areariservata.php");
         } else {

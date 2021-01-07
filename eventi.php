@@ -29,14 +29,14 @@ $patternEvento = file_get_contents("html/components/evento.html");
     }
 
 session_start();
-$username = "LOGIN";
+$icona = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
-    $username = $_SESSION["username"];
+    $icona = $_SESSION["icona"];
 }
 
 $content = array(
     "<eventi/>" => $listaEventi,
-    "{{ username }}" => $username
+    "{{ icona }}" => $icona
 );
 
 echo Util::replacer("html/eventi.html", $content);

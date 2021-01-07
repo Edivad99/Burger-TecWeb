@@ -34,7 +34,7 @@ for($i=0; $i<3; $i++) {
 }
 
 $content = array(
-    "{{ username }}" => $_SESSION["username"],
+    "{{ icona }}" => $_SESSION["icona"],
     "<msgErrore/>" => $messaggio,
     "<categorie/>" => $listaCategorie
 

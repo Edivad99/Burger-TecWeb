@@ -38,15 +38,17 @@ if(count($commenti) > 0) {
         $listaCommenti .= Util::replacerFromHTML($patternCommento, $content);
     }
 } else {
-    $listaCommenti = "NON CI SONO COMMENTI";
+    $listaCommenti = "Commenta per primo l'incredibile ".$panino["Nome"];
 }
 
 session_start();
 $votoForm = file_get_contents("html/components/formVotoPanino.html");
 $commentoForm = file_get_contents("html/components/formCommentoPanino.html");
-$username = "LOGIN";
+$username = "SCONOSCIUTO";
+$icona = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
     $username = $_SESSION["username"];
+    $icona = $_SESSION["icona"];
 } else { //All'utente viene mostrato il link per loggarsi e votare/commentare
     $votoForm = "<p>Per votare, effettua il <a href=\"login.php\" lang=\"eng\">login</a></p>";
     $commentoForm = file_get_contents("html/components/formCommentoPaninoDisabled.html");
@@ -56,7 +58,7 @@ if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
 $media = 0;
 foreach($voti as $voto) {
     $media += intval($voto["Voto"]);
-    if($username != "LOGIN" && $voto["Username"] == $username) {
+    if($username != "SCONOSCIUTO" && $voto["Username"] == $username) {
         $votoInt = intval($voto["Voto"]);
         $votoForm = "<p>Il tuo voto è: <abbr title=\"$votoInt su 5\">$votoInt/5</abbr></p>";//Se l'utente ha già votato, non mostro la form per il voto
     }
@@ -87,6 +89,7 @@ if(isset($panino)) {
         "<buttonCaricaCommenti/>" => $buttonCaricaCommenti,
         "<formCommentoPanino/>" => $commentoForm,
         "<formVotoPanino/>" => $votoForm,
+        "{{ icona }}" => $icona,
         "{{ paninoID }}" => $id,
         "{{ username }}" => $username,
         "{{ nomePanino }}" => $nomePanino,
