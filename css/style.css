@@ -208,6 +208,14 @@ abbr {
     flex: 33%;
 }
 
+#contenitorePanini li:last-child {
+    flex-grow: 0;
+}
+
+#contenitorePanini li:nth-last-child(2) {
+    flex-grow: 0;
+}
+
 #contenitorePanini img {
     width: 40%;
     display: block;
@@ -527,7 +535,7 @@ a.elimina {
 
 /* CONTENUTO > Gestione Eventi */
 
-#formGestioneEventi {
+.formGestione {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -546,7 +554,7 @@ a.elimina {
     padding: 1em 2em 2em 2em;
 }
 
-.formEvento #descrizione {
+.formEvento #descrizione, .formEvento #ingred {
     max-width: 400px;
     min-width: 188px;
     min-height: 65px;
@@ -559,6 +567,12 @@ a.elimina {
 
 select {
     width: 192px;
+}
+
+/* CONTENUTO > Gestione Eventi */
+
+#categoriaForm, #categoriaElimina {
+    margin-bottom: 2.5em;
 }
 
 /* CONTENUTO > 404 e 500 */

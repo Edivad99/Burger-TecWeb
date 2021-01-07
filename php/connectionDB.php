@@ -212,6 +212,81 @@ class DBAccess {
 
     /*
     =================================
+            Pagina Login
+    =================================
+    */
+
+    public function checkUserAndPassword($username, $password) {
+        $checkUsername = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT *
+                FROM Utenti
+                WHERE BINARY UserName = '$checkUsername' AND BINARY Password = '$password'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 1) {
+            $user = mysqli_fetch_assoc($queryResult);
+            $isAdmin = $user["Admin"] == 1;
+
+            return array(
+                "isValid" => true,
+                "isAdmin" => $isAdmin,
+                "username" => $user["Username"],
+                "usernameID" => $user["ID"]
+            );
+        }
+        return array(
+            "isValid" => false,
+            "isAdmin" => false,
+            "username" => null,
+            "usernameID" => -1
+        );
+    }
+
+    public function checkUserIsAdmin($username) {
+        $checkUsername = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT *
+                FROM Utenti
+                WHERE BINARY UserName = '$checkUsername'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 1) {
+            $user = mysqli_fetch_assoc($queryResult);
+            return ($user["Admin"] == 1);
+        }
+        return false;
+    }
+
+    public function createNewUser($username, $password) {
+        $checkUsername = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT *
+                FROM Utenti
+                WHERE BINARY UserName = '$checkUsername'";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 0) {
+            //Non esiste nessun utente con questo username
+            $sql = "INSERT INTO Utenti (Username, Password, Admin) 
+                    VALUES ('$checkUsername','$password', 0)";
+
+            return (mysqli_query($this->connection, $sql) === true);
+        }
+        return false;
+    }
+
+    public function changePassword($username, $vPassword, $nPassword) {
+        $checkUsername = mysqli_real_escape_string($this->connection, $username);
+        $sql = "UPDATE Utenti
+                SET Password = '$nPassword'
+                WHERE BINARY Username = '$checkUsername' AND BINARY Password = '$vPassword'";
+
+        return (mysqli_query($this->connection, $sql) === true);
+    }
+
+    /*
+    =================================
             Pagina Gestione Commenti
     =================================
     */
@@ -356,78 +431,74 @@ class DBAccess {
 
     /*
     =================================
-            Pagina Login
+            Pagina Gestione Panini
     =================================
     */
 
-    public function checkUserAndPassword($username, $password) {
-        $checkUsername = mysqli_real_escape_string($this->connection, $username);
+    public function createNewPanino($new_name, $image, $category, $ingredients, $description) {
+        $checkName = mysqli_real_escape_string($this->connection, $new_name);
+        $checkCategory = mysqli_real_escape_string($this->connection, $category);
+        $checkIngredients = mysqli_real_escape_string($this->connection, $ingredients);
+        $checkDescription = mysqli_real_escape_string($this->connection, $description);
         $sql = "SELECT *
-                FROM Utenti
-                WHERE BINARY UserName = '$checkUsername' AND BINARY Password = '$password'";
-
-        $queryResult = mysqli_query($this->connection, $sql);
-
-        if(mysqli_num_rows($queryResult) == 1) {
-            $user = mysqli_fetch_assoc($queryResult);
-            $isAdmin = $user["Admin"] == 1;
-
-            return array(
-                "isValid" => true,
-                "isAdmin" => $isAdmin,
-                "username" => $user["Username"],
-                "usernameID" => $user["ID"]
-            );
-        }
-        return array(
-            "isValid" => false,
-            "isAdmin" => false,
-            "username" => null,
-            "usernameID" => -1
-        );
-    }
-
-    public function checkUserIsAdmin($username) {
-        $checkUsername = mysqli_real_escape_string($this->connection, $username);
-        $sql = "SELECT *
-                FROM Utenti
-                WHERE BINARY UserName = '$checkUsername'";
-
-        $queryResult = mysqli_query($this->connection, $sql);
-
-        if(mysqli_num_rows($queryResult) == 1) {
-            $user = mysqli_fetch_assoc($queryResult);
-            return ($user["Admin"] == 1);
-        }
-        return false;
-    }
-
-    public function createNewUser($username, $password) {
-        $checkUsername = mysqli_real_escape_string($this->connection, $username);
-        $sql = "SELECT *
-                FROM Utenti
-                WHERE BINARY UserName = '$checkUsername'";
+                FROM Prodotti
+                WHERE Nome = '$checkName'";
 
         $queryResult = mysqli_query($this->connection, $sql);
 
         if(mysqli_num_rows($queryResult) == 0) {
-            //Non esiste nessun utente con questo username
-            $sql = "INSERT INTO Utenti (Username, Password, Admin) 
-                    VALUES ('$checkUsername','$password', 0)";
+            $sql = "INSERT INTO Prodotti (Nome, Img, Categoria, Ingredienti, Descrizione)
+                    VALUES ('$checkName', '$image', '$checkCategory', '$checkIngredients', '$checkDescription')";
 
             return (mysqli_query($this->connection, $sql) === true);
         }
+
         return false;
     }
 
-    public function changePassword($username, $vPassword, $nPassword) {
-        $checkUsername = mysqli_real_escape_string($this->connection, $username);
-        $sql = "UPDATE Utenti
-                SET Password = '$nPassword'
-                WHERE BINARY Username = '$checkUsername' AND BINARY Password = '$vPassword'";
+    public function deletePanino($name) {
+        $checkName = mysqli_real_escape_string($this->connection, $name);
+        $sql = "SELECT Img
+                FROM Prodotti
+                WHERE Nome = '$checkName'";
 
-        return (mysqli_query($this->connection, $sql) === true);
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 1) {
+
+            $img = mysqli_fetch_assoc($queryResult)["Img"];
+            $sql = "DELETE
+                    FROM Prodotti
+                    WHERE Nome = '$checkName'";
+
+            if(mysqli_query($this->connection, $sql) === true) {
+                return $img;//Ritorno il percorso dell'immagine per cancellarla
+            }
+        }
+
+        return false;
     }
+
+    public function getBurgerFromCategory($category) {
+        $checkCategory = mysqli_real_escape_string($this->connection, $category);
+        $sql = "SELECT DISTINCT(Nome)
+                FROM Prodotti
+                WHERE Categoria = '$checkCategory'
+                ORDER BY Nome";
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        $result = array();
+
+        while($row = mysqli_fetch_assoc($queryResult)) {
+            $opzione = array(
+                "Nome" => $row["Nome"]
+            );
+
+            array_push($result, $opzione);
+        }
+        return $result;
+    }
+
 }
 
 ?>
