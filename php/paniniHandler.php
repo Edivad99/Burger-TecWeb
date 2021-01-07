@@ -50,7 +50,11 @@ if(isset($_POST["aggiungi"]) && $_POST["aggiungi"] == "Aggiungi" && isset($_POST
         $result = $dbAccess->createNewPanino($nomePanino, $percorsoBase, $categoria, $ingredienti, $descrizione);
         if($result) {
             $result = move_uploaded_file($_FILES["immagine"]["tmp_name"], "../" . $percorsoBase);
-            $messaggi = "Il panino è stato inserito correttamente";
+            if($result) {
+                $messaggi = "Il panino è stato inserito correttamente";
+            } else {
+                $messaggi = "La foto del panino non è stata salvata";
+            }
         } else {
             $messaggi = "Il panino esiste già";
         }

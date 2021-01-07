@@ -19,10 +19,10 @@ function validaFormPanino() {
     }
     let check = controllaIngredienti(ingred);
     if(check == 0) {
-        document.getElementById("errore_ingredienti").innerText ="Devi inserire almeno 2 ingredienti";
+        document.getElementById("errore_ingredienti").innerText = "Devi inserire almeno 2 ingredienti";
         result = false;
     } else if (check == 1) {
-        document.getElementById("errore_ingredienti").innerText ="Togli il ; finale";
+        document.getElementById("errore_ingredienti").innerText = "Togli il ; alla fine";
         result = false;
     }
     if(descrizione.length <= 2) {
