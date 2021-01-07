@@ -5,18 +5,16 @@ use DB\DBAccess;
 
 if(isset($_GET["category"])) {
     $category = $_GET["category"];
-    if($category == "Pollo") {
-        $category = 1;
+    switch($_GET["category"]) {
+        case "Pollo": $category = 1; break;
+        case "Manzo": $category = 2; break;
+        case "Speciali": $category = 3; break;
+        default: $category = -1; break;
     }
-    if($category == "Manzo") {
-        $category = 2;
-    }
-    if($category == "Speciali") {
-        $category = 3;
-    }
+
     $dbAccess = new DBAccess();
     $connessioneRiuscita = $dbAccess->openDBConnection();
-    if(!$connessioneRiuscita) {
+    if(!$connessioneRiuscita || $category == -1) {
         echo "";
     } else {
         $result = $dbAccess->getBurgerFromCategory($category);
