@@ -10,8 +10,7 @@ if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
 }
 
 $content = array(
-    "{{ icona }}" => $icona,
-    "{{ iconaClassCSS }}" => $icona == "LOGIN" ? "" : "class=\"withImage\""
+    "{{ icona }}" => $icona
 );
 
 echo Util::replacer("html/contatti.html", $content);

@@ -90,7 +90,7 @@ body > header h1 {
     padding: 14px 16px 10px 16px;
 }
 
-#menu li a:not(.withImage):hover {
+#menu li a:hover {
     background-color: white;
     color: var(--principale);
 }

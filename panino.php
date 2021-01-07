@@ -90,7 +90,6 @@ if(isset($panino)) {
         "<formCommentoPanino/>" => $commentoForm,
         "<formVotoPanino/>" => $votoForm,
         "{{ icona }}" => $icona,
-        "{{ iconaClassCSS }}" => $icona == "LOGIN" ? "" : "class=\"withImage\"",
         "{{ paninoID }}" => $id,
         "{{ username }}" => $username,
         "{{ nomePanino }}" => $nomePanino,

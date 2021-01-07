@@ -57,8 +57,7 @@ if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
 $content = array(
     "<paniniMenu/>" => $listaPanini,
     "<listaCategoria/>" => $categorieMenu,
-    "{{ icona }}" => $icona,
-    "{{ iconaClassCSS }}" => $icona == "LOGIN" ? "" : "class=\"withImage\""
+    "{{ icona }}" => $icona
 );
 
 echo Util::replacer("html/menu.html", $content);

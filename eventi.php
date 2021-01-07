@@ -36,8 +36,7 @@ if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
 
 $content = array(
     "<eventi/>" => $listaEventi,
-    "{{ icona }}" => $icona,
-    "{{ iconaClassCSS }}" => $icona == "LOGIN" ? "" : "class=\"withImage\""
+    "{{ icona }}" => $icona
 );
 
 echo Util::replacer("html/eventi.html", $content);
