@@ -1,5 +1,5 @@
 \documentclass[a4paper, dvipsnames, table]{article} 
-%pensavo di usare table per i nomi in copertina
+\usepackage{Stiletemplate}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
@@ -9,41 +9,7 @@
 \pagestyle{fancy}
 
 \begin{document}
-\title{Burgheria Padovana}
-\date{Anno accademico: 2020/2021}
-
-\newpage  %includere repo github?
-\begin{figure}
-	\centering
-	\includegraphics[width=2cm]{../img/burger-icon.png}%da sistemare qualità
-\end{figure}
-\maketitle
-
-\begin{table}
-	\centering
-	\begin{tabular}{c|c c c}
-		\textbf{Componenti}
-			& Albiero	& Davide      & 1193425 \\
-			& Fincato	& Alessandro  & 1201264 \\
- 			& Panighel	& Cristiano   & 1201284 \\
-			& Tossuto	& Matteo      & 1193493 \\
-	\end{tabular}
-\end{table}
-
-\begin{center}
-	\textbf{Indirizzo sito web}: \\
-	\textbf{Email referente del gruppo}: davide.albiero@studenti.unipd.it
-\end{center}
-
-\begin{table}
-	\centering
-	\begin{tabular}{c|c c}
-		\textbf{Utenti} & \textbf{Nickname} & \textbf{Password} \\
-		\hline
-		Admin           & admin & admin             \\
-		User            & user  & user              \\
-	\end{tabular}
-\end{table}
+\copertina{}
 
 \newpage
 	\tableofcontents
@@ -60,16 +26,16 @@
 		\input{sezioni/Analisi/casi.tex}
 
 \newpage
-\section{Progettazione}%Obiettivi? Design e DB
+\section{Progettazione}
 	\subsection{Obiettivi}
 		\input{sezioni/Progettazione/obiettivi.tex}
-	\subsection{Design}%layout per differenza tra desktop e mobile?
+	\subsection{Design}
 		\input{sezioni/Progettazione/design.tex}
 	\subsection{Database}
 		\input{sezioni/Progettazione/DB.tex}
 
 \newpage
-\section{Presentazione}%Per spiegare scelte generali o particolari nel CSS
+\section{Presentazione}
 	\subsection{Desktop}
 		\input{sezioni/Presentazione/desktop.tex}
 	\subsection{Mobile}
@@ -78,7 +44,7 @@
 		\input{sezioni/Presentazione/print.tex}
 
 \newpage
-\section{Implementazione}%Per spiegare scelte per HTML, PHP e JS
+\section{Implementazione}
 	\subsection{Linguaggi}
 		\subsubsection{HTML5 e CSS}
 			\input{sezioni/Implementazione/htmlCss.tex}
@@ -90,11 +56,11 @@
 			\input{sezioni/Implementazione/JS.tex}
 
 \newpage
-\section{Validazione}%Strumenti per la validazione
+\section{Validazione}
 	\input{sezioni/Validazione.tex}
 
 \newpage
-\section{Fase di Test e Strumenti}%Dove e con cosa testato
+\section{Fase di Test e Strumenti}
 	\subsection{XAMPP}
 		\input{sezioni/Test/xampp.tex}
 	\subsection{Silktide - Toolbar}
