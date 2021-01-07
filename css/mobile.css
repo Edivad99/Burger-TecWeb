@@ -186,6 +186,23 @@ body > header h1 {
 
 /* CONTENUTO > Gestione Eventi */
 
+#gestione {
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#gestione a {
+    margin-bottom: 1em;
+    margin-right: 0em;
+}
+
+#gestione a:last-child {
+    margin-bottom: 0em;
+}
+
 .formGestione {
     flex-direction: column;
 }
