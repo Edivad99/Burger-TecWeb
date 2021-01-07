@@ -16,7 +16,7 @@ if(isset($_GET["messaggio"])) {
 
 $content = array(
     "<msgCambioPassword/>" => $msg,
-    "{{ username }}" => $_SESSION["username"]
+    "{{ icona }}" => $_SESSION["icona"]
 );
 
 echo Util::replacer("html/cambioPassword.html", $content);
