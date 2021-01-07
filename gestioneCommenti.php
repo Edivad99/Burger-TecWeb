@@ -46,7 +46,6 @@ if(count($commenti) > 0) {
 $content = array(
     "<buttonCaricaCommenti/>" => $buttonCaricaCommenti,
     "{{ icona }}" => $_SESSION["icona"],
-    "{{ iconaClassCSS }}" => "class=\"withImage\"",
     "{{ username }}" => $_SESSION["username"],
     "<commenti/>" => $listaCommenti
 );

@@ -16,7 +16,6 @@ if($_SESSION["isAdmin"]){
 
 $content = array(
     "{{ icona }}" => $_SESSION["icona"],
-    "{{ iconaClassCSS }}" => "class=\"withImage\"",
     "{{ username }}" => $_SESSION["username"],
     "<gestisciEventi/>" => $evento
 );
