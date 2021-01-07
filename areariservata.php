@@ -1,8 +1,6 @@
 <?php
 require_once "php/util.php";
-require_once "php/connectionDB.php";
 use Util\Util;
-use DB\DBAccess;
 
 session_start();
 if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
