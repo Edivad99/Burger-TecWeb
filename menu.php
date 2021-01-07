@@ -49,10 +49,8 @@ for($i=1; $i<=3; $i++) {
 }
 
 session_start();
-$username = "LOGIN";
 $icona = "LOGIN";
 if(isset($_SESSION["isValid"]) && $_SESSION["isValid"]) {
-    $username = $_SESSION["username"];
     $icona = $_SESSION["icona"];
 }
 
@@ -60,7 +58,7 @@ $content = array(
     "<paniniMenu/>" => $listaPanini,
     "<listaCategoria/>" => $categorieMenu,
     "{{ icona }}" => $icona,
-    "{{ username }}" => $username
+    "{{ iconaClassCSS }}" => $icona == "LOGIN" ? "" : "class=\"withImage\""
 );
 
 echo Util::replacer("html/menu.html", $content);

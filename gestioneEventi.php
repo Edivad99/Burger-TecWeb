@@ -50,11 +50,11 @@ foreach($opzioni as $opzione) {
 $content = array(
     "{{ username }}" => $_SESSION["username"],
     "{{ icona }}" =>$_SESSION["icona"],
+    "{{ iconaClassCSS }}" => "class=\"withImage\"",
     "{{ stdLuogo }}" => "Via Luigi Luzzati, 10 Padova, PD",//Di default questo luogo, dato che è dove si trova la panineria
     "{{ dataMinima }}" => date("Y-m-d") . "T00:00",
     "<msgErrore/>" => $msgDiErrore,
     "<opzioni/>" => $listaOpzioni
-
 );
 
 echo Util::replacer("html/gestioneEventi.html", $content);
