@@ -11,7 +11,7 @@ if(!isset($_SESSION["isValid"]) || !$_SESSION["isValid"]) {
     die;
 }
 
-if(!isset($_POST["username"]) || !isset($_POST["testo"]) || !isset($_POST["paninoID"]) || !is_numeric($_POST["paninoID"])) {
+if(!isset($_POST["username"], $_POST["testo"], $_POST["paninoID"]) || !is_numeric($_POST["paninoID"])) {
     header("Location: ../menu.php");
     die;
 }
@@ -21,7 +21,8 @@ $testo = Util::pulisciInput($_POST["testo"]);
 $paninoID = $_POST["paninoID"];
 
 if($_SESSION["username"] != $username || strlen($testo) < 2) {
-    header("Location: ../panino.php?ID=$paninoID&errore=1#commenti");
+    $messaggio = "Controlla la lunghezza del testo!";
+    header("Location: ../panino.php?ID=$paninoID&messaggio=$messaggio#commenti");
     die;
 }
 $data = date("Y-m-d H:i:s");

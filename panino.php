@@ -70,10 +70,7 @@ if(count($voti) > 0) {
     $mediaText = "<p>Il nostro panino è valutato <abbr title=\"$media su 5\"><span class=\"number\">$media</span>/5</abbr></p>";
 }
 
-$errore = "";
-if(isset($_GET) && isset($_GET["errore"]) && $_GET["errore"] == 1) {
-    $errore = "Controlla la lunghezza del testo!";
-}
+$errore = isset($_GET["messaggio"]) ? $_GET["messaggio"] : "";
 
 $buttonCaricaCommenti = "";
 if(count($commenti) >= 5) {
