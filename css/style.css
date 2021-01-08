@@ -204,15 +204,15 @@ abbr {
     text-align: center;
 }
 
-#contenitorePanini li {
+#contenitorePanini figure {
     flex: 33%;
 }
 
-#contenitorePanini li:last-child {
+#contenitorePanini figure:last-child {
     flex-grow: 0;
 }
 
-#contenitorePanini li:nth-last-child(2) {
+#contenitorePanini figure:nth-last-child(2) {
     flex-grow: 0;
 }
 

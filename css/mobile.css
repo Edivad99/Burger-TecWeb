@@ -126,7 +126,7 @@ body > header h1 {
 
 /* CONTENUTO > Menu */
 
-#contenitorePanini li {
+#contenitorePanini figure {
     flex: 50%;
 }
 
