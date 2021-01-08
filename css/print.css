@@ -235,6 +235,10 @@ a.elimina {
     display: none;
 }
 
+#listaCommenti .commento .commentoUser {
+    font-size: 1em;
+}
+
 /* CONTENUTO > 404 e 500 */
 
 #nonTrovato {

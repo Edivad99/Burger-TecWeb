@@ -541,6 +541,10 @@ a.elimina {
     margin-right: 0.5em;
 }
 
+#listaCommenti .commento .commentoUser {
+    font-size: 1em;
+}
+
 /* CONTENUTO > Gestione Eventi */
 
 .formGestione {
