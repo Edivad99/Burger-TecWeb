@@ -107,6 +107,14 @@ abbr {
     flex: 33%;
 }
 
+#contenitorePanini li:last-child {
+    flex-grow: 0;
+}
+
+#contenitorePanini li:nth-last-child(2) {
+    flex-grow: 0;
+}
+
 #contenitorePanini a {
     color: black;
 }
