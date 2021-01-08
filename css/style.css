@@ -265,6 +265,10 @@ abbr {
     color: var(--principale);
 }
 
+#loginVotoPanino {
+    color: var(--principale);
+}
+
 #votoPanino {
     margin-left: 48%;
 }
@@ -298,6 +302,10 @@ form#invioCommento #commento {
 
 form#invioCommento #pubblicaBtn {
     margin: 0 0 0.3em 0.7em;
+}
+
+#pubblicaBtn[disabled] {
+    cursor: default;
 }
 
 form#invioCommento #erroreForm {
