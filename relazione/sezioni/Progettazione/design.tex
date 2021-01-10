@@ -1,0 +1,14 @@
+\subsection{Design}
+Come già dichiarato sono state seguite due strategie per la creazione del sito: \emph{Mobile First} e l'attenzione fin dall'inizio all'accessibilità.\\
+È stato scelto un \emph{layout a quattro pannelli} per la maggior parte delle pagine, che si adatta facilmente alla strategia di \emph{Mobile First}.\\
+L'unica eccezione è la pagina \emph{Menu} che usa un \emph{layout a cinque pannelli} per poter inserire il menu categoria lateralmente.\\
+I pannelli presenti nel layout sono, in ordine di presentazione:
+\begin{enumerate}
+	\item \textbf{header:} contiene il logo e il nome del Locale e contiene il menu; 
+	\item \textbf{breadcrumb:} contiene il percorso della pagina corrente, serve ad orientare l'utente all'interno del sito;
+	\item \textbf{contenutoGenerale:} contiene le informazioni principali della pagina visitata;
+	\item \textbf{footer:} contiene le informazioni di contatto e la partita IVA del locale;
+	\item \textbf{leftSideBar:} nella versione \emph{Desktop} è utilizzata solo dalla pagina \emph{Menu}.
+	 Si trova, come suggerisce il nome, a sinistra del \emph{contenutoGenerale} e contiene la selezione della categoria dei panini. 
+	Nella versione \emph{Mobile} si trova invece tra il pannello \emph{breadcrumb} e il pannello \emph{contenutoGenerale}.
+\end{enumerate}

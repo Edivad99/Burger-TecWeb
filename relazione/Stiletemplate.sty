@@ -1,0 +1,65 @@
+\ProvidesPackage{Stiletemplate}	%il nostro pacchetto per swe
+\usepackage[utf8]{inputenc}
+\usepackage{graphbox}	% permette di modificare i margini
+\usepackage{hyperref}
+\usepackage[top=2.0cm, bottom=4.0cm, left=2.2cm, right=2.2cm]{geometry}
+
+\newcommand{\copertina}{
+	\begin{titlepage}
+		\begin{center}
+			
+			\begin{center}
+				\centerline{\includegraphics[height=6cm, width=9cm, keepaspectratio]{../img/burger-icon.png}}
+			\end{center}
+			
+			\vspace{1cm}
+			
+			\begin{Huge}
+				\textbf{Burgheria Padovana} \\
+			\end{Huge}
+			
+			\vspace{9pt}  
+			
+			\begin{large}
+				\textbf{Progetto del corso di Tecnologie Web}\\
+				\textbf{Anno accademico:} 2020/2021\\
+				\vspace{6pt}
+				\textbf{Indirizzo sito web:}\\
+				\vspace{6pt}
+				\textbf{Email referente del gruppo:} davide.albiero@studenti.unipd.it\\
+			\end{large}	  
+			
+			\vspace{15pt}
+			
+			\bgroup
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{c|c}
+				\multicolumn{2}{c}{\textbf{Informazioni sul gruppo} }\\
+				\hline %linea separatrice orrizzontale
+				Albiero Davide & 1193425\\ 
+				\newline Fincato Alessandro & 1201264\\
+				\newline Panighel Cristiano & 1201284\\ 
+				\newline Tossuto Matteo & 1193493\\
+			\end{tabular}
+			\egroup
+			
+			\vspace*{\fill}
+			
+			\bgroup
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{c|c c}
+				\textbf{Utenti} & \textbf{Username} & \textbf{Password}\\			
+				
+				\hline
+				Admin & admin & admin\\
+				\newline User & user & user\\
+			\end{tabular}
+			\egroup
+			
+			\vspace*{\fill}
+			
+		\end{center}
+	\end{titlepage}
+}

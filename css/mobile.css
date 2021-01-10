@@ -184,7 +184,7 @@ body > header h1 {
     display: block;
 }
 
-/* CONTENUTO > Gestione Eventi */
+/* CONTENUTO > Area Riservata */
 
 #gestione {
     flex-direction: column;
@@ -202,6 +202,8 @@ body > header h1 {
 #gestione a:last-child {
     margin-bottom: 0em;
 }
+
+/* CONTENUTO > Gestione Eventi */
 
 .formGestione {
     flex-direction: column;

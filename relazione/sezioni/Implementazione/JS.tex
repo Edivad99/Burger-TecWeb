@@ -1,0 +1,12 @@
+\subsection{JavaScript}
+\emph{JavaScript} è un linguaggio che si occupa del comportamento del sito.\\
+Nel nostro caso \emph{JavaScript} viene usato per effettuare controlli sulle form e per alcune feature:
+\begin{itemize}
+    \item Nella pagina \emph{Panino} viene usato per verificare che il commento da inserire rispetti alcune condizioni e in caso contrario l'utente viene avvisato;
+    \item Nella pagina \emph{Panino} viene usato per il bottone "carica altri commenti";
+    \item Nella pagina \emph{gestioneEventi} viene usato per controllare che i dati immessi nella form \emph{Aggiungi evento} siano corretti, in caso contrario l'utente viene avvisato;
+    \item Nella pagina \emph{gestioneEventi} viene usato per caricare nella select della form \emph{Elimina evento}, le date recuperate attraverso una chiamata alla pagina \emph{getDateFromEventi} mediante la funzione fetch dopo aver selezionato l'evento desiderato;
+    \item Nella pagina \emph{gestionePanini} viene usato per controllare che i dati immessi nella form \emph{Aggiungi panino} siano corretti, in caso contrario l'utente viene avvisato;
+    \item Nella pagina \emph{gestionePanini} viene usato per caricare nella select della form \emph{Elimina panino}, i panini recuperati attraverso una chiamata alla pagina \emph{getBurgerFromCategory} mediante la funzione fetch dopo aver selezionato la categoria desiderata;
+    \item Nella pagina \emph{gestioneCommenti} viene usato per il bottone "carica altri commenti"; questo per evitare un caricamento lento della pagina se sono presenti numerosi commenti e la possibile confusione del utente nel vedere troppe informazioni sullo schermo.
+\end{itemize}
