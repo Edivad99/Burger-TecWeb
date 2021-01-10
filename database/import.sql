@@ -84,6 +84,7 @@ INSERT INTO `Eventi` (`ID`, `Nome`, `Data_Evento`, `Luogo_Evento`, `Descrizione`
 (11, 'SERATA CON CHEF RUBIO', '2021/06/30 19:00', 'Via Luigi Luzzati, 10 Padova, PD', 'Serata speciale in compagnia dello chef Gabriele Rubini, conosciuto meglio come Chef Rubio. Venite a fare due chiacchere con lo Chef mentre assaggiate le sue speciali creazioni fatte apposta per la Brgheria Padovana. Non mancate!'),
 (12, "L'HAMBURGHER E IL SECCHIONE", '2021/07/15 19:00', 'Via Luigi Luzzati, 10 Padova, PD', "Serata speciale per i nostri universitari che hanno appena finito la sessione estiva. Chiunque abbia preso 30 in un qualsiasi esame di quest'ultima sessione otterrà un panino a scelta gratis. Dimostriamo al mondo che gli hamburgher sono del carburante fantastico per studiare al top!");
 
+
 INSERT INTO `Categoria` (`ID`, `Categoria`) VALUES
 (1, 'Pollo'),
 (2, 'Manzo'),

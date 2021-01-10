@@ -1,0 +1,28 @@
+\subsection{HTML5 e CSS}
+È stato deciso di utilizzare il linguaggio \emph{HTML5} per diversi motivi:
+\begin{itemize} %magari trovare altri motivi
+	\item \emph{HTML5} è oramai supportato dalla maggior parte dei Browser Web;
+	\item Dopo un sondaggio proposto alla clientela, è stato riscontrato che il 70\% dei nostri clienti sceglie di mangiare da noi quando si trova fuori casa. 
+	Quindi la maggior parte dei nostri clienti utilizzerebbe il telefono per visitare il sito;
+	\item La maggior parte degli accessi al web avviene tramite mobile;
+\end{itemize}
+Gli ultimi due punti si concentrano sull'utilizzo di un dispositivo \emph{Mobile} come strumento per visitare il futuro sito; questo è importante perché la maggior parte dei dispositivi \emph{Mobile} utilizza Browser aggiornati e quindi che supportano \emph{HTML5}.\\
+Si tiene a precisare che in ogni caso viene rispettata la sintassi \emph{XHTML} e in caso il browser non supporti \emph{HTML5} il sito degraderà in modo elegante.\\
+Inoltre si è scelto di utilizzare \emph{HTML5} per la sua fluidezza e funzionalità aggiuntive. %verificare
+Esiste una pagina \emph{HTML5} per ogni pagina del sito.\\ %decidere se mettere o meno
+Come linguaggio di stile è stato usato \emph{CSS3}.\\
+È stata mantenuta la separazione tra struttura e presentazione utilizzando i seguenti accorgimenti: 
+\begin{itemize}
+    \item Non sono stati usati tag di stile nelle pagine \emph{HTML};
+    \item Per la presentazione sono stati utilizzati file esterni senza utilizzare codice a cascata inline o embedded.
+\end{itemize}
+Ogni singola regola è stata valutata prima di utilizzarla, in base alla compatibilità dei browser.
+In alcune parti del sito sono state utilizzate le flex invece delle grid poichè supportato maggiormente.\\
+Nella maggior parte dei casi viene utilizzata come unità misura gli em o la percentuale.\\
+Questo migliora l'accessibilità e garantisce una corretta visualizzazione delle pagine su tutti i formati di schermi.\\
+I fogli di stile utilizzati sono tre:
+\begin{itemize}
+	\item Un foglio style.css per le impostazioni di stile generale;
+	\item Un foglio mobile.css per le impostazioni di stile che riguardano il mobile, separando i diversi punti di rottura; %magari impostare meglio frase
+	\item Un foglio print.css per le impostazioni che riguardano la stampa.
+\end{itemize}
