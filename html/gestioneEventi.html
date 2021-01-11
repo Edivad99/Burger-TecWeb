@@ -51,19 +51,19 @@
                     <legend>Aggiungi un evento:</legend>
 
                     <label for="titolo">Titolo</label>
-                    <input type="text" name="titolo" id="titolo" required />
+                    <input type="text" name="titolo" id="titolo" required aria-describedby="errore_titolo"/>
                     <p class="errore" id="errore_titolo"></p>
 
                     <label for="data-ora">Data-Ora</label>
-                    <input type="datetime-local" min="{{ dataMinima }}" name="data-ora" id="data-ora" required/>
+                    <input type="datetime-local" min="{{ dataMinima }}" name="data-ora" id="data-ora" required aria-describedby="errore_data"/>
                     <p class="errore" id="errore_data"></p>
 
                     <label for="luogo">Luogo</label>
-                    <input type="text" name="luogo" id="luogo" value="{{ stdLuogo }}" required />
+                    <input type="text" name="luogo" id="luogo" value="{{ stdLuogo }}" required aria-describedby="errore_luogo"/>
                     <p class="errore" id="errore_luogo"></p>
 
                     <label for="descrizione">Descrizione</label>
-                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required></textarea>
+                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required aria-describedby="errore_descrizione"></textarea>
                     <p class="errore" id="errore_descrizione"></p>
 
                     <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>

@@ -51,11 +51,11 @@
                     <legend>Aggiungi un panino:</legend>
 
                     <label for="nome">Nome panino</label>
-                    <input type="text" name="nome" id="nome" required autocomplete="off"/>
+                    <input type="text" name="nome" id="nome" required autocomplete="off" aria-describedby="errore_nome"/>
                     <p class="errore" id="errore_nome"></p>
 
                     <label for="immagine"><span lang="en">Upload</span> immagine</label>
-                    <input type="file" name="immagine" id="immagine" accept="image/x-png" required />
+                    <input type="file" name="immagine" id="immagine" accept="image/x-png" required aria-describedby="errore_immagine"/>
                     <p class="errore" id="errore_immagine"></p>
 
                     <label for="categoriaForm">Categoria</label>
@@ -64,11 +64,11 @@
                     </select>
 
                     <label for="ingred">Ingredienti</label>
-                    <textarea name="ingred" id="ingred" rows="4" cols="20" placeholder="Tra un ingrediente e l'altro va messo il ;" aria-label="Ingredienti Tra un ingrediente e l'altro va messo il ;" required></textarea>
+                    <textarea name="ingred" id="ingred" rows="4" cols="20" placeholder="Tra un ingrediente e l'altro va messo il ;" aria-label="Ingredienti Tra un ingrediente e l'altro va messo il ;" required aria-describedby="errore_ingredienti"></textarea>
                     <p class="errore" id="errore_ingredienti"></p>
 
                     <label for="descrizione">Descrizione</label>
-                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required></textarea>
+                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required aria-label="errore_descrizione"></textarea>
                     <p class="errore" id="errore_descrizione"></p>
 
                     <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>
