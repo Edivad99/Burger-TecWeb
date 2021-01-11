@@ -3,6 +3,8 @@
     --principale: #bd091b;
     --divisore: #ddd;
     --alternative: #e4002b;
+    --linkVisitato: yellow;
+    --linkNonVisitato: white;
 }
 
 * {
@@ -21,6 +23,14 @@ body {
     /*font-family: Helvetica, Arial, sans-serif;*/
     font-family: "Comic Sans MS", Arial, sans-serif; /*font da cambiare*/
     background-color: white;
+}
+
+a.backgroundLink:link {
+    color: var(--linkNonVisitato);
+}
+
+a.backgroundLink:visited {
+    color: var(--linkVisitato);
 }
 
 /*
@@ -265,10 +275,6 @@ abbr {
     color: var(--principale);
 }
 
-#loginVotoPanino {
-    color: var(--principale);
-}
-
 #votoPanino {
     margin-left: 48%;
 }
@@ -455,7 +461,7 @@ form#invioCommento #erroreForm {
     text-align: center;
 }
 
-#contatti a.tel, #contatti a#mail {
+#contatti {
     color: black;
 }
 
@@ -632,8 +638,4 @@ footer {
 
 footer ul {
     list-style: none;
-}
-
-footer a.tel {
-    color: white;
 }
