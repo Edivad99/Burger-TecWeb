@@ -69,7 +69,7 @@ body > header h1 {
     text-align: justify;
 }
 
-#immagineLocale, #immaginePanino {
+#immagineLocale {
     display: none;
 }
 
@@ -131,6 +131,17 @@ abbr {
 }
 
 /* CONTENUTO > Panino */
+
+#immaginePanino {
+    width: 40%;
+    float: left;
+    margin-right: 5em;
+    margin-top: 1em;
+}
+
+#votoPanino {
+    margin-left: 58%;
+}
 
 #ingredienti ul {
     list-style: inside;
