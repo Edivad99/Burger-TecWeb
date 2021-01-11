@@ -1,9 +1,12 @@
 :root {
     --sfondo: #faf2dd;
-    --principale: #bd091b;
     --divisore: #ddd;
-    --alternative: #e4002b;
-    --linkVisitato: gold;
+    --contentBackground: white;
+
+    --principale: #bd091b;
+    /* --principale: #0c2752; */
+    --menu-selected: white;
+    --linkVisitato: #faf600;
     --linkNonVisitato: white;
 }
 
@@ -20,9 +23,8 @@ html {
 body {
     max-width: 1024px;
     margin: auto;
-    /*font-family: Helvetica, Arial, sans-serif;*/
-    font-family: "Comic Sans MS", Arial, sans-serif; /*font da cambiare*/
-    background-color: white;
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    background-color: var(--contentBackground);
 }
 
 a.backgroundLink:link {
@@ -89,19 +91,19 @@ body > header h1 {
 
 #menu li a, #menu li {
     display: inline-block;
-    color: white;
+    color: var(--menu-selected);
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 #menu li#currentLink {
-    border-bottom: white 4px solid;
+    border-bottom: var(--menu-selected) 4px solid;
     padding: 14px 16px 10px 16px;
 }
 
 #menu li a:hover {
-    background-color: white;
+    background-color: var(--menu-selected);
     color: var(--principale);
 }
 
@@ -116,7 +118,7 @@ body > header h1 {
 */
 
 #breadcrumb {
-    background-color: white;
+    background-color: var(--contentBackground);
     color: var(--principale);
     padding: 0.5em 0 0.5em 1.0em;
     font-weight: bold;
@@ -140,7 +142,6 @@ body > header h1 {
 */
 
 #contenutoGenerale {
-    background-color: white;
     line-height: 1.5;
     letter-spacing: 0.12em;
     word-spacing: 0.16em;
