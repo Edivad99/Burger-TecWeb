@@ -30,7 +30,7 @@ $dbAccess->closeDBConnection();
 $listaCategorie="<option value=\"\" disabled selected>Scegli categoria</option>";
 for($i=0; $i<3; $i++) {
     $categoriaText = $categorie["result"][$i]["Categoria"];
-    $listaCategorie .= "<option>$categoriaText</option>";
+    $listaCategorie .= "<option value=\"$categoriaText\">$categoriaText</option>";
 }
 
 $content = array(

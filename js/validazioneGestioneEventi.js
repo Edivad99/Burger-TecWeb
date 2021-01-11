@@ -64,8 +64,16 @@ function titleChangedEvent() {
             if(dataArray.length > 0) {
                 selectOrari.disabled = false;
 
+                let emptyOption = document.createElement("option");
+                emptyOption.value = "";
+                emptyOption.text = "Scegli una data";
+                emptyOption.setAttribute("disabled", "");
+                emptyOption.setAttribute("selected", "");
+                selectOrari.add(emptyOption);
+
                 for(let i = 0; i < dataArray.length; i++) {
                     let option = document.createElement("option");
+                    option.value = dataArray[i];
                     option.text = dataArray[i];
                     selectOrari.add(option);
                 }
