@@ -30,6 +30,7 @@ function showMoreComments(user) {
 
 function buildCommento(data) {
     let link = document.createElement("a");
+    link.classList.add("backgroundLink");
     link.href = "panino.php?ID=" + data["PaninoID"];
     link.innerText = data["Panino"];
 
