@@ -342,6 +342,27 @@ class DBAccess {
         return (mysqli_query($this->connection, $sql) === true) && (mysqli_affected_rows($this->connection) == 1);
     }
 
+    public function getCommentoById($idCommento) {
+        $checkIDCommento = mysqli_real_escape_string($this->connection, $idCommento);
+        $sql = "SELECT Commenti.ID, Commenti.ID_Panino, Username, DATE_FORMAT(Ora_Pubblicazione, '%H:%i:%s %d/%m/%Y') AS DataOraPost, Contenuto
+                FROM Commenti, Utenti
+                WHERE Commenti.ID = $checkIDCommento AND Id_Utente = Utenti.ID";
+
+        $queryResult = mysqli_query($this->connection, $sql);
+
+        if(mysqli_num_rows($queryResult) == 1) {
+            $commento = mysqli_fetch_assoc($queryResult);
+            return array(
+                "ID" => $commento["ID"],
+                "ID_Panino" => $commento["ID_Panino"],
+                "Username" => $commento["Username"],
+                "OraPubblicazione" => $commento["DataOraPost"],
+                "Contenuto" => $commento["Contenuto"]
+            );
+        }
+        return null;
+    }
+
     /*
     =================================
             Pagina Gestione Eventi
