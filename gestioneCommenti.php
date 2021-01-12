@@ -40,7 +40,7 @@ if(count($commenti) > 0) {
         $buttonCaricaCommenti = "<button id=\"caricaCommenti\" class=\"button\" onclick=\"showMoreComments('{{ username }}')\">Carica altri commenti</button>";
     }
 } else {
-    $listaCommenti = "NON CI SONO COMMENTI";
+    $listaCommenti = "Ehi $_SESSION[username], ti va di aiutarci? Lascia qualche commento così da migliorare la qualità dei nostri panini";
 }
 
 $content = array(
