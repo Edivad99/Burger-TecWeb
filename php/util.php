@@ -29,7 +29,7 @@ class Util {
         $value = trim($value);
         // converte i caratteri speciali in entità html (ex. &lt;)
         $value = htmlentities($value);
-        // rimuove tag html, non gli vogliamo
+        // rimuove tag html, non li vogliamo
         $value = strip_tags($value);
         return $value;
     }
