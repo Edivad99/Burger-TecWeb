@@ -25,12 +25,10 @@ if(!$connessioneRiuscita) {
 
 //Controlliamo se il commento appartiene all'utente loggato, l'admin può modificarlo
 $commento = $dbAccess->getCommentoById($_GET["ID"]);
+$dbAccess->closeDBConnection();
 if($commento == null || ($commento["Username"] != $_SESSION["username"] && !$_SESSION["isAdmin"])) {
-    $dbAccess->closeDBConnection();
     header("Location: gestioneCommenti.php");
 }
-var_dump($commento);
-$dbAccess->closeDBConnection();
 
 $commentoForm = file_get_contents("html/components/formModificaCommento.html");
 
@@ -38,7 +36,8 @@ $content = array(
     "<formModificaCommento/>" => $commentoForm,
     "{{ testo }}" => $commento["Contenuto"],
     "{{ lenTesto }}" => 400 - strlen($commento["Contenuto"]),
-    "{{ erroreCommento }}" => "",
+    "{{ commentoID }}" => $commento["ID"],
+    "{{ erroreCommento }}" => isset($_GET["messaggio"]) ? $_GET["messaggio"] : "",
     "{{ icona }}" => $_SESSION["icona"],
     "{{ username }}" => $_SESSION["username"]
 );

@@ -6,7 +6,8 @@
     <form action="php/modificaCommento.php" method="post" id="invioCommento" onsubmit="return validaCommento();">
         <input type="hidden" name="commentoID" value="{{ commentoID }}"/>
         <textarea name="testo" id="commento" onkeyup="contaCaratteri()" rows="8" placeholder="Scrivi qui, per recensire modificare la recensione" aria-label="Area di testo per modificare la recensione del panino">{{ testo }}</textarea>
-        <input type="submit" value="Pubblica" id="pubblicaBtn"/>
+        <input type="submit" value="Modifica" id="pubblicaBtn"/>
+        <input type="reset" value="Reset"/>
         <p id="erroreForm">{{ erroreCommento }}</p>
     </form>
 </article>

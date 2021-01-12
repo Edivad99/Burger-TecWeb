@@ -362,6 +362,17 @@ class DBAccess {
         return null;
     }
 
+    public function updateCommentoById($idCommento, $testo) {
+        $checkIDCommento = mysqli_real_escape_string($this->connection, $idCommento);
+        $checkTesto= mysqli_real_escape_string($this->connection, $testo);
+
+        $sql = "UPDATE Commenti
+                SET Contenuto = '$checkTesto'
+                WHERE Commenti.ID = $checkIDCommento";
+
+        return (mysqli_query($this->connection, $sql) === true);
+    }
+
     /*
     =================================
             Pagina Gestione Eventi
