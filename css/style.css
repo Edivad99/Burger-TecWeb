@@ -3,10 +3,10 @@
     --divisore: #ddd;
     --contentBackground: white;
 
-    --principale: #bd091b;
-    /* --principale: #0c2752; */
+    --principale: #FF4A38;
+    /* --principale: #bd091b; */
     --menu-selected: white;
-    --linkVisitato: #faf600;
+    --linkVisitato: #0c2752;
     --linkNonVisitato: white;
 }
 
@@ -31,7 +31,7 @@ a.backgroundLink:link {
     color: var(--linkNonVisitato);
 }
 
-a.backgroundLink:visited {
+a.backgroundLink:visited, a:visited {
     color: var(--linkVisitato);
 }
 
@@ -107,6 +107,11 @@ body > header h1 {
     color: var(--principale);
 }
 
+#menu li a:visited {
+    background-color: var(--menu-selected);
+    color: var(--linkVisitato);
+}
+
 #menu li:last-child {
     float: right;
 }
@@ -129,6 +134,11 @@ body > header h1 {
 #breadcrumb a {
     text-decoration: none;
     color: var(--principale);
+}
+
+#breadcrumb a:visited {
+    text-decoration: none;
+    color: var(--linkVisitato);
 }
 
 #breadcrumb p {
@@ -199,6 +209,11 @@ abbr {
 #categoria li a:hover {
     background-color: var(--principale);
     color: white;
+}
+
+#categoria li a:visited {
+    background-color: var(--principale);
+    color: var(--linkVisitato);
 }
 
 #contenutoGeneraleMenuPanini {
