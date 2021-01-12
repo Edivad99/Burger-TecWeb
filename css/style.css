@@ -504,6 +504,7 @@ input[type="submit"] {
     background-color: var(--principale);
     border-color: transparent;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #accesso #registrati {
@@ -537,6 +538,7 @@ input[type="submit"] {
     padding: 0.5em;
     margin-right: 1em;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #gestione a:last-child {
