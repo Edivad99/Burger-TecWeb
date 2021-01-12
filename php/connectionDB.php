@@ -344,7 +344,7 @@ class DBAccess {
 
     public function getCommentoById($idCommento) {
         $checkIDCommento = mysqli_real_escape_string($this->connection, $idCommento);
-        $sql = "SELECT Commenti.ID, Commenti.ID_Panino, Username, DATE_FORMAT(Ora_Pubblicazione, '%H:%i:%s %d/%m/%Y') AS DataOraPost, Contenuto
+        $sql = "SELECT Commenti.ID, Commenti.ID_Panino, Username, Contenuto
                 FROM Commenti, Utenti
                 WHERE Commenti.ID = $checkIDCommento AND Id_Utente = Utenti.ID";
 
@@ -356,7 +356,6 @@ class DBAccess {
                 "ID" => $commento["ID"],
                 "ID_Panino" => $commento["ID_Panino"],
                 "Username" => $commento["Username"],
-                "OraPubblicazione" => $commento["DataOraPost"],
                 "Contenuto" => $commento["Contenuto"]
             );
         }

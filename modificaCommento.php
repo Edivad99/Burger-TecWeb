@@ -30,10 +30,15 @@ if($commento == null || ($commento["Username"] != $_SESSION["username"] && !$_SE
     header("Location: gestioneCommenti.php");
 }
 var_dump($commento);
-
 $dbAccess->closeDBConnection();
 
+$commentoForm = file_get_contents("html/components/formModificaCommento.html");
+
 $content = array(
+    "<formModificaCommento/>" => $commentoForm,
+    "{{ testo }}" => $commento["Contenuto"],
+    "{{ lenTesto }}" => 400 - strlen($commento["Contenuto"]),
+    "{{ erroreCommento }}" => "",
     "{{ icona }}" => $_SESSION["icona"],
     "{{ username }}" => $_SESSION["username"]
 );

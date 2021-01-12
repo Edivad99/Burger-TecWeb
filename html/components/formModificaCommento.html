@@ -1,0 +1,12 @@
+<article class="commento" id="boxAggiuntaCommento">
+    <header>
+        <h4 class="commentoUser">Modifica commento</h4>
+        <p class="commentoOra"><span id="caratteri">{{ lenTesto }}</span> caratteri rimasti</p>
+    </header>
+    <form action="php/modificaCommento.php" method="post" id="invioCommento" onsubmit="return validaCommento();">
+        <input type="hidden" name="commentoID" value="{{ commentoID }}"/>
+        <textarea name="testo" id="commento" onkeyup="contaCaratteri()" rows="8" placeholder="Scrivi qui, per recensire modificare la recensione" aria-label="Area di testo per modificare la recensione del panino">{{ testo }}</textarea>
+        <input type="submit" value="Pubblica" id="pubblicaBtn"/>
+        <p id="erroreForm">{{ erroreCommento }}</p>
+    </form>
+</article>
