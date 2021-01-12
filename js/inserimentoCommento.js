@@ -18,7 +18,10 @@ function validaCommento() {
     const messaggio = "Controlla la lunghezza del testo!";
 
     let result = lunghezza >= 2 && lunghezza <= maxCaratteri;
-    if(!result)
-        document.getElementById("erroreForm").innerText = messaggio;
+    if(!result) {
+        let errore = document.getElementById("erroreForm");
+        errore.innerText = messaggio;
+        errore.setAttribute("role", "alert");
+    }
     return result;
 }
