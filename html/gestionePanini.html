@@ -24,9 +24,8 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <a id="logo" href="index.php"><img src="img/burger-icon.png" alt=""/></a>
+        <a id="logo" href="index.php" aria-label="Torna alla pagina principale"><img src="img/burger-icon.png" alt=""/></a>
         <h1>Burgheria Padovana</h1>
-        <label for="menu-btn" class="aiutiNascosti">Menù</label>
         <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Menù"/>
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul id="menu">
@@ -64,11 +63,11 @@
                     </select>
 
                     <label for="ingred">Ingredienti</label>
-                    <textarea name="ingred" id="ingred" rows="4" cols="20" placeholder="Tra un ingrediente e l'altro va messo il ;" aria-label="Ingredienti Tra un ingrediente e l'altro va messo il ;" required aria-describedby="errore_ingredienti"></textarea>
+                    <textarea name="ingred" id="ingred" rows="4" cols="20" placeholder="Tra un ingrediente e l'altro va messo il ;" aria-label="Tra un ingrediente e l'altro va messo il ;" required aria-describedby="errore_ingredienti"></textarea>
                     <p class="errore" id="errore_ingredienti"></p>
 
                     <label for="descrizione">Descrizione</label>
-                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required aria-label="errore_descrizione"></textarea>
+                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required aria-describedby="errore_descrizione"></textarea>
                     <p class="errore" id="errore_descrizione"></p>
 
                     <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>

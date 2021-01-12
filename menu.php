@@ -44,7 +44,7 @@ for($i=1; $i<=3; $i++) {
     if($categoria == $i) {//Non devo fare un link circolare
         $categorieMenu .= "<li id=\"categoriaAttiva\">". $categoriaText . "</li>";
     } else {
-        $categorieMenu .= "<li><a href=\"menu.php?categoria=$i\">" . $categoriaText . "</a></li>";
+        $categorieMenu .= "<li><a href=\"menu.php?categoria=$i\" aria-label=\"Vai alla categoria $categoriaText\">" . $categoriaText . "</a></li>";
     }
 }
 
