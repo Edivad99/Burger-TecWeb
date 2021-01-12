@@ -569,6 +569,9 @@ a.elimina {
     font-size: 1em;
 }
 
+#boxModificaCommento > header > h1{
+    font-size: 1em;
+}
 /* CONTENUTO > Gestione Eventi */
 
 .formGestione {

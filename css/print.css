@@ -180,7 +180,7 @@ abbr {
     clear: both;
 }
 
-#boxAggiuntaCommento {
+#boxAggiuntaCommento, #boxModificaCommento {
     display: none;
 }
 
