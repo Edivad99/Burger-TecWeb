@@ -7,8 +7,8 @@
     <title>Burgheria Padovana</title>
 
     <meta name="title" content="Burgheria Padovana" />
-    <meta name="description" content="Qui puoi trovare le nostre principali offerte" />
-    <meta name="keywords" content="Burgheria Padovana, panini, carne italiana" />
+    <meta name="description" content="Benvenuto in Burgheria Padovana, un posto per veri affamati" />
+    <meta name="keywords" content="Burgheria Padovana, panini, carne italiana, Padova, Studenti, Università, UNIPD" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
     
@@ -28,7 +28,7 @@
         </ul>
         <img id="logo" src="img/burger-icon.png" alt=""/>
         <h1>Burgheria Padovana</h1>
-        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Menù"/>
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul id="menu">
             <li id="currentLink" lang="en">HOME</li>
@@ -45,19 +45,21 @@
     </nav>
 
     <div id="contenutoGenerale">
-        <p id="immagineLocale"></p>
-        <p id="cosafacciamo">
-            Burgheria Padovana offre ottimi panini a tutte le ore del giorno.
-            I nostri panini sono fatti da 100% carne italiana. Tutte le verdure sono a <abbr title="chilometro">km</abbr> zero. <br>
-            Il nostro menù è frutto di una ricerca costante e di una dedizione assoluta al mondo dei burger.
-            Continuiamo ogni giorno a lavorare per creare un’esperienza che parta dal cibo ma che sappia andare ben oltre.
-        </p>
-        <p id="promozioneStudenti">Per tutti gli studenti dal lunedì al venerdì Panino + Bibita a solo 6<abbr title="euro">&euro;</abbr></p>
+        <p id="promozioneStudenti">Per tutti gli studenti dal lunedì al venerdì<br> Panino + Bibita a solo 6<abbr title="euro">&euro;</abbr></p>
+        <div id="presentazione">
+            <p id="cosafacciamo">
+                Burgheria Padovana offre ottimi panini a tutte le ore del giorno.
+                I nostri panini sono fatti da 100% carne italiana. Tutte le verdure sono a <abbr title="chilometro">km</abbr> zero. <br>
+                Il nostro menù è frutto di una ricerca costante e di una dedizione assoluta al mondo dei <span leng="en">burger</span>.
+                Continuiamo ogni giorno a lavorare per creare un’esperienza che parta dal cibo ma che sappia andare ben oltre.<br>
+                <a id="maggioriInformazioni" href="../storia.php">Maggiori informazioni</a>
+            </p>
+        </div>
     </div>
     <footer>
         <ul>
             <li>Via Luigi Luzzati, 10 Padova</li>
-            <li><abbr title="Telefono">Tel</abbr>: <a class="tel" href="tel:+393453434225">+39 3453434225</a></li>
+            <li><abbr title="Telefono">Tel</abbr>: <a class="backgroundLink" href="tel:+393453434225">+39 3453434225</a></li>
             <li><abbr title="Partita IVA">P.IVA</abbr> 17935620231</li>
         </ul>
     </footer>

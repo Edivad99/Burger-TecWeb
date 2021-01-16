@@ -108,16 +108,25 @@ body > header h1 {
 =================================
 */
 
-#immagineLocale, #immaginePanino {
+#presentazione {
+    padding: 0em;
+    background-color: #757575;
+}
+
+#presentazione p {
+    background-color: rgba(200,200,200, .7);
+}
+
+#presentazione p a {
+    border: none;
+}
+
+#immaginePanino {
     width: 70%;
     display: block;
     float: none;
     margin-left: auto;
     margin-right: auto;
-}
-
-#cosafacciamo {
-    clear: both;
 }
 
 #promozioneStudenti {
@@ -126,7 +135,7 @@ body > header h1 {
 
 /* CONTENUTO > Menu */
 
-#contenitorePanini li {
+#contenitorePanini figure {
     flex: 50%;
 }
 
@@ -273,7 +282,7 @@ footer {
 }
 
 #categoriaAttiva {
-    padding: 4px 16px;
+    padding: 4px 16px 1px 16px;
 }
 
 }
