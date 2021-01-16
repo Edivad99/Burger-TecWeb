@@ -7,7 +7,7 @@
     <title>Login | Burgheria Padovana</title>
 
     <meta name="title" content="Login | Burgheria Padovana" />
-    <meta name="description" content="Pagina di Login" />
+    <meta name="description" content="Entra a far parte della nostra storia" />
     <meta name="keywords" content="Burgheria Padovana, Accedi, Registrati, Username, Password, Login" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
@@ -44,10 +44,11 @@
 
     <div id="contenutoGenerale">
         <msgErrore/>
+        <p class="requiredBox">I campi marcati con un * sono obbligatori.</p>
         <form action="php/loginHandler.php" method="post" id="accesso">
-            <label for="user" lang="en">Username:</label>
+            <label for="user" lang="en">Username*:</label>
             <input type="text" name="usr" id="user" autocomplete="username" required/>
-            <label for="pwd" lang="en">Password:</label>
+            <label for="pwd" lang="en">Password*:</label>
             <input type="password" name="pwd" id="pwd" autocomplete="current-password" required/>
             <span>
                 <input type="submit" name="accesso" value="Accedi" id="login" aria-label="Accedi"/>
