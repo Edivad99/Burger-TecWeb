@@ -21,7 +21,7 @@ function showMoreComments(user) {
             let commento = buildCommento(data[i]);
             listaCommenti.appendChild(commento);
         }
-        offset += 5;
+        offset += data.length;
 
     }).catch(error => {
         console.log(error);
@@ -94,7 +94,7 @@ function showMoreCommentsByPanino(paninoID) {
             let commento = buildCommentoNeiPanini(data[i]);
             listaCommenti.appendChild(commento);
         }
-        offsetPanino += 5;
+        offsetPanino += data.length;
 
     }).catch(error => {
         console.log(error);
