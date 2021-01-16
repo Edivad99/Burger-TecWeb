@@ -48,6 +48,11 @@ function buildCommento(data) {
     elimina.href = "php/eliminaCommento.php?ID=" + data["CommentoID"];
     elimina.innerText = "Elimina";
 
+    let modifica = document.createElement("a");
+    modifica.classList.add("elimina");
+    modifica.href = "modificaCommento.php?ID=" + data["CommentoID"];
+    modifica.innerText = "Modifica";
+
     let commentoTag = document.createElement("p");
     commentoTag.classList.add("commentoText");
     commentoTag.innerText = data["Contenuto"];
@@ -55,6 +60,7 @@ function buildCommento(data) {
     let header = document.createElement("header");
     header.appendChild(usernameTag);
     header.appendChild(elimina);
+    header.appendChild(modifica);
     header.appendChild(oraTag);
 
     let article = document.createElement("header");
