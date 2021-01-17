@@ -162,17 +162,35 @@ p {
     margin-bottom: 2em;
 }
 
-#immagineLocale {
-    content: url(../img/locale.jpg);
-    float: left;
-    width: 41%;
-    padding-right: 0.5em;
-}
+
+/* CONTENUTO > Index */
 
 #promozioneStudenti {
     font-size: 1.6em;
     clear: both;
     text-align: center;
+}
+
+#presentazione {
+    background-image: url(../img/locale.jpg);
+    background-position: center;
+    padding: 6em;
+    background-repeat: no-repeat;
+}
+
+#presentazione p {
+    font-size: 1.3em;
+    background-color: white; /* Fallback color */
+    background-color: rgba(230,230,230, .75);
+    position: relative;
+    text-align: center;
+    padding: 0.5em;
+    margin: 0em;
+}
+
+#presentazione p a {
+    border: 2px solid black;
+    font-size: 0.8em;
 }
 
 abbr {
