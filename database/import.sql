@@ -157,7 +157,7 @@ INSERT INTO `Voti` (`ID_Panino`, `ID_Utente`, `Voto`) VALUES
 (16, 5, 3),
 (16, 10, 4),
 (17, 7, 4),
-(18, 4, 5);
+(18, 13, 5);
 
 INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Ora_Pubblicazione`, `Contenuto`) VALUES
 (1, 10, '2018-01-11 17:26', 'Panino passabile, niente di speciale.'),
@@ -178,7 +178,7 @@ INSERT INTO `Commenti` (`ID_Panino`, `ID_Utente`, `Ora_Pubblicazione`, `Contenut
 (13, 2, '2019-10-02 22:00', "Non so il perchè di tutti questi commenti entusiasti. L'ho provato ma non è niente di che in realtà."),
 (14, 5, '2020-05-19 19:30', 'Sono rimasta molto delusa, un panino veramente povero, da non prendere mai!!!'),
 (16, 5, '2020-07-08 15:47', 'Panino molto particolare ma niente di speciale.'),
-(18, 4, '2020-09-08 21:32', 'Un panino veramente assurdo, talmente grande che non sono riuscita a finirlo. Roba da matti.'),
+(18, 13, '2020-09-08 21:32', 'Un panino veramente assurdo, talmente grande che non sono riuscita a finirlo. Roba da matti.'),
 (14, 3, '2019-01-11 12:18', 'Tanto semplice quanto delizioso, super!'),
 (4, 5, '2019-01-25 19:33', 'La croccantezza di questo panino me la sognerò di notte, è perfetta'),
 (18, 10, '2019-01-28 20:14', 'Per essere buono è buono... un pò pesantino però'),
