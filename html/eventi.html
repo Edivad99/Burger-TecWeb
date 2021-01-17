@@ -7,7 +7,7 @@
     <title>Eventi | Burgheria Padovana</title>
 
     <meta name="title" content="Eventi | Burgheria Padovana" />
-    <meta name="description" content="Eventi organizzati da Burger" />
+    <meta name="description" content="Scopri gli eventi organizzati da Burgheria Padovana" />
     <meta name="keywords" content="Burgheria Padovana, Eventi, Serata, Panino, Padova" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
@@ -24,9 +24,9 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <a id="logo" href="index.php"><img src="img/burger-icon.png"/></a>
+        <a id="logo" href="index.php" aria-label="Torna alla pagina principale"><img src="img/burger-icon.png" alt=""/></a>
         <h1>Burgheria Padovana</h1>
-        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Menù"/>
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul id="menu">
             <li><a href="index.php" lang="en">HOME</a></li>
@@ -42,15 +42,15 @@
         <p>Ti trovi in: <a href="index.php" lang="en">Home</a> > Eventi</p>
     </nav>
 
-    <div id="contenutoGenerale">
+    <main id="contenutoGenerale">
         <p class="aiutiNascosti"><a href="#footer">Salta il contenuto</a></p>
         <eventi/>
-    </div>
+    </main>
 
     <footer id="footer">
         <ul>
             <li>Via Luigi Luzzati, 10 Padova</li>
-            <li><abbr title="Telefono">Tel</abbr>: <a class="tel" href="tel:+393453434225">+39 3453434225</a></li>
+            <li><abbr title="Telefono">Tel</abbr>: <a class="backgroundLink" href="tel:+393453434225">+39 3453434225</a></li>
             <li><abbr title="Partita IVA">P.IVA</abbr> 17935620231</li>
         </ul>
     </footer>

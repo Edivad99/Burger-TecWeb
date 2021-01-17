@@ -7,7 +7,7 @@
     <title>Gestione Panini | Burgheria Padovana</title>
 
     <meta name="title" content="Gestione Panini | Burgheria Padovana" />
-    <meta name="description" content="Qui l'admin può gestire gli eventi della Burgheria Padovana"/> <!--Non so se è il caso di far apparire questa pagina sul browser-->
+    <meta name="description" content="Gestisci i panini della Burgheria Padovana"/>
     <meta name="keywords" content="Burgheria Padovana, Aggiungi, Rimuovi, panino" />
     <meta name="author" content="Albiero Fincato Panighel Tossuto" />
     <meta name="language" content="italian it" />
@@ -24,9 +24,9 @@
             <li><a href="#menu">Vai al menù</a></li>
             <li><a href="#contenutoGenerale">Vai al contenuto</a></li>
         </ul>
-        <a id="logo" href="index.php"><img src="img/burger-icon.png"/></a>
+        <a id="logo" href="index.php" aria-label="Torna alla pagina principale"><img src="img/burger-icon.png" alt=""/></a>
         <h1>Burgheria Padovana</h1>
-        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Menù"/>
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul id="menu">
             <li><a href="index.php" lang="en">HOME</a></li>
@@ -39,10 +39,10 @@
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.php" lang="en">Home</a><a href="areariservata.php"> > Area riservata</a> > Gestione Panini</p>
+        <p>Ti trovi in: <a href="index.php" lang="en">Home</a> > <a href="areariservata.php">Area riservata</a> > Gestione Panini</p>
     </nav>
 
-    <div id="contenutoGenerale">
+    <main id="contenutoGenerale">
         <msgErrore/>
         <div class="formGestione">
             <form action="php/paniniHandler.php" method="post" onsubmit="return validaFormPanino()" enctype="multipart/form-data">
@@ -50,11 +50,11 @@
                     <legend>Aggiungi un panino:</legend>
 
                     <label for="nome">Nome panino</label>
-                    <input type="text" name="nome" id="nome" required autocomplete="off"/>
+                    <input type="text" name="nome" id="nome" required autocomplete="off" aria-describedby="errore_nome"/>
                     <p class="errore" id="errore_nome"></p>
 
                     <label for="immagine"><span lang="en">Upload</span> immagine</label>
-                    <input type="file" name="immagine" id="immagine" accept="image/x-png" required />
+                    <input type="file" name="immagine" id="immagine" accept="image/x-png" aria-label="Carica immagine panino" required aria-describedby="errore_immagine"/>
                     <p class="errore" id="errore_immagine"></p>
 
                     <label for="categoriaForm">Categoria</label>
@@ -63,14 +63,14 @@
                     </select>
 
                     <label for="ingred">Ingredienti</label>
-                    <textarea name="ingred" id="ingred" rows="4" cols="20" placeholder="Tra un ingrediente e l'altro va messo il ;" aria-label="Ingredienti: Tra un ingrediente e l'altro va messo il ;" required></textarea>
+                    <textarea name="ingred" id="ingred" rows="4" cols="20" placeholder="Tra un ingrediente e l'altro va messo il ;" aria-label="Ingredienti: Tra un ingrediente e l'altro va messo il ;" required aria-describedby="errore_ingredienti"></textarea>
                     <p class="errore" id="errore_ingredienti"></p>
 
                     <label for="descrizione">Descrizione</label>
-                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required></textarea>
+                    <textarea name="descrizione" id="descrizione" rows="4" cols="20" required aria-describedby="errore_descrizione"></textarea>
                     <p class="errore" id="errore_descrizione"></p>
 
-                    <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi"/>
+                    <input type="submit" name="aggiungi" value="Aggiungi" id="aggiungi" aria-label="Aggiungi panino"/>
                 </fieldset>
             </form>
 
@@ -87,16 +87,16 @@
                     <select name="name" id="name" required disabled>
                     </select>
 
-                    <input type="submit" name="elimina" value="Elimina" id="elimina"/>
+                    <input type="submit" name="elimina" value="Elimina" id="elimina" aria-label="Elimina panino"/>
                 </fieldset>
             </form>
         </div>
-    </div>
+    </main>
 
     <footer id="footer">
         <ul>
             <li>Via Luigi Luzzati, 10 Padova</li>
-            <li><abbr title="Telefono">Tel</abbr>: <a class="tel" href="tel:+393453434225">+39 3453434225</a></li>
+            <li><abbr title="Telefono">Tel</abbr>: <a class="backgroundLink" href="tel:+393453434225">+39 3453434225</a></li>
             <li><abbr title="Partita IVA">P.IVA</abbr> 17935620231</li>
         </ul>
     </footer>

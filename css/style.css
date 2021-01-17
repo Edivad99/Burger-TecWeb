@@ -1,8 +1,13 @@
 :root {
     --sfondo: #faf2dd;
-    --principale: #bd091b;
     --divisore: #ddd;
-    --alternative: #e4002b;
+    --contentBackground: white;
+
+    --principale: #FF4A38;
+    /* --principale: #bd091b; */
+    --menu-selected: white;
+    --linkVisitato: #0c2752;
+    --linkNonVisitato: white;
 }
 
 * {
@@ -18,9 +23,16 @@ html {
 body {
     max-width: 1024px;
     margin: auto;
-    /*font-family: Helvetica, Arial, sans-serif;*/
-    font-family: "Comic Sans MS", Arial, sans-serif; /*font da cambiare*/
-    background-color: white;
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    background-color: var(--contentBackground);
+}
+
+a.backgroundLink:link {
+    color: var(--linkNonVisitato);
+}
+
+a.backgroundLink:visited, a:visited {
+    color: var(--linkVisitato);
 }
 
 /*
@@ -79,20 +91,25 @@ body > header h1 {
 
 #menu li a, #menu li {
     display: inline-block;
-    color: white;
+    color: var(--menu-selected);
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 #menu li#currentLink {
-    border-bottom: white 4px solid;
+    border-bottom: var(--menu-selected) 4px solid;
     padding: 14px 16px 10px 16px;
 }
 
 #menu li a:hover {
-    background-color: white;
+    background-color: var(--menu-selected);
     color: var(--principale);
+}
+
+#menu li a:visited {
+    background-color: var(--menu-selected);
+    color: var(--linkVisitato);
 }
 
 #menu li:last-child {
@@ -106,7 +123,7 @@ body > header h1 {
 */
 
 #breadcrumb {
-    background-color: white;
+    background-color: var(--contentBackground);
     color: var(--principale);
     padding: 0.5em 0 0.5em 1.0em;
     font-weight: bold;
@@ -117,6 +134,11 @@ body > header h1 {
 #breadcrumb a {
     text-decoration: none;
     color: var(--principale);
+}
+
+#breadcrumb a:visited {
+    text-decoration: none;
+    color: var(--linkVisitato);
 }
 
 #breadcrumb p {
@@ -130,7 +152,6 @@ body > header h1 {
 */
 
 #contenutoGenerale {
-    background-color: white;
     line-height: 1.5;
     letter-spacing: 0.12em;
     word-spacing: 0.16em;
@@ -141,17 +162,34 @@ p {
     margin-bottom: 2em;
 }
 
-#immagineLocale {
-    content: url(../img/locale.jpg);
-    float: left;
-    width: 41%;
-    padding-right: 0.5em;
-}
+
+/* CONTENUTO > Index */
 
 #promozioneStudenti {
     font-size: 1.6em;
-    clear: both;
     text-align: center;
+}
+
+#presentazione {
+    background-image: url(../img/locale.jpg);
+    background-position: center;
+    padding: 6em;
+    background-repeat: no-repeat;
+}
+
+#presentazione p {
+    font-size: 1.3em;
+    background-color: white; /* Fallback color */
+    background-color: rgba(230,230,230, .75);
+    position: relative;
+    text-align: center;
+    padding: 0.5em;
+    margin: 0em;
+}
+
+#presentazione p a {
+    border: 2px solid black;
+    font-size: 0.8em;
 }
 
 abbr {
@@ -190,6 +228,11 @@ abbr {
     color: white;
 }
 
+#categoria li a:visited {
+    background-color: var(--principale);
+    color: var(--linkVisitato);
+}
+
 #contenutoGeneraleMenuPanini {
     line-height: 1.8;
     padding: 1em 0.2em 1em 0.2em;
@@ -204,15 +247,15 @@ abbr {
     text-align: center;
 }
 
-#contenitorePanini li {
+#contenitorePanini figure {
     flex: 33%;
 }
 
-#contenitorePanini li:last-child {
+#contenitorePanini figure:last-child {
     flex-grow: 0;
 }
 
-#contenitorePanini li:nth-last-child(2) {
+#contenitorePanini figure:nth-last-child(2) {
     flex-grow: 0;
 }
 
@@ -298,6 +341,10 @@ form#invioCommento #commento {
 
 form#invioCommento #pubblicaBtn {
     margin: 0 0 0.3em 0.7em;
+}
+
+#pubblicaBtn[disabled] {
+    cursor: default;
 }
 
 form#invioCommento #erroreForm {
@@ -406,6 +453,7 @@ form#invioCommento #erroreForm {
 #HistoryImg {
     width: 48%;
     float: right;
+    content: url(../img/aforisma.jpg);
 }
 
 .year {
@@ -447,7 +495,7 @@ form#invioCommento #erroreForm {
     text-align: center;
 }
 
-#contatti a.tel, #contatti a#mail {
+#contatti {
     color: black;
 }
 
@@ -474,6 +522,7 @@ input[type="submit"], input[type="reset"] {
     background-color: var(--principale);
     border-color: transparent;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #accesso #registrati {
@@ -486,6 +535,10 @@ input[type="submit"], input[type="reset"] {
     color: white;
     text-align: center;
     font-size: 1.4em;
+}
+
+.requiredBox {
+    text-align: center;
 }
 
 /* CONTENUTO > Area Riservata */
@@ -507,6 +560,7 @@ input[type="submit"], input[type="reset"] {
     padding: 0.5em;
     margin-right: 1em;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #gestione a:last-child {
@@ -533,6 +587,13 @@ a.elimina {
     margin-right: 0.5em;
 }
 
+#listaCommenti .commento .commentoUser {
+    font-size: 1em;
+}
+
+#boxModificaCommento > header > h1{
+    font-size: 1em;
+}
 /* CONTENUTO > Gestione Eventi */
 
 .formGestione {
@@ -620,8 +681,4 @@ footer {
 
 footer ul {
     list-style: none;
-}
-
-footer a.tel {
-    color: white;
 }

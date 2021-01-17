@@ -25,7 +25,7 @@ body > header {
 }
 
 body > header h1 {
-    font-size: 2.5em; /*Forse va diminuito*/
+    font-size: 2.5em;
 }
 
 #logo {
@@ -49,7 +49,7 @@ body > header h1 {
 */
 
 #breadcrumb {
-    padding: 0em 0em 1em 0em; /*Aumentare Font?*/
+    padding: 0em 0em 1em 0em;
 }
 
 #breadcrumb a {
@@ -67,10 +67,6 @@ body > header h1 {
     line-height: 1.8;
     padding: 1em 0.2em 1em 0.2em;
     text-align: justify;
-}
-
-#immagineLocale {
-    display: none;
 }
 
 abbr {
@@ -103,15 +99,15 @@ abbr {
     text-align: center;
 }
 
-#contenitorePanini li {
+#contenitorePanini figure {
     flex: 33%;
 }
 
-#contenitorePanini li:last-child {
+#contenitorePanini figure:last-child {
     flex-grow: 0;
 }
 
-#contenitorePanini li:nth-last-child(2) {
+#contenitorePanini figure:nth-last-child(2) {
     flex-grow: 0;
 }
 
@@ -180,7 +176,7 @@ abbr {
     clear: both;
 }
 
-#boxAggiuntaCommento {
+#boxAggiuntaCommento, #boxModificaCommento {
     display: none;
 }
 
@@ -209,7 +205,7 @@ abbr {
     text-align: center;
 }
 
-#contatti a.tel, #contatti a#mail {
+#contatti, #contatti a#mail {
     color:black;
     text-decoration: none;
 }
@@ -246,6 +242,10 @@ a.elimina {
     display: none;
 }
 
+#listaCommenti .commento .commentoUser {
+    font-size: 1em;
+}
+
 /* CONTENUTO > 404 e 500 */
 
 #nonTrovato {
@@ -263,7 +263,6 @@ footer {
     line-height: 1.8;
 }
 
-footer a.tel {
+.backgroundLink {
     color: black;
-    text-decoration: none;
 }

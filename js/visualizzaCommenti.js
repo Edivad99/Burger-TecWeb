@@ -21,7 +21,7 @@ function showMoreComments(user) {
             let commento = buildCommento(data[i]);
             listaCommenti.appendChild(commento);
         }
-        offset += 5;
+        offset += data.length;
 
     }).catch(error => {
         console.log(error);
@@ -30,6 +30,7 @@ function showMoreComments(user) {
 
 function buildCommento(data) {
     let link = document.createElement("a");
+    link.classList.add("backgroundLink");
     link.href = "panino.php?ID=" + data["PaninoID"];
     link.innerText = data["Panino"];
 
@@ -47,6 +48,11 @@ function buildCommento(data) {
     elimina.href = "php/eliminaCommento.php?ID=" + data["CommentoID"];
     elimina.innerText = "Elimina";
 
+    let modifica = document.createElement("a");
+    modifica.classList.add("elimina");
+    modifica.href = "modificaCommento.php?ID=" + data["CommentoID"];
+    modifica.innerText = "Modifica";
+
     let commentoTag = document.createElement("p");
     commentoTag.classList.add("commentoText");
     commentoTag.innerText = data["Contenuto"];
@@ -54,6 +60,7 @@ function buildCommento(data) {
     let header = document.createElement("header");
     header.appendChild(usernameTag);
     header.appendChild(elimina);
+    header.appendChild(modifica);
     header.appendChild(oraTag);
 
     let article = document.createElement("header");
@@ -87,7 +94,7 @@ function showMoreCommentsByPanino(paninoID) {
             let commento = buildCommentoNeiPanini(data[i]);
             listaCommenti.appendChild(commento);
         }
-        offsetPanino += 5;
+        offsetPanino += data.length;
 
     }).catch(error => {
         console.log(error);

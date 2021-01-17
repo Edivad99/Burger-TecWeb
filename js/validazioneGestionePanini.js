@@ -86,8 +86,16 @@ function nameChangedBurger() {
             if(paninoArray.length > 0) {
                 selectPanini.disabled = false;
 
+                let emptyOption = document.createElement("option");
+                emptyOption.value = "";
+                emptyOption.text = "Scegli il panino";
+                emptyOption.setAttribute("disabled", "");
+                emptyOption.setAttribute("selected", "");
+                selectPanini.add(emptyOption);
+
                 for(let i = 0; i < paninoArray.length; i++) {
                     let option = document.createElement("option");
+                    option.value = paninoArray[i];
                     option.text = paninoArray[i];
                     selectPanini.add(option);
                 }
