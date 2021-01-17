@@ -644,7 +644,7 @@ select {
 }
 
 #nonTrovato h2 {
-    color: #bd091b;
+    color: var(--principale);
     font-size: 6em;
 }
 
@@ -653,7 +653,7 @@ select {
 }
 
 #toHomeButton {
-    background-color: #bd091b;
+    background-color: var(--principale);
     color: white;
     padding: 0.5em 1.3em;
     text-decoration: none;
