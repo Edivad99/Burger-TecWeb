@@ -17,7 +17,6 @@ class DBAccess {
                                            DBAccess::PASSWORD,
                                            DBAccess::DATABASE_NAME);
 
-        //Forse bisogna sollevare un'eccezione?
         if(!$this->connection) {
             return false;
         } else {
