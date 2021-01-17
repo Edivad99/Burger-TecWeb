@@ -167,7 +167,6 @@ p {
 
 #promozioneStudenti {
     font-size: 1.6em;
-    clear: both;
     text-align: center;
 }
 
@@ -454,6 +453,7 @@ form#invioCommento #erroreForm {
 #HistoryImg {
     width: 48%;
     float: right;
+    content: url(../img/aforisma.jpg);
 }
 
 .year {
