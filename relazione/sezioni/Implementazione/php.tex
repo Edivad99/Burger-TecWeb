@@ -1,7 +1,6 @@
 \subsection{PHP}
 È stato deciso di elaborare tutte le pagine in \emph{PHP}. 
-Questa operazione è necessaria in quanto in ogni 
-pagina viene riportato il tasto di login se l'utente non è loggato, altrimenti viene mostrato il simbolo di un omino che, se premuto, porterà alla propria aerea riservata.\\
+Questa operazione è necessaria in quanto in ogni pagina viene riportato il tasto di login se l'utente non si è ancora autenticato, altrimenti viene mostrato il simbolo di un omino che, se premuto, porterà alla propria aerea riservata.\\
 Il linguaggio \emph{PHP} viene utilizzato per leggere, ricavare, scrivere ed eliminare informazioni dal database.\\
 Il sito è strutturato in questo modo: 
 \begin{itemize}
@@ -10,14 +9,14 @@ Il sito è strutturato in questo modo:
     \item File \emph{PHP} per la gestione di diverse funzionalità: inserimento o eliminazione di panini od eventi, login e logout, la possibilità di votare o commentare un panino, aggiungere, modificare od eliminare commenti e la possibilità di cambiare password;
     \item File \emph{PHP} per l'interazione con il \emph{DB}.
 \end{itemize}
-In questo modo si mantiene la separazione tra struttura e comportamento, in quanto la struttura viene descritta nei file HTML, mentre il comportamento è gestito dai file \emph{PHP} e \emph{JS} come vedremo in seguito.\\
+In questo modo si mantiene la separazione tra struttura e comportamento, in quanto la struttura viene descritta nei file \emph{HTML}, mentre il comportamento è gestito dai file \emph{PHP} e \emph{JS} come vedremo in seguito.\\
 
-Nei file \emph{PHP} vengono eseguiti controlli lato client sull'input delle form controllando che i dati inseriti siano corretti e cercando di ridurre al minimo possibili tentativi di \emph{SQL injection}.\\
+Nei file \emph{PHP} vengono eseguiti controlli lato client sull'input delle form controllando che i dati inseriti siano corretti e cercando di ridurre al minimo possibili tentativi di \emph{SQL Injection}.\\
 I metodi utilizzati per il controllo dell'input sono: 
     \begin{itemize}
         \item \emph{trim()}: elimina gli spazi prima e dopo la stringa in input;
         \item \emph{htmlentities()}: converte tutti i possibili caratteri speciali in entità \emph{HTML};
         \item \emph{strip\_tags()}: elimina tutti i possibili tag \emph{HTML};
         \item Inoltre viene utilizzata la funzione \emph{mysqli\_real\_escape\_string};
-        \item Nella query per il login viene utilizzato \emph{BINARY} per rendere la form case sensitive;
+        \item Nella query per il login viene utilizzato \emph{BINARY} per rendere la form case sensitive.
     \end{itemize}
